@@ -43,11 +43,10 @@ function br_theme_setup() {
         remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 
-        // Load in required or optional files.
-
-        // Classes
-        //require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
-        // Scripts and styles
+		// Load in required or optional files.
+        // Classes.
+        // require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
+		// Scripts and styles.
         require_once( get_stylesheet_directory() . '/includes-client/scripts-styles.php' );
         // Add in our Customizer options.
         require_once( get_stylesheet_directory() . '/includes-client/customize.php' );
