@@ -22,16 +22,19 @@ if( $show_full || is_single() || is_archive() || is_home() || is_search() ) {
 		if ( $show_cats && $cats ) {
 			printf( _x( 'Categorized %s', 'Post meta info: category.', 'fl-automator' ), $cats );
 		}
-                echo '</span><span class="entry-tags">';
+                echo '</span>';
 		if ( $show_tags && $tags ) {
+				echo '<span class="entry-tags">';
 			if ( $show_cats && $cats ) {
 				printf( _x( ' Tagged %s', 'Post meta info: tags. Continuing of the sentence started with "Posted in Category".', 'fl-automator' ), $tags );
 			} else {
 				printf( _x( 'Tagged %s', 'Post meta info: tags.', 'fl-automator' ), $tags );
 			}
+
+			echo '</span></div>';
 		}
 
-		echo '</span></div>';
+		
 	}
 
 	// Comments disabled here as already enabled in top post meta

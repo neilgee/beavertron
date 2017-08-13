@@ -9,18 +9,18 @@ if($show_author || $show_date || $comments) {
 }
 
 // Author
-if ( $show_author ) {
-	echo '<span class="fl-post-author">';
-	printf( _x( 'By %s', 'Post meta info: author.', 'fl-automator' ), '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '"><span>' . get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ) . '</span></a>' );
-	echo '</span>';
-}
+// if ( $show_author ) {
+// 	echo '<span class="fl-post-author">';
+// 	printf( _x( 'By %s', 'Post meta info: author.', 'fl-automator' ), '<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '"><span>' . get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ) . '</span></a>' );
+// 	echo '</span>';
+// }
 
 // Date
 if($show_date) {
 
-	if($show_author) {
-		echo '<span class="fl-sep"> | </span>';
-	}
+	// if($show_author) {
+	// 	echo '<span class="fl-sep"> | </span>';
+	// }
 
 	echo '<span class="fl-post-date">' . get_the_date() . '</span>';
 }

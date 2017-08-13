@@ -1359,6 +1359,10 @@ header ul li a{
 /* Entry Meta
 --------------------------------------------- */
 
+.fl-post-meta-bottom {
+	font-style: normal;
+}
+
 p.entry-meta {
 	font-size: 16px;
 	font-size:1.6rem;
@@ -1379,16 +1383,16 @@ p.entry-meta {
 	display: block;
 }
 
-.entry-time::before,
+.fl-post-date::before,
 .fl-post-grid-date::before {
     content: '\f469';
     font-family: dashicons;
     color: #666;
     font-size: 25px;
-    vertical-align: middle;
+	vertical-align: middle;
+	padding-right: 3px;
 }
 
-.entry-author::before,
 .fl-post-grid-author:before {
     content: '\f110';
     font-family: dashicons;
@@ -1398,7 +1402,7 @@ p.entry-meta {
     vertical-align: middle;
 }
 
-.entry-comments-link::before,
+.fl-comments-popup-link::before,
 .fl-post-feed-comments::before {
     content: '\f101';
     font-family: dashicons;
