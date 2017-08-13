@@ -1,20 +1,15 @@
 <?php
 
-// Declare WooCommerce support for your theme - install the plugin and below and uncomment the line below that.
-// Add the Genesis Connect WooCommerce notice.
-//include_once( get_stylesheet_directory() . '/includes/woocommerce/woocommerce-notice.php' );
-
-
 add_action( 'wp_enqueue_scripts', 'woo_css_styles', 900 );
 /**
  * WOO CSS styles.
  */
 function woo_css_styles() {
-wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-client/woocommerce/woo.css', array(), '2.0.0', 'all' );
+wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-child/woocommerce/woo.css', array(), '2.0.0', 'all' );
 }
 
 // Customizer Options
-include_once( get_stylesheet_directory() . '/includes-client/woocommerce/customize-woo.php' );
+include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customize-woo.php' );
 
 // Supports for zoom/slider/gallery
 add_theme_support( 'wc-product-gallery-lightbox' );
