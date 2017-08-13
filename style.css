@@ -422,13 +422,50 @@ input[type="submit"].small {
 	cursor: not-allowed;
 }
 
+/* BB Plugin Button - change>>>>> .the-row <<<<<<<<
+---------------------------------------------------------------------------------------------------- */
+/* lines up the button if parent is equal heights */
+.fl-builder-content .the-row .fl-module-button {
+	margin-top: auto;
+} 
+
+.fl-builder-content .the-row a.fl-button, 
+.fl-builder-content .the-row a.fl-button:visited {
+   background: #666;
+   border-color:  #666;
+   border-style: solid;
+   border-width: 1px 0 0 0;
+   color: #fff;
+   border-radius: 1px;
+   width: 100%;
+   text-align: center;
+   text-transform: uppercase;
+}
+
+.fl-builder-content .the-row a.fl-button:hover, 
+.fl-builder-content .the-row a.fl-button:focus {
+   background: #fff;
+   color: #666;
+}
+
+.fl-builder-content .the-row a.fl-button *, 
+.fl-builder-content .the-row a.fl-button:visited  {
+   color: #fff;
+}
+
+.fl-builder-content .the-row a.fl-button:hover *, 
+.fl-builder-content .the-row a.fl-button:focus * {
+   color: #666;
+}
+
 
 
 /* Read More
 ---------------------------------------------------------------------------------------------------- */
 
 a.more-link,
-.fl-post-grid-more {
+.fl-post-grid-more,
+.fl-post-more-link {
 	display:inline-block;
 	font-size:14px;
 	margin-top:10px;
@@ -447,7 +484,8 @@ a.more-link,
 
 }
 a.more-link:hover,
-.fl-post-grid-more:hover {
+.fl-post-grid-more:hover,
+.fl-post-more-link:hover {
 	opacity:.8;
 	color:#fff;
 	background-color:#000;
