@@ -23,7 +23,10 @@ add_action( 'wp_enqueue_scripts', 'bt_scripts_styles', 1000 ); // All the rest l
  */
 function bt_scripts_styles() {
 	// wp_enqueue_style( 'googlefonts' , '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800', array(), '2', 'all' );
-        wp_enqueue_style( 'fl-beavertron-theme', get_stylesheet_directory_uri() . '/style.css' );
+		wp_enqueue_style( 'fl-beavertron-theme', get_stylesheet_directory_uri() . '/style.css' );
+		wp_enqueue_script( 'remove-mobile', FL_CHILD_THEME_URL . '/js/remove-mobile.js', array(), '1.6', true );
+		wp_enqueue_style( 'remove-mobile-inbuilt' , FL_CHILD_THEME_URL . '/css/remove-mobile.css', array() , '1.6.1', 'all' );
+		
         // wp_dequeue_style( 'foundation-icons' );
         // wp_dequeue_style( 'font-awesome' );
         // wp_dequeue_style( 'dashicons' );
@@ -41,7 +44,7 @@ function bt_ie_styles() {
 	wp_enqueue_style( 'ieall' );
 }
 
-//add_action( 'wp_enqueue_scripts', 'bt_backstretch_background_scripts' );
+// add_action( 'wp_enqueue_scripts', 'bt_backstretch_background_scripts' );
 /**
  * Backstretch for Custom Background Image
  */
@@ -63,3 +66,7 @@ function bt_ie_styles() {
 	wp_enqueue_script( 'fitvids', get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
  	wp_enqueue_script( 'fitvids-init', get_bloginfo( 'stylesheet_directory' ) . '/js/fitvids-init.js', array( 'fitvids' ), '1.1', true );
 }
+
+
+
+

@@ -1,0 +1,23 @@
+/* https://pro.wpbeaverworld.com/disables-responsive-menu-effect-small-device/ */
+
+@media (max-width: 768px ) {
+    
+        .fl-page-nav-wrap {
+                    padding-bottom: 0;
+        }
+    
+        .fl-full-width .fl-page-nav {
+                    display: table;
+                    width: auto;
+        }
+    
+        .fl-page-nav-collapse {
+                    display: block;
+                    visibility: visible;
+        }
+    
+        .fl-page-nav-collapse ul.navbar-nav > li {
+                    border: none;
+                    float: left;
+        }
+    }
