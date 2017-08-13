@@ -158,10 +158,20 @@ function gsm_register_required_plugins() {
 					 'required'  => false,
 			 ),
 			 array(
+					'name'      => 'Admin Page Spider',
+					'slug'      => 'admin-page-spider',
+					'required'  => false,
+			),
+			 array(
 					 'name'      => 'Akismet',
 					 'slug'      => 'akismet',
 					 'required'  => false,
 			 ),
+			 array(
+					'name'      => 'Better Search Replace',
+					'slug'      => 'better-search-replace',
+					'required'  => false,
+			),
 			 array(
 					 'name'      => 'BuddyPress',
 					 'slug'      => 'buddypress',
@@ -213,6 +223,11 @@ function gsm_register_required_plugins() {
 					 'required'  => false,
 			 ),
 			 array(
+					'name'      => 'No Page Comment',
+					'slug'      => 'no_page_comment',
+					'required'  => false,
+			),
+			 array(
 					 'name'      => 'Post Types Order',
 					 'slug'      => 'post-types-Order',
 					 'required'  => false,
@@ -231,7 +246,12 @@ function gsm_register_required_plugins() {
 					 'name'      => 'Simply Show Hooks',
 					 'slug'      => 'simply-show-hooks',
 					 'required'  => false,
-			 ),
+			 ),	
+			 array(
+					'name'      => 'SOGO Add Script Header Footer',
+					'slug'      => 'oh-add-script-header-footer',
+					'required'  => false,
+			),
 			 array(
 					 'name'      => 'Testimonial Rotator',
 					 'slug'      => 'testimonial-rotator',
