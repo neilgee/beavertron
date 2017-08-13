@@ -61,6 +61,11 @@ function br_theme_setup() {
                 include_once( get_stylesheet_directory() . '/includes-client/woocommerce/woocommerce.php' );
         }
 
+        // GravityForms
+	if ( class_exists( 'GFCommon' ) ) {
+		include_once( get_stylesheet_directory() . '/includes-client/gravity.php' );
+	}
+
         // Get the plugins.
         require_once  get_stylesheet_directory() . '/plugins.php';
 

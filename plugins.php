@@ -82,17 +82,20 @@ function gsm_register_required_plugins() {
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			 ),
-			 array(
-					 'name'               => 'Envira Gallery', // The plugin name.
-					 'slug'               => 'envira-gallery', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/envira-gallery.zip', // The plugin source.
-					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '1.5.9.5', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			 ),
+
+				// This is an example of how to include a plugin pre-packaged with a theme.
+				array(
+					'name'               => 'Beaver Themer', // The plugin name.
+					'slug'               => 'bb-theme-builder', // The plugin slug (typically the folder name).
+					'source'             => get_theme_root() . '/lib/plugins/bb-theme-builder.zip', // The plugin source.
+					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+					'version'            => '1.0.1.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+					'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+			),   
+
 			 // This is an example of how to include a plugin pre-packaged with a theme.
 			 array(
 					 'name'               => 'Gravity Forms', // The plugin name.
@@ -105,18 +108,7 @@ function gsm_register_required_plugins() {
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			 ),
-			 // This is an example of how to include a plugin pre-packaged with a theme.
-			 array(
-					 'name'               => 'Soliloquy', // The plugin name.
-					 'slug'               => 'soliloquy', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/soliloquy.zip', // The plugin source.
-					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.5.5.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			 ),
+
 			 array(
 					 'name'               => 'Woocommerce Memberships', // The plugin name.
 					 'slug'               => 'woocommerce-memberships', // The plugin slug (typically the folder name).
@@ -170,11 +162,6 @@ function gsm_register_required_plugins() {
 					 'slug'      => 'akismet',
 					 'required'  => false,
 			 ),
-			//  array(
-			// 		 'name'      => 'Better Font Awesome',
-			// 		 'slug'      => 'better-font-awesome',
-			// 		 'required'  => false,
-			//  ),
 			 array(
 					 'name'      => 'BuddyPress',
 					 'slug'      => 'buddypress',
@@ -195,16 +182,6 @@ function gsm_register_required_plugins() {
 					 'slug'      => 'content-aware-sidebars',
 					 'required'  => false,
 			 ),
-			 array(
-					 'name'      => 'Cyclone Slider 2',
-					 'slug'      => 'cyclone-slider-2',
-					 'required'  => false,
-			 ),
-			//  array(
-			// 		 'name'      => 'Disable Visual Editor',
-			// 		 'slug'      => 'disable-visual-editor-wysiwyg',
-			// 		 'required'  => false,
-			//  ),
 			 array(
 					 'name'      => 'Duplicate Post',
 					 'slug'      => 'duplicate-post',
@@ -228,41 +205,6 @@ function gsm_register_required_plugins() {
 			 array(
 					 'name'      => 'EWWW Image Optimizer',
 					 'slug'      => 'ewww-image-optimizer',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Genesis eNews Extended',
-					 'slug'      => 'genesis-enews-extended',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Genesis Woocommerce',
-					 'slug'      => 'genesis-connect-woocommerce',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Genesis Simple Sidebars',
-					 'slug'      => 'genesis-simple-sidebars',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Genesis Simple Share',
-					 'slug'      => 'genesis-simple-share',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Genesis Title Toggle',
-					 'slug'      => 'genesis-title-toggle',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Genesis Visual Hook Guide',
-					 'slug'      => 'genesis-visual-hook-guide',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Genesis Featured Page Advanced',
-					 'slug'      => 'genesis-featured-page-advanced',
 					 'required'  => false,
 			 ),
 			 array(
@@ -301,11 +243,6 @@ function gsm_register_required_plugins() {
 					 'required'  => false,
 			 ),
 			 array(
-					 'name'      => 'InfiniteWP - Client',
-					 'slug'      => 'iwp-client',
-					 'required'  => false,
-			 ),
-			 array(
 					 'name'      => 'Imsanity',
 					 'slug'      => 'imsanity',
 					 'required'  => false,
@@ -340,11 +277,6 @@ function gsm_register_required_plugins() {
 					 'slug'      => 'slicknav-mobile-menu',
 					 'required'  => false,
 			 ),
-			//  array(
-			// 		 'name'      => 'Raw HTML',
-			// 		 'slug'      => 'raw-html',
-			// 		 'required'  => false,
-			//  ),
 			 array(
 					 'name'      => 'Force Regenerate Thumbnails',
 					 'slug'      => 'force-regenerate-thumbnails',
@@ -391,11 +323,6 @@ function gsm_register_required_plugins() {
 					 'required'  => false,
 			 ),
 			 array(
-					 'name'      => 'W3 Total Cache',
-					 'slug'      => 'w3-total-cache',
-					 'required'  => false,
-			 ),
-			 array(
 					 'name'      => 'WP Optimize',
 					 'slug'      => 'wp-optimize',
 					 'required'  => false,
@@ -431,7 +358,7 @@ function gsm_register_required_plugins() {
 	 * Only uncomment the strings in the config array if you want to customize the strings.
 	 */
 	$config = array(
-		'id'           => 'genesischild-mobile-first',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+		'id'           => 'beavertron',                 // Unique ID for hashing notices for multiple instances of TGMPA.
 		'default_path' => '',                      // Default absolute path to bundled plugins.
 		'menu'         => 'tgmpa-install-plugins', // Menu slug.
 		'parent_slug'  => 'themes.php',            // Parent menu slug.
