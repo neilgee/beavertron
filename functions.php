@@ -43,27 +43,27 @@ function br_theme_setup() {
         remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 
-		// Load in required or optional files.
+	// Load in required or optional files.
         // Classes.
         // require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
-		// Scripts and styles.
-        require_once( get_stylesheet_directory() . '/includes-client/scripts-styles.php' );
+	// Scripts and styles.
+        require_once( get_stylesheet_directory() . '/includes-child/scripts-styles.php' );
         // Add in our Customizer options.
-        require_once( get_stylesheet_directory() . '/includes-client/customize.php' );
+        require_once( get_stylesheet_directory() . '/includes-child/customize.php' );
         // Add in our CSS for our customizer options.
-        require_once( get_stylesheet_directory() . '/includes-client/output.php' );
+        require_once( get_stylesheet_directory() . '/includes-child/output.php' );
         // Client Logo for WP Login and backend admin clean up.
-        include_once( get_stylesheet_directory() . '/includes-client/client-file.php' );
+        include_once( get_stylesheet_directory() . '/includes-child/client-file.php' );
 
         // WooCommerce
         if ( class_exists( 'WooCommerce' ) ) {
         // WooCommerce functions
-                include_once( get_stylesheet_directory() . '/includes-client/woocommerce/woocommerce.php' );
+                include_once( get_stylesheet_directory() . '/includes-child/woocommerce/woocommerce.php' );
         }
 
         // GravityForms
 	if ( class_exists( 'GFCommon' ) ) {
-		include_once( get_stylesheet_directory() . '/includes-client/gravity.php' );
+		include_once( get_stylesheet_directory() . '/includes-child/gravity.php' );
 	}
 
         // Get the plugins.
@@ -127,9 +127,9 @@ function br_theme_setup() {
         add_filter( 'intermediate_image_sizes_advanced', 'bt_remove_default_images' );
         // Remove default image sizes here.
         function bt_remove_default_images( $sizes ) {
-                unset( $sizes['small']); // 150px
-                unset( $sizes['medium']); // 300px
-                unset( $sizes['large']); // 1024px
+               // unset( $sizes['small']); // 150px
+               // unset( $sizes['medium']); // 300px
+               // unset( $sizes['large']); // 1024px
                 unset( $sizes['medium_large']); // 768px
                 return $sizes;
         }
@@ -172,7 +172,7 @@ function br_theme_setup() {
         }
 
 
-                // Allow shortcode to run in widgets.
+        // Allow shortcode to run in widgets.
         add_filter( 'widget_text', 'do_shortcode' );
 
 
@@ -189,8 +189,6 @@ function br_theme_setup() {
                 }
                 return $html;
         }
-
-
 
 
 } // Closing After Set Up Hook
