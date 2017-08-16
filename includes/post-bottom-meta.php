@@ -4,7 +4,7 @@
 if( $show_full || is_single() || is_archive() || is_home() || is_search() ) {
 	
 	// Wrapper
-	if($show_cats || $show_tags || $comments) {
+	if( $show_cats || $show_tags || $comments ) {
 
 		echo '<div class="fl-post-meta fl-post-meta-bottom">';
 
@@ -17,9 +17,12 @@ if( $show_full || is_single() || is_archive() || is_home() || is_search() ) {
 		$tags = get_the_tag_list( '', ', ' );
 		$cats = get_the_category_list( ', ' );
         // Add spans around so can display block. Add CSS classes to style
-		echo '<div class="fl-post-cats-tags"><span class="entry-categories">';
+		echo '<div class="fl-post-cats-tags">';
 
 		if ( $show_cats && $cats ) {
+
+		echo '<span class="entry-categories">';
+			
 			printf( _x( 'Categorized %s', 'Post meta info: category.', 'fl-automator' ), $cats );
 		}
                 echo '</span>';
@@ -31,9 +34,11 @@ if( $show_full || is_single() || is_archive() || is_home() || is_search() ) {
 				printf( _x( 'Tagged %s', 'Post meta info: tags.', 'fl-automator' ), $tags );
 			}
 
-			echo '</span></div>';
+			echo '</span>';
 		}
 
+		echo '</div>';
+		
 		
 	}
 

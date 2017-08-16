@@ -10,18 +10,18 @@
  * @link    http://wpbeaches.com
  */
 
-add_action( 'wp_enqueue_scripts', 'bt_css', 999 );
+add_action( 'wp_enqueue_scripts', 'bt_css', 1001 );
 /**
  * Checks the settings for the images and background colors for each image
  * If any of these value are set the appropriate CSS is output
- * Enqueued with a 999 priority as the main style sheet is at 998
+ * Enqueued with a 1001 priority as the main style sheet is at 1000
  *
  * @since 1.0
  */
 function bt_css() {
 
 	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
-
+	
 	/* Our Customiser settings, stored as variables */
 	$hero_bg_image                     = get_theme_mod( 'hero_bg');
 	$bt_link_color                     = get_theme_mod( 'bt_link_color', bt_link_color_default() );
@@ -82,7 +82,8 @@ function bt_css() {
 	}
 
 	/* Start off with •nuffink*/
-	$css = '';
+	$css = '.hello {
+		color#red;';
 
 
 	$css .= ( !empty($hero_bg_image) ) ? sprintf('
@@ -407,4 +408,6 @@ function bt_css() {
 	if ( $css ) {
 		wp_add_inline_style( $handle, $css );
 	}
+
+
 }
