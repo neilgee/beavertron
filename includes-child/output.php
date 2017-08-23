@@ -82,8 +82,7 @@ function bt_css() {
 	}
 
 	/* Start off with •nuffink*/
-	$css = '.hello {
-		color#red;';
+	$css = '';
 
 
 	$css .= ( !empty($hero_bg_image) ) ? sprintf('

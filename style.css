@@ -815,9 +815,30 @@ img.alignright,
 ---------------------------------------------------------------------------------------------------- */
 
 
-/* # Buttons
+/* # Buttons - Black-But example
 ---------------------------------------------------------------------------------------------------- */
-
+.fl-builder-content .black-but a.fl-button,
+.fl-builder-content .black-but a.fl-button:visited {
+	background: #000;
+	border: 1px solid #000;
+	color: #fff;
+	border-radius: 1px;
+	padding: 7px 35px;
+}
+.fl-builder-content .black-but  a.fl-button:hover, 
+.fl-builder-content .black-but  a.fl-button:focus {
+	background: #fff;
+	border: 1px solid #000;
+	color: #000;
+}
+.fl-builder-content .black-but a.fl-button *, 
+.fl-builder-content .black-but a.fl-button:visited  {
+	color: #fff;
+}
+.fl-builder-content .black-but  a.fl-button:hover *, 
+.fl-builder-content .black-but  a.fl-button:focus * {
+	color: #000000;
+}
 
 
 /* # Hero
@@ -1196,48 +1217,22 @@ Business Profile
 
 
 
-/* # Media Queries
+
+/* Footer
 ---------------------------------------------------------------------------------------------------- */
 
+/* Sticky Footer */
 
-@media only screen and (min-width: 580px) {
-
-	
+.fl-page {
+	position: relative;
+	min-height: 100vh;
+	padding-bottom: 60px; /* Should be equal to the height of your footer */
 }
-
-
-@media only screen and (min-width: 768px) {
-
-
-
-	/* Header
-	---------------------------------------------------------------------------------------------------- */
-
-
-	/* ## Title Area
-	--------------------------------------------- */
-
-	/* ## Header Widget Area
-	--------------------------------------------- */
-
-
-	/* Layout
-	---------------------------------------------------------------------------------------------------- */
-
-
-	/* Content
-	---------------------------------------------------------------------------------------------------- */
-	
-
-	/* Sidebars
-	---------------------------------------------------------------------------------------------------- */
-
-	/* ### Primary Sidebar */
-
-
-	/* Footer
-	---------------------------------------------------------------------------------------------------- */
-
+.fl-page-footer-wrap {
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+}
 
 
 
@@ -1325,11 +1320,6 @@ Business Profile
 	pre {
 		border: 1px solid #999;
 		page-break-inside: avoid;
-	}
-
-	.content,
-	.content-sidebar {
-		width: 100%;
 	}
 
 	button,

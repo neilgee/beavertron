@@ -58,6 +58,8 @@ function br_theme_setup() {
 	require_once( get_stylesheet_directory() . '/includes-child/output.php' );
 	// Client Logo for WP Login and backend admin clean up.
 	include_once( get_stylesheet_directory() . '/includes-child/client-file.php' );
+	// Remove Default BB Mobile Menu.
+	//include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
 
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
@@ -193,6 +195,10 @@ function br_theme_setup() {
 		}
 	return $html;
 	}
+
+	
+
+
 
 
 } // Closing After Set Up Hook
