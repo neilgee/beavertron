@@ -418,36 +418,6 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 // 	)
 // );
 
-add_filter( 'theme_mod_', 'bt_default_theme_preset2');
-function bt_default_theme_preset2( $mods ) {
-
-	$mods2 = array(
-		'fl-accent'                 	=> '#c3251d',
-		'fl-accent-hover'           	=> '#999999',
-	);
-
-	$mods3 = array_merge($mods, $mods2); 
-	
-	return $mods3;
-
-}
-
-
-add_filter( 'fl_theme_mods', 'bt_default_theme_preset3');
-function bt_default_theme_preset3( $mods ) {
-
-	$mods2 = array(
-		'fl-accent'                 	=> '#c3251d',
-		'fl-accent-hover'           	=> '#999999',
-	);
-
-	$mods3 = array_merge($mods, $mods2); 
-	
-	return $mods3;
-
-	var_dump ('$mods3');
-}
-
 
 add_filter( 'fl_default_theme_mods', 'bt_default_theme_preset');
 

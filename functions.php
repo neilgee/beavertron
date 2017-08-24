@@ -87,8 +87,8 @@ function br_theme_setup() {
 
 	add_filter( 'upload_mimes', 'bt_add_svg_images' );
 	/**
-		* Allow SVG Images Via Media Uploader.
-		*/
+	* Allow SVG Images Via Media Uploader.
+	*/
 	function bt_add_svg_images( $mimetypes ) {
 		$mimetypes['svg'] = 'image/svg+xml';
 		return $mimetypes;
@@ -96,15 +96,15 @@ function br_theme_setup() {
 
 	// Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
 	add_theme_support( 'custom-logo', array(
-			'height'      => 150, // set to your dimensions
-			'width'       => 180,// set to your dimensions
-			'flex-height' => true,
-			'flex-width'  => true,
-			));
+		'height'      => 150, // set to your dimensions
+		'width'       => 180,// set to your dimensions
+		'flex-height' => true,
+		'flex-width'  => true,
+	));
 	
 	
 	add_shortcode( 'client_logo', 'bt_client_logo' );
-	//Position the content with a shortcode [client_logo]
+	// Position the content with a shortcode [client_logo]
 	function bt_client_logo() {
 	ob_start();
 		if ( function_exists( 'the_custom_logo' ) ) {    
@@ -141,16 +141,16 @@ function br_theme_setup() {
 	}
 
 	/**
-		* Change Read More Button For Excerpt.
-		**/
+	* Change Read More Button For Excerpt.
+	**/
 	function bt_read_more_link() {
 		return ' ...  <a href="' . get_permalink() . '" class="more-link" title="Read More">Read More</a>';
 	}
 
 	add_filter( 'get_the_content_limit', 'bt_content_limit_read_more_markup', 10, 3 );
 	/**
-		* Customize the content limit more markup.
-		**/
+	* Customize the content limit more markup.
+	**/
 	function bt_content_limit_read_more_markup( $output, $content, $link ) {
 
 		$output = sprintf( '<p>%s &#x02026;</p><p class="more-link-wrap">%s</p>', $content, str_replace( '&#x02026;', '', $link ) );
@@ -160,21 +160,11 @@ function br_theme_setup() {
 
 	add_filter( 'get_the_content_more_link', 'bt_filter_read_more_link' );
 	/**
-		* Modify the WordPress read more link when entry content is showing
-		**/
+	* Modify the WordPress read more link when entry content is showing
+	**/
 	function bt_filter_read_more_link() {
 
 		return sprintf( '<a href="%1$s" class="%2$s" title="Read More">%3$s</a>', get_permalink(), 'more-link', __( ' Read More' ) );
-	}
-
-	add_filter( 'comment_form_defaults', 'bt_comment_form_defaults' );
-	/**
-		* Change the comments reply text.
-		*/
-	function bt_comment_form_defaults( $defaults ) {
-		$defaults['title_reply'] = __( 'Leave a Comment', 'beavertron' );
-		$defaults['comment_notes_after'] = '';
-		return $defaults;
 	}
 
 
@@ -184,8 +174,8 @@ function br_theme_setup() {
 
 	add_filter( 'widget_text','bt_execute_php_widgets' );
 	/**
-		* Allow PHP code to run in Widgets.
-		*/
+	* Allow PHP code to run in Widgets.
+	*/
 	function bt_execute_php_widgets( $html ) {
 		if ( strpos( $html, '<' . '?php' ) !== false ) {
 			ob_start();
