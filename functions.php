@@ -9,10 +9,9 @@
  * @link    http://wpbeaches.com/
  */
 
-// // Defines
-// define( 'FL_CHILD_THEME_DIR', get_stylesheet_directory() );
-// define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
 
+
+// Original bb child theme setting
 // Classes
 // require_once 'classes/class-fl-child-theme.php';
 
@@ -28,7 +27,7 @@ add_action( 'after_setup_theme', 'br_theme_setup', 15 );
 function br_theme_setup() {
 
 	// Defines
-		// Child theme constant settings.
+	// Child theme constant settings.
 	define( 'CHILD_THEME_NAME', 'beavertron' );
 	define( 'CHILD_THEME_URL', 'http://wpbeaches.com' );
 	define( 'CHILD_THEME_VERSION', '1.0.0' );
@@ -59,7 +58,7 @@ function br_theme_setup() {
 	// Client Logo for WP Login and backend admin clean up.
 	include_once( get_stylesheet_directory() . '/includes-child/client-file.php' );
 	// Remove Default BB Mobile Menu.
-	//include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
+	include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
 
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
@@ -73,7 +72,7 @@ function br_theme_setup() {
 	}
 
 	// Get the plugins.
-	require_once  get_stylesheet_directory() . '/plugins.php';
+	//require_once  get_stylesheet_directory() . '/plugins.php';
 
 	// Allow the theme to be translated.
 	load_theme_textdomain( 'beavertron', get_stylesheet_directory_uri() . '/languages' );
@@ -82,35 +81,6 @@ function br_theme_setup() {
 	if ( function_exists( 'add_image_size' ) ) {
 		add_image_size( 'blog-feature', 300, 200, true );
 		add_image_size( 'medium', 300, 300, true ); // Overwrite default and hard cropping
-	}
-
-
-	add_filter( 'upload_mimes', 'bt_add_svg_images' );
-	/**
-	* Allow SVG Images Via Media Uploader.
-	*/
-	function bt_add_svg_images( $mimetypes ) {
-		$mimetypes['svg'] = 'image/svg+xml';
-		return $mimetypes;
-	}
-
-	// Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
-	add_theme_support( 'custom-logo', array(
-		'height'      => 150, // set to your dimensions
-		'width'       => 180,// set to your dimensions
-		'flex-height' => true,
-		'flex-width'  => true,
-	));
-	
-	
-	add_shortcode( 'client_logo', 'bt_client_logo' );
-	// Position the content with a shortcode [client_logo]
-	function bt_client_logo() {
-	ob_start();
-		if ( function_exists( 'the_custom_logo' ) ) {    
-		echo '<div itemscope itemtype="http://schema.org/Organization">' . get_custom_logo() . '</div>';
-		}
-	return ob_get_clean();
 	}
 
 
@@ -130,6 +100,7 @@ function br_theme_setup() {
 	}
 
 
+
 	add_filter( 'intermediate_image_sizes_advanced', 'bt_remove_default_images' );
 	// Remove default image sizes here.
 	function bt_remove_default_images( $sizes ) {
@@ -140,31 +111,33 @@ function br_theme_setup() {
 		return $sizes;
 	}
 
+
+	add_filter( 'upload_mimes', 'bt_add_svg_images' );
 	/**
-	* Change Read More Button For Excerpt.
-	**/
-	function bt_read_more_link() {
-		return ' ...  <a href="' . get_permalink() . '" class="more-link" title="Read More">Read More</a>';
+	* Allow SVG Images Via Media Uploader.
+	*/
+	function bt_add_svg_images( $mimetypes ) {
+		$mimetypes['svg'] = 'image/svg+xml';
+		return $mimetypes;
 	}
 
-	add_filter( 'get_the_content_limit', 'bt_content_limit_read_more_markup', 10, 3 );
-	/**
-	* Customize the content limit more markup.
-	**/
-	function bt_content_limit_read_more_markup( $output, $content, $link ) {
-
-		$output = sprintf( '<p>%s &#x02026;</p><p class="more-link-wrap">%s</p>', $content, str_replace( '&#x02026;', '', $link ) );
-
-		return $output;
-	}
-
-	add_filter( 'get_the_content_more_link', 'bt_filter_read_more_link' );
-	/**
-	* Modify the WordPress read more link when entry content is showing
-	**/
-	function bt_filter_read_more_link() {
-
-		return sprintf( '<a href="%1$s" class="%2$s" title="Read More">%3$s</a>', get_permalink(), 'more-link', __( ' Read More' ) );
+	// Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
+	add_theme_support( 'custom-logo', array(
+		'height'      => 100, // set to your dimensions
+		'width'       => 300,// set to your dimensions
+		'flex-height' => true,
+		'flex-width'  => true,
+	));
+	
+	
+	add_shortcode( 'client_logo', 'bt_client_logo' );
+	// Position the content with a shortcode [client_logo]
+	function bt_client_logo() {
+	ob_start();
+		if ( function_exists( 'the_custom_logo' ) ) {    
+		echo '<div itemscope itemtype="http://schema.org/Organization">' . get_custom_logo() . '</div>';
+		}
+	return ob_get_clean();
 	}
 
 

@@ -21,13 +21,6 @@ function bt_scripts_styles() {
 
 }
 
-// add_action( 'wp_enqueue_scripts', 'bt_jquery_enqueue' );
-// Disabled as causes issue with Beaver Themer // Add later jQuery
- function bt_jquery_enqueue() {
-	wp_deregister_script( 'jquery' );
-	wp_register_script( 'jquery', ( 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js' ),  array(), '2.2.4', true );
-	wp_enqueue_script( 'jquery' );
-}
 
 
 //add_action( 'wp_enqueue_scripts', 'bt_ie_styles', 999 );	//IE conditional styles load last
@@ -54,16 +47,5 @@ function bt_ie_styles() {
 	wp_enqueue_script( 'backstretch-image', get_stylesheet_directory_uri().'/js/backstretch-initialise.js' , array( 'jquery', 'backstretch' ), '1', true );
 	wp_localize_script( 'backstretch-image', 'BackStretchImage', array( 'src' => get_background_image() ) );
 }
-
-//add_action( 'wp_enqueue_scripts', 'bt_fitvids_responsive_video' );
-/**
- * Fitvids
- */
- function bt_fitvids_responsive_video() {
-	wp_enqueue_script( 'fitvids', get_bloginfo( 'stylesheet_directory' ) . '/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
- 	wp_enqueue_script( 'fitvids-init', get_bloginfo( 'stylesheet_directory' ) . '/js/fitvids-init.js', array( 'fitvids' ), '1.1', true );
-}
-
-
 
 

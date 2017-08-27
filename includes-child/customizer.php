@@ -8,21 +8,7 @@
  /**
   * Set Up Default Colors - so if not changed in Customizer no CSS mark up is output
   */
- function  bt_link_color_default() {
- 	return '#c3251d';
- }
-
- function  bt_link_hover_color_default() {
- 	return '#c3251d';
- }
-
- function  bt_menu_color_default() {
-	 return '#333333';
- }
-
- function  bt_menu_hover_color_default() {
- 	return '#c3251d';
- }
+ 
 
  function  bt_button_color_default() {
 	return '#333333';
@@ -32,17 +18,6 @@
 	 return '#c3251d';
  }
 
- function  bt_footer_link_color_default() {
- 	return '#999999';
- }
-
- function  bt_footer_link_hover_color_default() {
- 	return '#ffffff';
- }
-
- function  bt_footerwidgets_background_color_default() {
-   return '#333';
- }
 
 add_action( 'customize_register', 'bt_register_theme_customizer', 20 );
 /**
@@ -54,7 +29,7 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 	
 	// Change label for logo text color
-	 $wp_customize->get_control('header_textcolor')->label = __('Site Title Color', 'beavertron');
+	// $wp_customize->get_control('header_textcolor')->label = __('Site Title Color', 'beavertron');
 
 	// Customize Background Settings
 	// Change heading.
@@ -92,68 +67,12 @@ function bt_register_theme_customizer( $wp_customize ) {
 			)
 	) );
 
-	// Add Link Color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_link_color', array(
-			'default'           => bt_link_color_default(),
-			'sanitize_callback' => 'sanitize_hex_color',
-        ) );
 
-	// Add control
-        $wp_customize->add_control( new WP_Customize_Color_Control(
-        $wp_customize, 'bt_link_color', array(
-        		'label'      => __( 'Link Color', 'beavertron' ), //set the label to appear in the Customizer
-        		'section'    => 'colors', //select the section for it to appear under
-        		'settings'   => 'bt_link_color' //pick the setting it applies to
-        		)
-        ) );
-
-	// Add link hover - focus color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_link_hover_color', array(
-			'default'           => bt_link_hover_color_default(),
-			'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-	 $wp_customize, 'bt_link_hover_color', array(
-			'label'      => __( 'Link Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-			'section'    => 'colors', //select the section for it to appear under
-			'settings'   => 'bt_link_hover_color' //pick the setting it applies to
-			)
-	) );
-
-	// Add Link Color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_menu_color', array(
-			'default'           => bt_menu_color_default(),
-			'sanitize_callback' => 'sanitize_hex_color',
-        ) );
-
-	// Add control
-        $wp_customize->add_control( new WP_Customize_Color_Control(
-        $wp_customize, 'bt_menu_color', array(
-        		'label'      => __( 'Menu Color', 'beavertron' ), //set the label to appear in the Customizer
-        		'section'    => 'colors', //select the section for it to appear under
-        		'settings'   => 'bt_menu_color' //pick the setting it applies to
-        		)
-        ) );
-
-	// Add link hover - focus  color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_menu_hover_color', array(
-		'default'           => bt_menu_hover_color_default(),
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-		$wp_customize, 'bt_menu_hover_color', array(
-			'label'      => __( 'Menu Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-			'section'    => 'colors', //select the section for it to appear under
-			'settings'   => 'bt_menu_hover_color' //pick the setting it applies to
-			)
+	// Add Section For Buttons
+	$wp_customize->add_section( 'bt_buttons' , array(
+		'title'      => __( 'Buttons','beavertron' ),
+		'panel'      => 'fl-general',
+		'priority'   => 20,
 	) );
 
 	// Add buttons background color
@@ -167,7 +86,7 @@ function bt_register_theme_customizer( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_button_color', array(
         		'label'      => __( 'Button Color', 'beavertron' ), //set the label to appear in the Customizer
-        		'section'    => 'colors', //select the section for it to appear under
+        		'section'    => 'bt_buttons', //select the section for it to appear under
         		'settings'   => 'bt_button_color' //pick the setting it applies to
         		)
         ) );
@@ -183,80 +102,11 @@ function bt_register_theme_customizer( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_button_hover_color', array(
         		'label'      => __( 'Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-        		'section'    => 'colors', //select the section for it to appear under
+        		'section'    => 'bt_buttons', //select the section for it to appear under
         		'settings'   => 'bt_button_hover_color' //pick the setting it applies to
         		)
         ) );
 
-	// Add Footer Link Color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_footer_link_color', array(
-			'default'           => bt_footer_link_color_default(),
-			'sanitize_callback' => 'sanitize_hex_color',
-        ) );
-
-	// Add control
-        $wp_customize->add_control( new WP_Customize_Color_Control(
-        $wp_customize, 'bt_footer_link_color', array(
-        		'label'      => __( 'Footer Widgets Link Color', 'beavertron' ), //set the label to appear in the Customizer
-        		'section'    => 'colors', //select the section for it to appear under
-        		'settings'   => 'bt_footer_link_color' //pick the setting it applies to
-        		)
-        ) );
-
-	// Add Footer link hover - focus color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_footer_link_hover_color', array(
-			'default'           => bt_footer_link_hover_color_default(),
-			'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-	 $wp_customize, 'bt_footer_link_hover_color', array(
-			'label'      => __( 'Footer Widgets Link Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-			'section'    => 'colors', //select the section for it to appear under
-			'settings'   => 'bt_footer_link_hover_color' //pick the setting it applies to
-			)
-	) );
-
-        // Add Footer Widgets background color
-        // Add setting.
-        $wp_customize->add_setting( 'bt_footerwidgets_background_color', array(
-                'default'           => bt_footerwidgets_background_color_default(),
-                'sanitize_callback' => 'sanitize_hex_color',
-        ) );
-
-        // Add control
-        $wp_customize->add_control( new WP_Customize_Color_Control(
-        $wp_customize, 'bt_footerwidgets_background_color', array(
-                'label'      => __( 'Footer Widgets Background  Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'colors', //select the section for it to appear under
-                'settings'   => 'bt_footerwidgets_background_color' //pick the setting it applies to
-        )
-        ) );
-
-	// Remove default Genesis logo/title
-	$wp_customize->remove_control('blog_title');
-
-
-         // Add featured image section to the Customizer
-         $wp_customize->add_section( 'bt_single_image_section', array(
-                 'title'       => __( 'Post and Page Images', 'beavertron' ),
-                 'description' => __( 'Choose if you would like to display the featured image above the content on single posts and pages.', 'beavertron' ),
-                 'priority'    => 200, // puts the customizer section lower down
-         ) );
-         // Add featured image setting to the Customizer
-         $wp_customize->add_setting( 'bt_single_image_setting', array(
-                 'default'    => false, // set the option as enabled by default
-                 'capability' => 'edit_theme_options',
-         ) );
-         $wp_customize->add_control( 'bt_single_image_setting', array(
-                 'section'  => 'bt_single_image_section',
-                 'settings' => 'bt_single_image_setting',
-                 'label'    => __( 'Show featured image on posts and pages?', 'beavertron' ),
-                 'type'     => 'checkbox'
-		 ));
 		 
 	// Remove Panels and Sections by uncommenting.
 
@@ -320,6 +170,10 @@ function bt_register_theme_customizer( $wp_customize ) {
 	// $wp_customize->remove_section( 'bt_single_image_section' );
 	// $wp_customize->remove_section( 'colors' );
 
+
+	// $wp_customize->remove_section( 'title_tagline' ); // Removes Site Identity
+	// $wp_customize->remove_section( 'static_front_page' ); // Removes Static Front Page
+
 	
 }
 
@@ -328,7 +182,7 @@ function bt_register_theme_customizer( $wp_customize ) {
 // Add custom preset.
 FLCustomizer::add_preset( 'bt-preset-colour', array(
 	'name'      => 'BT Preset',
-	'skin'      => get_stylesheet_directory() . '/css/presets.css', // not used - output to Skin CSS
+	'skin'      => get_stylesheet_directory() . '/css/presets.css', // what ever is in this gets output to Skin CSS
 	'settings'  => array(
 		// http://kb.wpbeaverbuilder.com/article/283-add-theme-preset-general
 		'fl-layout-width'				=> 'full-width',
@@ -336,7 +190,7 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 		'fl-scroll-to-top'				=> 'enable', 
 
 		'fl-body-bg-color'             	=> '#fff',
-
+		
 		'fl-accent'                 	=> '#c3251d',
 		'fl-accent-hover'           	=> '#999999',
 
@@ -376,9 +230,11 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 		// 'fl-body-font-family'			 => 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
 		'fl-body-font-weight'			 => '400',
 		'fl-body-font-size'			     => '18',
-		'fl-body-line-height'			 => '1.3'
+		'fl-body-line-height'			 => '1.3',
 
+		'fl-archive-readmore-text' 	  => 'See More',
 
+		// Thesea are other key pairs that you can use
 		// 'fl-header-nav-search' 		     => 'hidden',
 		// 'fl-header-content-layout' 	  => 'social-text',
 		// 'fl-header-content-text' 	    => '¡Llámanos! 5555-555',
@@ -390,7 +246,7 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 		// 'fl-blog-post-author' 		      => 'hidden',
 		// 'fl-blog-post-date' 		        => 'visible',
 		// 'fl-archive-show-full' 		     => '0',
-		// 'fl-archive-readmore-text' 	  => 'Leer más',
+		// 
 		// 'fl-archive-show-thumbs' 	    => 'beside',
 		// 'fl-posts-show-thumbs' 		     => '',
 		// 'fl-posts-show-cats' 		       => 'visible',
@@ -411,12 +267,14 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 	)
 ));
 
-// Remove all the builtin presets.
-// FLCustomizer::remove_preset( 
-// 	array('default-dark' , 'classic' , 'modern' , 'bold' , 
-// 		'stripe' , 'deluxe' , 'premier' , 'dusk' , 'midnight', 'bt-preset-colour'
-// 	)
-// );
+/** Remove all the builtin presets.
+ *  Removing all but th default and my custom preset one.
+ */
+FLCustomizer::remove_preset( 
+	array('default-dark' , 'classic' , 'modern' , 'bold' , 
+		'stripe' , 'deluxe' , 'premier' , 'dusk' , 'midnight'
+	)
+);
 
 
 add_filter( 'fl_default_theme_mods', 'bt_default_theme_preset');
@@ -430,6 +288,8 @@ function bt_default_theme_preset( $mods ) {
 
 		'fl-body-bg-color'             	=> '#fff',
 
+		//'fl-accent'                 	=> '#333',
+		
 		'fl-accent'                 	=> '#c3251d',
 		'fl-accent-hover'           	=> '#666666',
 
@@ -469,7 +329,9 @@ function bt_default_theme_preset( $mods ) {
 		// 'fl-body-font-family'			 => 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
 		'fl-body-font-weight'			 => '400',
 		'fl-body-font-size'			     => '18',
-		'fl-body-line-height'			 => '1.3'
+		'fl-body-line-height'			 => '1.3',
+
+		'fl-archive-readmore-text' 	     => 'Read More'
 	);
 
 	$mods3 = array_merge($mods, $mods2); 
