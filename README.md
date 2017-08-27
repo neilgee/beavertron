@@ -71,12 +71,11 @@ The CSS is currently in a state of flux as I work out how I want it structured, 
 - Meta has default icon styling
 - Styling for Business Profile plugin
 
-
+## Change the Theme Name
+- Find in files and replace 'Beavertron', 'beavertron' and 'bt_'
 
 Download the zip rename the theme '**beavertron**' - place this theme in your WordPress installation **"/wp-content/themes/"** and activate in WordPress Dashboard
 
-
-![Genesis Child Theme Customizer](https://wpbeaches.com/images/gc-customizer.png)
 
 
 ![Genesis Child WooCommerce Customizer](https://wpbeaches.com/images/woocommerce-customizer.png)
