@@ -42,10 +42,6 @@ ul {
 	padding: 0;
 }
 
-li {
-	list-style-type: none;
-}
-
 hr {
 	border: 0;
 	border-collapse: collapse;
@@ -125,76 +121,6 @@ figure {
   }
 }
 
-/* ## Gallery
---------------------------------------------- */
-
-.gallery {
-	overflow: hidden;
-}
-
-.gallery-item {
-	float: left;
-	margin: 0 0 28px;
-	text-align: center;
-}
-
-.gallery-columns-1 .gallery-item {
-	width: 100%;
-}
-
-.gallery-columns-2 .gallery-item {
-	width: 50%;
-}
-
-.gallery-columns-3 .gallery-item {
-	width: 33%;
-}
-
-.gallery-columns-4 .gallery-item {
-	width: 25%;
-}
-
-.gallery-columns-5 .gallery-item {
-	width: 20%;
-}
-
-.gallery-columns-6 .gallery-item {
-	width: 16.6666%;
-}
-
-.gallery-columns-7 .gallery-item {
-	width: 14.2857%;
-}
-
-.gallery-columns-8 .gallery-item {
-	width: 12.5%;
-}
-
-.gallery-columns-9 .gallery-item {
-	width: 11.1111%;
-}
-
-.gallery-columns-2 .gallery-item:nth-child(2n+1),
-.gallery-columns-3 .gallery-item:nth-child(3n+1),
-.gallery-columns-4 .gallery-item:nth-child(4n+1),
-.gallery-columns-5 .gallery-item:nth-child(5n+1),
-.gallery-columns-6 .gallery-item:nth-child(6n+1),
-.gallery-columns-7 .gallery-item:nth-child(7n+1),
-.gallery-columns-8 .gallery-item:nth-child(8n+1),
-.gallery-columns-9 .gallery-item:nth-child(9n+1) {
-	clear: left;
-}
-
-.gallery img {
-	border: 1px solid #ddd;
-	height: auto;
-	padding: 4px;
-}
-
-.gallery img:hover,
-.gallery img:focus {
-	border: 1px solid #999;
-}
 
 /* ## Forms
 --------------------------------------------- */
@@ -428,19 +354,26 @@ a.more-link:hover,
 
 /* # Widgets
 ---------------------------------------------------------------------------------------------------- */
-
 .fl-widget {
 	word-wrap: break-word;
+	margin-bottom: 60px;
 }
+
+.fl-widget  ul  li {
+	margin-bottom: 8px;
+	line-height: 1.3;
+}
+
+.fl-widget li li {
+	border: 0;
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
 
 .fl-widget p:last-child,
 .fl-widget ul > li:last-of-type {
 	margin-bottom: 0;
-}
-
-.fl-widget ul > li {
-	margin-bottom: 10px;
-	padding-bottom: 10px;
 }
 
 .fl-widget ul > li:last-of-type {
@@ -453,13 +386,6 @@ a.more-link:hover,
 	padding-left: 20px;
 	text-indent: -20px;
 }
-
-.fl-widget li li {
-	border: 0;
-	margin: 0 0 0 30px;
-	padding: 0;
-}
-
 
 
 /* # Plugins
@@ -759,20 +685,10 @@ li.comment {
 
 /* Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
-.fl-widget {
-	margin-bottom: 60px;
-}
-
-.fl-widget  ul > li {
-	margin-bottom: 3px;
-	padding-bottom: 3px;
-	line-height: 1.3;
-}
 
 .fl-page-footer-widgets-row p:last-child {
 	margin-bottom: 0;
 }
-
 
 /* Site Footer
 ---------------------------------------------------------------------------------------------------- */
