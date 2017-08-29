@@ -12,11 +12,18 @@
 
 
 // Original bb child theme setting
-// Classes
+// Classes - BB Default way - This theme declares constants below.
 // require_once 'classes/class-fl-child-theme.php';
 
-// Actions
+// Actions - BB Default way - This theme calls required files below.
 // add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
+
+
+// Image sizes - add in required image sizes here. Not working for theme if inside after_setup_theme
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'blog-feature', 300, 200, true );
+	add_image_size( 'medium', 300, 300, true ); // Overwrite default and hard cropping
+}
 
 add_action( 'after_setup_theme', 'br_theme_setup', 15 );
 /**
@@ -77,29 +84,19 @@ function br_theme_setup() {
 	// Allow the theme to be translated.
 	load_theme_textdomain( 'beavertron', get_stylesheet_directory_uri() . '/languages' );
 
-	// Image sizes - add in required image sizes here.
-	if ( function_exists( 'add_image_size' ) ) {
-		add_image_size( 'blog-feature', 300, 200, true );
-		add_image_size( 'medium', 300, 300, true ); // Overwrite default and hard cropping
-	}
-
-
-
 	add_filter( 'image_size_names_choose', 'bt_custom_image_sizes' );
 	// Helps Beaver Builder see custom sizes.
 	function bt_custom_image_sizes( $sizes ) {
 		global $_wp_additional_image_sizes;
 		if ( empty($_wp_additional_image_sizes) )
 				return $sizes;
-
+	
 		foreach ( $_wp_additional_image_sizes as $id => $data ) {
 				if ( !isset($sizes[$id]) )
 						$sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
 		}
 		return $sizes;
 	}
-
-
 
 	add_filter( 'intermediate_image_sizes_advanced', 'bt_remove_default_images' );
 	// Remove default image sizes here.
@@ -158,10 +155,5 @@ function br_theme_setup() {
 		}
 	return $html;
 	}
-
-	
-
-
-
 
 } // Closing After Set Up Hook

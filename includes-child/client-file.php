@@ -78,3 +78,13 @@ function bt_hide_tabs() {
         ';
 	}
 }
+
+// Roles & Capabilities
+// @link  https://wordpress.stackexchange.com/questions/4191/allow-editors-to-edit-menus
+// add editor the privilege to edit theme & menu
+
+// get the the role object
+//$role_object = get_role( 'editor' );
+
+// add $cap capability to this role object
+//$role_object->add_cap( 'edit_theme_options' );

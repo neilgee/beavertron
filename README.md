@@ -6,6 +6,7 @@ This a starter child theme that requires the parent Beaver Theme.
 ### WordPress Head Clean Up
 Several unecessary scripts including emoji styles have been removed
 
+
 ### Folder Structure - includes-child
 At the top of functions.php there a number of include files that you can comment/uncomment for adding functionality. The folder they are pulled from is *includes-child* as the *includes* folder is only used for parent theme overrides
 - */includes-child/scripts-styles.php* contains all JS and CSS files for inclusion
@@ -18,12 +19,14 @@ At the top of functions.php there a number of include files that you can comment
 - */includes-child/woocommerce/woo.css* WooCommerce CSS
 - */includes-child/gravity.php* Gravity forms functionality
 
+
 ### Folder Structure - includes
 These are straight parent theme overrides
 - */includes/copyright.php* override copyright credit line
 - */includes/post-bottom-meta.php* removed comments from bottom meta, added span tags around cats and tags with CSS classes for more control over styling
 - */includes/post-top-meta.php* removed author data and comment fontawesome icon
 - *index.php* has been overridden and sits in the Child Theme root - difference being it has the numeric WordPress pagination in use - ref - https://wpbeaches.com/add-numeric-pagination-accessibility-beaver-builder-theme/
+
 
 ### Images
 - Added a 'blog-feature' image at 300x200
@@ -32,6 +35,7 @@ These are straight parent theme overrides
 - Removed default WordPress 'medium_large' image size - other defaults can be removed by uncommenting
 - Function added to allow SVG image uploads to Media Library.
 
+
 ### Custom Logo
 - Custom Logo is supported via the Customizer in the panel Settings > Site Identity > Logo, default size is 300x100px which you can change in the *add_theme_support('custom-logo')* array in *functions.php*
 - The logo can support the SVG format.
@@ -39,6 +43,7 @@ These are straight parent theme overrides
 - The main purpose of the Custom Logo is to allow for its use via a header created with Beaver Themer - if you are using the Beaver Theme to create the header then the default Header panel > Header Logo section is preferred to use.
 
 More info here - https://wpbeaches.com/add-custom-logo-schema-beaver-themer-header-layout/
+
 
 ### Customizer
 - Extra WooCommerce settings for button and alert colors have been added to the default WooCommerce panel, they only appear if WooCommerce is active.
@@ -60,6 +65,7 @@ The CSS is currently in a state of flux as I work out how I want it structured, 
 - Sticky Footer styling with flexbox - also have the BB knowledgebase one which is commented out.
 - Pagination CSS for numeric style as used in child theme index.php
 
+
 ### JS
 - Backstretch scripts available (Disabled by default).
 
@@ -71,8 +77,9 @@ The CSS is currently in a state of flux as I work out how I want it structured, 
 - Meta has default icon styling
 - Styling for Business Profile plugin
 
+
 ## Change the Theme Name
-- Find in files and replace 'Beavertron', 'beavertron' and 'bt_'
+- Find in files and replace 'Beavertron', 'beavertron' and 'bt_' with your name and prefix.
 
 Download the zip rename the theme '**beavertron**' - place this theme in your WordPress installation **"/wp-content/themes/"** and activate in WordPress Dashboard
 

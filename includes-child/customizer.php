@@ -268,7 +268,7 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 ));
 
 /** Remove all the builtin presets.
- *  Removing all but th default and my custom preset one.
+ *  Removing all but the default and custom preset one.
  */
 FLCustomizer::remove_preset( 
 	array('default-dark' , 'classic' , 'modern' , 'bold' , 
@@ -287,8 +287,6 @@ function bt_default_theme_preset( $mods ) {
 		'fl-scroll-to-top'				=> 'enable', 
 
 		'fl-body-bg-color'             	=> '#fff',
-
-		//'fl-accent'                 	=> '#333',
 		
 		'fl-accent'                 	=> '#c3251d',
 		'fl-accent-hover'           	=> '#666666',
@@ -327,11 +325,46 @@ function bt_default_theme_preset( $mods ) {
 
 		'fl-body-text-color'			 => '#555555',
 		// 'fl-body-font-family'			 => 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
-		'fl-body-font-weight'			 => '400',
+		'fl-body-font-weight'			 => '300',
 		'fl-body-font-size'			     => '18',
-		'fl-body-line-height'			 => '1.3',
+		'fl-body-line-height'			 => '1.6',
 
-		'fl-archive-readmore-text' 	     => 'Read More'
+		'fl-archive-readmore-text' 	     => 'Read More',
+
+		'fl-blog-layout' 		         => 'sidebar-right',
+		'fl-blog-sidebar-size' 		     => '3',
+		'fl-blog-sidebar-display' 	     => 'desktop',
+		'fl-blog-post-author' 		     => 'hidden',
+		'fl-blog-post-date' 		     => 'visible',
+		'fl-archive-show-full' 		     => '0',
+
+		'fl-lightbox' 			         => 'enabled',
+
+
+
+		// Thesea are other key pairs that you can use
+		// 'fl-header-nav-search' 		     => 'hidden',
+		// 'fl-header-content-layout' 	  => 'social-text',
+		// 'fl-header-content-text' 	    => '¡Llámanos! 5555-555',
+		// 'fl-logo-type' 			            => 'text',
+		// 'fl-logo-text' 			            => 'Centro de Salud',
+	
+		// 
+		// 'fl-archive-show-thumbs' 	    => 'beside',
+		// 'fl-posts-show-thumbs' 		     => '',
+		// 'fl-posts-show-cats' 		       => 'visible',
+		// 'fl-posts-show-tags' 		       => 'visible',
+		// 'fl-posts-show-nav' 		        => 'hidden',
+		// 'fl-footer-widgets-display'	  => 'disabled',
+		// 'fl-footer-widgets-bg-type' 	 => 'content',
+		// 'fl-footer-layout' 		         => '2-cols',
+		// 'fl-footer-col1-layout' 	     => 'text',
+		// 'fl-footer-col2-layout'	 	    => 'social',
+
+		// 'fl-social-facebook' 		 => 'http://facebook.com',
+		// 'fl-social-twitter' 		  => 'http://twitter.com',
+		// 'fl-social-google' 		   => 'http://google.com',
+		// 'fl-social-linkedin' 		 => 'http://linkedin.com',
 	);
 
 	$mods3 = array_merge($mods, $mods2); 
