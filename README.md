@@ -26,7 +26,7 @@ These are straight parent theme overrides
 - */includes/post-bottom-meta.php* removed comments from bottom meta, added span tags around cats and tags with CSS classes for more control over styling
 - */includes/post-top-meta.php* removed author data and comment fontawesome icon
 - *index.php* has been overridden and sits in the Child Theme root - difference being it has the numeric WordPress pagination in use - ref - https://wpbeaches.com/add-numeric-pagination-accessibility-beaver-builder-theme/ also the **archive_page_header** function has been moved to inside the main content block.
-- */includes/archive-header.php* has a unique hook after the archive title **bt_after_archive_header** so a category description can be output after the archive title.
+- */includes/archive-header.php* will output category/tag description if it exists.
 
 
 ### Images

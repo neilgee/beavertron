@@ -159,14 +159,4 @@ function br_theme_setup() {
 	return $html;
 	}
 
-	add_action( 'bt_after_archive_header' , 'bt_category_description' );
-	/**
-	* Hook in Cat description after archive.
-	*/
-	function bt_category_description() {
-			if ( category_description() && is_category() || is_tag() ){
-				echo  category_description();
-		}
-	}
-
 } // Closing After Set Up Hook
