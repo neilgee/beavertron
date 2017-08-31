@@ -5,10 +5,10 @@
 
 		<?php FLTheme::sidebar('left'); ?>
 
-                <!-- // Not wanting the archive header printed to the screen 
-					<?php FLTheme::archive_page_header(); ?>  -->
 
 		<div class="fl-content <?php FLTheme::content_class(); ?>" itemscope="itemscope" itemtype="http://schema.org/Blog">
+
+		<?php FLTheme::archive_page_header(); ?>
 
 			<?php if(have_posts()) : ?>
 

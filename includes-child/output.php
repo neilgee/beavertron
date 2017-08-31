@@ -20,8 +20,8 @@ add_action( 'wp_enqueue_scripts', 'bt_css', 1001 );
  */
 function bt_css() {
 	// Choice here of passing inline CSS straight after the BB Skin CSS or the Child Theme CSS
-	//$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
-	$handle  = 'fl-automator-skin';
+	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
+	// $handle  = 'fl-automator-skin';
 	/* Our Customiser settings, stored as variables */
 	$hero_bg_image                 = get_theme_mod( 'hero_bg');
 	$bt_button_color               = get_theme_mod( 'bt_button_color', bt_button_color_default() );
@@ -35,12 +35,12 @@ function bt_css() {
 	$bt_woo_button_dis_color       = get_theme_mod( 'bt_woo_button_dis_color', bt_woo_button_dis_color_default() );
 	$bt_woo_button_dis_hover_color = get_theme_mod( 'bt_woo_button_dis_hover_color', bt_woo_button_dis_hover_color_default() );
 
-	$bt_woo_price_color		          = get_theme_mod( 'bt_woo_price_color', bt_woo_price_color_default() );
-	$bt_woo_sale_price_color	      = get_theme_mod( 'bt_woo_sale_price_color', bt_woo_sale_price_color_default() );
+	$bt_woo_price_color		       = get_theme_mod( 'bt_woo_price_color', bt_woo_price_color_default() );
+	$bt_woo_sale_price_color	   = get_theme_mod( 'bt_woo_sale_price_color', bt_woo_sale_price_color_default() );
 
 	$bt_woo_error_color	           = get_theme_mod( 'bt_woo_error_color', bt_woo_error_color_default() );
-	$bt_woo_info_color	            = get_theme_mod( 'bt_woo_info_color', bt_woo_info_color_default() );
-	$bt_woo_message_color	         = get_theme_mod( 'bt_woo_message_color', bt_woo_message_color_default() );
+	$bt_woo_info_color	           = get_theme_mod( 'bt_woo_info_color', bt_woo_info_color_default() );
+	$bt_woo_message_color	       = get_theme_mod( 'bt_woo_message_color', bt_woo_message_color_default() );
 	}
 
 
@@ -93,7 +93,7 @@ function bt_css() {
 		input[type="reset"],
 		input[type="submit"],
 		.button,
-		.widget .button,
+		.fl-widget .button,
   		.archive-pagination li a,
 		a.more-link {
 			background: %1$s;
@@ -119,8 +119,8 @@ function bt_css() {
 		input:focus[type="button"],
 		input:focus[type="reset"],
 		input:focus[type="submit"],
-		.widget .button:hover,
-		.widget .button:focus,
+		.fl-widget .button:hover,
+		.fl-widget .button:focus,
 		.archive-pagination li a:hover,
 		.archive-pagination li a:focus,
 		.archive-pagination .active a,

@@ -25,7 +25,8 @@ These are straight parent theme overrides
 - */includes/copyright.php* override copyright credit line
 - */includes/post-bottom-meta.php* removed comments from bottom meta, added span tags around cats and tags with CSS classes for more control over styling
 - */includes/post-top-meta.php* removed author data and comment fontawesome icon
-- *index.php* has been overridden and sits in the Child Theme root - difference being it has the numeric WordPress pagination in use - ref - https://wpbeaches.com/add-numeric-pagination-accessibility-beaver-builder-theme/
+- *index.php* has been overridden and sits in the Child Theme root - difference being it has the numeric WordPress pagination in use - ref - https://wpbeaches.com/add-numeric-pagination-accessibility-beaver-builder-theme/ also the **archive_page_header** function has been moved to inside the main content block.
+- */includes/archive-header.php* has a unique hook after the archive title **bt_after_archive_header** so a category description can be output after the archive title.
 
 
 ### Images
@@ -59,11 +60,10 @@ More info here - https://wpbeaches.com/add-custom-logo-schema-beaver-themer-head
 ### CSS
 The CSS is currently in a state of flux as I work out how I want it structured, so more commits here will be happening.
 - style.css
-- 1 x IE styles in CSS directory for IE9 and lower - (Disabled by default).
 - Beaver Builder button snippet
 - Meta styling with Dashicons
 - Sticky Footer styling with flexbox - also have the BB knowledgebase one which is commented out.
-- Pagination CSS for numeric style as used in child theme index.php
+- Pagination CSS for numeric style as used in child theme **index.php**
 
 
 ### JS
@@ -75,11 +75,11 @@ The CSS is currently in a state of flux as I work out how I want it structured, 
 - Shortcode enabled in widget areas
 - Author name removed in Post Meta for posts
 - Meta has default icon styling
-- Styling for Business Profile plugin
+- Styling for [Business Profile plugin](https://wordpress.org/plugins/business-profile/)
 
 
 ## Change the Theme Name
-- Find in files and replace 'Beavertron', 'beavertron' and 'bt_' with your name and prefix.
+- Find in files and replace `Beavertron`, `beavertron` and `bt_` with your name and prefix.
 
 Download the zip rename the theme '**beavertron**' - place this theme in your WordPress installation **"/wp-content/themes/"** and activate in WordPress Dashboard
 

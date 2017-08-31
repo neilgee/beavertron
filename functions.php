@@ -18,8 +18,11 @@
 // Actions - BB Default way - This theme calls required files below.
 // add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 
-
-// Image sizes - add in required image sizes here. Not working for theme if inside after_setup_theme
+/**
+ * Custom Image Sizes
+ * Image sizes - add in required image sizes here. Not working for theme if inside after_setup_theme
+ * @since 1.0.0
+ */
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'blog-feature', 300, 200, true );
 	add_image_size( 'medium', 300, 300, true ); // Overwrite default and hard cropping
@@ -154,6 +157,16 @@ function br_theme_setup() {
 			ob_end_clean();
 		}
 	return $html;
+	}
+
+	add_action( 'bt_after_archive_header' , 'bt_category_description' );
+	/**
+	* Hook in Cat description after archive.
+	*/
+	function bt_category_description() {
+			if ( category_description() && is_category() || is_tag() ){
+				echo  category_description();
+		}
 	}
 
 } // Closing After Set Up Hook

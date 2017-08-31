@@ -21,19 +21,6 @@ function bt_scripts_styles() {
 
 }
 
-
-
-//add_action( 'wp_enqueue_scripts', 'bt_ie_styles', 999 );	//IE conditional styles load last
-/**
- * IE Conditional Styles - gotta load very last.
- */
-function bt_ie_styles() {
-	wp_register_style( 'ieall', get_stylesheet_directory_uri() . '/css/ieall.css' );//target IE9 and lower
-	$GLOBALS['wp_styles']->add_data( 'ieall', 'conditional', 'IE' );
-
-	wp_enqueue_style( 'ieall' );
-}
-
 // add_action( 'wp_enqueue_scripts', 'bt_backstretch_background_scripts' );
 /**
  * Backstretch for Custom Background Image
