@@ -92,11 +92,6 @@ h6 {
 
 
 
-/* ## Colors
---------------------------------------------- */
-
-
-
 /* ## Objects
 --------------------------------------------- */
 
@@ -121,28 +116,40 @@ figure {
   }
 }
 
+/* ## Avatar
+--------------------------------------------- */
+
+.avatar {
+	float: left;
+	border-radius: 50%;
+}
+
+
+/* ## Search Form
+--------------------------------------------- */
+
+.search-form {
+	overflow: hidden;
+}
+
+.post-password-form input[type="submit"],
+.search-form input[type="submit"] {
+	margin-top: 10px;
+}
+
+.widget_search input[type="submit"] {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
 
 /* ## Forms
 --------------------------------------------- */
-
-input,
-select,
-textarea {
-	background-color: #fff;
-	border: 1px solid #ddd;
-	color: #333;
-	font-size: 18px;
-	font-weight: 300;
-	padding: 10px;
-	width: 100%;
-}
-
-input:focus,
-textarea:focus {
-	border: 1px solid #999;
-	outline: none;
-}
-
 
 input[type="checkbox"],
 input[type="image"],
@@ -237,6 +244,46 @@ input[type="submit"].small {
 
 
 
+/* # Buttons - Black-But example
+---------------------------------------------------------------------------------------------------- */
+/* lines up the button if parent is equal heights change >>>>> .the-row <<<<<< */
+.fl-builder-content .the-row .fl-module-button {
+	margin-top: auto;
+} 
+
+.fl-builder-content .black-but a.fl-button,
+.fl-builder-content .black-but a.fl-button:visited {
+	background: #000;
+	border: 1px solid #000;
+	color: #fff;
+	border-radius: 1px;
+	padding: 7px 35px;
+}
+.fl-builder-content .black-but  a.fl-button:hover, 
+.fl-builder-content .black-but  a.fl-button:focus {
+	background: #fff;
+	border: 1px solid #000;
+	color: #000;
+}
+.fl-builder-content .black-but a.fl-button *, 
+.fl-builder-content .black-but a.fl-button:visited  {
+	color: #fff;
+}
+.fl-builder-content .black-but  a.fl-button:hover *, 
+.fl-builder-content .black-but  a.fl-button:focus * {
+	color: #000000;
+}
+
+/* # Skip Links
+---------------------------------------------------------------------------------------------------- */
+
+
+/* Display outline on focus */
+:focus {
+	color: #333;
+	outline: #ccc solid 1px;
+}
+
 
 /* Read More
 ---------------------------------------------------------------------------------------------------- */
@@ -274,36 +321,48 @@ a.more-link:hover,
 }
 
 
+/* Client Colors
+---------------------------------------------------------------------------------------------------- */
+
+
 /* # Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
 
-/* ## Site Containers
---------------------------------------------- */
 
-
-/* # Common Classes
+/* # Site Header
 ---------------------------------------------------------------------------------------------------- */
 
-/* ## Avatar
+
+/* # Site Navigation
+---------------------------------------------------------------------------------------------------- */
+
+
+
+/* FrontPage Container Widgets
+---------------------------------------------------------------------------------------------------- */
+
+
+
+/* # Hero
+---------------------------------------------------------------------------------------------------- */
+
+
+
+/* # Posts Row
+---------------------------------------------------------------------------------------------------- */
+
+
+
+/* # Footer Header
+---------------------------------------------------------------------------------------------------- */
+
+
+
+/*  Entries
 --------------------------------------------- */
 
-.avatar {
-	float: left;
-	border-radius: 50%;
-}
 
-.alignleft .avatar,
-.author-box .avatar {
-	margin-right: 24px;
-}
 
-.alignright .avatar {
-	margin-left: 24px;
-}
-
-.comment .avatar {
-	margin: 0 16px 24px 0;
-}
 
 /* ## Archive Title & Description
 --------------------------------------------- */
@@ -329,27 +388,6 @@ a.more-link:hover,
 	margin-bottom: 0;
 }
 
-/* ## Search Form
---------------------------------------------- */
-
-.search-form {
-	overflow: hidden;
-}
-
-.post-password-form input[type="submit"],
-.search-form input[type="submit"] {
-	margin-top: 10px;
-}
-
-.widget_search input[type="submit"] {
-	border: 0;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	margin: -1px;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-}
 
 /* # Widgets
 ---------------------------------------------------------------------------------------------------- */
@@ -385,93 +423,6 @@ a.more-link:hover,
 	padding-left: 20px;
 	text-indent: -20px;
 }
-
-
-/* # Plugins
----------------------------------------------------------------------------------------------------- */
-
-
-
-/* ## Jetpack
---------------------------------------------- */
-
-#wpstats {
-	display: none;
-}
-
-/* # Skip Links
----------------------------------------------------------------------------------------------------- */
-
-
-/* Display outline on focus */
-:focus {
-	color: #333;
-	outline: #ccc solid 1px;
-}
-
-/* # Site Header
----------------------------------------------------------------------------------------------------- */
-
-
-/* # Site Navigation
----------------------------------------------------------------------------------------------------- */
-
-
-
-/* FrontPage Container Widgets
----------------------------------------------------------------------------------------------------- */
-
-
-
-
-/* # Buttons - Black-But example
----------------------------------------------------------------------------------------------------- */
-/* lines up the button if parent is equal heights change >>>>> .the-row <<<<<< */
-.fl-builder-content .the-row .fl-module-button {
-	margin-top: auto;
-} 
-
-.fl-builder-content .black-but a.fl-button,
-.fl-builder-content .black-but a.fl-button:visited {
-	background: #000;
-	border: 1px solid #000;
-	color: #fff;
-	border-radius: 1px;
-	padding: 7px 35px;
-}
-.fl-builder-content .black-but  a.fl-button:hover, 
-.fl-builder-content .black-but  a.fl-button:focus {
-	background: #fff;
-	border: 1px solid #000;
-	color: #000;
-}
-.fl-builder-content .black-but a.fl-button *, 
-.fl-builder-content .black-but a.fl-button:visited  {
-	color: #fff;
-}
-.fl-builder-content .black-but  a.fl-button:hover *, 
-.fl-builder-content .black-but  a.fl-button:focus * {
-	color: #000000;
-}
-
-
-/* # Hero
----------------------------------------------------------------------------------------------------- */
-
-
-
-/* # Posts Row
----------------------------------------------------------------------------------------------------- */
-
-
-
-/* # Footer Header
----------------------------------------------------------------------------------------------------- */
-
-
-
-/*  Entries
---------------------------------------------- */
 
 
 /* Entry Meta
@@ -697,6 +648,16 @@ li.comment {
 	padding-bottom: 10px;
 }
 
+
+/* # Plugins
+---------------------------------------------------------------------------------------------------- */
+
+/* ## Jetpack
+--------------------------------------------- */
+
+#wpstats {
+	display: none;
+}
 
 
 /*
