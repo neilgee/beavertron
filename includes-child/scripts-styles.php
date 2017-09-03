@@ -17,9 +17,26 @@ function bt_scripts_styles() {
 	wp_enqueue_style( CHILD_THEME_NAME, FL_CHILD_THEME_URL . '/style.css' );	
 	// wp_dequeue_style( 'foundation-icons' );
 	// wp_dequeue_style( 'font-awesome' );
-	// wp_dequeue_style( 'dashicons' );
+	wp_enqueue_style( 'dashicons' );
 
 }
+
+
+
+add_filter( 'fl_theme_system_fonts', 'bt_added_fonts' );
+function bt_added_fonts( $system ) {
+    $system[ '-apple-system' ] = array(
+			"fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
+            "weights"  => array(
+                "300",
+                "400",
+                "700",
+            )
+    );
+    return $system;
+}
+
+
 
 // add_action( 'wp_enqueue_scripts', 'bt_backstretch_background_scripts' );
 /**

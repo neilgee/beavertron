@@ -13,10 +13,6 @@ template: bb-theme
 /*  Typographical Elements
 --------------------------------------------- */
 
-body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-}
-
 a,
 button,
 input:focus,
@@ -38,7 +34,8 @@ p {
 
 ol,
 ul {
-	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	padding: 0;
 }
 
@@ -86,7 +83,6 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	margin: 0 0 10px;
 }
 
@@ -901,7 +897,7 @@ Business Profile
 	.entry-comments-link,
 	.entry-footer,
 	.hidden-print,
-	.fl-page-nav-col
+	.fl-page-nav-col,
 	.post-edit-link,
 	.fl-sidebar {
 		display: none !important;
