@@ -39,6 +39,11 @@ ul {
 	padding: 0;
 }
 
+ul li,
+.fl-widget ul li {
+	display: list-item;
+}
+
 hr {
 	border: 0;
 	border-collapse: collapse;

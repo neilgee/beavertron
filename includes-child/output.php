@@ -18,14 +18,22 @@ add_action( 'wp_enqueue_scripts', 'bt_css', 1001 );
  *
  * @since 1.0
  */
+
 function bt_css() {
+	
 	// Choice here of passing inline CSS straight after the BB Skin CSS or the Child Theme CSS
 	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
 	// $handle  = 'fl-automator-skin';
 	/* Our Customiser settings, stored as variables */
 	$hero_bg_image                 = get_theme_mod( 'hero_bg');
+
 	$bt_button_color               = get_theme_mod( 'bt_button_color', bt_button_color_default() );
+	$bt_text_button_color          = get_theme_mod( 'bt_text_button_color', bt_text_button_color_default() );
+	$bt_button_border              = get_theme_mod( 'bt_button_border', bt_button_border_default() );
+	$bt_button_hover_border        = get_theme_mod( 'bt_button_hover_border', bt_button_hover_border_default() );
 	$bt_button_hover_color         = get_theme_mod( 'bt_button_hover_color', bt_button_hover_color_default() );
+	$bt_text_button_hover_color    = get_theme_mod( 'bt_text_button_hover_color', bt_text_button_hover_color_default() );
+	
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
 	$bt_woo_button_color           = get_theme_mod( 'bt_woo_button_color', bt_woo_button_color_default() );
@@ -41,6 +49,8 @@ function bt_css() {
 	$bt_woo_error_color	           = get_theme_mod( 'bt_woo_error_color', bt_woo_error_color_default() );
 	$bt_woo_info_color	           = get_theme_mod( 'bt_woo_info_color', bt_woo_info_color_default() );
 	$bt_woo_message_color	       = get_theme_mod( 'bt_woo_message_color', bt_woo_message_color_default() );
+
+	
 	}
 
 
@@ -80,13 +90,16 @@ function bt_css() {
 
 	$css .= ( !empty($hero_bg_image) ) ? sprintf('
 		.herocontainer {
-		background: url(%s) no-repeat center;
-		background-size: cover;
+			background: url(%s) no-repeat center;
+			background-size: cover;
 		}
 	', $hero_bg_image ) : '';
 
 
-	$css .= ( bt_button_color_default() !== $bt_button_color ) ? sprintf( '
+
+	$css .= ( bt_button_color_default() !== $bt_button_color ) ||
+			( bt_button_border_default() !== $bt_button_border ) ||
+			( bt_text_button_color_default() !== $bt_text_button_color ) ? sprintf( '
 		
 		button,
 		input[type="button"],
@@ -96,14 +109,18 @@ function bt_css() {
 		.fl-widget .button,
   		.archive-pagination li a,
 		a.more-link {
-			background: %1$s;
-			border: 1px solid %1$s;
-			color: %2$s;
+			background: %s;
+			border: 1px solid %s;
+			color: %s;
 		}
-		', $bt_button_color, bt_color_contrast( $bt_button_color ) ) : '';
+		', $bt_button_color, $bt_button_border, $bt_text_button_color  ) : '' ;
 
 
-	$css .= ( bt_button_hover_color_default() !== $bt_button_hover_color ) ? sprintf( '
+
+
+	$css .= ( bt_button_hover_color_default() !== $bt_button_hover_color ) ||
+			( bt_button_hover_border_default() !== $bt_button_hover_border ) ||
+			( bt_text_button_hover_color_default() !== $bt_text_button_hover_color ) ? sprintf( '
 		button:hover,
 		button:focus,
 		.button:hover,
@@ -125,11 +142,13 @@ function bt_css() {
 		.archive-pagination li a:focus,
 		.archive-pagination .active a,
 		a.more-link:hover  {
-			background: %1$s;
-			border: 1px solid %1$s;
-			color: %2$s;
+			background: %s;
+			border: 1px solid %s;
+			color: %s;
 		}
-		', $bt_button_hover_color, bt_color_contrast( $bt_button_hover_color ) ) : '';
+		', $bt_button_hover_color,$bt_button_hover_border, $bt_text_button_hover_color ) : '';
+		
+	
 
 
 	// WooCommerce

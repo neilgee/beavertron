@@ -11,12 +11,29 @@
  
 
  function  bt_button_color_default() {
-	return '#333333';
+	return '#666666';
+ }
+
+ function  bt_button_border_default() {
+	return '#666666';
+ }
+
+ function  bt_text_button_color_default() {
+	return '#ffffff';
  }
 
  function  bt_button_hover_color_default() {
 	 return '#c3251d';
  }
+
+ function  bt_button_hover_border_default() {
+	return '#666666';
+ }
+
+ function  bt_text_button_hover_color_default() {
+	return '#ffffff';
+ }
+
 
 
 add_action( 'customize_register', 'bt_register_theme_customizer', 20 );
@@ -78,34 +95,98 @@ function bt_register_theme_customizer( $wp_customize ) {
 	// Add buttons background color
 	// Add setting.
 	$wp_customize->add_setting( 'bt_button_color', array(
-			'default' => bt_button_color_default(),
-			'sanitize_callback' => 'sanitize_hex_color',
-        ) );
+		'default'           => bt_button_color_default(),
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
 
 	// Add control
-        $wp_customize->add_control( new WP_Customize_Color_Control(
-        $wp_customize, 'bt_button_color', array(
-        		'label'      => __( 'Button Color', 'beavertron' ), //set the label to appear in the Customizer
-        		'section'    => 'bt_buttons', //select the section for it to appear under
-        		'settings'   => 'bt_button_color' //pick the setting it applies to
-        		)
-        ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+	$wp_customize, 'bt_button_color', array(
+		'label'      => __( 'Button Color', 'beavertron' ), //set the label to appear in the Customizer
+		'section'    => 'bt_buttons', //select the section for it to appear under
+		'settings'   => 'bt_button_color' //pick the setting it applies to
+		)
+	) );
 
-	// Add buttons hover - focus background color
+	// Add buttons border color
+	// Add setting.
+	$wp_customize->add_setting( 'bt_button_border', array(
+		'default'           => bt_button_border_default(),
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	// Add control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+	$wp_customize, 'bt_button_border', array(
+		'label'      => __( 'Button Border Color', 'beavertron' ), //set the label to appear in the Customizer
+		'section'    => 'bt_buttons', //select the section for it to appear under
+		'settings'   => 'bt_button_border' //pick the setting it applies to
+		)
+	) );
+
+	// Add buttons text color
+	// Add setting.
+	$wp_customize->add_setting( 'bt_text_button_color', array(
+		'default'           => bt_text_button_color_default(),
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	// Add control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+	$wp_customize, 'bt_text_button_color', array(
+		'label'      => __( 'Text Button Color', 'beavertron' ), //set the label to appear in the Customizer
+		'section'    => 'bt_buttons', //select the section for it to appear under
+		'settings'   => 'bt_text_button_color' //pick the setting it applies to
+		)
+	) );
+
+	// Add buttons hover & focus background color
 	// Add setting.
 	$wp_customize->add_setting( 'bt_button_hover_color', array(
 		'default' => bt_button_hover_color_default(),
 		'sanitize_callback' => 'sanitize_hex_color',
-        ) );
+    ) );
 
 	// Add control
-        $wp_customize->add_control( new WP_Customize_Color_Control(
-        $wp_customize, 'bt_button_hover_color', array(
-        		'label'      => __( 'Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-        		'section'    => 'bt_buttons', //select the section for it to appear under
-        		'settings'   => 'bt_button_hover_color' //pick the setting it applies to
-        		)
-        ) );
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+	$wp_customize, 'bt_button_hover_color', array(
+		'label'      => __( 'Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
+		'section'    => 'bt_buttons', //select the section for it to appear under
+		'settings'   => 'bt_button_hover_color' //pick the setting it applies to
+		)
+	) );
+	
+	// Add buttons border hover color
+	// Add setting.
+	$wp_customize->add_setting( 'bt_button_hover_border', array(
+		'default'           => bt_button_hover_border_default(),
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	// Add control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+	$wp_customize, 'bt_button_hover_border', array(
+		'label'      => __( 'Button Border Hover Color', 'beavertron' ), //set the label to appear in the Customizer
+		'section'    => 'bt_buttons', //select the section for it to appear under
+		'settings'   => 'bt_button_hover_border' //pick the setting it applies to
+		)
+	) );
+
+	// Add buttons text hover color
+	// Add setting.
+	$wp_customize->add_setting( 'bt_text_button_hover_color', array(
+		'default'           => bt_text_button_hover_color_default(),
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	// Add control
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+	$wp_customize, 'bt_text_button_hover_color', array(
+		'label'      => __( 'Text Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
+		'section'    => 'bt_buttons', //select the section for it to appear under
+		'settings'   => 'bt_text_button_hover_color' //pick the setting it applies to
+		)
+	) );
 
 		 
 	// Remove Panels and Sections by uncommenting.
@@ -324,7 +405,7 @@ function bt_default_theme_preset( $mods ) {
 		'fl-h6-font-size'			     => '16',
 
 		'fl-body-text-color'			 => '#555555',
-		// 'fl-body-font-family'			 => 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+		'fl-body-font-family'			 => '-apple-system',
 		'fl-body-font-weight'			 => '300',
 		'fl-body-font-size'			     => '18',
 		'fl-body-line-height'			 => '1.6',

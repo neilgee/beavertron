@@ -14,7 +14,7 @@ add_action( 'wp_enqueue_scripts', 'bt_scripts_styles', 1000 ); // All the rest l
  */
 function bt_scripts_styles() {
 	// wp_enqueue_style( 'googlefonts' , '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800', array(), '2', 'all' );
-	wp_enqueue_style( CHILD_THEME_NAME, FL_CHILD_THEME_URL . '/style.css' );	
+	wp_enqueue_style( CHILD_THEME_NAME, FL_CHILD_THEME_URL . '/style.css', array(), '1.0.0', 'all' );	
 	// wp_dequeue_style( 'foundation-icons' );
 	// wp_dequeue_style( 'font-awesome' );
 	wp_enqueue_style( 'dashicons' );
@@ -36,6 +36,11 @@ function bt_added_fonts( $system ) {
     return $system;
 }
 
+
+// add_action( 'wp_enqueue_scripts', 'bt_backstretch_background_scripts' );
+/**
+ * Backstretch for Custom Background Image
+ */
 
 
 // add_action( 'wp_enqueue_scripts', 'bt_backstretch_background_scripts' );

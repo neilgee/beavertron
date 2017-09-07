@@ -48,13 +48,14 @@ More info here - https://wpbeaches.com/add-custom-logo-schema-beaver-themer-head
 
 ### Customizer
 - Extra WooCommerce settings for button and alert colors have been added to the default WooCommerce panel, they only appear if WooCommerce is active.
-- Button background and hover colors appear in panel General > Buttons
+- Button color and background and hover colors appear in panel General > Buttons
 - Additional Customizer settings are output via wp_add_inline_style to the parent theme CSS 'fl-automator-skin' this can be changed to the child theme CSS.
 - Added panel 'Featured Images' with 'Hero Background' field - not actively used.
 - List of all Panels and Sections which can be removed from view by uncommenting the code in the **customizer.php** file.
 - Added a custom preset 'BT Preset' to illustrate how it is done.
 - Removed all other presets.
 - Added a filter to change the defaults for the default preset 'fl_default_theme_mods'
+- Body font and headings set in Customizer with a font system stack similar to Github.
 
 
 ### CSS
