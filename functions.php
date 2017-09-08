@@ -20,7 +20,7 @@
 
 /**
  * Custom Image Sizes
- * Image sizes - add in required image sizes here. Not working for theme if inside after_setup_theme
+ * Image sizes - add in required image sizes here. Not working for theme if inside after_setup_theme function
  * @since 1.0.0
  */
 if ( function_exists( 'add_image_size' ) ) {
@@ -69,6 +69,13 @@ function br_theme_setup() {
 	include_once( get_stylesheet_directory() . '/includes-child/client-file.php' );
 	// Remove Default BB Mobile Menu.
 	include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
+	
+	// BeaverBuilder
+	if ( class_exists( 'FLBuilderModel' ) ) {
+		// BeaverBuilder functions
+			include_once( get_stylesheet_directory() . '/includes-child/beaverbuilder.php' );
+		}
+		
 
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
