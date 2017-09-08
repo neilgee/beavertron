@@ -1,7 +1,7 @@
 # Beavertron
 Starter Theme for Beaver Builder.
 
-This a starter child theme that requires the parent Beaver Theme.
+This a starter child theme that requires the parent Beaver Builder Theme.
 
 ### WordPress Head Clean Up
 Several unecessary scripts including emoji styles have been removed
@@ -18,6 +18,7 @@ At the top of functions.php there a number of include files that you can comment
 - */includes-child/woocommerce/customize-woo.php* all the Woo customizer fields
 - */includes-child/woocommerce/woo.css* WooCommerce CSS
 - */includes-child/gravity.php* Gravity forms functionality
+- */includes-child/beaverbuilder.php* BeaverBuilder plugin functionality
 
 
 ### Folder Structure - includes
@@ -56,6 +57,7 @@ More info here - https://wpbeaches.com/add-custom-logo-schema-beaver-themer-head
 - Removed all other presets.
 - Added a filter to change the defaults for the default preset 'fl_default_theme_mods'
 - Body font and headings set in Customizer with a font system stack similar to Github.
+- Same above system font stack available from within BB modules font dropdowns.
 
 
 ### CSS
