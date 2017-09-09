@@ -70,9 +70,6 @@ The CSS is currently in a state of flux as I work out how I want it structured, 
 - Pagination CSS for numeric style as used in child theme **index.php**
 
 
-### JS
-- Backstretch scripts available (Disabled by default).
-
 
 ### Miscellaneous
 - PHP is enabled to execute in widget areas
