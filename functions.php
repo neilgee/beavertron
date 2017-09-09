@@ -9,15 +9,6 @@
  * @link    http://wpbeaches.com/
  */
 
-
-
-// Original bb child theme setting
-// Classes - BB Default way - This theme declares constants below.
-// require_once 'classes/class-fl-child-theme.php';
-
-// Actions - BB Default way - This theme calls required files below.
-// add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
-
 /**
  * Custom Image Sizes
  * Image sizes - add in required image sizes here. Not working for theme if inside after_setup_theme function
@@ -58,9 +49,9 @@ function br_theme_setup() {
 
 	// Load in required or optional files.
 	// Classes.
-	// require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
-	// Scripts and styles.
-	require_once( get_stylesheet_directory() . '/includes-child/scripts-styles.php' );
+	require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
+	// Actions - BB Default way - This theme calls required files below.
+	add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 	// Add in our Customizer options.
 	require_once( get_stylesheet_directory() . '/includes-child/customizer.php' );
 	// Add in our CSS for our customizer options.
@@ -164,6 +155,21 @@ function br_theme_setup() {
 			ob_end_clean();
 		}
 	return $html;
+	}
+	/**
+	* Add sys font stack to theme customizer
+	*/
+	add_filter( 'fl_theme_system_fonts', 'bt_added_fonts' );
+	function bt_added_fonts( $system ) {
+		$system[ '-apple-system' ] = array(
+				"fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
+				"weights"  => array(
+					"300",
+					"400",
+					"700",
+				)
+		);
+		return $system;
 	}
 
 } // Closing After Set Up Hook
