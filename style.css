@@ -32,11 +32,10 @@ p {
 	padding: 0;
 }
 
-ol,
-ul {
+.fl-post-content ul,
+.fl-post-content ol {
 	margin-top: 10px;
 	margin-bottom: 10px;
-	padding: 0;
 }
 
 ul li,
