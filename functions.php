@@ -19,6 +19,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'medium', 300, 300, true ); // Overwrite default and hard cropping
 }
 
+
 add_action( 'after_setup_theme', 'br_theme_setup', 15 );
 /**
  * Beavertron theme set up
@@ -26,6 +27,7 @@ add_action( 'after_setup_theme', 'br_theme_setup', 15 );
  * @since 1.0.0
  */
 function br_theme_setup() {
+	
 
 	// Defines
 	// Child theme constant settings.
@@ -78,6 +80,7 @@ function br_theme_setup() {
 	if ( class_exists( 'GFCommon' ) ) {
 		include_once( get_stylesheet_directory() . '/includes-child/gravity.php' );
 	}
+	
 
 	// Get the plugins.
 	//require_once  get_stylesheet_directory() . '/plugins.php';
@@ -172,4 +175,9 @@ function br_theme_setup() {
 		return $system;
 	}
 
+	
+
 } // Closing After Set Up Hook
+
+
+add_filter( 'fl_builder_override_lightbox', __return_true );
