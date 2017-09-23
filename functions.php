@@ -178,6 +178,3 @@ function br_theme_setup() {
 	
 
 } // Closing After Set Up Hook
-
-
-add_filter( 'fl_builder_override_lightbox', __return_true );
