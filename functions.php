@@ -20,13 +20,13 @@ if ( function_exists( 'add_image_size' ) ) {
 }
 
 
-add_action( 'after_setup_theme', 'br_theme_setup', 15 );
+add_action( 'after_setup_theme', 'bt_theme_setup', 15 );
 /**
  * Beavertron theme set up
  *
  * @since 1.0.0
  */
-function br_theme_setup() {
+function bt_theme_setup() {
 	
 
 	// Defines
