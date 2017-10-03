@@ -364,7 +364,6 @@ FLCustomizer::remove_preset(
 add_filter( 'fl_default_theme_mods', 'bt_default_theme_preset');
 
 function bt_default_theme_preset( $mods ) {
-
 	$mods2 = array(
 		'fl-layout-width'				=> 'full-width',
 		'fl-content-width'				=> '1020', // Container width
@@ -445,18 +444,19 @@ function bt_default_theme_preset( $mods ) {
 		// 'fl-footer-col1-layout' 	     => 'text',
 		// 'fl-footer-col2-layout'	 	    => 'social',
 
-		// 'fl-social-facebook' 		 => 'http://facebook.com',
-		// 'fl-social-twitter' 		  => 'http://twitter.com',
-		// 'fl-social-google' 		   => 'http://google.com',
-		// 'fl-social-linkedin' 		 => 'http://linkedin.com',
+		// 'fl-social-facebook' 		          => 'http://facebook.com/beavertron'
+		// 'fl-social-twitter' 		        => 'http://twitter.com',
+		// 'fl-social-google' 		         => 'http://google.com',
+		// 'fl-social-linkedin' 		       => 'http://linkedin.com',
 	);
-
-	$mods3 = array_merge($mods, $mods2); 
 	
+	
+	$mods3 = array_merge($mods, $mods2); 
 
 	return $mods3;
 
 }
+
 
 
 

@@ -175,6 +175,6 @@ function br_theme_setup() {
 		return $system;
 	}
 
-	
 
+	
 } // Closing After Set Up Hook

@@ -252,7 +252,9 @@ input[type="submit"].small {
 } 
 
 .fl-builder-content .black-but a.fl-button,
-.fl-builder-content .black-but a.fl-button:visited {
+.fl-builder-content .black-but a.fl-button:visited,
+.fl-builder-content .black-but .fl-slide-0 a.fl-button, 
+.fl-builder-content .black-but .fl-slide-0 a.fl-button:visited  {
 	background: #000;
 	border: 1px solid #000;
 	color: #fff;
@@ -260,7 +262,9 @@ input[type="submit"].small {
 	padding: 7px 35px;
 }
 .fl-builder-content .black-but  a.fl-button:hover, 
-.fl-builder-content .black-but  a.fl-button:focus {
+.fl-builder-content .black-but  a.fl-button:focus,
+.fl-builder-content .black-but .fl-slide-0 a.fl-button:hover,
+.fl-builder-content .black-but .fl-slide-0 a.fl-button:focus  {
 	background: #fff;
 	border: 1px solid #000;
 	color: #000;
@@ -289,8 +293,8 @@ input[type="submit"].small {
 ---------------------------------------------------------------------------------------------------- */
 
 a.more-link,
-.fl-post-grid-more,
-.fl-post-more-link {
+.fl-post-grid-content a.fl-post-grid-more,
+a.fl-post-more-link {
 	display:inline-block;
 	font-size:14px;
 	margin-top:10px;
@@ -309,8 +313,8 @@ a.more-link,
 }
 
 a.more-link:hover,
-.fl-post-grid-more:hover,
-.fl-post-more-link:hover {
+.fl-post-grid-content a.fl-post-grid-more:hover,
+a.fl-post-more-link:hover {
 	opacity:.8;
 	color:#333333;
 	background-color:#999999;
@@ -334,6 +338,12 @@ a.more-link:hover,
 .fl-page-nav-wrap {
     border-bottom: none;
 	border-top: none;
+}
+
+@media (min-width: 992px) {
+	.fl-page-nav-right .fl-page-header-wrap {
+		border-bottom: none;
+	}
 }
 
 /* # Site Navigation
