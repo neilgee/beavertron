@@ -51,7 +51,7 @@ function wb_builder_register_settings_form( $form, $id ) {
    if ( 'global' == $id ) {
        // Modify the row settings $form config array.
        
-   $form2 = array(
+   $form = array(
        'title' => __( 'Beavertron Global Settings', 'fl-builder' ),
        'tabs' => array(
            'general'  => array(
@@ -239,8 +239,6 @@ function wb_builder_register_settings_form( $form, $id ) {
            )
        ));
    } 
-// $form2[ 'tabs' ][ 'general' ][ 'sections' ][ 'responsive' ][ 'fields' ][ 'medium_breakpoint' ][ 'default' ] = '1300';
-   $form3 = array_merge( $form, $form2 );
    
-   return $form3;
+   return $form;
 }
