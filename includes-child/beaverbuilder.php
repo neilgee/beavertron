@@ -48,7 +48,8 @@ add_filter( 'fl_builder_register_settings_form', 'wb_builder_register_settings_f
 function wb_builder_register_settings_form_short( $form, $id ) {
 	if ( 'global' == $id ) {
     // Modify the row settings $form config array.
-	$form['title'] = 'Beaverton Global Settings';
+    $form['title'] = 'Beavertron Global Settings';
+    $form['tabs']['general']['sections']['rows']['fields']['row_width']['default'] = '1200';    
 	$form['tabs']['general']['sections']['responsive']['fields']['responsive_breakpoint']['default'] = '767';
 	$form['tabs']['general']['sections']['responsive']['fields']['medium_breakpoint']['default'] = '1200';
 	   
