@@ -64,7 +64,7 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '5.5.13', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '5.6.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -76,7 +76,7 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'bb-plugin-pro', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/bb-plugin-pro.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '1.10.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '1.10.8.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -89,7 +89,7 @@ function gsm_register_required_plugins() {
 					'slug'               => 'bb-theme-builder', // The plugin slug (typically the folder name).
 					'source'             => get_theme_root() . '/lib/plugins/bb-theme-builder.zip', // The plugin source.
 					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					'version'            => '1.0.1.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					'version'            => '1.0.2.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -102,7 +102,7 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.2.2.1.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.2.2.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '2.2.5.5', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
