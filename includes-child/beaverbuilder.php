@@ -57,3 +57,10 @@ function wb_builder_register_settings_form_short( $form, $id ) {
    
    return $form;
 }
+
+
+/** 
+ * Enable for development so module CSS files are not combined
+ * 
+ */
+//add_filter( 'fl_is_debug', '__return_true' ); 

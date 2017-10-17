@@ -366,7 +366,7 @@ add_filter( 'fl_default_theme_mods', 'bt_default_theme_preset');
 function bt_default_theme_preset( $mods ) {
 	$mods2 = array(
 		'fl-layout-width'				=> 'full-width',
-		'fl-content-width'				=> '1020', // Container width
+		'fl-content-width'				=> '1200', // Container width
 		'fl-scroll-to-top'				=> 'enable', 
 
 		'fl-body-bg-color'             	=> '#fff',

@@ -11,7 +11,7 @@ Several unecessary scripts including emoji styles have been removed
 
 ### Folder Structure - includes-child
 At the top of functions.php there a number of include files that you can comment/uncomment for adding functionality. The folder they are pulled from is *includes-child* as the *includes* folder is only used for parent theme overrides
-- */includes-child/beaverbuilder.php* BeaverBuilder plugin functionality, includes a font stack added, a filter for global BB settings, change media break points, filter to remove lightbox.
+- */includes-child/beaverbuilder.php* BeaverBuilder plugin functionality, includes a font stack added, a filter for global BB settings, change media break points to be over 767px medium and over 1200px large, filter to remove lightbox.
 - */includes-child/client-file.php* a miscellaneous area for things like client logo for login
 - */includes-child/customizer.php* contains all the Customizer options.
 - */includes-child/gravity.php* Gravity forms functionality
