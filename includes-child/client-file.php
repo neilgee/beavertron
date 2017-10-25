@@ -79,6 +79,17 @@ function bt_hide_tabs() {
 	}
 }
 
+add_action( 'admin_init', 'wsl_add_footer' );
+// Add credit and contact deats
+function wsl_add_footer() {
+    add_filter( 'admin_footer_text', 'wsl_edit_text', 11 );
+}
+
+function wsl_edit_text() {
+    return "<em>Site by <a href='https://websitelove.com.au' rel='nofollow'>WebsiteLove</a>, contact <a href='mailto:support@websitelove.com.au' rel='nofollow'>us</a></em>";
+}
+
+
 // Roles & Capabilities
 // @link  https://wordpress.stackexchange.com/questions/4191/allow-editors-to-edit-menus
 // add editor the privilege to edit theme & menu
