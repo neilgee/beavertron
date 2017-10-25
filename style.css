@@ -693,8 +693,14 @@ Business Profile
     content: ' \f0e0';
 }
 
+.fl-page .bp-address {
+	position: relative;
+	padding-left: 40px;
+}
 .fl-page .bp-address:before {
-    content: ' \f041';
+	content: ' \f041';
+	position: absolute;
+    left: 0;
 }
 
 .fl-sidebar .bp-times {
@@ -713,13 +719,30 @@ Business Profile
 	margin-top: 0;
 }
 
+.bp-contact-card .bp-opening-hours .bp-weekday-name {
+    float: left;
+    clear: left;
+    width: 35%;
+}
+
+.bp-contact-card .bp-opening-hours .bp-times {
+    float: right;
+    clear: right;
+    width: 60%;
+    text-align: left;
+}
+
 .bp-contact-card .bp-opening-hours {
 	margin: 0 auto;
 }
 
+.bp-opening-hours .bp-title {
+	display: none;
+}
+
 .bp-map {
 	max-height: 210px;
-	max-width: 320px;
+	max-width: 360px;
 }
 .fl-page-footer-widgets .bp-map {
     height: 200px;
