@@ -25,7 +25,7 @@
 	clear:both;
 }
 
-.woocommerce ul li,
+
 .woocommerce .wc_payment_method  {
 	list-style-type: none;
 }
@@ -101,4 +101,21 @@
 .woocommerce ul.products li.product .button {
 	margin-top: auto;
 	display: table;
+}
+/* Increase Image Size in Sidebar */
+.woocommerce ul.cart_list li img, 
+.woocommerce ul.product_list_widget li img {
+    width: 64px;
+}
+
+/* Related Products */
+
+.woocommerce-page .related ul.products li.product {
+	width: 49%;
+}
+@media (min-width: 767px) {
+	.woocommerce-page .related ul.products li.product {
+		width: 30.8%;
+		padding: 2%;
+	}
 }

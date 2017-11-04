@@ -77,6 +77,10 @@ blockquote::before {
 	top: -10px;
 }
 
+address {
+	margin-bottom: 0;
+}
+
 
 /* ## Headings
 --------------------------------------------- */
@@ -275,7 +279,7 @@ input[type="submit"].small {
 }
 .fl-builder-content .black-but  a.fl-button:hover *, 
 .fl-builder-content .black-but  a.fl-button:focus * {
-	color: #000000;
+	color: #000;
 }
 
 /* # Skip Links
@@ -368,7 +372,9 @@ a.fl-post-more-link:hover {
 
 /* # Footer Header
 ---------------------------------------------------------------------------------------------------- */
-
+.site-footer-row p {
+	margin-bottom: 0;
+}
 
 
 /*  Entries
