@@ -274,7 +274,8 @@ input[type="submit"].small {
 	color: #000;
 }
 .fl-builder-content .black-but a.fl-button *, 
-.fl-builder-content .black-but a.fl-button:visited  {
+.fl-builder-content .black-but a.fl-button:visited,
+.fl-builder-content .black-but .fl-slide-0 a.fl-button *  {
 	color: #fff;
 }
 .fl-builder-content .black-but  a.fl-button:hover *, 
