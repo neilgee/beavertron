@@ -257,8 +257,8 @@ input[type="submit"].small {
 
 .fl-builder-content .black-but a.fl-button,
 .fl-builder-content .black-but a.fl-button:visited,
-.fl-builder-content .black-but .fl-slide-0 a.fl-button, 
-.fl-builder-content .black-but .fl-slide-0 a.fl-button:visited  {
+.fl-builder-content .black-but .fl-slide a.fl-button, 
+.fl-builder-content .black-but .fl-slide a.fl-button:visited  {
 	background: #000;
 	border: 1px solid #000;
 	color: #fff;
@@ -267,20 +267,20 @@ input[type="submit"].small {
 }
 .fl-builder-content .black-but  a.fl-button:hover, 
 .fl-builder-content .black-but  a.fl-button:focus,
-.fl-builder-content .black-but .fl-slide-0 a.fl-button:hover,
-.fl-builder-content .black-but .fl-slide-0 a.fl-button:focus  {
+.fl-builder-content .black-but .fl-slide a.fl-button:hover,
+.fl-builder-content .black-but .fl-slide a.fl-button:focus  {
 	background: #fff;
 	border: 1px solid #000;
 	color: #000;
 }
 .fl-builder-content .black-but a.fl-button *, 
 .fl-builder-content .black-but a.fl-button:visited,
-.fl-builder-content .black-but .fl-slide-0 a.fl-button *  {
+.fl-builder-content .black-but .fl-slide a.fl-button *  {
 	color: #fff;
 }
 .fl-builder-content .black-but  a.fl-button:hover *, 
 .fl-builder-content .black-but  a.fl-button:focus * {
-	color: #000;
+	color: #000 !important;
 }
 
 /* # Skip Links
