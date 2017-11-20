@@ -276,7 +276,7 @@ input[type="submit"].small {
 .fl-builder-content .black-but a.fl-button *, 
 .fl-builder-content .black-but a.fl-button:visited,
 .fl-builder-content .black-but .fl-slide a.fl-button *  {
-	color: #fff;
+	color: #fff !important;
 }
 .fl-builder-content .black-but  a.fl-button:hover *, 
 .fl-builder-content .black-but  a.fl-button:focus * {
