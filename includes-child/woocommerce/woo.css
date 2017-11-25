@@ -85,6 +85,10 @@
 	font-size: 16px;
 }
 
+.woocommerce form .form-row .required {
+	text-decoration: none;
+}
+
 /* Flexbox on WooCommerce archive products */
 .woocommerce .products ul,
 .woocommerce ul.products {
@@ -119,3 +123,5 @@
 		padding: 2%;
 	}
 }
+
+
