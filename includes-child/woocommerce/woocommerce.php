@@ -16,22 +16,13 @@ add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
 add_theme_support( 'wc-product-gallery-zoom' );
 
-
-add_filter( 'genesis_site_layout', 'bt_woo_layout' );
-// Full width pages
-function bt_woo_layout() {
-        if( is_page ( array( 'cart', 'checkout' )) || is_shop() || 'product' == get_post_type() ) {
-                return 'full-width-content';
-        }
-}
-
 // How many products per page
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
 
 
 add_filter( 'woocommerce_pagination_args', 'bt_woocommerce_pagination' );
 /**
- * Update the next and previous arrows to the default Genesis style.
+ * Update the next and previous arrows to the default style.
  *
  * @since 2.3.0
  *
@@ -39,8 +30,8 @@ add_filter( 'woocommerce_pagination_args', 'bt_woocommerce_pagination' );
  */
 function bt_woocommerce_pagination( $args ) {
 
-	$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'genesis-sample' ) );
-	$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'genesis-sample' ) );
+	$args['prev_text'] = sprintf( '&laquo; %s', __( 'Previous Page', 'beavertron' ) );
+	$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'beavertron' ) );
 
 	return $args;
 

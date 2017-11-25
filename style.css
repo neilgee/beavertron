@@ -283,6 +283,29 @@ input[type="submit"].small {
 	color: #000 !important;
 }
 
+
+/* Lists Using a Check as an example
+--------------------------------------------- */
+
+.fl-content  .tick-list li {
+	list-style-type: none;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.tick-list li:before{
+	content: "\f139";
+	font-family: dashicons;
+	padding-right: 5px;
+	color: #555555;
+	font-weight: 700;
+	font-size: 28px;
+	position: absolute;
+	left: -35px;
+	top: -5px;
+}
+
+
 /* # Skip Links
 ---------------------------------------------------------------------------------------------------- */
 
