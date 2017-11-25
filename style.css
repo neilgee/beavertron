@@ -284,26 +284,6 @@ input[type="submit"].small {
 }
 
 
-/* Lists Using a Check as an example
---------------------------------------------- */
-
-.fl-content  .tick-list li {
-	list-style-type: none;
-	margin-bottom: 10px;
-	position: relative;
-}
-
-.tick-list li:before{
-	content: "\f139";
-	font-family: dashicons;
-	padding-right: 5px;
-	color: #555555;
-	font-weight: 700;
-	font-size: 28px;
-	position: absolute;
-	left: -35px;
-	top: -5px;
-}
 
 
 /* # Skip Links
@@ -872,29 +852,64 @@ Business Profile
 	.fl-page { display: block; } /* IE10 & IE11 */
    
 }
+/* CSS Snippets
+ *
+ * Lists and Quotes
+ *---------------------------------------------------------------------------------------------------- */
 
-
-/* Split unordered list over 2 columns
+/* Split unordered list over 2 columns & 3 columns
 ---------------------------------------------------------------------------------------------------- */
 
-@media only screen and (max-width: 768px) {
-
-	.fl-builder .split-list ul {
-		margin-bottom: 0;
+@media only screen and (min-width: 767px) {
+	.three-column-list {
+		column-count: 3;
+		column-gap: 40px;
 	}
-
-	.fl-col-small .split-list .fl-node-content {
-		margin-bottom: 0;
+	
+	.two-column-list {
+		column-count: 2;
+		column-gap: 40px;
 	}
+}
 
-	.fl-col-small + .fl-col-small .split-list .fl-node-content {
-		margin-top: 0;
-		margin-bottom: 20px;
-	}
 
-	.fl-col-small {
-		max-width: 500px;
-	}
+/* Lists Using a Check as an example
+--------------------------------------------- */
+
+.fl-content  .tick-list li {
+	list-style-type: none;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.tick-list li:before{
+	content: '\f139';
+	font-family: 'dashicons';
+	padding-right: 5px;
+	color: #555555;
+	font-weight: 700;
+	font-size: 28px;
+	position: absolute;
+	left: -35px;
+	top: -5px;
+}
+
+
+/* Header Quote
+---------------------------------------------------------------------------------------------------- */
+.header-quote .fl-heading-text::before {
+	content: '\f205';
+	font-family: 'dashicons';
+	padding-right:10px;
+	font-size: 30px;
+}
+
+.header-quote .fl-heading-text::after {
+	content: '\f205';
+	font-family: 'dashicons';
+	transform: rotate(180deg); 
+	margin-left: 10px;
+	display: inline-block;
 }
 
 
