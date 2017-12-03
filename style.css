@@ -913,6 +913,18 @@ Business Profile
 }
 
 
+/* Offset Anchor Sticky Header
+ * Add HTML --> <a class="anchor" id="top"></a>
+---------------------------------------------------------------------------------------------------- */
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -250px;
+    visibility: hidden;
+}
+
+
 
 /* Print Styles
 ---------------------------------------------------------------------------------------------------- */
