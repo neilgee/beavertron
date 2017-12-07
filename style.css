@@ -340,6 +340,17 @@ a.fl-post-more-link:hover {
 /* # Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
 
+/* Center an uneven row - below is an example of 3 cols centered in a 4 col layout */
+
+.three-row-four-parent .fl-col-group:last-of-type  {
+	justify-content: center;
+}
+
+.three-row-four-parent .fl-col-group:last-of-type .fl-col {
+	width: 25%;
+	flex: 0 0 auto;
+}
+
 
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */

@@ -89,6 +89,15 @@
 	text-decoration: none;
 }
 
+.woocommerce ul .wc_payment_method {
+	list-style-type: none;
+}
+
+.woocommerce-billing-fields__field-wrapper abbr {
+	border-bottom: none;
+    text-decoration: none;
+}
+
 /* Flexbox on WooCommerce archive products */
 .woocommerce .products ul,
 .woocommerce ul.products {
@@ -106,6 +115,9 @@
 	margin-top: auto;
 	display: table;
 }
+
+
+
 /* Increase Image Size in Sidebar */
 .woocommerce ul.cart_list li img, 
 .woocommerce ul.product_list_widget li img {
