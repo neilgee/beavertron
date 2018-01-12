@@ -385,14 +385,19 @@ a.fl-post-more-link:hover {
 
 
 
-/* # Footer Header
+/* # Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer-row p {
 	margin-bottom: 0;
+	font-size: 14px;
 }
 
 .site-footer-row .dashicons {
 	vertical-align: middle;
+}
+
+.site-footer-widgets-row {
+
 }
 
 
@@ -935,6 +940,12 @@ a.anchor {
     visibility: hidden;
 }
 
+/* Builder Stuff
+---------------------------------------------------------------------------------------------------- */
+
+* .fl-help-tooltip{
+	display: none !important;
+}
 
 
 /* Print Styles
