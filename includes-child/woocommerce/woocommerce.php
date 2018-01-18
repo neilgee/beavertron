@@ -12,9 +12,9 @@ wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-child/w
 include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customize-woo.php' );
 
 // Supports for zoom/slider/gallery
-add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
-add_theme_support( 'wc-product-gallery-zoom' );
+// add_theme_support( 'wc-product-gallery-lightbox' );
+// add_theme_support( 'wc-product-gallery-slider' );
+// add_theme_support( 'wc-product-gallery-zoom' );
 
 // How many products per page
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );

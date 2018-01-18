@@ -73,7 +73,7 @@ function bt_theme_setup() {
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
 	// WooCommerce functions
-			include_once( get_stylesheet_directory() . '/includes-child/woocommerce/woocommerce.php' );
+		include_once( get_stylesheet_directory() . '/includes-child/woocommerce/woocommerce.php' );
 	}
 
 	// GravityForms

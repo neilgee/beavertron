@@ -83,24 +83,36 @@ function gsm_register_required_plugins() {
 					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			 ),
 
+			 array(
+				'name'               => 'Ultimate Addon for Beaver Builder', // The plugin name.
+				'slug'               => 'bb-ultimate-addon', // The plugin slug (typically the folder name).
+				'source'             => get_theme_root() . '/lib/plugins/bb-ultimate-addon.zip', // The plugin source.
+				'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+				'version'            => '1.6.8', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+				'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+				'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+				'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+				'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+			),
+
 				// This is an example of how to include a plugin pre-packaged with a theme.
-				array(
-					'name'               => 'Beaver Themer', // The plugin name.
-					'slug'               => 'bb-theme-builder', // The plugin slug (typically the folder name).
-					'source'             => get_theme_root() . '/lib/plugins/bb-theme-builder.zip', // The plugin source.
-					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					'version'            => '1.0.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-					'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+			array(
+				'name'               => 'Beaver Themer', // The plugin name.
+				'slug'               => 'bb-theme-builder', // The plugin slug (typically the folder name).
+				'source'             => get_theme_root() . '/lib/plugins/bb-theme-builder.zip', // The plugin source.
+				'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+				'version'            => '1.0.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+				'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+				'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+				'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+				'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			),   
 
 			 // This is an example of how to include a plugin pre-packaged with a theme.
 			 array(
 					 'name'               => 'Gravity Forms', // The plugin name.
 					 'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.2.2.1.zip', // The plugin source.
+					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.2.5.21.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
 					 'version'            => '2.2.5.21', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
