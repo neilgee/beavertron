@@ -20,6 +20,15 @@
  //add_filter( 'fl_builder_override_lightbox', __return_true );
 
 
+ /**
+  * Add SVG to allowed regex for BB module uploads
+  */
+add_filter( 'fl_module_upload_regex', function( $regex, $type, $ext, $file ) {
+    $regex[ 'photo' ] = '#(jpe?g|png|gif|bmp|tiff|svg?)#i';
+
+    return $regex;
+}, 10, 4 );
+
 
 add_filter( 'fl_builder_font_families_system', 'bt_added_fonts_plugin' );
 /**
@@ -56,6 +65,22 @@ function wb_builder_register_settings_form_short( $form, $id ) {
    } 
    
    return $form;
+}
+
+
+add_filter( 'fl_builder_is_node_visible', 'bt_check_field_connections', 10, 2 );
+/* Dont output empty custom field connections */
+function bt_check_field_connections( $is_visible, $node ) {
+
+    if ( isset( $node->settings->connections ) ) {
+        foreach ( $node->settings->connections as $key => $connection ) {
+            if ( ! empty( $connection ) && empty( $node->settings->$key ) ) {
+                return false;
+            }
+        }
+    }
+    
+    return $is_visible;
 }
 
 
