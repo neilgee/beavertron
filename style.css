@@ -423,6 +423,35 @@ a.fl-post-more-link:hover {
 	}
 }
 
+/* # Mobile Nav Using Beaver In Built Button Option - changed background and added hamburger icon
+ * Black and white example below
+---------------------------------------------------------------------------------------------------- */
+
+
+@media (max-width: 767px) {
+	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle * {
+		color: #000000;
+		text-transform: uppercase;
+	}
+
+	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:before {
+		content: '\f0c9';
+		font-family: 'fontawesome';
+		color: #000000;
+	}
+	
+	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle {
+		display: block;
+		background: #ffffff;
+		color: #000000;
+	}
+	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:focus,
+	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:hover,
+	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:active {
+		background: #ffffff;
+	}
+}
+
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
 
@@ -957,12 +986,12 @@ Business Profile
 }
 
 .tick-list li:before{
-	content: '\f139';
-	font-family: 'dashicons';
+	content: '\f00c';
+	font-family: 'fontawesome';
 	padding-right: 5px;
 	color: #555555;
-	font-weight: 700;
-	font-size: 28px;
+	font-weight: normal;
+	font-size: 22px;
 	position: absolute;
 	left: -35px;
 	top: -5px;
