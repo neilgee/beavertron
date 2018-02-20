@@ -21,6 +21,8 @@ final class FLChildTheme {
         // Take out the default lightbox
         // wp_dequeue_script('jquery-magnificpopup');
         // wp_dequeue_style('jquery-magnificpopup');
+       // wp_enqueue_script( 'global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), '1.0.0', true );
+
 
     }
     
