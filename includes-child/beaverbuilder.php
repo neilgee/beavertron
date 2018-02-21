@@ -60,7 +60,7 @@ function wb_builder_register_settings_form_short( $form, $id ) {
     $form['title'] = 'Beavertron Global Settings';
     $form['tabs']['general']['sections']['rows']['fields']['row_width']['default'] = '1200';    
 	$form['tabs']['general']['sections']['responsive']['fields']['responsive_breakpoint']['default'] = '767';
-	$form['tabs']['general']['sections']['responsive']['fields']['medium_breakpoint']['default'] = '1200';
+	$form['tabs']['general']['sections']['responsive']['fields']['medium_breakpoint']['default'] = '1024';
 	   
    } 
    
