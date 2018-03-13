@@ -34,6 +34,7 @@
 .woocommerce .input-radio {
 	box-shadow: none;
 	width: auto;
+	position: relative !important;
 }
 
 .woocommerce .related ul li.product img,
