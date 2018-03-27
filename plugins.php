@@ -276,7 +276,7 @@ function gsm_register_required_plugins() {
 			 ),
 			 array(
 					'name'     => 'LiteSpeed Cache',
-					'slug'     => 'liteSpeed-cache',
+					'slug'     => 'litespeed-cache',
 					'required' => false,
 			),
 			 array(
