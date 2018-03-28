@@ -61,7 +61,7 @@ function bt_theme_setup() {
 	// Client Logo for WP Login and backend admin clean up.
 	include_once( get_stylesheet_directory() . '/includes-child/client-file.php' );
 	// Remove Default BB Mobile Menu.
-	include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
+	//include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
 	
 	// BeaverBuilder
 	if ( class_exists( 'FLBuilderModel' ) ) {
