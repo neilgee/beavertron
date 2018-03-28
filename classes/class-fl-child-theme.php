@@ -16,6 +16,10 @@ final class FLChildTheme {
     {
         wp_enqueue_style( CHILD_THEME_NAME, FL_CHILD_THEME_URL . '/style.css' , array(), '1.0.0', 'all' );
         wp_enqueue_style( 'dashicons' );
+       
+        // Webfonts Example
+        // wp_enqueue_style( 'webfonts', FL_CHILD_THEME_URL . '/webfonts/stylesheet.css' , array(), '1.0.0', 'all' );
+
         // wp_dequeue_style( 'foundation-icons' );
         // wp_dequeue_style( 'font-awesome' );
         
