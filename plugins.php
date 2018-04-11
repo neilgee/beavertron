@@ -238,7 +238,7 @@ function gsm_register_required_plugins() {
 			),
 			 array(
 					 'name'      => 'Post Types Order',
-					 'slug'      => 'post-types-Order',
+					 'slug'      => 'post-types-order',
 					 'required'  => false,
 			 ),
 			 array(
