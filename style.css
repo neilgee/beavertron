@@ -398,15 +398,18 @@ a.fl-post-more-link:hover {
 /* # Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
 
-/* Center an uneven row - below is an example of 3 cols centered in a 4 col layout */
+/* Center an uneven row - below is an example of 2 cols centered in a 3 col layout */
+@media (min-width: 768px) {
+	.two-row-three-parent .fl-col-group {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+	}
 
-.three-row-four-parent .fl-col-group:last-of-type  {
-	justify-content: center;
-}
-
-.three-row-four-parent .fl-col-group:last-of-type .fl-col {
-	width: 25%;
-	flex: 0 0 auto;
+	.two-row-three-parent .fl-col-group .fl-col {
+		width: 33% !important;
+		flex: 0 0 auto;
+	}
 }
 
 
