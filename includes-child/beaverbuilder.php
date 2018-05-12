@@ -49,6 +49,7 @@ function bt_added_fonts_plugin( $system ) {
 	
     return $system;
 }
+
 add_filter( 'fl_builder_register_settings_form', 'wb_builder_register_settings_form_short', 10, 2 );
 /** 
  * Filter the Global Settings Options.
@@ -89,3 +90,9 @@ function bt_check_field_connections( $is_visible, $node ) {
  * 
  */
 //add_filter( 'fl_is_debug', '__return_true' ); 
+
+/* Turn off BB notifications */
+add_filter ('fl_disable_notifications', '__return_true' );
+
+/* Turn off BB inline editing */
+add_filter ('fl_inline_editing_enabled', '__return_false' );

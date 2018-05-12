@@ -66,10 +66,9 @@ function bt_theme_setup() {
 	// BeaverBuilder
 	if ( class_exists( 'FLBuilderModel' ) ) {
 		// BeaverBuilder functions
-			include_once( get_stylesheet_directory() . '/includes-child/beaverbuilder.php' );
-		}
+		include_once( get_stylesheet_directory() . '/includes-child/beaverbuilder.php' );
+	}
 		
-
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
 	// WooCommerce functions
@@ -81,9 +80,9 @@ function bt_theme_setup() {
 		include_once( get_stylesheet_directory() . '/includes-child/gravity.php' );
 	}
 	
-
 	// Get the plugins.
 	//require_once  get_stylesheet_directory() . '/plugins.php';
+
 
 	// Allow the theme to be translated.
 	load_theme_textdomain( 'beavertron', get_stylesheet_directory_uri() . '/languages' );
@@ -126,9 +125,47 @@ function bt_theme_setup() {
 	function bt_client_logo() {
 	ob_start();
 		if ( function_exists( 'the_custom_logo' ) ) {    
-		echo '<div itemscope itemtype="http://schema.org/Organization">' . get_custom_logo() . '</div>';
+			echo '<div itemscope itemtype="http://schema.org/Organization">' . get_custom_logo() . '</div>';
 		}
 	return ob_get_clean();
+	}
+
+	
+	add_action( 'add_attachment', 'bt_image_meta_upon_image_upload' );
+	/* 
+	 * Automatically set the image Title, Alt-Text, Caption & Description upon upload
+	 * https://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/
+	 */
+	function bt_image_meta_upon_image_upload( $post_ID ) {
+
+		// Check if uploaded file is an image, else do nothing
+
+		if ( wp_attachment_is_image( $post_ID ) ) {
+
+			$my_image_title = get_post( $post_ID )->post_title;
+
+			// Sanitize the title:  remove hyphens, underscores & extra spaces:
+			$my_image_title = preg_replace( '%\s*[-_\s]+\s*%', ' ',  $my_image_title );
+
+			// Sanitize the title:  capitalize first letter of every word (other letters lower case):
+			$my_image_title = ucwords( strtolower( $my_image_title ) );
+
+			// Create an array with the image meta (Title, Caption, Description) to be updated
+			// Note:  comment out the Excerpt/Caption or Content/Description lines if not needed
+			$my_image_meta = array(
+				'ID'		=> $post_ID,			// Specify the image (ID) to be updated
+				'post_title'	=> $my_image_title,		// Set image Title to sanitized title
+				//'post_excerpt'	=> $my_image_title,		// Set image Caption (Excerpt) to sanitized title
+				//'post_content'	=> $my_image_title,		// Set image Description (Content) to sanitized title
+			);
+
+			// Set the image Alt-Text
+			update_post_meta( $post_ID, '_wp_attachment_image_alt', $my_image_title );
+
+			// Set the image meta (e.g. Title, Excerpt, Content)
+			wp_update_post( $my_image_meta );
+
+		} 
 	}
 
 
