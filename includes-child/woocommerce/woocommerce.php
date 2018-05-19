@@ -5,7 +5,7 @@ add_action( 'wp_enqueue_scripts', 'woo_css_styles', 900 );
  * WOO CSS styles.
  */
 function woo_css_styles() {
-wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-child/woocommerce/woo.css', array(), '2.0.0', 'all' );
+        wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-child/woocommerce/woo.css', array(), '2.0.0', 'all' );
 }
 
 // Customizer Options
@@ -16,8 +16,15 @@ include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customiz
 // add_theme_support( 'wc-product-gallery-slider' );
 // add_theme_support( 'wc-product-gallery-zoom' );
 
+
+add_filter( 'loop_shop_per_page', 'bt_new_loop_shop_per_page', 20 );
 // How many products per page
-add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 12;' ), 20 );
+function bt_new_loop_shop_per_page( $cols ) {
+        // $cols contains the current number of products per page based on the value stored on Options -> Reading
+        // Return the number of products you wanna show per page.
+        $cols = 12;
+        return $cols;
+}
 
 
 add_filter( 'woocommerce_pagination_args', 'bt_woocommerce_pagination' );
