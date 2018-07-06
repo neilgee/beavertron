@@ -20,6 +20,9 @@ final class FLChildTheme {
         // Webfonts Example
         // wp_enqueue_style( 'webfonts', FL_CHILD_THEME_URL . '/webfonts/stylesheet.css' , array(), '1.0.0', 'all' );
 
+         // Google Fonts Example
+        // wp_enqueue_style( 'googlefonts' , '//fonts.googleapis.com/css?family=PT+Serif:400i,700i', array(), '2', 'all' );
+
         // wp_dequeue_style( 'foundation-icons' );
         // wp_dequeue_style( 'font-awesome' );
         
