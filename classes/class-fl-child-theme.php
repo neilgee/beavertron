@@ -20,9 +20,10 @@ final class FLChildTheme {
         // Webfonts Example
         // wp_enqueue_style( 'webfonts', FL_CHILD_THEME_URL . '/webfonts/stylesheet.css' , array(), '1.0.0', 'all' );
 
-         // Google Fonts Example
+        // Google Fonts Example
         // wp_enqueue_style( 'googlefonts' , '//fonts.googleapis.com/css?family=PT+Serif:400i,700i', array(), '2', 'all' );
 
+        // Remove Icon Styles
         // wp_dequeue_style( 'foundation-icons' );
         // wp_dequeue_style( 'font-awesome' );
         
@@ -36,12 +37,11 @@ final class FLChildTheme {
         // Selctize JS - CSS & JS files filed and init is commented out in global
         // if( is_shop() || is_product_category() ) {
 
-        // wp_enqueue_script( 'selectjs', get_stylesheet_directory_uri() . '/js/selectize.min.js', array( 'jquery' ), '2.2.0', true );
-        // wp_enqueue_style( 'selectcss', get_stylesheet_directory_uri() . '/css/selectize.css' , array(), '2.2.0', 'all' );
-        // wp_enqueue_script( 'selectinit', get_stylesheet_directory_uri() . '/js/global.js', array( 'selectjs' ), '2.0.4', true );       
+        // wp_enqueue_script( 'selectjs', get_stylesheet_directory_uri() . '/js/selectize.min.js', array( 'jquery' ), '0.12.5', true );
+        // wp_enqueue_style( 'selectcss', get_stylesheet_directory_uri() . '/css/selectize.css' , array(),  '0.12.5', 'all' );
+        // wp_enqueue_script( 'selectinit', get_stylesheet_directory_uri() . '/js/global.js', array( 'selectjs' ), '1.0.0', true );       
 
         // }
-
 
     }
     

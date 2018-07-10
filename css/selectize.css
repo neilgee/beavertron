@@ -1,5 +1,5 @@
 /**
- * selectize.css (v0.12.4)
+ * selectize.css (v0.12.5)
  * Copyright (c) 2013–2015 Brian Reavis & contributors
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
@@ -14,13 +14,13 @@
  * @author Brian Reavis <brian@thirdroute.com>
  */
 
-.selectize-control.plugin-drag_drop.multi > .selectize-input > div.ui-sortable-placeholder {
+ .selectize-control.plugin-drag_drop.multi > .selectize-input > div.ui-sortable-placeholder {
   visibility: visible !important;
   background: #f2f2f2 !important;
   background: rgba(0, 0, 0, 0.06) !important;
   border: 0 none !important;
-  -webkit-box-shadow: inset 0 0 12px 4px #ffffff;
-  box-shadow: inset 0 0 12px 4px #ffffff;
+  -webkit-box-shadow: inset 0 0 12px 4px #fff;
+  box-shadow: inset 0 0 12px 4px #fff;
 }
 .selectize-control.plugin-drag_drop .ui-sortable-placeholder::after {
   content: '!';
@@ -111,8 +111,8 @@
 }
 .selectize-control.plugin-remove_button .remove-single {
   position: absolute;
-  right: 28px;
-  top: 6px;
+  right: 0;
+  top: 0;
   font-size: 23px;
 }
 .selectize-control {
@@ -129,10 +129,9 @@
 }
 .selectize-input,
 .selectize-control.single .selectize-input.input-active {
-  background: #ffffff;
+  background: #fff;
   cursor: text;
   display: inline-block;
-  padding: 8px 8px !important;
 }
 .selectize-input {
   border: 1px solid #d0d0d0;
@@ -155,7 +154,7 @@
   padding: 6px 8px 3px;
 }
 .selectize-input.full {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .selectize-input.disabled,
 .selectize-input.disabled * {
@@ -236,7 +235,7 @@
   position: absolute;
   z-index: 10;
   border: 1px solid #d0d0d0;
-  background: #ffffff;
+  background: #fff;
   margin: -1px 0 0 0;
   border-top: 0 none;
   -webkit-box-sizing: border-box;
@@ -258,16 +257,25 @@
   -moz-border-radius: 1px;
   border-radius: 1px;
 }
-.selectize-dropdown [data-selectable],
+.selectize-dropdown .option,
 .selectize-dropdown .optgroup-header {
   padding: 5px 8px;
+}
+.selectize-dropdown .option,
+.selectize-dropdown [data-disabled],
+.selectize-dropdown [data-disabled] [data-selectable].option {
+  cursor: inherit;
+  opacity: 0.5;
+}
+.selectize-dropdown [data-selectable].option {
+  opacity: 1;
 }
 .selectize-dropdown .optgroup:first-child .optgroup-header {
   border-top: 0 none;
 }
 .selectize-dropdown .optgroup-header {
   color: #303030;
-  background: #ffffff;
+  background: #fff;
   cursor: default;
 }
 .selectize-dropdown .active {
@@ -293,7 +301,6 @@
 .selectize-control.single .selectize-input.input-active,
 .selectize-control.single .selectize-input.input-active input {
   cursor: text;
-  padding: 8px 8px !important;
 }
 .selectize-control.single .selectize-input:after {
   content: ' ';
@@ -323,21 +330,4 @@
 .selectize-control .selectize-input.disabled {
   opacity: 0.5;
   background-color: #fafafa;
-}
-
-
-.selectized input[type=text] {
-  height: auto !important;
-}
-
-/* .selectize-input > input {
-  display: inline-block !important;
-} */
-
-.selectize-input input { 
-  height: 10px; 
-} 
-  
-.selectize-input div.item + input { 
-  display: inline-block; 
 }
