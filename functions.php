@@ -111,6 +111,15 @@ function bt_theme_setup() {
 		return $sizes;
 	}
 
+	add_filter( 'upload_mimes', 'bt_add_svg_images' );
+	/**
+	* Allow SVG Images Via Media Uploader.
+	*/
+	function bt_add_svg_images( $mimetypes ) {
+		$mimetypes['svg'] = 'image/svg+xml';
+		return $mimetypes;
+	}
+
 	// Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
 	add_theme_support( 'custom-logo', array(
 		'height'      => 100, // set to your dimensions
