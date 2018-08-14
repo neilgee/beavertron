@@ -979,7 +979,10 @@ Business Profile
 }
 
 
-/* Lists Using a Check as an example
+/* Icon Stuff
+--------------------------------------------- */
+
+/* Lists Using a tick icon as an example
 --------------------------------------------- */
 
 .fl-content  .tick-list li {
@@ -999,8 +1002,18 @@ Business Profile
 	left: -35px;
 	top: -5px;
 }
+/* Icon Centre
+--------------------------------------------- */
+.icon-top .fl-icon {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-
+.icon-top .fl-icon i {
+	float: none;
+}
 /* Header Quote
 ---------------------------------------------------------------------------------------------------- */
 .header-quote .fl-heading-text::before {

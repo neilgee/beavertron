@@ -34,13 +34,13 @@ final class FLChildTheme {
         // Set Up Global JS
         // wp_enqueue_script( 'global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), '1.0.0', true );
 
-        // Selctize JS - CSS & JS files filed and init is commented out in global
+        // Select2 JS - CSS & JS files filed and init is commented out in global
         // if( is_shop() || is_product_category() ) {
 
-        // wp_enqueue_script( 'selectjs', get_stylesheet_directory_uri() . '/js/selectize.min.js', array( 'jquery' ), '0.12.5', true );
-        // wp_enqueue_style( 'selectcss', get_stylesheet_directory_uri() . '/css/selectize.css' , array(),  '0.12.5', 'all' );
-        // wp_enqueue_script( 'selectinit', get_stylesheet_directory_uri() . '/js/global.js', array( 'selectjs' ), '1.0.0', true );       
-
+        // wp_enqueue_script( 'select2js', get_stylesheet_directory_uri() . '/js/select2.min.js', array( 'jquery' ), '4.0.6', true );
+        // wp_enqueue_style( 'select2css', get_stylesheet_directory_uri() . '/css/select2.min.css' , array(), '4.0.6', 'all' );
+        // wp_enqueue_script( 'selectinit', get_stylesheet_directory_uri() . '/js/global.js', array( 'select2js' ), '1.0.0', true );       
+    
         // }
 
     }
