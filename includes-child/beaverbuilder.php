@@ -12,7 +12,7 @@
  */
 
 
- /**
+/**
  * 
  * Remove BB Plugin LightBox
  * @since 1.0.0
@@ -20,9 +20,9 @@
  //add_filter( 'fl_builder_override_lightbox', __return_true );
 
 
- /**
-  * Add SVG to allowed regex for BB module uploads
-  */
+/**
+ * Add SVG to allowed regex for BB module uploads
+ */
 add_filter( 'fl_module_upload_regex', function( $regex, $type, $ext, $file ) {
     $regex[ 'photo' ] = '#(jpe?g|png|gif|bmp|tiff|svg?)#i';
 
@@ -45,8 +45,8 @@ function bt_added_fonts_plugin( $system ) {
 				"700",
 				"900"
             )
-	);
-	
+    );
+    
     return $system;
 }
 
@@ -91,8 +91,48 @@ function bt_check_field_connections( $is_visible, $node ) {
  */
 //add_filter( 'fl_is_debug', '__return_true' ); 
 
+
 /* Turn off BB notifications */
 add_filter ('fl_disable_notifications', '__return_true' );
 
 /* Turn off BB inline editing */
 add_filter ('fl_inline_editing_enabled', '__return_false' );
+
+add_filter( 'fl_builder_color_presets', 'bt_builder_color_presets' );
+/** 
+ * Add color presets for Beaver Builder
+ * 
+ */
+function bt_builder_color_presets( $colors ) {
+    $colors = array();
+      
+      $colors[] = 'ffffff';
+      $colors[] = '000000';
+      $colors[] = '333333';
+      $colors[] = '999999';
+  
+    return $colors;
+}
+
+add_action( 'customize_controls_print_footer_scripts', 'bt_customize_color_presets' );
+/** 
+ * Add color presets for Beaver Builder Customizer Theme
+ * 
+ */
+function bt_customize_color_presets() {
+    ?>
+  <script>
+    jQuery(document).ready(function($){
+      $('.wp-picker-container').iris({
+        mode: 'hsl',
+        controls: { 
+          horiz: 'h', // square horizontal displays hue
+          vert: 's', // square vertical displays saturdation
+          strip: 'l' // slider displays lightness
+        },
+        palettes: ['#ffffff', '#000000', '#333333', '#999999']
+      })
+    });
+  </script>
+  <?php
+};

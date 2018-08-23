@@ -64,54 +64,54 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '5.6.10', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '5.7.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			 ),
 			 // This is an example of how to include a plugin pre-packaged with a theme.
-			 array(
-					 'name'               => 'Beaver Builder Plugin (Pro Version)', // The plugin name.
-					 'slug'               => 'bb-plugin-pro', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/bb-plugin-pro.zip', // The plugin source.
-					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.1.1.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			 ),
+			//  array(
+			// 		 'name'               => 'Beaver Builder Plugin (Pro Version)', // The plugin name.
+			// 		 'slug'               => 'bb-plugin-pro', // The plugin slug (typically the folder name).
+			// 		 'source'             => get_theme_root() . '/lib/plugins/bb-plugin-pro.zip', // The plugin source.
+			// 		 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			// 		 'version'            => '2.1.4.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+			// 		 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			// 		 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			// 		 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			// 		 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+			//  ),
 			 array(
 					'name'               => 'Ultimate Addon for Beaver Builder', // The plugin name.
 					'slug'               => 'bb-ultimate-addon', // The plugin slug (typically the folder name).
 					'source'             => get_theme_root() . '/lib/plugins/bb-ultimate-addon.zip', // The plugin source.
 					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					'version'            => '1.7.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					'version'            => '1.8.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 					'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			),
 				// This is an example of how to include a plugin pre-packaged with a theme.
-			array(
-					'name'               => 'Beaver Themer', // The plugin name.
-					'slug'               => 'bb-theme-builder', // The plugin slug (typically the folder name).
-					'source'             => get_theme_root() . '/lib/plugins/bb-theme-builder.zip', // The plugin source.
-					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					'version'            => '1.1.1.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-					'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			),   
+			// array(
+			// 		'name'               => 'Beaver Themer', // The plugin name.
+			// 		'slug'               => 'bb-theme-builder', // The plugin slug (typically the folder name).
+			// 		'source'             => get_theme_root() . '/lib/plugins/bb-theme-builder.zip', // The plugin source.
+			// 		'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			// 		'version'            => '1.1.2.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+			// 		'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			// 		'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			// 		'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			// 		'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
+			// ),   
 			 // This is an example of how to include a plugin pre-packaged with a theme.
 			 array(
 					 'name'               => 'Gravity Forms', // The plugin name.
 					 'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.2.6.1.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.2.6.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '2.3.3.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
