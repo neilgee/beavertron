@@ -20,14 +20,15 @@
  //add_filter( 'fl_builder_override_lightbox', __return_true );
 
 
+ add_filter( 'fl_module_upload_regex', 'bt_upload_image_formats', 10, 4 );
 /**
  * Add SVG to allowed regex for BB module uploads
  */
-add_filter( 'fl_module_upload_regex', function( $regex, $type, $ext, $file ) {
+ function bt_upload_image_formats( $regex, $type, $ext, $file ) {
     $regex[ 'photo' ] = '#(jpe?g|png|gif|bmp|tiff|svg?)#i';
 
     return $regex;
-}, 10, 4 );
+}
 
 
 add_filter( 'fl_builder_font_families_system', 'bt_added_fonts_plugin' );
@@ -50,6 +51,7 @@ function bt_added_fonts_plugin( $system ) {
     return $system;
 }
 
+
 add_filter( 'fl_builder_register_settings_form', 'wb_builder_register_settings_form_short', 10, 2 );
 /** 
  * Filter the Global Settings Options.
@@ -70,7 +72,10 @@ function wb_builder_register_settings_form_short( $form, $id ) {
 
 
 add_filter( 'fl_builder_is_node_visible', 'bt_check_field_connections', 10, 2 );
-/* Dont output empty custom field connections */
+/** 
+ * Dont output empty custom field connections
+ * 
+ */
 function bt_check_field_connections( $is_visible, $node ) {
 
     if ( isset( $node->settings->connections ) ) {
@@ -95,8 +100,10 @@ function bt_check_field_connections( $is_visible, $node ) {
 /* Turn off BB notifications */
 add_filter ('fl_disable_notifications', '__return_true' );
 
+
 /* Turn off BB inline editing */
 add_filter ('fl_inline_editing_enabled', '__return_false' );
+
 
 add_filter( 'fl_builder_color_presets', 'bt_builder_color_presets' );
 /** 
@@ -113,6 +120,7 @@ function bt_builder_color_presets( $colors ) {
   
     return $colors;
 }
+
 
 add_action( 'customize_controls_print_footer_scripts', 'bt_customize_color_presets' );
 /** 
