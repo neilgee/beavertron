@@ -51,6 +51,12 @@ function bt_theme_setup() {
 
 	// Load in required or optional files.
 	// Classes.
+
+	// Cache buster
+	if ( ! class_exists('FLCache\CacheHelper') ) {
+		require_once( get_stylesheet_directory() . '/classes/class-fl-builder-cache-helper.php');
+		}
+	// Core Class	
 	require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
 	// Actions - BB Default way - This theme calls required files below.
 	add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
@@ -210,24 +216,7 @@ function bt_theme_setup() {
 		);
 		return $system;
 	}
-
-
-	function bt_acf_auto_set_license_keys() {
-
-		if ( !get_option('acf_pro_license') && defined('ACF_PRO_KEY') ) {
 	  
-		  $save = array(
-				  'key'	=> ACF_PRO_KEY,
-				  'url'	=> home_url()
-			  );
-	  
-			  $save = maybe_serialize($save);
-			  $save = base64_encode($save);
-	  
-		  update_option('acf_pro_license', $save);
-		}
-	  }
-	  add_action('after_switch_theme', 'bt_acf_auto_set_license_keys');
 
 
 	

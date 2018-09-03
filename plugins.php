@@ -109,7 +109,7 @@ function gsm_register_required_plugins() {
 			 array(
 					 'name'               => 'Gravity Forms', // The plugin name.
 					 'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.2.6.1.zip', // The plugin source.
+					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.3.3.6.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
 					 'version'            => '2.3.3.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
