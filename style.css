@@ -306,6 +306,65 @@ input[type="submit"].small {
 
 
 
+input[type=text], 
+input[type=password], 
+input[type=email], 
+input[type=tel],
+input[type=date], 
+input[type=month], 
+input[type=week], 
+input[type=time], 
+input[type=number], 
+input[type=search], 
+input[type=url], 
+textarea {
+	display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #f3f3f3;
+    background-image: none;
+    border: 1px solid #ccc;
+    -moz-transition: all ease-in-out .15s;
+    -webkit-transition: all ease-in-out .15s;
+    transition: all ease-in-out .15s;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=tel]:focus, 
+input[type=date]:focus, 
+input[type=month]:focus, 
+input[type=week]:focus, 
+input[type=time]:focus, 
+input[type=number]:focus, 
+input[type=search]:focus, 
+input[type=url]:focus, 
+textarea:focus {
+    background-color: #ffffff;
+    border-color: #cccccc;
+    outline: 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* Gravity Forms */
+.gform_wrapper label.gfield_label {
+    font-weight: 400;
+    font-size: inherit;
+}
+
 /* # Buttons - Black-But example
 ---------------------------------------------------------------------------------------------------- */
 /* lines up the button if parent is equal heights change >>>>> .the-row <<<<<< */
@@ -1006,20 +1065,6 @@ Business Profile
 	 }
 	
 	}
-
-
-
-@media only screen and (min-width: 767px) {
-	.three-column-list {
-		column-count: 3;
-		column-gap: 40px;
-	}
-	
-	.two-column-list {
-		column-count: 2;
-		column-gap: 40px;
-	}
-}
 
 
 /* Icon Stuff
