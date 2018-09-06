@@ -97,6 +97,18 @@ function bt_check_field_connections( $is_visible, $node ) {
 //add_filter( 'fl_is_debug', '__return_true' ); 
 
 
+add_filter( 'fl_theme_builder_assets_expire', 'bt_builder_expire' );
+/** 
+ * Delay Themer Builder Assets to Expire for 10 years ~ default is 30 days
+ * 
+ */
+function bt_builder_expire() {
+    $expire_bundle = strtotime( '+3650 days' );
+
+return $expire_bundle;
+}
+
+
 /* Turn off BB notifications */
 add_filter ('fl_disable_notifications', '__return_true' );
 
