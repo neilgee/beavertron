@@ -58,6 +58,8 @@ function bt_remove_dashboard_widgets() {
 	// remove_meta_box('icl_dashboard_widget','dashboard','normal'); //Multi Language Plugin
 	// remove_meta_box('dashboard_activity','dashboard', 'normal'); //Activity
 	remove_action( 'welcome_panel','wp_welcome_panel' );
+	remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel'); // Try Gutenberg
+
 }
 
 
