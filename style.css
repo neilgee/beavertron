@@ -324,7 +324,6 @@ textarea {
     font-size: 14px;
     line-height: 1.428571429;
     color: #555555;
-    vertical-align: middle;
     background-color: #f3f3f3;
     background-image: none;
     border: 1px solid #ccc;
@@ -553,10 +552,6 @@ a.fl-post-more-link:hover {
 
 .site-footer-row .dashicons {
 	vertical-align: middle;
-}
-
-.site-footer-widgets-row {
-
 }
 
 
