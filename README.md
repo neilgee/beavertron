@@ -17,11 +17,11 @@ Several WordPress unecessary scripts including emoji styles have been removed
 ### Folder Structure - includes-child
 At the top of _functions.php_ there a number of include files that you can comment/uncomment for adding functionality. The folder they are pulled from is *includes-child* as the *includes* folder is only used for parent theme overrides
 - */includes-child/beaverbuilder.php* BeaverBuilder plugin functionality:
-* includes a font system stack, 
-* a filter for global BB settings, change media break points to be  767px small, 1024px medium and 1200px large, 
-* filter to remove lightbox. 
-* filter to remove empty field connections, filters to disable inline-editing and BB notifications.
-* filter for adding colour presets to backend color pickers.
+   * includes a font system stack, 
+   * a filter for global BB settings, change media break points to be  767px small, 1024px medium and 1200px large, 
+   * filter to remove lightbox. 
+   * filter to remove empty field connections, filters to disable inline-editing and BB notifications.
+   * filter for adding colour presets to backend color pickers.
 
 
 - */includes-child/client-file.php* a miscellaneous area for things like client logo for login
