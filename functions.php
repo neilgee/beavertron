@@ -37,7 +37,7 @@ function bt_theme_setup() {
 	// Child theme constant settings.
 	define( 'CHILD_THEME_NAME', 'beavertron' );
 	define( 'CHILD_THEME_URL', 'http://wpbeaches.com' );
-	define( 'CHILD_THEME_VERSION', '1.0.0' );
+	define( 'CHILD_THEME_VERSION', '1.7.0' );
 	define( 'FL_CHILD_THEME_DIR', get_stylesheet_directory() );
 	define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
 	// Allow SVG Upload

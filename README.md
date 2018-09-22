@@ -1,17 +1,25 @@
 # Beavertron
-Starter Theme for Beaver Builder.
+Starter Child Theme for Beaver Builder Theme 1.7.
+(Previous Starter for 1.6 available [here](https://github.com/neilgee/beavertron/archive/v1.6.0.zip) )
 
 This a starter child theme that requires the parent Beaver Builder Theme.
 
 ### WordPress Head Clean Up
-Several unecessary scripts including emoji styles have been removed
+Several WordPress unecessary scripts including emoji styles have been removed
 
 ### Child Theme Class - FLChildTheme
-- */classes/class-fl-child-theme.php* contains all CSS files for inclusion, added version and other default parameters for child theme stylesheet
+- */classes/class-fl-child-theme.php* contains all CSS and Javascript files for enqueing, some are enqueued others are commented out
 
 ### Folder Structure - includes-child
-At the top of functions.php there a number of include files that you can comment/uncomment for adding functionality. The folder they are pulled from is *includes-child* as the *includes* folder is only used for parent theme overrides
-- */includes-child/beaverbuilder.php* BeaverBuilder plugin functionality, includes a font stack added, a filter for global BB settings, change media break points to be over 767px medium and over 1200px large, filter to remove lightbox.
+At the top of _functions.php_ there a number of include files that you can comment/uncomment for adding functionality. The folder they are pulled from is *includes-child* as the *includes* folder is only used for parent theme overrides
+- */includes-child/beaverbuilder.php* BeaverBuilder plugin functionality:
+* includes a font system stack, 
+* a filter for global BB settings, change media break points to be  767px small, 1024px medium and 1200px large, 
+* filter to remove lightbox. 
+* filter to remove empty field connections, filters to disable inline-editing and BB notifications.
+* filter for adding colour presets to backend color pickers.
+
+
 - */includes-child/client-file.php* a miscellaneous area for things like client logo for login
 - */includes-child/customizer.php* contains all the Customizer options.
 - */includes-child/gravity.php* Gravity forms functionality
@@ -33,10 +41,11 @@ These are straight parent theme overrides
 
 ### Images
 - Added a 'blog-feature' image at 300x200
-- Override default medium image with a hard crop
+- Re-added Medium 300x300 with hard crop
 - Added filter to allow Beaver Builder recognise added custom image sizes
 - Removed default WordPress 'medium_large' image size - other defaults can be removed by uncommenting
 - Function added to allow SVG image uploads to Media Library.
+- Image uploads add their file name as alt and title attributes
 
 
 ### Custom Logo
@@ -50,22 +59,22 @@ More info here - https://wpbeaches.com/add-custom-logo-schema-beaver-themer-head
 
 ### Customizer
 - Extra WooCommerce settings for button and alert colors have been added to the default WooCommerce panel, they only appear if WooCommerce is active.
-- Button color and background and hover colors appear in panel General > Buttons
+- Button Hover COlor added panel *General > Buttons*
 - Additional Customizer settings are output via wp_add_inline_style to the parent theme CSS 'fl-automator-skin' this can be changed to the child theme CSS.
 - Added panel 'Featured Images' with 'Hero Background' field - not actively used.
 - List of all Panels and Sections which can be removed from view by uncommenting the code in the **customizer.php** file.
 - Added a custom preset 'BT Preset' to illustrate how it is done.
 - Removed all other presets.
+- Set Preset defaults in _includes-child/customizer-filter.php_
 - Added a filter to change the defaults for the default preset 'fl_default_theme_mods'
 - Body font and headings set in Customizer with a font system stack similar to Github.
 - Same above system font stack available from within BB modules font dropdowns.
 
 
 ### CSS
-The CSS is currently in a state of flux as I work out how I want it structured, so more commits here will be happening.
-- style.css
+Including
 - Beaver Builder button snippet
-- Meta styling with Dashicons
+- Meta styling with FontAwesome 5
 - Sticky Footer styling with flexbox - also have the BB knowledgebase one which is commented out.
 - Pagination CSS for numeric style as used in child theme **index.php**
 
@@ -76,7 +85,8 @@ The CSS is currently in a state of flux as I work out how I want it structured, 
 - Shortcode enabled in widget areas
 - Author name removed in Post Meta for posts
 - Meta has default icon styling
-- Styling for [Business Profile plugin](https://wordpress.org/plugins/business-profile/)
+- Separate CSS Styling for [Business Profile plugin](https://wordpress.org/plugins/business-profile/)
+- FontAwesome 5 enabled
 
 
 ## Change the Theme Name
