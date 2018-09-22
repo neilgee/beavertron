@@ -1,5 +1,6 @@
 # Beavertron
 Starter Child Theme for Beaver Builder Theme 1.7.
+
 (Previous Starter for 1.6 available [here](https://github.com/neilgee/beavertron/archive/v1.6.0.zip) )
 
 This a starter child theme that requires the parent Beaver Builder Theme.
@@ -9,6 +10,9 @@ Several WordPress unecessary scripts including emoji styles have been removed
 
 ### Child Theme Class - FLChildTheme
 - */classes/class-fl-child-theme.php* contains all CSS and Javascript files for enqueing, some are enqueued others are commented out
+
+### Cache Buster - FLCache
+- */classes/class-fl-builder-cache-helper.php* upcoming BB code to purge all the popular caches when saving layouts and templates in BB/Themer.
 
 ### Folder Structure - includes-child
 At the top of _functions.php_ there a number of include files that you can comment/uncomment for adding functionality. The folder they are pulled from is *includes-child* as the *includes* folder is only used for parent theme overrides
