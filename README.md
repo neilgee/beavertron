@@ -3,13 +3,13 @@ Starter Child Theme for Beaver Builder Theme 1.7.
 
 (Previous Starter for 1.6 available [here](https://github.com/neilgee/beavertron/archive/v1.6.0.zip) )
 
-This a starter child theme that requires the parent Beaver Builder Theme.
+This is a starter child theme that requires the parent Beaver Builder Theme.
 
 ### WordPress Head Clean Up
 Several WordPress unecessary scripts including emoji styles have been removed
 
 ### Child Theme Class - FLChildTheme
-- */classes/class-fl-child-theme.php* contains all CSS and Javascript files for enqueing, some are enqueued others are commented out
+- */classes/class-fl-child-theme.php* contains all CSS and Javascript files for enqueing, some are enqueued others are commented out, here is where you add all the styles and scripts.
 
 ### Cache Buster - FLCache
 - */classes/class-fl-builder-cache-helper.php* upcoming BB code to purge all the popular caches when saving layouts and templates in BB/Themer.
@@ -17,11 +17,11 @@ Several WordPress unecessary scripts including emoji styles have been removed
 ### Folder Structure - includes-child
 At the top of _functions.php_ there a number of include files that you can comment/uncomment for adding functionality. The folder they are pulled from is *includes-child* as the *includes* folder is only used for parent theme overrides
 - */includes-child/beaverbuilder.php* BeaverBuilder plugin functionality:
-   * includes a font system stack, 
+   * includes a font system stack, there is one already in the theme - this is for the BB plugin., 
    * a filter for global BB settings, change media break points to be  767px small, 1024px medium and 1200px large, 
    * filter to remove lightbox. 
    * filter to remove empty field connections, filters to disable inline-editing and BB notifications.
-   * filter for adding colour presets to backend color pickers.
+   * filter for adding colour presets to Customizer and BB plugin color pickers.
 
 
 - */includes-child/client-file.php* a miscellaneous area for things like client logo for login
@@ -63,15 +63,15 @@ More info here - https://wpbeaches.com/add-custom-logo-schema-beaver-themer-head
 
 ### Customizer
 - Extra WooCommerce settings for button and alert colors have been added to the default WooCommerce panel, they only appear if WooCommerce is active.
-- Button Hover COlor added panel *General > Buttons*
-- Additional Customizer settings are output via wp_add_inline_style to the parent theme CSS 'fl-automator-skin' this can be changed to the child theme CSS.
+- Button Hover Color added panel *General > Buttons*
+- Additional Customizer settings are output via wp_add_inline_style to the child theme CSS 
 - Added panel 'Featured Images' with 'Hero Background' field - not actively used.
 - List of all Panels and Sections which can be removed from view by uncommenting the code in the **customizer.php** file.
-- Added a custom preset 'BT Preset' to illustrate how it is done.
+- Added a custom preset 'BT Preset' this is the preferred and only preset.
 - Removed all other presets.
 - Set Preset defaults in _includes-child/customizer-filter.php_
-- Added a filter to change the defaults for the default preset 'fl_default_theme_mods'
-- Body font and headings set in Customizer with a font system stack similar to Github.
+- Added a filter to change the values for the 'BT Preset' 'fl_default_theme_mods'
+- Body font and headings set in Customizer with a default font system stack similar to Github.
 - Same above system font stack available from within BB modules font dropdowns.
 
 
@@ -81,6 +81,7 @@ Including
 - Meta styling with FontAwesome 5
 - Sticky Footer styling with flexbox - also have the BB knowledgebase one which is commented out.
 - Pagination CSS for numeric style as used in child theme **index.php**
+- Various CSS snippets
 
 
 
