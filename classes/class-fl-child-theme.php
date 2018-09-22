@@ -30,7 +30,7 @@ final class FLChildTheme {
         // Remove FA 4
         wp_dequeue_style( 'font-awesome' );
 		wp_deregister_style( 'font-awesome' );
-		wp_deregister_style( 'font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.7.0/css/font-awesome.min.css' );
+		//wp_deregister_style( 'font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.7.0/css/font-awesome.min.css' );
 		// If we need external
 		//wp_enqueue_style( 'font-awesome-5', get_stylesheet_directory_uri() . '/fonts/fontawesome/css/fontawesome-all.min.css' );
 		// Load FA 5 Everywhere
