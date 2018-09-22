@@ -85,8 +85,9 @@ The CSS is currently in a state of flux as I work out how I want it structured, 
 Download the zip rename the theme '**beavertron**' - place this theme in your WordPress installation **"/wp-content/themes/"** and activate in WordPress Dashboard
 
 
-![Beavertron Child Theme](https://wpbeaches.com/images/beavertron-theme.jpg)
-Beavertron Child Theme
-![Beavertron Child Theme WooCommerce Customizer](https://wpbeaches.com/images/beavertron-theme-woocommerce.jpg)
-Additional Customizer controls when WooCommerce is active
+![Beavertron Child Theme](https://wpbeaches.com/images/beavertron-theme.png)
+
+
+![Additional Customizer controls when WooCommerce is active](https://wpbeaches.com/images/beavertron-theme-woocommerce.png)
+
 
