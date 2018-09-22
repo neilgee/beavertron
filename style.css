@@ -1,7 +1,7 @@
 /*
 Theme Name: Beavertron
 Theme URI: https://www.wpbeaches.com
-Version: 1.6
+Version: 1.0
 Description: An example child theme that can be used as a starting point for custom development.
 Author: Neil Gowran
 Author URI: https://www.wpbeaches.com
@@ -235,41 +235,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background: #333;
-	border: 1px solid #333;
-	color: #fff;
-	cursor: pointer;
 	padding: 10px 15px;
 	font-size: 16px;
-	line-height: 1.3;
-	font-weight: normal;
-	text-transform: uppercase;
-	width: auto;
-	-moz-box-shadow: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	text-shadow: none;
 }
-
-
-button:hover,
-input:hover[type="button"],
-input:hover[type="reset"],
-input:hover[type="submit"],
-.button:hover,
-button:focus,
-input:focus[type="button"],
-input:focus[type="reset"],
-input:focus[type="submit"],
-.button:focus  {
-	background-color: #c3251d;
-	border: 1px solid #c3251d;
-	color: #fff;
-}
-
 
 .button {
 	display: inline-block;
@@ -463,22 +431,11 @@ a.fl-post-more-link:hover {
 ---------------------------------------------------------------------------------------------------- */
 
 
+
 /* # Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
 
-/* Center an uneven row - below is an example of 2 cols centered in a 3 col layout */
-@media (min-width: 768px) {
-	.two-row-three-parent .fl-col-group {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: center;
-	}
 
-	.two-row-three-parent .fl-col-group .fl-col {
-		width: 33% !important;
-		flex: 0 0 auto;
-	}
-}
 
 
 /* # Site Header
@@ -507,7 +464,8 @@ a.fl-post-more-link:hover {
 
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:before {
 		content: '\f0c9';
-		font-family: 'fontawesome';
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 900;
 		color: #000000;
 	}
 	
@@ -553,7 +511,6 @@ a.fl-post-more-link:hover {
 .site-footer-row .dashicons {
 	vertical-align: middle;
 }
-
 
 /*  Entries
 --------------------------------------------- */
@@ -611,7 +568,7 @@ a.fl-post-more-link:hover {
 }
 
 .fl-widget ul > li:last-of-type {
- padding-bottom: 0;
+ 	padding-bottom: 0;
 }
 
 .fl-widget ol > li {
@@ -642,18 +599,19 @@ a.fl-post-more-link:hover {
 
 .fl-post-date::before,
 .fl-post-grid-date::before {
-    content: '\f469';
-    font-family: dashicons;
-    color: #666;
+    content: '\f017';
+	font-family: 'Font Awesome 5 Free';
+    color: #333;
     font-size: 25px;
 	vertical-align: middle;
 	padding-right: 3px;
 }
 
 .fl-post-grid-author:before {
-    content: '\f110';
-    font-family: dashicons;
-    color: #666;
+    content: '\f007';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+    color: #333;
     font-size: 25px;
     padding-left: 10px;
     vertical-align: middle;
@@ -661,12 +619,15 @@ a.fl-post-more-link:hover {
 
 .fl-comments-popup-link::before,
 .fl-post-feed-comments::before {
-    content: '\f101';
-    font-family: dashicons;
-    color: #666;
+    content: '\f075';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 400;
+    color: #333;
     font-size: 25px;
     padding-left: 10px;
-    vertical-align: middle;
+	vertical-align: middle;
+	padding-right: 3px;
+
 }
 
 .fl-post-feed-comments .fa-comment:before {
@@ -675,9 +636,10 @@ a.fl-post-more-link:hover {
 
 .fl-entry-categories::before,
 .fl-post-info-terms::before {
-    content: '\f322';
-    font-family: dashicons;
-    color: #666;
+    content: '\f07c';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 400;
+    color: #333;
     font-size: 25px;
     vertical-align: middle;
     padding-right: 5px;
@@ -685,9 +647,10 @@ a.fl-post-more-link:hover {
 
 .fl-entry-tags::before,
 .fl-post-info-tags .fl-post-info-terms::before{
-    content: '\f323';
-    font-family: dashicons;
-    color: #666;
+    content: '\f02c';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+    color: #333;
     font-size: 25px;
     padding-right: 5px;
     vertical-align: sub;
@@ -857,128 +820,6 @@ li.comment {
 }
 
 
-/*
-Business Profile
----------------------------------------------------------------------------------------------------- */
-
-.fl-page  .bp-contact-card > div:before {
-	font-family: 'fontawesome';
-	font-size: 20px;	
-	width: 35px;
-	display: inline-block;
-    text-align: center;
-}
-
-.fl-page .bp-phone:before {
-    content: ' \f095';
-}
-
-.fl-page .bp-contact:before {
-    content: ' \f0e0';
-}
-
-.fl-page .bp-address {
-	position: relative;
-	padding-left: 40px;
-}
-.fl-page .bp-address:before {
-	content: ' \f041';
-	position: absolute;
-    left: 0;
-}
-
-.fl-sidebar .bp-times {
-    width: 55%;
-}
-
-.fl-sidebar .bp-weekday-name {
-    width: 35%;
-}
-
-.bp-contact-card .bp-name {
-	margin-bottom: 0;
-}
-
-.bp-contact-card .bp-address {
-	margin-top: 0;
-}
-
-.bp-contact-card .bp-opening-hours .bp-weekday-name {
-    float: left;
-    clear: left;
-    width: 35%;
-}
-
-.bp-contact-card .bp-opening-hours .bp-times {
-    float: right;
-    clear: right;
-    width: 60%;
-    text-align: left;
-}
-
-.bp-contact-card .bp-opening-hours {
-	margin: 0 auto;
-}
-
-.bp-opening-hours .bp-title {
-	display: none;
-}
-
-.bp-map {
-	max-height: 210px;
-	max-width: 360px;
-}
-.fl-page-footer-widgets .bp-map {
-    height: 200px;
-    max-width: 340px;
-    margin: 0 auto;
-}
-
-.fl-page-footer-widgets .bp-times {
-    width: 58%;
-    font-size: 14px;
-}
-
-.fl-page-footer-widgets .bp-weekday-name {
-    width: 42%;
-    font-size: 14px;
-}
-
-.fl-page-footer-widgets .bp-opening-hours .bp-title {
-	display: none;
-}
-
-
-@media only screen and (min-width: 1024px) {
-
-	.fl-page-footer-widgets .bp-times {
-		font-size: 18px;
-	}
-	.fl-page-footer-widgets .bp-map {
-	    margin: 0;
-	}
-
-	.fl-page-footer-widgets .bp-weekday-name {
-		font-size: 18px;
-	}
-}
-
-@media only screen and (min-width: 1200px) {
-
-	.fl-page-footer-widgets .bp-times {
-		width: 60%;
-	}
-
-	.fl-page-footer-widgets .bp-weekday-name {
-		width: 35%;
-	}
-
-	#bp-map-0 > div {
-		width: 90% !important;
-	}
-}
-
-
 
 /* Sticky Footer  - 1st Block commented is BB recommended, 2nd Block, uncommented is Flexbox
 ---------------------------------------------------------------------------------------------------- */
@@ -1023,10 +864,23 @@ Business Profile
    
 }
 /* CSS Snippets
- *
- * Lists and Quotes
+ * Rows, Lists and Quotes
+ * 
  *---------------------------------------------------------------------------------------------------- */
 
+ /* Center an uneven row - below is an example of 2 cols centered in a 3 col layout */
+@media (min-width: 768px) {
+	.two-row-three-parent .fl-col-group {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: center;
+	}
+
+	.two-row-three-parent .fl-col-group .fl-col {
+		width: 33% !important;
+		flex: 0 0 auto;
+	}
+}
 /* Split unordered list over 2 columns & 3 columns
  * 1st code is CSS cols, 2nd code is 2 text edit boxes with UL list in each
 ---------------------------------------------------------------------------------------------------- */
@@ -1076,15 +930,16 @@ Business Profile
 
 .tick-list li:before{
 	content: '\f00c';
-	font-family: 'fontawesome';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
 	padding-right: 5px;
 	color: #555555;
-	font-weight: normal;
 	font-size: 22px;
 	position: absolute;
 	left: -35px;
 	top: -5px;
 }
+
 /* Icon Centre
 --------------------------------------------- */
 .icon-top .fl-icon {
@@ -1097,21 +952,29 @@ Business Profile
 .icon-top .fl-icon i {
 	float: none;
 }
+
 /* Header Quote
 ---------------------------------------------------------------------------------------------------- */
-.header-quote .fl-heading-text::before {
+.header-quote .fl-heading-text::before,
+.header-quote .fl-rich-text p:first-of-type::before  {
 	content: '\f205';
 	font-family: 'dashicons';
 	padding-right:10px;
 	font-size: 30px;
+	color: #333;
 }
 
-.header-quote .fl-heading-text::after {
+.header-quote .fl-heading-text::after,
+.header-quote .fl-rich-text p:last-of-type::after {
 	content: '\f205';
 	font-family: 'dashicons';
 	transform: rotate(180deg); 
 	margin-left: 10px;
 	display: inline-block;
+	font-size: 30px;
+	color: #333;
+
+
 }
 
 

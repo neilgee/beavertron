@@ -5,36 +5,6 @@
  * @package beavertron
  */
 
- /**
-  * Set Up Default Colors - so if not changed in Customizer no CSS mark up is output
-  */
- 
-
- function  bt_button_color_default() {
-	return '#666666';
- }
-
- function  bt_button_border_default() {
-	return '#666666';
- }
-
- function  bt_text_button_color_default() {
-	return '#ffffff';
- }
-
- function  bt_button_hover_color_default() {
-	 return '#c3251d';
- }
-
- function  bt_button_hover_border_default() {
-	return '#666666';
- }
-
- function  bt_text_button_hover_color_default() {
-	return '#ffffff';
- }
-
-
 
 add_action( 'customize_register', 'bt_register_theme_customizer', 20 );
 /**
@@ -44,6 +14,25 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 	global $wp_customize;
 
+	/* Adding in a Hover Control for Buttons to the fl-buttons panel*/
+	$wp_customize->add_setting(
+		'bt_border_color_hover', //give it an ID
+		array(
+			'default' => '#000000', // Give it a default
+		)
+	);
+	$wp_customize->add_control(
+	   new WP_Customize_Color_Control(
+		   $wp_customize,
+		   'bt_border_color_on_hover', //give it an ID
+		   array(
+			   'label'      => __( 'Border Hover Color', 'beavertron' ), //set the label to appear in the Customizer
+			   'section'    => 'fl-buttons', //select the section for it to appear under  
+			   'settings'   => 'bt_border_color_hover', //pick the setting it applies to
+			   'priority'	 => 15,
+		   )
+	   )
+	);
 	
 	// Change label for logo text color
 	// $wp_customize->get_control('header_textcolor')->label = __('Site Title Color', 'beavertron');
@@ -85,112 +74,6 @@ function bt_register_theme_customizer( $wp_customize ) {
 	) );
 
 
-	// Add Section For Buttons
-	$wp_customize->add_section( 'bt_buttons' , array(
-		'title'      => __( 'Buttons','beavertron' ),
-		'panel'      => 'fl-general',
-		'priority'   => 20,
-	) );
-
-	// Add buttons background color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_button_color', array(
-		'default'           => bt_button_color_default(),
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-	$wp_customize, 'bt_button_color', array(
-		'label'      => __( 'Button Color', 'beavertron' ), //set the label to appear in the Customizer
-		'section'    => 'bt_buttons', //select the section for it to appear under
-		'settings'   => 'bt_button_color' //pick the setting it applies to
-		)
-	) );
-
-	// Add buttons hover & focus background color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_button_hover_color', array(
-		'default' => bt_button_hover_color_default(),
-		'sanitize_callback' => 'sanitize_hex_color',
-    ) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-	$wp_customize, 'bt_button_hover_color', array(
-		'label'      => __( 'Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-		'section'    => 'bt_buttons', //select the section for it to appear under
-		'settings'   => 'bt_button_hover_color' //pick the setting it applies to
-		)
-	) );
-
-	// Add buttons text color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_text_button_color', array(
-		'default'           => bt_text_button_color_default(),
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-	$wp_customize, 'bt_text_button_color', array(
-		'label'      => __( 'Text Button Color', 'beavertron' ), //set the label to appear in the Customizer
-		'section'    => 'bt_buttons', //select the section for it to appear under
-		'settings'   => 'bt_text_button_color' //pick the setting it applies to
-		)
-	) );
-
-	// Add buttons text hover color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_text_button_hover_color', array(
-		'default'           => bt_text_button_hover_color_default(),
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-	$wp_customize, 'bt_text_button_hover_color', array(
-		'label'      => __( 'Text Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-		'section'    => 'bt_buttons', //select the section for it to appear under
-		'settings'   => 'bt_text_button_hover_color' //pick the setting it applies to
-		)
-	) );
-
-
-	// Add buttons border color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_button_border', array(
-		'default'           => bt_button_border_default(),
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-	$wp_customize, 'bt_button_border', array(
-		'label'      => __( 'Button Border Color', 'beavertron' ), //set the label to appear in the Customizer
-		'section'    => 'bt_buttons', //select the section for it to appear under
-		'settings'   => 'bt_button_border' //pick the setting it applies to
-		)
-	) );
-
-	
-	// Add buttons border hover color
-	// Add setting.
-	$wp_customize->add_setting( 'bt_button_hover_border', array(
-		'default'           => bt_button_hover_border_default(),
-		'sanitize_callback' => 'sanitize_hex_color',
-	) );
-
-	// Add control
-	$wp_customize->add_control( new WP_Customize_Color_Control(
-	$wp_customize, 'bt_button_hover_border', array(
-		'label'      => __( 'Button Border Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-		'section'    => 'bt_buttons', //select the section for it to appear under
-		'settings'   => 'bt_button_hover_border' //pick the setting it applies to
-		)
-	) );
-
-
 		 
 	// Remove Panels and Sections by uncommenting.
 
@@ -202,6 +85,8 @@ function bt_register_theme_customizer( $wp_customize ) {
 	// 	$wp_customize->remove_section( 'fl-accent-color' ); 
 	// 	$wp_customize->remove_section( 'fl-heading-font' ); 
 	// 	$wp_customize->remove_section( 'fl-body-text' ); 
+	// $wp_customize->remove_section( 'fl-buttons' ); 
+
 	 
 
 	// $wp_customize->remove_panel( 'fl-header' ); 
@@ -263,7 +148,7 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 
 
-// Add custom preset.
+// Adding a custom preset with some default values.
 FLCustomizer::add_preset( 'bt-preset-colour', array(
 	'name'      => 'BT Preset',
 	'skin'      => get_stylesheet_directory() . '/css/presets.css', // what ever is in this gets output to Skin CSS
@@ -275,11 +160,11 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 
 		'fl-body-bg-color'             	=> '#fff',
 		
-		'fl-accent'                 	=> '#c3251d',
+		'fl-accent'                 	=> '#666666',
 		'fl-accent-hover'           	=> '#999999',
 
-		'fl-heading-text-color'     	=> '#555555',
-		'fl-topbar-bg-color'        	=> '#222222',
+		'fl-heading-text-color'     	=> '#333333',
+		'fl-topbar-bg-color'        	=> '#333333',
 		'fl-topbar-text-color'			=> '#cccccc',
 		'fl-topbar-link-color'			=> '#999999',
 		'fl-topbar-hover-color'			=> '#ffffff',
@@ -293,6 +178,8 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 		'fl-nav-bg-color'           	=> '#000000',
 		'fl-nav-link-color'				=> '#cccccc',
 		'fl-nav-hover-color'			=> '#ffffff',
+		'fl-logo-font-family'			=> 'system-ui',
+		'fl-nav-font-family'			=> 'system-ui',
 
 		'fl-footer-widgets-bg-color'	=> '#000000',
 		'fl-footer-widgets-text-color'	=> '#cccccc',
@@ -303,6 +190,7 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 		'fl-footer-link-color'			=> '#999999',
 		'fl-footer-hover-color'			=> '#ffffff',
 
+		'fl-heading-font-family'		 => 'system-ui',
 		'fl-h1-font-size'			     => '36',
 		'fl-h2-font-size'			     => '30',
 		'fl-h3-font-size'			     => '24',
@@ -310,13 +198,30 @@ FLCustomizer::add_preset( 'bt-preset-colour', array(
 		'fl-h5-font-size'			     => '18',
 		'fl-h6-font-size'			     => '16',
 
-		'fl-body-text-color'			 => '#555555',
-		// 'fl-body-font-family'			 => 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+		'fl-body-text-color'			 => '#333333',
+		'fl-body-font-family'			 => 'system-ui',
 		'fl-body-font-weight'			 => '400',
 		'fl-body-font-size'			     => '18',
 		'fl-body-line-height'			 => '1.3',
 
 		'fl-archive-readmore-text' 	  => 'See More',
+
+		'fl-button-style'					=> 'custom',
+		'fl-button-color'	                  => '#ffffff',
+		'fl-button-hover-color'	            => '#000000',
+		'fl-button-background-color'	       => '#000000',
+		'fl-button-background-hover-color'	 => '#ffffff',
+		// 'fl-button-font-line'	              => '',
+		'fl-button-font-family'	               => 'system-ui',
+		'fl-button-font-weight'	               => '400',
+		// 'fl-button-font-size'	              => '',
+		'fl-button-line-height'	               => 1.5,
+		'fl-button-text-transform'	            => 'uppercase',
+		// 'fl-button-border-line'	            => '',
+		'fl-button-border-style'	           => 'solid',
+		'fl-button-border-width'	              => 1,
+		'fl-button-border-color'	           => '#000000',
+		'fl-button-border-radius'	             => 3,
 
 		// Thesea are other key pairs that you can use
 		// 'fl-header-nav-search' 		     => 'hidden',
@@ -362,7 +267,9 @@ FLCustomizer::remove_preset(
 
 
 add_filter( 'fl_default_theme_mods', 'bt_default_theme_preset');
-
+/** 
+ *  Default Theme Mods
+ */
 function bt_default_theme_preset( $mods ) {
 	$mods2 = array(
 		'fl-layout-width'				=> 'full-width',
@@ -371,11 +278,11 @@ function bt_default_theme_preset( $mods ) {
 
 		'fl-body-bg-color'             	=> '#fff',
 		
-		'fl-accent'                 	=> '#c3251d',
+		'fl-accent'                 	=> '#555555',
 		'fl-accent-hover'           	=> '#666666',
 
-		'fl-heading-text-color'     	=> '#555555',
-		'fl-topbar-bg-color'        	=> '#222222',
+		'fl-heading-text-color'     	=> '#333333',
+		'fl-topbar-bg-color'        	=> '#333333',
 		'fl-topbar-text-color'			=> '#cccccc',
 		'fl-topbar-link-color'			=> '#999999',
 		'fl-topbar-hover-color'			=> '#ffffff',
@@ -389,6 +296,8 @@ function bt_default_theme_preset( $mods ) {
 		'fl-nav-bg-color'           	=> '#000000',
 		'fl-nav-link-color'				=> '#cccccc',
 		'fl-nav-hover-color'			=> '#ffffff',
+		'fl-logo-font-family'			=> 'system-ui',
+		'fl-nav-font-family'			=> 'system-ui',
 
 		'fl-footer-widgets-bg-color'	=> '#000000',
 		'fl-footer-widgets-text-color'	=> '#cccccc',
@@ -399,6 +308,7 @@ function bt_default_theme_preset( $mods ) {
 		'fl-footer-link-color'			=> '#999999',
 		'fl-footer-hover-color'			=> '#ffffff',
 
+		'fl-heading-font-family'		 => 'system-ui',
 		'fl-h1-font-size'			     => '36',
 		'fl-h2-font-size'			     => '30',
 		'fl-h3-font-size'			     => '24',
@@ -406,8 +316,8 @@ function bt_default_theme_preset( $mods ) {
 		'fl-h5-font-size'			     => '18',
 		'fl-h6-font-size'			     => '16',
 
-		'fl-body-text-color'			 => '#555555',
-		'fl-body-font-family'			 => '-apple-system',
+		'fl-body-text-color'			 => '#333333',
+		'fl-body-font-family'			 => 'system-ui',
 		'fl-body-font-weight'			 => '300',
 		'fl-body-font-size'			     => '18',
 		'fl-body-line-height'			 => '1.6',
@@ -422,10 +332,26 @@ function bt_default_theme_preset( $mods ) {
 		'fl-archive-show-full' 		     => '0',
 
 		'fl-lightbox' 			         => 'enabled',
+		
+		'fl-button-style'					=> 'custom',
+		'fl-button-color'	                  => '#ffffff',
+		'fl-button-hover-color'	            => '#000000',
+		'fl-button-background-color'	       => '#000000',
+		'fl-button-background-hover-color'	 => '#ffffff',
+		// 'fl-button-font-line'	              => '',
+		'fl-button-font-family'	               => 'system-ui',
+		'fl-button-font-weight'	               => '400',
+		// 'fl-button-font-size'	              => '',
+		'fl-button-line-height'	               => 1.5,
+		'fl-button-text-transform'	            => 'uppercase',
+		// 'fl-button-border-line'	            => '',
+		'fl-button-border-style'	           => 'solid',
+		'fl-button-border-width'	              => 1,
+		'fl-button-border-color'	           => '#000000',
+		'fl-button-border-radius'	             => 3,
 
 
-
-		// Thesea are other key pairs that you can use
+		// These are other key pairs that you can use
 		// 'fl-header-nav-search' 		     => 'hidden',
 		// 'fl-header-content-layout' 	  => 'social-text',
 		// 'fl-header-content-text' 	    => '¡Llámanos! 5555-555',
@@ -444,7 +370,7 @@ function bt_default_theme_preset( $mods ) {
 		// 'fl-footer-col1-layout' 	     => 'text',
 		// 'fl-footer-col2-layout'	 	    => 'social',
 
-		// 'fl-social-facebook' 		          => 'http://facebook.com/beavertron'
+		// 'fl-social-facebook' 		       => 'http://facebook.com/beavertron'
 		// 'fl-social-twitter' 		        => 'http://twitter.com',
 		// 'fl-social-google' 		         => 'http://google.com',
 		// 'fl-social-linkedin' 		       => 'http://linkedin.com',
@@ -462,3 +388,36 @@ function bt_default_theme_preset( $mods ) {
 
 
 
+//add_action( 'wp_enqueue_scripts', 'bt_customize_css2', 1001 );
+/**
+ * Output CSS for background image with wp_add_inline_style
+ * This is being output in output.php
+ */
+function bt_customize_css2() {
+	//wp_enqueue_style( 'beavertron', get_stylesheet_directory_uri() . '/style.css' ); //Enqueue your main stylesheet
+	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
+	//$handle  = 'beavertron';
+
+	$css = '';
+	$border_color = get_theme_mod( 'bt_border_color_hover' ); // Assigning it to a variable to keep the markup clean.
+	$css .= ( $border_color ) ? sprintf('
+		.fl-page button:hover, 
+		.fl-responsive-preview-content button:hover, 
+		.fl-page input[type=button]:hover, 
+		.fl-responsive-preview-content input[type=button]:hover, 
+		.fl-page input[type=submit]:hover, 
+		.fl-responsive-preview-content input[type=submit]:hover, 
+		.fl-page a.fl-button:hover, 
+		.fl-responsive-preview-content a.fl-button:hover {
+			border-color: %s;			 
+		}
+	', $border_color ) : '';
+	if ( $css ) {
+	wp_add_inline_style( $handle  , $css );
+	}
+
+	// var_dump($handle);
+	// var_dump($css);
+	// var_dump($border_color);
+	
+}

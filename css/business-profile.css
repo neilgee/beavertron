@@ -1,0 +1,122 @@
+
+/*
+Business Profile
+---------------------------------------------------------------------------------------------------- */
+
+.fl-page  .bp-contact-card > div:before {
+	font-family: 'fontawesome';
+	font-size: 20px;	
+	width: 35px;
+	display: inline-block;
+    text-align: center;
+}
+
+.fl-page .bp-phone:before {
+    content: ' \f095';
+}
+
+.fl-page .bp-contact:before {
+    content: ' \f0e0';
+}
+
+.fl-page .bp-address {
+	position: relative;
+	padding-left: 40px;
+}
+.fl-page .bp-address:before {
+	content: ' \f041';
+	position: absolute;
+    left: 0;
+}
+
+.fl-sidebar .bp-times {
+    width: 55%;
+}
+
+.fl-sidebar .bp-weekday-name {
+    width: 35%;
+}
+
+.bp-contact-card .bp-name {
+	margin-bottom: 0;
+}
+
+.bp-contact-card .bp-address {
+	margin-top: 0;
+}
+
+.bp-contact-card .bp-opening-hours .bp-weekday-name {
+    float: left;
+    clear: left;
+    width: 35%;
+}
+
+.bp-contact-card .bp-opening-hours .bp-times {
+    float: right;
+    clear: right;
+    width: 60%;
+    text-align: left;
+}
+
+.bp-contact-card .bp-opening-hours {
+	margin: 0 auto;
+}
+
+.bp-opening-hours .bp-title {
+	display: none;
+}
+
+.bp-map {
+	max-height: 210px;
+	max-width: 360px;
+}
+.fl-page-footer-widgets .bp-map {
+    height: 200px;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.fl-page-footer-widgets .bp-times {
+    width: 58%;
+    font-size: 14px;
+}
+
+.fl-page-footer-widgets .bp-weekday-name {
+    width: 42%;
+    font-size: 14px;
+}
+
+.fl-page-footer-widgets .bp-opening-hours .bp-title {
+	display: none;
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+	.fl-page-footer-widgets .bp-times {
+		font-size: 18px;
+	}
+	.fl-page-footer-widgets .bp-map {
+	    margin: 0;
+	}
+
+	.fl-page-footer-widgets .bp-weekday-name {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.fl-page-footer-widgets .bp-times {
+		width: 60%;
+	}
+
+	.fl-page-footer-widgets .bp-weekday-name {
+		width: 35%;
+	}
+
+	#bp-map-0 > div {
+		width: 90% !important;
+	}
+}
+

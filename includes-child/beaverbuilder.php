@@ -38,7 +38,7 @@ add_filter( 'fl_builder_font_families_system', 'bt_added_fonts_plugin' );
  * @since 1.0.0
  */
 function bt_added_fonts_plugin( $system ) {
-    $system[ '-apple-system' ] = array(
+    $system[ 'system-ui-fonts' ] = array(
 			"fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
             "weights"  => array(
                 "300",
@@ -150,7 +150,7 @@ function bt_customize_color_presets() {
           vert: 's', // square vertical displays saturdation
           strip: 'l' // slider displays lightness
         },
-        palettes: ['#ffffff', '#000000', '#333333', '#999999']
+        palettes: ['#ffffff', '#000000', '#333333', '#999999', '#c3251d']
       })
     });
   </script>

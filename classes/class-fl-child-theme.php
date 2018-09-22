@@ -30,13 +30,14 @@ final class FLChildTheme {
         // Remove FA 4
         wp_dequeue_style( 'font-awesome' );
 		wp_deregister_style( 'font-awesome' );
-		//wp_deregister_style( 'font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.7.0/css/font-awesome.min.css' );
-		// If we need external
+        // If we need external
 		//wp_enqueue_style( 'font-awesome-5', get_stylesheet_directory_uri() . '/fonts/fontawesome/css/fontawesome-all.min.css' );
 		// Load FA 5 Everywhere
 		wp_enqueue_style( 'font-awesome-5' );
 
-        
+        // Business Profile CSS
+        wp_enqueue_style( 'businessprofile', get_stylesheet_directory_uri() . '/css/business-profile.css' , array(), '2.0.0', 'all' );
+
         // Take out the default lightbox
         // wp_dequeue_script('jquery-magnificpopup');
         // wp_dequeue_style('jquery-magnificpopup');

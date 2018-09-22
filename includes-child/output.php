@@ -27,12 +27,6 @@ function bt_css() {
 	/* Our Customiser settings, stored as variables */
 	$hero_bg_image                 = get_theme_mod( 'hero_bg');
 
-	$bt_button_color               = get_theme_mod( 'bt_button_color', bt_button_color_default() );
-	$bt_text_button_color          = get_theme_mod( 'bt_text_button_color', bt_text_button_color_default() );
-	$bt_button_border              = get_theme_mod( 'bt_button_border', bt_button_border_default() );
-	$bt_button_hover_border        = get_theme_mod( 'bt_button_hover_border', bt_button_hover_border_default() );
-	$bt_button_hover_color         = get_theme_mod( 'bt_button_hover_color', bt_button_hover_color_default() );
-	$bt_text_button_hover_color    = get_theme_mod( 'bt_text_button_hover_color', bt_text_button_hover_color_default() );
 	
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
@@ -64,8 +58,8 @@ function bt_css() {
 		$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
 
 		$luminosity = ( ( $red * 0.2126 ) + ( $green * 0.7152 ) + ( $blue * 0.0722 ) );
-
-		return ( $luminosity > 128 ) ? '#333333' : '#ffffff';
+		// Changed from 128 to give more white text against darker backgrounds
+		return ( $luminosity > 155 ) ? '#333333' : '#ffffff';
 	}
 
 	//* Calculate Color Brightness
@@ -94,61 +88,21 @@ function bt_css() {
 			background-size: cover;
 		}
 	', $hero_bg_image ) : '';
-
-
-
-	$css .= ( bt_button_color_default() !== $bt_button_color ) ||
-			( bt_button_border_default() !== $bt_button_border ) ||
-			( bt_text_button_color_default() !== $bt_text_button_color ) ? sprintf( '
-		
-		button,
-		input[type="button"],
-		input[type="reset"],
-		input[type="submit"],
-		.button,
-		.fl-widget .button,
-  		.archive-pagination li a,
-		a.more-link {
-			background: %s;
-			border: 1px solid %s;
-			color: %s;
-		}
-		', $bt_button_color, $bt_button_border, $bt_text_button_color  ) : '' ;
-
-
-
-
-	$css .= ( bt_button_hover_color_default() !== $bt_button_hover_color ) ||
-			( bt_button_hover_border_default() !== $bt_button_hover_border ) ||
-			( bt_text_button_hover_color_default() !== $bt_text_button_hover_color ) ? sprintf( '
-		button:hover,
-		button:focus,
-		.button:hover,
-		.button:focus,
-		input[type="button"]:hover,
-		input[type="button"]:focus,
-		input[type="reset"]:hover,
-		input[type="reset"]:focus,
-		input[type="reset"]:hover,
-		input[type="reset"]:focus,
-		input:hover[type="reset"],
-		input:hover[type="submit"],
-		input:focus[type="button"],
-		input:focus[type="reset"],
-		input:focus[type="submit"],
-		.fl-widget .button:hover,
-		.fl-widget .button:focus,
-		.archive-pagination li a:hover,
-		.archive-pagination li a:focus,
-		.archive-pagination .active a,
-		a.more-link:hover  {
-			background: %s;
-			border: 1px solid %s;
-			color: %s;
-		}
-		', $bt_button_hover_color,$bt_button_hover_border, $bt_text_button_hover_color ) : '';
-		
 	
+	// Button Border Hover Color
+	$border_color = get_theme_mod( 'bt_border_color_hover' ); // Assigning it to a variable to keep the markup clean.
+	$css .= ( $border_color ) ? sprintf('
+		.fl-page button:hover, 
+		.fl-responsive-preview-content button:hover, 
+		.fl-page input[type=button]:hover, 
+		.fl-responsive-preview-content input[type=button]:hover, 
+		.fl-page input[type=submit]:hover, 
+		.fl-responsive-preview-content input[type=submit]:hover, 
+		.fl-page a.fl-button:hover, 
+		.fl-responsive-preview-content a.fl-button:hover {
+			border-color: %s;			 
+		}
+	', $border_color ) : '';
 
 
 	// WooCommerce

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Beavertron Theme
  *
@@ -18,6 +17,12 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'blog-feature', 300, 200, true );
 	add_image_size( 'medium', 300, 300, true ); // Overwrite default and hard cropping
 }
+/**
+ * Filtering the Customizer
+ * Not working for theme if inside after_setup_theme function - so thats why it is here.
+ * @since 2.0.0
+ */
+require_once( get_stylesheet_directory() . '/includes-child/customizer-filtered.php' );
 
 
 add_action( 'after_setup_theme', 'bt_theme_setup', 15 );
@@ -27,7 +32,6 @@ add_action( 'after_setup_theme', 'bt_theme_setup', 15 );
  * @since 1.0.0
  */
 function bt_theme_setup() {
-	
 
 	// Defines
 	// Child theme constant settings.
@@ -60,9 +64,10 @@ function bt_theme_setup() {
 	require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
 	// Actions - BB Default way - This theme calls required files below.
 	add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
-	// Add in our Customizer options.
-	require_once( get_stylesheet_directory() . '/includes-child/customizer.php' );
+
+
 	// Add in our CSS for our customizer options.
+	require_once( get_stylesheet_directory() . '/includes-child/customizer.php' );
 	require_once( get_stylesheet_directory() . '/includes-child/output.php' );
 	// Client Logo for WP Login and backend admin clean up.
 	include_once( get_stylesheet_directory() . '/includes-child/client-file.php' );
@@ -201,23 +206,6 @@ function bt_theme_setup() {
 		}
 	return $html;
 	}
-	/**
-	* Add sys font stack to theme customizer
-	*/
-	add_filter( 'fl_theme_system_fonts', 'bt_added_fonts' );
-	function bt_added_fonts( $system ) {
-		$system[ '-apple-system' ] = array(
-				"fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
-				"weights"  => array(
-					"300",
-					"400",
-					"700",
-				)
-		);
-		return $system;
-	}
-	  
-
 
 	
 } // Closing After Set Up Hook
