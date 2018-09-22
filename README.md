@@ -91,6 +91,7 @@ Including
 - Meta has default icon styling
 - Separate CSS Styling for [Business Profile plugin](https://wordpress.org/plugins/business-profile/)
 - FontAwesome 5 enabled
+- Select2 JS and CSS files included, uncomment in _classes/class-fl-child-theme.php_
 
 
 ## Change the Theme Name
