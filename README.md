@@ -90,4 +90,6 @@ Download the zip rename the theme '**beavertron**' - place this theme in your Wo
 
 ![Additional Customizer controls when WooCommerce is active](https://wpbeaches.com/images/beavertron-theme-woocommerce.png)
 
+Additional Customizer controls when WooCommerce is active
+
 
