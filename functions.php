@@ -32,9 +32,11 @@ add_action( 'after_setup_theme', 'bt_theme_setup', 15 );
  * @since 1.0.0
  */
 function bt_theme_setup() {
-
-	// Defines
-	// Child theme constant settings.
+	/**
+	 * Defines
+	 * Child theme constant settings.
+	 * @since 1.0.0
+	 */
 	define( 'CHILD_THEME_NAME', 'beavertron' );
 	define( 'CHILD_THEME_URL', 'http://wpbeaches.com' );
 	define( 'CHILD_THEME_VERSION', '1.7.0' );
@@ -43,7 +45,10 @@ function bt_theme_setup() {
 	// Allow SVG Upload
 	define( 'ALLOW_UNFILTERED_UPLOADS', true );
 
-	// Clean up WP Head
+	/**
+	 * Clean up WP Head
+	 * @since 1.0.0
+	 */
 	remove_action( 'wp_head', 'wp_generator' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'rsd_link' );
@@ -52,54 +57,79 @@ function bt_theme_setup() {
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
-
-	// Load in required or optional files.
-	// Classes.
-
-	// Cache buster
+	/**
+	 * Load Beaver Builder classes, cache buster and core class
+	 * @since 1.0.0
+	 */
 	if ( ! class_exists('FLCache\CacheHelper') ) {
 		require_once( get_stylesheet_directory() . '/classes/class-fl-builder-cache-helper.php');
 		}
-	// Core Class	
 	require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
 	// Actions - BB Default way - This theme calls required files below.
 	add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 
-
-	// Add in our CSS for our customizer options.
+	/**
+	 * Add in our CSS for our customizer options.
+	 * @since 1.0.0
+	 */
 	require_once( get_stylesheet_directory() . '/includes-child/customizer.php' );
 	require_once( get_stylesheet_directory() . '/includes-child/output.php' );
-	// Client Logo for WP Login and backend admin clean up.
+
+	/**
+	 * Client Logo for WP Login and backend admin clean up.
+	 * @since 1.0.0
+	 */
 	include_once( get_stylesheet_directory() . '/includes-child/client-file.php' );
-	// Remove Default BB Mobile Menu.
+	
+	/**
+	 * Remove Default BB Mobile Menu.
+	 * @since 1.0.0
+	 */
 	//include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
 	
-	// BeaverBuilder
+	
+	/**
+	 * Load in Beaver Builder Plugin functions
+	 * @since 1.0.0
+	 */
 	if ( class_exists( 'FLBuilderModel' ) ) {
 		// BeaverBuilder functions
 		include_once( get_stylesheet_directory() . '/includes-child/beaverbuilder.php' );
 	}
-		
-	// WooCommerce
+	
+	/**
+	 * Load in WooCommerce functions
+	 * @since 1.0.0
+	 */
 	if ( class_exists( 'WooCommerce' ) ) {
-	// WooCommerce functions
 		include_once( get_stylesheet_directory() . '/includes-child/woocommerce/woocommerce.php' );
 	}
 
-	// GravityForms
+	/**
+	 * Load in Gravity Forms functions
+	 * @since 1.0.0
+	 */
 	if ( class_exists( 'GFCommon' ) ) {
 		include_once( get_stylesheet_directory() . '/includes-child/gravity.php' );
 	}
 	
-	// Get the plugins.
+	/**
+	* Get the plugins ffrom TGM Plugin Activation
+	* @since 1.0.0
+	*/
 	//require_once  get_stylesheet_directory() . '/plugins.php';
 
-
-	// Allow the theme to be translated.
+	/**
+	* Allow the theme to be translated.
+	* @since 1.0.0
+	*/
 	load_theme_textdomain( 'beavertron', get_stylesheet_directory_uri() . '/languages' );
 
 	add_filter( 'image_size_names_choose', 'bt_custom_image_sizes' );
-	// Helps Beaver Builder see custom sizes.
+	/**
+	* Helps Beaver Builder see custom sizes.
+	* @since 1.0.0
+	*/
 	function bt_custom_image_sizes( $sizes ) {
 		global $_wp_additional_image_sizes;
 		if ( empty($_wp_additional_image_sizes) )
@@ -113,7 +143,10 @@ function bt_theme_setup() {
 	}
 
 	add_filter( 'intermediate_image_sizes_advanced', 'bt_remove_default_images' );
-	// Remove default image sizes here.
+	/**
+	* Remove default image sizes
+	* @since 1.0.0
+	*/
 	function bt_remove_default_images( $sizes ) {
 		// unset( $sizes['small']); // 150px
 		// unset( $sizes['medium']); // 300px
@@ -125,13 +158,18 @@ function bt_theme_setup() {
 	add_filter( 'upload_mimes', 'bt_add_svg_images' );
 	/**
 	* Allow SVG Images Via Media Uploader.
+	* @since 1.0.0
 	*/
 	function bt_add_svg_images( $mimetypes ) {
 		$mimetypes['svg'] = 'image/svg+xml';
 		return $mimetypes;
 	}
 
-	// Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
+
+	/**
+	* Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
+	* @since 1.0.0
+	*/
 	add_theme_support( 'custom-logo', array(
 		'height'      => 100, // set to your dimensions
 		'width'       => 300,// set to your dimensions
@@ -141,7 +179,10 @@ function bt_theme_setup() {
 	
 	
 	add_shortcode( 'client_logo', 'bt_client_logo' );
-	// Position the content with a shortcode [client_logo]
+	/**
+	* Position the content with a shortcode [client_logo]
+	* @since 1.0.0
+	*/
 	function bt_client_logo() {
 	ob_start();
 		if ( function_exists( 'the_custom_logo' ) ) {    
@@ -152,9 +193,10 @@ function bt_theme_setup() {
 
 	
 	add_action( 'add_attachment', 'bt_image_meta_upon_image_upload' );
-	/* 
+	/**
 	 * Automatically set the image Title, Alt-Text, Caption & Description upon upload
-	 * https://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/
+	 * @since 1.0.0
+	 * @link https://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/
 	 */
 	function bt_image_meta_upon_image_upload( $post_ID ) {
 
@@ -188,14 +230,17 @@ function bt_theme_setup() {
 		} 
 	}
 
-
-	// Allow shortcode to run in widgets.
+	/**
+	* Allow shortcode to run in widgets.
+	* @since 1.0.0
+	*/
 	add_filter( 'widget_text', 'do_shortcode' );
 
 
 	add_filter( 'widget_text','bt_execute_php_widgets' );
 	/**
 	* Allow PHP code to run in Widgets.
+	* @since 1.0.0
 	*/
 	function bt_execute_php_widgets( $html ) {
 		if ( strpos( $html, '<' . '?php' ) !== false ) {

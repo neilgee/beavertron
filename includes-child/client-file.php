@@ -12,10 +12,9 @@
 
 add_action( 'login_head', 'bt_custom_login_logo' );
 /**
- * Client Logo - Home link and Image Description
- * |
- * V
- * Fix Image Width and Height on Inline
+ * Client Logo for Backend Login - Home link and Image Description
+ *
+ * @since 1.0.0
  */
 function bt_custom_login_logo() {
 	echo '<style type="text/css">
@@ -25,18 +24,32 @@ function bt_custom_login_logo() {
 }
 
 add_filter( 'login_headerurl', 'bt_custom_login_url', 10, 4 );
+/**
+ * Logo Backend Home link
+ *
+ * @since 1.0.0
+ */
 function bt_custom_login_url() {
 	return site_url();
 }
 
 add_filter( 'login_headertitle','bt_login_header_title' );
+/**
+ *  Logo Title Attribute uses Site Name
+ *
+ * @since 1.0.0
+ */
 function bt_login_header_title() {
 	return get_bloginfo( 'name' );
 }
 
 
 add_action('after_setup_theme', 'bt_remove_admin_bar');
-// Remove admin bar for subscribers.
+/**
+ *  Remove admin bar for subscribers.
+ *
+ * @since 1.0.0
+ */
 function bt_remove_admin_bar() {
 		if ( ! current_user_can( 'edit_posts' ) && ! is_admin() ) {
 				show_admin_bar( false );
@@ -45,6 +58,11 @@ function bt_remove_admin_bar() {
 
 
 add_action('wp_dashboard_setup', 'bt_remove_dashboard_widgets' );
+/**
+ *  Remove Dashboard Widgets
+ *
+ * @since 1.0.0
+ */
 function bt_remove_dashboard_widgets() {
 	// remove_meta_box('dashboard_quick_press','dashboard','side'); //Quick Press widget
 	// remove_meta_box('dashboard_recent_drafts','dashboard','side'); //Recent Drafts
@@ -64,7 +82,11 @@ function bt_remove_dashboard_widgets() {
 
 
 add_action( 'admin_head', 'bt_hide_tabs' );
-// Hide 'Screen Option' and 'Help' tab for non-Admins
+/**
+ *  Hide 'Screen Option' and 'Help' tab for non-Admins
+ *
+ * @since 1.0.0
+ */
 function bt_hide_tabs() {
 	if ( ! current_user_can( 'activate_plugins' )) {
 	echo '
@@ -82,7 +104,11 @@ function bt_hide_tabs() {
 }
 
 add_action( 'admin_init', 'wsl_add_footer' );
-// Add credit and contact deats
+/**
+ *  Add credit and contact deats
+ *
+ * @since 1.0.0
+ */
 function wsl_add_footer() {
     add_filter( 'admin_footer_text', 'wsl_edit_text', 11 );
 }
@@ -95,7 +121,9 @@ function wsl_edit_text() {
 add_action('after_switch_theme', 'bt_acf_auto_set_license_keys');
 /**
  * ACF License - via constant defined in wp-config.php
- *  https://gist.github.com/mattradford/6d5b8f3cd11ce1f62480
+ * @link  https://gist.github.com/mattradford/6d5b8f3cd11ce1f62480
+ *
+ * @since 1.0.0
  */
 function bt_acf_auto_set_license_keys() {
 
@@ -113,13 +141,14 @@ function bt_acf_auto_set_license_keys() {
 	}
   }
 
-
-// Roles & Capabilities
-// @link  https://wordpress.stackexchange.com/questions/4191/allow-editors-to-edit-menus
-// add editor the privilege to edit theme & menu
-
+/**
+ * Roles & Capabilities
+ * @link  https://wordpress.stackexchange.com/questions/4191/allow-editors-to-edit-menus
+ * Add editor the privilege to edit theme & menu
+ * @since 1.0.0
+ */
 // get the the role object
-//$role_object = get_role( 'editor' );
+// $role_object = get_role( 'editor' );
 
 // add $cap capability to this role object
-//$role_object->add_cap( 'edit_theme_options' );
+// $role_object->add_cap( 'edit_theme_options' );

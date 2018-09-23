@@ -228,52 +228,50 @@ FLCustomizer::add_preset( 'bt-preset', array(
 
 		'fl-archive-readmore-text' 	  => 'See More',
 
-		'fl-button-style'					=> 'custom',
-		'fl-button-color'	                  => '#ffffff',
-		'fl-button-hover-color'	            => '#000000',
-		'fl-button-background-color'	       => '#000000',
-		'fl-button-background-hover-color'	 => '#ffffff',
-		// 'fl-button-font-line'	              => '',
-		'fl-button-font-family'	               => 'system-ui',
-		'fl-button-font-weight'	               => '400',
-		// 'fl-button-font-size'	              => '',
-		'fl-button-line-height'	               => 1.5,
-		'fl-button-text-transform'	            => 'uppercase',
-		// 'fl-button-border-line'	            => '',
-		'fl-button-border-style'	           => 'solid',
-		'fl-button-border-width'	              => 1,
-		'fl-button-border-color'	           => '#000000',
-		'fl-button-border-radius'	             => 3,
+		'fl-button-style'                  => 'custom',
+		'fl-button-color'                  => '#ffffff',
+		'fl-button-hover-color'            => '#000000',
+		'fl-button-background-color'       => '#000000',
+		'fl-button-background-hover-color' => '#ffffff',
+		// 'fl-button-font-line'              => '',
+		'fl-button-font-family'            => 'system-ui',
+		'fl-button-font-weight'            => '400',
+		// 'fl-button-font-size'              => '',
+		'fl-button-line-height'            => 1.5,
+		'fl-button-text-transform'         => 'uppercase',
+		// 'fl-button-border-line'            => '',
+		'fl-button-border-style'           => 'solid',
+		'fl-button-border-width'           => 1,
+		'fl-button-border-color'           => '#000000',
+		'fl-button-border-radius'          => 3,
 
 		// Thesea are other key pairs that you can use
-		// 'fl-header-nav-search' 		     => 'hidden',
-		// 'fl-header-content-layout' 	  => 'social-text',
-		// 'fl-header-content-text' 	    => '¡Llámanos! 5555-555',
-		// 'fl-logo-type' 			            => 'text',
-		// 'fl-logo-text' 			            => 'Centro de Salud',
-		// 'fl-blog-layout' 		           => 'sidebar-right',
-		// 'fl-blog-sidebar-size' 		     => '3',
-		// 'fl-blog-sidebar-display' 	   => 'desktop',
-		// 'fl-blog-post-author' 		      => 'hidden',
-		// 'fl-blog-post-date' 		        => 'visible',
-		// 'fl-archive-show-full' 		     => '0',
-		// 
-		// 'fl-archive-show-thumbs' 	    => 'beside',
-		// 'fl-posts-show-thumbs' 		     => '',
-		// 'fl-posts-show-cats' 		       => 'visible',
-		// 'fl-posts-show-tags' 		       => 'visible',
-		// 'fl-posts-show-nav' 		        => 'hidden',
-		// 'fl-lightbox' 			             => 'enabled',
-		// 'fl-footer-widgets-display'	  => 'disabled',
-		// 'fl-footer-widgets-bg-type' 	 => 'content',
-		// 'fl-footer-layout' 		         => '2-cols',
-		// 'fl-footer-col1-layout' 	     => 'text',
-		// 'fl-footer-col2-layout'	 	    => 'social',
-
-		// 'fl-social-facebook' 		 => 'http://facebook.com',
-		// 'fl-social-twitter' 		  => 'http://twitter.com',
-		// 'fl-social-google' 		   => 'http://google.com',
-		// 'fl-social-linkedin' 		 => 'http://linkedin.com',
+		// 'fl-header-nav-search'      => 'hidden',
+		// 'fl-header-content-layout'  => 'social-text',
+		// 'fl-header-content-text'    => '¡Llámanos! 5555-555',
+		// 'fl-logo-type'              => 'text',
+		// 'fl-logo-text'              => 'Centro de Salud',
+		// 'fl-blog-layout'            => 'sidebar-right',
+		// 'fl-blog-sidebar-size'      => '3',
+		// 'fl-blog-sidebar-display'   => 'desktop',
+		// 'fl-blog-post-author'       => 'hidden',
+		// 'fl-blog-post-date'         => 'visible',
+		// 'fl-archive-show-full'      => '0',
+		// 'fl-archive-show-thumbs'    => 'beside',
+		// 'fl-posts-show-thumbs'      => '',
+		// 'fl-posts-show-cats'        => 'visible',
+		// 'fl-posts-show-tags'        => 'visible',
+		// 'fl-posts-show-nav'         => 'hidden',
+		// 'fl-lightbox'               => 'enabled',
+		// 'fl-footer-widgets-display' => 'disabled',
+		// 'fl-footer-widgets-bg-type' => 'content',
+		// 'fl-footer-layout'          => '2-cols',
+		// 'fl-footer-col1-layout'     => 'text',
+		// 'fl-footer-col2-layout'     => 'social',
+		// 'fl-social-facebook'        => 'http: //facebook.com',
+		// 'fl-social-twitter'         => 'http: //twitter.com',
+		// 'fl-social-google'          => 'http: //google.com',
+		// 'fl-social-linkedin'        => 'http: //linkedin.com',
 
 	)
 ));
@@ -364,47 +362,47 @@ function bt_default_theme_preset( $mods ) {
 
 		'fl-lightbox' 			         => 'enabled',
 		
-		'fl-button-style'					=> 'custom',
-		'fl-button-color'	                  => '#ffffff',
-		'fl-button-hover-color'	            => '#000000',
-		'fl-button-background-color'	       => '#000000',
-		'fl-button-background-hover-color'	 => '#ffffff',
-		// 'fl-button-font-line'	              => '',
-		'fl-button-font-family'	               => 'system-ui',
-		'fl-button-font-weight'	               => '400',
-		// 'fl-button-font-size'	              => '',
-		'fl-button-line-height'	               => 1.5,
-		'fl-button-text-transform'	            => 'uppercase',
-		// 'fl-button-border-line'	            => '',
-		'fl-button-border-style'	           => 'solid',
-		'fl-button-border-width'	              => 1,
-		'fl-button-border-color'	           => '#000000',
-		'fl-button-border-radius'	             => 3,
+		'fl-button-style'                  => 'custom',
+		'fl-button-color'                  => '#ffffff',
+		'fl-button-hover-color'            => '#000000',
+		'fl-button-background-color'       => '#000000',
+		'fl-button-background-hover-color' => '#ffffff',
+		// 'fl-button-font-line'              => '',
+		'fl-button-font-family'            => 'system-ui',
+		'fl-button-font-weight'            => '400',
+		// 'fl-button-font-size'              => '',
+		'fl-button-line-height'            => 1.5,
+		'fl-button-text-transform'         => 'uppercase',
+		// 'fl-button-border-line'            => '',
+		'fl-button-border-style'           => 'solid',
+		'fl-button-border-width'           => 1,
+		'fl-button-border-color'           => '#000000',
+		'fl-button-border-radius'          => 3,
 
 
 		// These are other key pairs that you can use
-		// 'fl-header-nav-search' 		     => 'hidden',
-		// 'fl-header-content-layout' 	  => 'social-text',
-		// 'fl-header-content-text' 	    => '¡Llámanos! 5555-555',
-		// 'fl-logo-type' 			            => 'text',
-		// 'fl-logo-text' 			            => 'Centro de Salud',
+		// 'fl-header-nav-search'     => 'hidden',
+		// 'fl-header-content-layout' => 'social-text',
+		// 'fl-header-content-text'   => '¡Llámanos! 5555-555',
+		// 'fl-logo-type'             => 'text',
+		// 'fl-logo-text'             => 'Centro de Salud',
 	
-		// 
-		// 'fl-archive-show-thumbs' 	    => 'beside',
-		// 'fl-posts-show-thumbs' 		     => '',
-		// 'fl-posts-show-cats' 		       => 'visible',
-		// 'fl-posts-show-tags' 		       => 'visible',
-		// 'fl-posts-show-nav' 		        => 'hidden',
-		// 'fl-footer-widgets-display'	  => 'disabled',
-		// 'fl-footer-widgets-bg-type' 	 => 'content',
-		// 'fl-footer-layout' 		         => '2-cols',
-		// 'fl-footer-col1-layout' 	     => 'text',
-		// 'fl-footer-col2-layout'	 	    => 'social',
+		
+		// 'fl-archive-show-thumbs'    => 'beside',
+		// 'fl-posts-show-thumbs'      => '',
+		// 'fl-posts-show-cats'        => 'visible',
+		// 'fl-posts-show-tags'        => 'visible',
+		// 'fl-posts-show-nav'         => 'hidden',
+		// 'fl-footer-widgets-display' => 'disabled',
+		// 'fl-footer-widgets-bg-type' => 'content',
+		// 'fl-footer-layout'          => '2-cols',
+		// 'fl-footer-col1-layout'     => 'text',
+		// 'fl-footer-col2-layout'     => 'social',
 
-		// 'fl-social-facebook' 		       => 'http://facebook.com/beavertron'
-		// 'fl-social-twitter' 		        => 'http://twitter.com',
-		// 'fl-social-google' 		         => 'http://google.com',
-		// 'fl-social-linkedin' 		       => 'http://linkedin.com',
+		// 'fl-social-facebook' => 'http://facebook.com/beavertron'
+		// 'fl-social-twitter'  => 'http://twitter.com',
+		// 'fl-social-google'   => 'http://google.com',
+		// 'fl-social-linkedin' => 'http://linkedin.com',
 	);
 	
 	
@@ -412,44 +410,4 @@ function bt_default_theme_preset( $mods ) {
 
 	return $mods3;
 
-}
-
-
-
-
-
-
-
-//add_action( 'wp_enqueue_scripts', 'bt_customize_css2', 1001 );
-/**
- * Output CSS for background image with wp_add_inline_style
- * This is being output in output.php
- */
-function bt_customize_css2() {
-	//wp_enqueue_style( 'beavertron', get_stylesheet_directory_uri() . '/style.css' ); //Enqueue your main stylesheet
-	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
-	//$handle  = 'beavertron';
-
-	$css = '';
-	$border_color = get_theme_mod( 'bt_border_color_hover' ); // Assigning it to a variable to keep the markup clean.
-	$css .= ( $border_color ) ? sprintf('
-		.fl-page button:hover, 
-		.fl-responsive-preview-content button:hover, 
-		.fl-page input[type=button]:hover, 
-		.fl-responsive-preview-content input[type=button]:hover, 
-		.fl-page input[type=submit]:hover, 
-		.fl-responsive-preview-content input[type=submit]:hover, 
-		.fl-page a.fl-button:hover, 
-		.fl-responsive-preview-content a.fl-button:hover {
-			border-color: %s;			 
-		}
-	', $border_color ) : '';
-	if ( $css ) {
-	wp_add_inline_style( $handle  , $css );
-	}
-
-	// var_dump($handle);
-	// var_dump($css);
-	// var_dump($border_color);
-	
 }

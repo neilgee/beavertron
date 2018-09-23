@@ -13,7 +13,6 @@
 
 
 /**
- * 
  * Remove BB Plugin LightBox
  * @since 1.0.0
  */
@@ -23,6 +22,7 @@
  add_filter( 'fl_module_upload_regex', 'bt_upload_image_formats', 10, 4 );
 /**
  * Add SVG to allowed regex for BB module uploads
+ * @since 1.0.0
  */
  function bt_upload_image_formats( $regex, $type, $ext, $file ) {
     $regex[ 'photo' ] = '#(jpe?g|png|gif|bmp|tiff|svg?)#i';
@@ -56,6 +56,7 @@ add_filter( 'fl_builder_register_settings_form', 'wb_builder_register_settings_f
 /** 
  * Filter the Global Settings Options.
  * Media breakpoints and form title have been changed.
+ * @since 1.0.0
  */
 function wb_builder_register_settings_form_short( $form, $id ) {
 	if ( 'global' == $id ) {
@@ -74,7 +75,7 @@ function wb_builder_register_settings_form_short( $form, $id ) {
 add_filter( 'fl_builder_is_node_visible', 'bt_check_field_connections', 10, 2 );
 /** 
  * Dont output empty custom field connections
- * 
+ * @since 1.0.0
  */
 function bt_check_field_connections( $is_visible, $node ) {
 
@@ -92,7 +93,7 @@ function bt_check_field_connections( $is_visible, $node ) {
 
 /** 
  * Enable for development so module CSS files are not combined
- * 
+ * @since 1.0.0
  */
 //add_filter( 'fl_is_debug', '__return_true' ); 
 
@@ -100,7 +101,7 @@ function bt_check_field_connections( $is_visible, $node ) {
 add_filter( 'fl_theme_builder_assets_expire', 'bt_builder_expire' );
 /** 
  * Delay Themer Builder Assets to Expire for 10 years ~ default is 30 days
- * 
+ * @since 1.0.0
  */
 function bt_builder_expire() {
     $expire_bundle = strtotime( '+3650 days' );
@@ -108,27 +109,32 @@ function bt_builder_expire() {
 return $expire_bundle;
 }
 
-
-/* Turn off BB notifications */
+/** 
+ * Turn off BB notifications
+ * @since 1.0.0
+ */
 add_filter ('fl_disable_notifications', '__return_true' );
 
-
-/* Turn off BB inline editing */
+/** 
+ * Turn off BB inline editing
+ * @since 1.0.0
+ */
 add_filter ('fl_inline_editing_enabled', '__return_false' );
 
 
 add_filter( 'fl_builder_color_presets', 'bt_builder_color_presets' );
 /** 
  * Add color presets for Beaver Builder
- * 
+ * @since 1.0.0
  */
 function bt_builder_color_presets( $colors ) {
     $colors = array();
-      
-      $colors[] = 'ffffff';
-      $colors[] = '000000';
-      $colors[] = '333333';
-      $colors[] = '999999';
+        
+    $colors[] = 'c3251d';
+        $colors[] = 'ffffff';
+        $colors[] = '000000';
+        $colors[] = '333333';
+        $colors[] = '999999';
   
     return $colors;
 }
@@ -137,7 +143,7 @@ function bt_builder_color_presets( $colors ) {
 add_action( 'customize_controls_print_footer_scripts', 'bt_customize_color_presets' );
 /** 
  * Add color presets for Beaver Builder Customizer Theme
- * 
+ * @since 1.0.0
  */
 function bt_customize_color_presets() {
     ?>
@@ -150,7 +156,7 @@ function bt_customize_color_presets() {
           vert: 's', // square vertical displays saturdation
           strip: 'l' // slider displays lightness
         },
-        palettes: ['#ffffff', '#000000', '#333333', '#999999', '#c3251d']
+        palettes: ['#c3251d','#ffffff', '#000000', '#333333', '#999999']
       })
     });
   </script>

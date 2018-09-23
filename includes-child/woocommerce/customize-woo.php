@@ -1,11 +1,12 @@
 <?php
 /**
  * Adding all Customizer Stuff Here.
- *
+ * @since 1.0.0
  * @package beavertron
  */
  /**
   * Set Up Default Colors - so if not changed in Customizer no CSS mark up is output
+  * @since 1.0.0
   */
 
  function  bt_woo_button_color_default() {
@@ -57,6 +58,7 @@ function  bt_woo_button_dis_hover_color_default() {
 add_action( 'customize_register', 'bt_register_theme_customizer_woo', 20 );
 /**
  * Register for the Customizer
+ * @since 1.0.0
  */
 function bt_register_theme_customizer_woo( $wp_customize ) {
 
