@@ -24,7 +24,11 @@ At the top of _functions.php_ there a number of include files that you can comme
    * filter for adding colour presets to Customizer and BB plugin color pickers.
 
 
-- */includes-child/client-file.php* a miscellaneous area for things like client logo for login
+- */includes-child/client-file.php* a miscellaneous area for things like:
+    * client logo for login
+    * removing Dashboard widgets including Gutenberg nags
+    * add ACF Pro license
+
 - */includes-child/customizer.php* contains all the Customizer options.
 - */includes-child/gravity.php* Gravity forms functionality
 - */includes-child/mobile-menu-removal.php* remove default mobile menu 
@@ -68,6 +72,7 @@ More info here - https://wpbeaches.com/add-custom-logo-schema-beaver-themer-head
 - Added panel 'Featured Images' with 'Hero Background' field - not actively used.
 - List of all Panels and Sections which can be removed from view by uncommenting the code in the **customizer.php** file.
 - Added a custom preset 'BT Preset' this is the preferred and only preset.
+- BT Preset is set as always active with _set_theme_mod_ this can be removed from _includes-child/customizer.php_
 - Removed all other presets.
 - Set Preset defaults in _includes-child/customizer-filter.php_
 - Added a filter to change the values for the 'BT Preset' 'fl_default_theme_mods'
@@ -93,6 +98,7 @@ Including
 - Separate CSS Styling for [Business Profile plugin](https://wordpress.org/plugins/business-profile/)
 - FontAwesome 5 enabled
 - Select2 JS and CSS files included, uncomment in _classes/class-fl-child-theme.php_
+- Remove Dashboard Widgets in Admin 
 
 
 ## Change the Theme Name

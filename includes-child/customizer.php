@@ -14,7 +14,10 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 	global $wp_customize;
 
-	/* Adding in a Hover Control for Buttons to the fl-buttons panel*/
+	/* *
+	 * Adding in a Hover Control for Buttons to the 'fl-buttons' panel
+	 * 
+	 */
 	$wp_customize->add_setting(
 		'bt_border_color_hover', //give it an ID
 		array(
@@ -149,7 +152,7 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 
 // Adding a custom preset with some default values.
-FLCustomizer::add_preset( 'bt-preset-colour', array(
+FLCustomizer::add_preset( 'bt-preset', array(
 	'name'      => 'BT Preset',
 	'skin'      => get_stylesheet_directory() . '/css/presets.css', // what ever is in this gets output to Skin CSS
 	'settings'  => array(
@@ -265,6 +268,8 @@ FLCustomizer::remove_preset(
 	)
 );
 
+set_theme_mod( 'fl-preset', 'bt-preset' );
+
 
 add_filter( 'fl_default_theme_mods', 'bt_default_theme_preset');
 /** 
@@ -276,7 +281,7 @@ function bt_default_theme_preset( $mods ) {
 		'fl-content-width'				=> '1200', // Container width
 		'fl-scroll-to-top'				=> 'enable', 
 
-		'fl-body-bg-color'             	=> '#fff',
+		'fl-body-bg-color'             	=> '#ffffff',
 		
 		'fl-accent'                 	=> '#555555',
 		'fl-accent-hover'           	=> '#666666',
@@ -288,7 +293,7 @@ function bt_default_theme_preset( $mods ) {
 		'fl-topbar-hover-color'			=> '#ffffff',
 
 
-		'fl-header-bg-color'        	=> '#000',
+		'fl-header-bg-color'        	=> '#000000',
 		'fl-header-text-color'			=> '#cccccc',
 		'fl-header-link-color'			=> '#999999',
 		'fl-header-hover-color'			=> '#ffffff',
@@ -382,6 +387,7 @@ function bt_default_theme_preset( $mods ) {
 	return $mods3;
 
 }
+
 
 
 

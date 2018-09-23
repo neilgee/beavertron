@@ -14,7 +14,7 @@ final class FLChildTheme {
      */
     static public function enqueue_scripts()
     {
-        wp_enqueue_style( CHILD_THEME_NAME, FL_CHILD_THEME_URL . '/style.css' , array(), '1.0.0', 'all' );
+        wp_enqueue_style( CHILD_THEME_NAME, FL_CHILD_THEME_URL . '/style.css' , array(), '1.7.0', 'all' );
         wp_enqueue_style( 'dashicons' );
        
         // Webfonts Example
@@ -36,7 +36,7 @@ final class FLChildTheme {
 		wp_enqueue_style( 'font-awesome-5' );
 
         // Business Profile CSS
-        wp_enqueue_style( 'businessprofile', get_stylesheet_directory_uri() . '/css/business-profile.css' , array(), '2.0.0', 'all' );
+        //wp_enqueue_style( 'businessprofile', get_stylesheet_directory_uri() . '/css/business-profile.css' , array(), '2.0.0', 'all' );
 
         // Take out the default lightbox
         // wp_dequeue_script('jquery-magnificpopup');

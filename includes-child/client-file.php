@@ -95,6 +95,7 @@ function wsl_edit_text() {
 add_action('after_switch_theme', 'bt_acf_auto_set_license_keys');
 /**
  * ACF License - via constant defined in wp-config.php
+ *  https://gist.github.com/mattradford/6d5b8f3cd11ce1f62480
  */
 function bt_acf_auto_set_license_keys() {
 

@@ -20,7 +20,7 @@ if ( function_exists( 'add_image_size' ) ) {
 /**
  * Filtering the Customizer
  * Not working for theme if inside after_setup_theme function - so thats why it is here.
- * @since 2.0.0
+ * @since 1.7.0
  */
 require_once( get_stylesheet_directory() . '/includes-child/customizer-filtered.php' );
 
