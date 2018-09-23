@@ -1,14 +1,15 @@
 <?php
 /**
  * Adding all Customizer Stuff Here.
- *
- * @package beavertron
+ * @since 1.0.0
+ * @package Beavertron
  */
 
 
 add_action( 'customize_register', 'bt_register_theme_customizer', 20 );
 /**
  * Register for the Customizer
+ * @since 1.0.0
  */
 function bt_register_theme_customizer( $wp_customize ) {
 
@@ -16,37 +17,50 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 	/* *
 	 * Adding in a Hover Control for Buttons to the 'fl-buttons' panel
-	 * 
+	 * @since 1.7.0
 	 */
 	$wp_customize->add_setting(
 		'bt_border_color_hover', //give it an ID
-		array(
-			'default' => '#000000', // Give it a default
-		)
+			array(
+				'default' => '#000000', // Give it a default
+			)
 	);
 	$wp_customize->add_control(
 	   new WP_Customize_Color_Control(
 		   $wp_customize,
 		   'bt_border_color_on_hover', //give it an ID
-		   array(
-			   'label'      => __( 'Border Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-			   'section'    => 'fl-buttons', //select the section for it to appear under  
-			   'settings'   => 'bt_border_color_hover', //pick the setting it applies to
-			   'priority'	 => 15,
-		   )
+			array(
+				'label'      => __( 'Border Hover Color', 'beavertron' ), //set the label to appear in the Customizer
+				'section'    => 'fl-buttons', //select the section for it to appear under  
+				'settings'   => 'bt_border_color_hover', //pick the setting it applies to
+				'priority'	 => 15,
+			)
 	   )
 	);
 	
-	// Change label for logo text color
+	/**
+	 * Change label for logo text color
+	 * @since 1.0.0
+	 */
 	// $wp_customize->get_control('header_textcolor')->label = __('Site Title Color', 'beavertron');
 
-	// Customize Background Settings
-	// Change heading.
+	/**
+	 * Customize Background Settings
+	 * Change heading title
+	 * @since 1.0.0
+	 */
 	$wp_customize->get_section( 'background_image' )->title = __( 'Background Styles', 'beavertron' );
 	// Move background image to background styles.
 	$wp_customize->get_control( 'background_color' )->section = 'background_image';
 
-	// Create custom panel.
+	/**
+	 * Create custom panel
+	 * Create Custom Section
+	 * Add setting
+	 * Add control
+	 * @since 1.0.0
+	 */
+	// Add Panel
 	$wp_customize->add_panel( 'featured_images', array(
 		'priority'       => 70,
 		'theme_supports' => '',
@@ -77,8 +91,11 @@ function bt_register_theme_customizer( $wp_customize ) {
 	) );
 
 
-		 
-	// Remove Panels and Sections by uncommenting.
+	/**
+	 * Remove Panels and Sections by uncommenting.
+	 * Create Custom Section
+	 * @since 1.0.0
+	 */
 
 	//$wp_customize->remove_section( 'fl-presets' ); 
 
@@ -150,8 +167,10 @@ function bt_register_theme_customizer( $wp_customize ) {
 }
 
 
-
-// Adding a custom preset with some default values.
+/** 
+ *  Adding a custom preset with some default values.
+ *  @since 1.0.0
+ */
 FLCustomizer::add_preset( 'bt-preset', array(
 	'name'      => 'BT Preset',
 	'skin'      => get_stylesheet_directory() . '/css/presets.css', // what ever is in this gets output to Skin CSS
@@ -259,21 +278,28 @@ FLCustomizer::add_preset( 'bt-preset', array(
 	)
 ));
 
-/** Remove all the builtin presets.
- *  Removing all but the default and custom preset one.
+/** 
+ * Remove all the builtin presets.
+ * @since 1.0.0
  */
+
 FLCustomizer::remove_preset( 
 	array('default-dark' , 'classic' , 'modern' , 'bold' , 
 		'stripe' , 'deluxe' , 'premier' , 'dusk' , 'midnight'
 	)
 );
 
+/** 
+ *  Set Theme Preset
+ *  @since 1.7.0
+ */
 set_theme_mod( 'fl-preset', 'bt-preset' );
 
 
 add_filter( 'fl_default_theme_mods', 'bt_default_theme_preset');
 /** 
- *  Default Theme Mods
+ *  Sey Active Preset Theme Mods
+ *  @since 1.0.0
  */
 function bt_default_theme_preset( $mods ) {
 	$mods2 = array(
