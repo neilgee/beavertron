@@ -63,13 +63,13 @@ function bt_theme_setup() {
 	 */
 	if ( ! class_exists('FLCache\CacheHelper') ) {
 		require_once( get_stylesheet_directory() . '/classes/class-fl-builder-cache-helper.php');
-		}
+	}
 	require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
 	// Actions - BB Default way - This theme calls required files below.
 	add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 
 	/**
-	 * Add in our CSS for our customizer options.
+	 * Add Customizer Options and CSS output.
 	 * @since 1.0.0
 	 */
 	require_once( get_stylesheet_directory() . '/includes-child/customizer.php' );
@@ -129,10 +129,11 @@ function bt_theme_setup() {
 	/**
 	* Helps Beaver Builder see custom sizes.
 	* @since 1.0.0
+	* @link https://kb.wpbeaverbuilder.com/article/382-add-custom-image-sizes
 	*/
 	function bt_custom_image_sizes( $sizes ) {
 		global $_wp_additional_image_sizes;
-		if ( empty($_wp_additional_image_sizes) )
+		if ( empty( $_wp_additional_image_sizes ) )
 				return $sizes;
 	
 		foreach ( $_wp_additional_image_sizes as $id => $data ) {
@@ -252,5 +253,4 @@ function bt_theme_setup() {
 	return $html;
 	}
 
-	
 } // Closing After Set Up Hook

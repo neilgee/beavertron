@@ -90,7 +90,7 @@ function bt_css() {
 	', $hero_bg_image ) : '';
 	
 	// Button Border Hover Color
-	$border_color = get_theme_mod( 'bt_border_color_hover' ); // Assigning it to a variable to keep the markup clean.
+	$border_color = FLTheme::get_setting( 'bt_border_color_hover' ); // Assigning it to a variable to keep the markup clean.
 	$css .= ( $border_color ) ? sprintf('
 		.fl-page button:hover, 
 		.fl-responsive-preview-content button:hover, 

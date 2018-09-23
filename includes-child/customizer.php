@@ -39,21 +39,6 @@ function bt_register_theme_customizer( $wp_customize ) {
 	);
 	
 	/**
-	 * Change label for logo text color
-	 * @since 1.0.0
-	 */
-	// $wp_customize->get_control('header_textcolor')->label = __('Site Title Color', 'beavertron');
-
-	/**
-	 * Customize Background Settings
-	 * Change heading title
-	 * @since 1.0.0
-	 */
-	$wp_customize->get_section( 'background_image' )->title = __( 'Background Styles', 'beavertron' );
-	// Move background image to background styles.
-	$wp_customize->get_control( 'background_color' )->section = 'background_image';
-
-	/**
 	 * Create custom panel
 	 * Create Custom Section
 	 * Add setting
@@ -410,4 +395,283 @@ function bt_default_theme_preset( $mods ) {
 
 	return $mods3;
 
+}
+
+
+
+
+
+//add_action( 'after_setup_theme', 'bt_add_customizer_panel', 35 );
+/**
+ * Create Custom Customizer Panel with FLCustomizer::add_panel
+ * 7 Panel Examples with a range of controls
+ * @since 1.7.0
+ */
+function bt_add_customizer_panel() {
+    /* Body Background Section */
+        FLCustomizer::add_panel('bt_bg_image', array(
+                'title'   => _x( 'Beavertron Stuff', 'Customizer panel title.', 'beavertron' ),
+                'sections'=> array (
+                    'beaver-section1'=> array(
+                        'title'=>_x('Beavertron Panel 1', 'Customizer section title.', 'beavertron' ),
+                        'options'=>array(
+                            /* Background Color */
+                            'bt-body-bg-color' => array(
+                                'setting'   => array(
+                                    'default'   => '#f2f2f2',
+                                ),
+                                'control'   => array(
+                                    'class'     => 'WP_Customize_Color_Control',
+                                    'label'     => __( 'Background Color', 'beavertron' ),
+                                ),
+                            ),
+                            
+                            /* Background Image */
+                            'bt-body-bg-image' => array(
+                                'setting'   => array(
+                                    'default'   => '',
+                                    'transport' => 'postMessage',
+                                ),
+                                'control'   => array(
+                                    'class'     => 'WP_Customize_Image_Control',
+                                    'label'     => __( 'Background Image', 'beavertron' ),
+                                ),
+                            ),
+            
+                            /* Background Repeat */
+                            'bt-body-bg-repeat' => array(
+                                'setting'   => array(
+                                    'default'   => 'no-repeat',
+                                    'transport' => 'postMessage',
+                                ),
+                                'control'   => array(
+                                    'class'     => 'WP_Customize_Control',
+                                    'label'     => __( 'Background Repeat', 'beavertron' ),
+                                    'type'      => 'select',
+                                    'choices'   => array(
+                                        'no-repeat'  => __( 'None', 'beavertron' ),
+                                        'repeat'     => __( 'Tile', 'beavertron' ),
+                                        'repeat-x'   => __( 'Horizontal', 'beavertron' ),
+                                        'repeat-y'   => __( 'Vertical', 'beavertron' ),
+                                    ),
+                                ),
+                            ),
+            
+                            /* Background Position */
+                            'bt-body-bg-position' => array(
+                                'setting'   => array(
+                                    'default'   => 'center top',
+                                    'transport' => 'postMessage',
+                                ),
+                                'control'   => array(
+                                    'class'     => 'WP_Customize_Control',
+                                    'label'     => __( 'Background Position', 'beavertron' ),
+                                    'type'      => 'select',
+                                    'choices'   => array(
+                                        'left top'      => __( 'Left Top', 'beavertron' ),
+                                        'left center'   => __( 'Left Center', 'beavertron' ),
+                                        'left bottom'   => __( 'Left Bottom', 'beavertron' ),
+                                        'right top'     => __( 'Right Top', 'beavertron' ),
+                                        'right center'  => __( 'Right Center', 'beavertron' ),
+                                        'right bottom'  => __( 'Right Bottom', 'beavertron' ),
+                                        'center top'    => __( 'Center Top', 'beavertron' ),
+                                        'center center' => __( 'Center', 'beavertron' ),
+                                        'center bottom' => __( 'Center Bottom', 'beavertron' ),
+                                    ),
+                                ),
+                            ),
+            
+                            /* Background Attachment */
+                            'bt-body-bg-attachment' => array(
+                                'setting'   => array(
+                                    'default'   => 'scroll',
+                                    'transport' => 'postMessage',
+                                ),
+                                'control'   => array(
+                                    'class'     => 'WP_Customize_Control',
+                                    'label'     => __( 'Background Attachment', 'beavertron' ),
+                                    'type'      => 'select',
+                                    'choices'   => array(
+                                        'scroll'    => __( 'Scroll', 'beavertron' ),
+                                        'fixed'     => __( 'Fixed', 'beavertron' ),
+                                    ),
+                                ),
+                            ),
+            
+                            /* Background Size */
+                            'bt-body-bg-size' => array(
+                                'setting'   => array(
+                                    'default'   => 'auto',
+                                    'transport' => 'postMessage',
+                                ),
+                                'control'   => array(
+                                    'class'     => 'WP_Customize_Control',
+                                    'label'     => __( 'Background Scale', 'beavertron' ),
+                                    'type'      => 'select',
+                                    'choices'   => array(
+                                        'auto'      => __( 'None', 'beavertron' ),
+                                        'contain'   => __( 'Fit', 'beavertron' ),
+                                        'cover'     => __( 'Fill', 'beavertron' ),
+                                    ),
+                                ),
+                            ),
+                        ),
+                    ),
+                    'beaver-section2'=> array(
+                        'title'=>_x('Beavertron Text Field', 'Customizer section title.', 'beavertron' ),
+                        'options'=>array(
+                            /* Text Field */
+                            'bt-text-field' => array(
+                                'setting'   => array(
+                                    'default'   => '',
+                                    'transport' => 'postMessage'
+                                ),
+                                'control'   => array(
+                                    'class' => 'WP_Customize_Control',
+                                    'label' => __( 'Text Field', 'beavertron' ),
+                                    'type'  => 'text'
+                                )
+                            )
+
+                        ),
+                    ),
+                    'beaver-section3'=> array(
+                        'title'=>_x('Beavertron TextArea Field', 'Customizer section title.', 'beavertron' ),
+                        'options'=>array(
+                        /* Textarea Field */
+                            'bt-text-area-field' => array(
+                                'setting'   => array(
+                                    'default'   => '',
+                                    'transport' => 'postMessage'
+                                ),
+                                'control'   => array(
+                                    'class' => 'WP_Customize_Control',
+                                    'label' => __( 'Text Area Field', 'beavertron' ),
+                                    'type'  => 'textarea'
+                                )
+                            )
+
+                        ),
+                    ),
+                    'beaver-section4'=> array(
+                        'title'=>_x('Beavertron Select Field', 'Customizer section title.', 'beavertron' ),
+                        'options'=>array(
+                            /* Select Field */
+                            'bt-select-field' => array(
+                                'setting'   => array(
+                                'default'   => 'index-2', //* By default option 2 will be selected
+                                'transport' => 'postMessage'
+                                ),
+                                'control'   => array(
+                                'class'   => 'WP_Customize_Control',
+                                'label'   => _x( 'Select Field', 'Testing select field.', 'beavertron' ),
+                                'type'    => 'select',
+                                'choices' => array(
+                                    'index-1' => __('Option 1', 'beavertron'),
+                                    'index-2' => __('Option 2', 'beavertron'),
+                                    'index-3' => __('Option 3', 'beavertron')
+                                )
+                              )
+                            )
+
+                        ),
+                    ),
+                    'beaver-section5'=> array(
+                        'title'=>_x('Beavertron Color Field', 'Customizer section title.', 'beavertron' ),
+                        'options'=>array(
+                            /* Color Field */
+                            'bt-color-field' => array(
+                                'setting'   => array(
+                                'default'   => '#ffffff',
+                                'transport' => 'postMessage'
+                                ),
+                                
+                                'control'   => array(
+                                'class'     => 'WP_Customize_Color_Control',
+                                'label'     => __('Color Field', 'beavertron')
+                                )
+                            )
+                        ),
+                    ),
+                    'beaver-section6'=> array(
+                        'title'=>_x('Beavertron Slider Field', 'Customizer section title.', 'beavertron' ),
+                        'options'=>array(
+                            /* Slider Field */
+                            'bt-slide-type' => array(
+                                'setting'   => array(
+                                  'default'   => '100',
+                                  'transport' => 'postMessage'
+                                ),
+                                'control'   => array(
+                                  'class'     => 'FLCustomizerControl',
+                                  'label'     => __('Color Opacity', 'beavertron'),
+                                  'type'      => 'slider',
+                                  'choices'   => array(
+                                    'min'  => 0,
+                                    'max'  => 100,
+                                    'step' => 1
+                                  ),
+                                )
+                              )
+                        ),
+                    ),
+                    'beaver-section7'=> array(
+                        'title'=>_x('Beavertron Fonts Field', 'Customizer section title.', 'beavertron' ),
+                        'options'=>array(
+                            /* Font Family, Size and Weight Fields */
+                            'bt-font-family' => array(
+                                'setting'   => array(
+                                    'default'   => 'Helvetica',
+                                    'transport' => 'postMessage'
+                                ),
+                                'control'   => array(
+                                    'class'     => 'FLCustomizerControl',
+                                    'label'     => __('Font Family', 'beavertron'),
+                                    'type'      => 'font',
+                                    'connect'   => 'font-weight'
+                                )
+                            ),
+
+                            /* Font Weight */
+                            'font-weight' => array(
+                                'setting'   => array(
+                                    'default'   => '400',
+                                'transport' => 'postMessage'
+                                ),
+                                'control'   => array(
+                                    'class'     => 'FLCustomizerControl',
+                                    'label'     => __('Font Weight', 'beavertron'),
+                                    'type'      => 'font-weight',
+                                    'connect'   => 'font-family'
+                                )
+                            ),
+
+                            /* Font Size */
+                            'font-size' => array(
+                                'setting'   => array(
+                                    'default'   => '30',
+                                    'transport' => 'postMessage'
+                                ),
+                                'control'   => array(
+                                    'class'     => 'FLCustomizerControl',
+                                    'label'     => __('Font Size', 'beavertron'),
+                                    'type'  => 'slider',
+                                    'choices'     => array(
+                                        'min'  => 16,
+                                        'max'  => 72,
+                                        'step' => 1
+                                    ),
+                                )
+                            )
+                        ),
+                    ),
+            
+                )
+                
+
+            ));
+            $data = FLTheme::get_setting('bt-body-bg-color');
+
+
+            var_dump ($data);   
 }
