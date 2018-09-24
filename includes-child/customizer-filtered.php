@@ -34,25 +34,25 @@ function bt_customizer_options_filtered( $data, $key ) {
         $data['sections']['fl-buttons']['options']['fl-button-border-color']['setting']['default']='#000000';
         $data['sections']['fl-buttons']['options']['fl-button-border-style']['setting']['default']='solid';
 
-
-
-        // I dont think thats how you set up a new option below - to delete
+        // Add Settings and Controls - 1 way
+        // $data['sections']['fl-buttons']['options']['bt_border-hover']['setting']['default']='#666666';
         // $data['sections']['fl-buttons']['options']['bt_border-hover']['setting']['transport']='postMessage';
         // $data['sections']['fl-buttons']['options']['bt_border-hover']['control']['class']='WP_Customize_Color_Control';
-        // $data['sections']['fl-buttons']['options']['fl-button-border-color']['control']['label']='BorderControl';
+        // $data['sections']['fl-buttons']['options']['bt_border-hover']['control']['label']='BorderControl';
 
-        // I do think thats how you set up a new option below - to keep when i can get it working
-       $mynewsetting = array('fl-button-border-color-hover' => array(
+        // Add Settings and Controls - 2nd way
+        $mynewsetting = array(
             'setting' => array(
                 'default' => '#999999',
                 'transport' => 'postMessage',
             ),
             'control' => array(
                 'class'     => 'WP_Customize_Color_Control',
-                'label'     => __( 'Border Hover Color', 'fl-automator' ),
+                'label'     => __( 'Border Hover Color', 'beavertron' ),
+                'priority'  => 0,
             ),
-        ));
-        //$data['sections']['fl-buttons']['options'] = $mynewsetting;
+        );
+     //  $data['sections']['fl-buttons']['options']['bt_border-hover'] = $mynewsetting;
     }
 
     
@@ -62,6 +62,12 @@ function bt_customizer_options_filtered( $data, $key ) {
         $data['sections']['fl-header-logo']['options']['fl-logo-font-family']['setting']['default']='system-ui';
         $data['sections']['fl-nav-style']['options']['fl-nav-font-family']['setting']['default']='system-ui';
         $data['sections']['fl-nav-style']['options']['fl-nav-hover-color']['setting']['default']='#999999';
+
+    }
+
+    if ( 'fl-content' == $key ) {
+
+      //  $data['sections']['fl-header-logo']['options']['fl-logo-font-family']['setting']['default']='system-ui';
 
     }
  

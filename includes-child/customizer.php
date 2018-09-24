@@ -17,6 +17,7 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 	/* *
 	 * Adding in a Hover Control for Buttons to the 'fl-buttons' panel
+	 * Also can be done with fl_theme_add_panel_data filter - see 2 examples in customizer-filtered.php
 	 * @since 1.7.0
 	 */
 	$wp_customize->add_setting(
@@ -37,12 +38,37 @@ function bt_register_theme_customizer( $wp_customize ) {
 			)
 	   )
 	);
-	
+
+	/**
+	 * Change Customizer Heading Section
+	 * @since 1.0.0
+	 */
+	//$wp_customize->get_section( 'background_image' )->title = __( 'Background Styles', 'beavertron' );
+
+
+	/**
+	 *  Add WooCommerce Colors Section
+	 * @since 2.0.0
+	 */
+	$wp_customize->add_section( 'woocommerce_colors' , array(
+		'title'      => __( 'WooCommerce Colors','beavertron' ),
+		'panel'      => 'woocommerce',
+		'priority'   => 20,
+	) );
+
+	/**
+	 *  Move BB WooCommerce layout Section to native WooCommerce panel
+	 * @since 2.0.0
+	 */
+	$wp_customize->get_section('fl-content-woo')->panel ='woocommerce';
+
+
 	/**
 	 * Create custom panel
 	 * Create Custom Section
 	 * Add setting
 	 * Add control
+	 * Also can be done with FLCustomizer::add_panel - see example commented further down
 	 * @since 1.0.0
 	 */
 	// Add Panel

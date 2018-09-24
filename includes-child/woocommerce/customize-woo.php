@@ -62,14 +62,15 @@ add_action( 'customize_register', 'bt_register_theme_customizer_woo', 20 );
  */
 function bt_register_theme_customizer_woo( $wp_customize ) {
 
-
-	// Add in WooCommerce in default panel
-	// Add section.
-	$wp_customize->add_section( 'woocommerce' , array(
-		'title'      => __( 'WooCommerce','beavertron' ),
-		//'panel'      => 'woocommerce',
-		'priority'   => 520,
-	) );
+        /**
+         * Uncommenting as WooCommerce has own panel & section
+         * @since 2.0.0
+         */
+	// $wp_customize->add_section( 'woocommerce' , array(
+	// 	'title'      => __( 'WooCommerce','beavertron' ),
+	// 	//'panel'      => 'woocommerce',
+	// 	'priority'   => 520,
+	// ) );
 
 	// Add buttons background color
 	// Add setting.
@@ -82,7 +83,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_button_color', array(
 		'label'      => __( 'Button Color', 'beavertron' ), //set the label to appear in the Customizer
-		'section'    => 'fl-content-woo', //select the section for it to appear under
+		'section'    => 'woocommerce_colors', //select the section for it to appear under
 		'settings'   => 'bt_woo_button_color' //pick the setting it applies to
 		)
         ) );
@@ -98,7 +99,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_button_hover_color', array(
 		'label'      => __( 'Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-		'section'    => 'fl-content-woo', //select the section for it to appear under
+		'section'    => 'woocommerce_colors', //select the section for it to appear under
 		'settings'   => 'bt_woo_button_hover_color' //pick the setting it applies to
 		)
         ) );
@@ -114,7 +115,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_button_alt_color', array(
                 'label'      => __( 'Button Alt Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_button_alt_color' //pick the setting it applies to
                 )
         ) );
@@ -130,7 +131,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_button_alt_hover_color', array(
                 'label'      => __( 'Button Alt Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_button_alt_hover_color' //pick the setting it applies to
                 )
         ) );
@@ -146,7 +147,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_button_dis_color', array(
                 'label'      => __( 'Button Disabled Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_button_dis_color' //pick the setting it applies to
                 )
         ) );
@@ -162,7 +163,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_button_dis_hover_color', array(
                 'label'      => __( 'Button Disabled Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_button_dis_hover_color' //pick the setting it applies to
                 )
         ) );
@@ -178,7 +179,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_price_color', array(
                 'label'      => __( 'Price Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_price_color' //pick the setting it applies to
                 )
         ) );
@@ -194,7 +195,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_sale_price_color', array(
                 'label'      => __( 'SALE Price Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_sale_price_color' //pick the setting it applies to
                 )
         ) );
@@ -210,7 +211,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_info_color', array(
                 'label'      => __( 'Info Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_info_color' //pick the setting it applies to
                 )
         ) );
@@ -226,7 +227,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_error_color', array(
                 'label'      => __( 'Error Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_error_color' //pick the setting it applies to
                 )
         ) );
@@ -242,7 +243,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_message_color', array(
                 'label'      => __( 'Message Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'fl-content-woo', //select the section for it to appear under
+                'section'    => 'woocommerce_colors', //select the section for it to appear under
                 'settings'   => 'bt_woo_message_color' //pick the setting it applies to
                 )
         ) );
