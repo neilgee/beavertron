@@ -64,7 +64,7 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '5.7.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '5.7.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -87,7 +87,7 @@ function gsm_register_required_plugins() {
 					'slug'               => 'bb-ultimate-addon', // The plugin slug (typically the folder name).
 					'source'             => get_theme_root() . '/lib/plugins/bb-ultimate-addon.zip', // The plugin source.
 					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					'version'            => '1.8.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					'version'            => '1.11.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -109,9 +109,9 @@ function gsm_register_required_plugins() {
 			 array(
 					 'name'               => 'Gravity Forms', // The plugin name.
 					 'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.3.3.6.zip', // The plugin source.
+					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.3.3.10.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.3.3.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '2.3.3.10', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -139,14 +139,7 @@ function gsm_register_required_plugins() {
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			 ),
-			 // This is an example of how to include a plugin from a private repo in your theme.
-			 array(
-					 'name'               => 'Beaver Cache Helper', // The plugin name.
-					 'slug'               => 'beaver-cache-helper', // The plugin slug (typically the folder name).
-					 'source'             => 'https://github.com/Pross/beaver-cache-helper/archive/master.zip', // The plugin source.
-					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'external_url'       => 'https://github.com/Pross/beaver-cache-helper/', // If set, overrides default API URL and points to an external URL.
-			 ),
+
 
 			 array(
 					'name'               => 'WP Sync DB Master', // The plugin name.
@@ -227,6 +220,11 @@ function gsm_register_required_plugins() {
 					 'required'  => false,
 			 ),
 			 array(
+					'name'      => 'Force Regenerate Thumbnails',
+					'slug'      => 'force-regenerate-thumbnails',
+					'required'  => false,
+			),
+			 array(
 					 'name'      => 'Members',
 					 'slug'      => 'members',
 					 'required'  => false,
@@ -306,11 +304,7 @@ function gsm_register_required_plugins() {
 					 'slug'      => 'slicknav-mobile-menu',
 					 'required'  => false,
 			 ),
-			 array(
-					 'name'      => 'Force Regenerate Thumbnails',
-					 'slug'      => 'force-regenerate-thumbnails',
-					 'required'  => false,
-			 ),
+		
 			 array(
 					 'name'      => 'Smoothscroller',
 					 'slug'      => 'smoothscroller',
@@ -346,11 +340,7 @@ function gsm_register_required_plugins() {
 					 'slug'      => 'wordpress-seo',
 					 'required'  => false,
 			 ),
-			 array(
-					 'name'      => 'WP Super Cache',
-					 'slug'      => 'wp-super-cache',
-					 'required'  => false,
-			 ),
+	
 			 array(
 					 'name'      => 'WP Sweep',
 					 'slug'      => 'wp-sweep',

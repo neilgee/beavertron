@@ -501,16 +501,6 @@ a.fl-post-more-link:hover {
 
 
 
-/* # Footer
----------------------------------------------------------------------------------------------------- */
-.site-footer-row p {
-	margin-bottom: 0;
-	font-size: 14px;
-}
-
-.site-footer-row .dashicons {
-	vertical-align: middle;
-}
 
 /*  Entries
 --------------------------------------------- */
@@ -786,6 +776,28 @@ li.comment {
 	margin-bottom: 0;
 }
 
+
+@media (max-width: 767px) {
+	.site-footer-widgets-row h3.fl-heading,
+	.site-footer-widgets-row .fl-icon-group-left,
+	.site-footer-widgets-row .menu li  {
+		text-align: center !important;
+	} 
+	.site-footer-widgets-row .uabb-business-hours-wrap {
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+	}
+	.site-footer-widgets-row .uabb-business-day,
+	.site-footer-widgets-row .uabb-business-hours {
+		width: auto;
+	}
+	.site-footer-widgets-row .uabb-business-day {
+		margin-right: 10px;
+	}
+	
+}
+
 /* Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
@@ -807,6 +819,16 @@ li.comment {
 .fl-page-footer-text {
 	padding-bottom: 10px;
 }
+
+.site-footer-row p {
+	margin-bottom: 0;
+	font-size: 14px;
+}
+
+.site-footer-row .dashicons {
+	vertical-align: middle;
+}
+
 
 
 /* # Plugins
@@ -951,6 +973,10 @@ li.comment {
 
 .icon-top .fl-icon i {
 	float: none;
+}
+
+i.fa-phone{
+	transform: rotate(110deg); 
 }
 
 /* Header Quote

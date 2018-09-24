@@ -27,6 +27,7 @@ function bt_customizer_options_filtered( $data, $key ) {
         $data['sections']['fl-body-font']['options']['fl-body-font-family']['setting']['default']='system-ui';
 
         // Buttons
+        $data['sections']['fl-buttons']['options']['fl-button-style']['setting']['default']='custom';
         $data['sections']['fl-buttons']['options']['fl-button-color']['setting']['default']='#ffffff';
         $data['sections']['fl-buttons']['options']['fl-button-hover-color']['setting']['default']='#000000';
         $data['sections']['fl-buttons']['options']['fl-button-background-color']['setting']['default']='#000000';
