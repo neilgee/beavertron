@@ -2,7 +2,7 @@
 Theme Name: Beavertron
 Theme URI: https://www.wpbeaches.com
 Version: 1.7
-Description: An example child theme that can be used as a starting point for custom development.
+Description: An BB child theme that can be used as a clean slate for custom development.
 Author: Neil Gowran
 Author URI: https://www.wpbeaches.com
 template: bb-theme
@@ -368,6 +368,31 @@ textarea:focus {
 }
 
 
+
+
+/* # Buttons - Button with chevron(add the icon) no background
+---------------------------------------------------------------------------------------------------- */
+
+.but-no-back a.fl-button {
+	border: none;
+	background: transparent;
+	color: #000;
+	padding: 0;
+}
+
+.but-no-back a.fl-button:hover,
+.but-no-back a.fl-button:hover * {
+	color: #000 ;
+	border: none;
+	background: transparent;
+	opacity: .8;
+}
+
+.fl-builder-content .but-no-back i.fl-button-icon-after {
+    margin-left: -3px;
+    margin-right: 0;
+    line-height: 0;
+}
 
 
 /* # Skip Links

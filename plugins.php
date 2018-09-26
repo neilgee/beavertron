@@ -195,6 +195,11 @@ function gsm_register_required_plugins() {
 					 'required'  => false,
 			 ),
 			 array(
+					'name'      => 'Custom Content Shortcode',
+					'slug'      => 'custom-content-shortcode',
+					'required'  => false,
+			),
+			 array(
 					 'name'      => 'Duplicate Post',
 					 'slug'      => 'duplicate-post',
 					 'required'  => false,
