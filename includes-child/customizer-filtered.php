@@ -34,6 +34,9 @@ function bt_customizer_options_filtered( $data, $key ) {
         $data['sections']['fl-buttons']['options']['fl-button-background-hover-color']['setting']['default']='#ffffff';
         $data['sections']['fl-buttons']['options']['fl-button-border-color']['setting']['default']='#000000';
         $data['sections']['fl-buttons']['options']['fl-button-border-style']['setting']['default']='solid';
+        $data['sections']['fl-buttons']['options']['fl-button-border-radius']['setting']['default']='3';
+        $data['sections']['fl-buttons']['options']['fl-button-border-width']['setting']['default']='1';
+
 
         // Add Settings and Controls - 1 way
         // $data['sections']['fl-buttons']['options']['bt_border-hover']['setting']['default']='#666666';
