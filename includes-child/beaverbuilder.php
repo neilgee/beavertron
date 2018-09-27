@@ -130,7 +130,7 @@ add_filter( 'fl_builder_color_presets', 'bt_builder_color_presets' );
 function bt_builder_color_presets( $colors ) {
     $colors = array();
         
-    $colors[] = 'c3251d';
+        $colors[] = 'c3251d';
         $colors[] = 'ffffff';
         $colors[] = '000000';
         $colors[] = '333333';

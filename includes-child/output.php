@@ -88,9 +88,26 @@ function bt_css() {
 			background-size: cover;
 		}
 	', $hero_bg_image ) : '';
+
+
+	// Padding for Buttons
+	$button_padding_width = FLTheme::get_setting( 'bt_button_padding_left_right' );
+	$button_padding_height = FLTheme::get_setting( 'bt_button_padding_top_bottom' ); // Assigning it to a variable to keep the markup clean.
+	$css .= ( $button_padding_width ) ? sprintf('
+		.fl-page button, 
+		.fl-responsive-preview-content button, 
+		.fl-page input[type=button], 
+		.fl-responsive-preview-content input[type=button], 
+		.fl-page input[type=submit], 
+		.fl-responsive-preview-content input[type=submit], 
+		.fl-page a.fl-button, 
+		.fl-responsive-preview-content a.fl-button {
+			padding: %1$spx %2$spx
+		}
+	', $button_padding_height, $button_padding_width ) : '';
 	
 	// Button Border Hover Color
-	$border_color = FLTheme::get_setting( 'bt_border_color_hover' ); // Assigning it to a variable to keep the markup clean.
+	$border_color = FLTheme::get_setting( 'bt_border_color_hover' );
 	$css .= ( $border_color ) ? sprintf('
 		.fl-page button:hover, 
 		.fl-responsive-preview-content button:hover, 
@@ -100,12 +117,12 @@ function bt_css() {
 		.fl-responsive-preview-content input[type=submit]:hover, 
 		.fl-page a.fl-button:hover, 
 		.fl-responsive-preview-content a.fl-button:hover {
-			border-color: %s;			 
+			border-color: %s;	
 		}
 	', $border_color ) : '';
 
 
-	// WooCommerce
+// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
 
 

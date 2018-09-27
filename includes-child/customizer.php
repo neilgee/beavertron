@@ -39,6 +39,62 @@ function bt_register_theme_customizer( $wp_customize ) {
 	   )
 	);
 
+	/* *
+	 * Adding in a Padding Controls for Buttons to the 'fl-buttons' panel
+	 * Also can be done with fl_theme_add_panel_data filter - see 2 examples in customizer-filtered.php
+	 * @since 1.7.0
+	 */
+	$wp_customize->add_setting(
+		'bt_button_padding_left_right', //give it an ID
+			array(
+				'default' => '7', // Give it a default
+				//'transport' => 'postMessage',
+			)
+	);
+	$wp_customize->add_control(
+	   new FLCustomizerControl(
+		   $wp_customize,
+		   'bt_button_padding_leftright', //give it an ID
+			array(
+				'label'    => __( 'Button Padding Left/Right', 'beavertron' ),   //set the label to appear in the Customizer
+				'section'  => 'fl-buttons',                                      //select the section for it to appear under  
+				'settings' => 'bt_button_padding_left_right',                    //pick the setting it applies to
+				'priority' => 15,
+				'type'     => 'slider',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			)
+	   )
+	);
+	$wp_customize->add_setting(
+		'bt_button_padding_top_bottom', //give it an ID
+			array(
+				'default' => '28', // Give it a default
+				//'transport' => 'postMessage',
+			)
+	);
+	$wp_customize->add_control(
+	   new FLCustomizerControl(
+		   $wp_customize,
+		   'bt_button_padding_topbottom', //give it an ID
+			array(
+				'label'    => __( 'Button Padding Top/Bottom', 'beavertron' ),   //set the label to appear in the Customizer
+				'section'  => 'fl-buttons',                                      //select the section for it to appear under  
+				'settings' => 'bt_button_padding_top_bottom',                    //pick the setting it applies to
+				'priority' => 15,
+				'type'     => 'slider',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			)
+	   )
+	);
+
 	/**
 	 * Change Customizer Heading Section
 	 * @since 1.0.0

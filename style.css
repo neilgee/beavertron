@@ -373,7 +373,8 @@ textarea:focus {
 /* # Buttons - Button with chevron(add the icon) no background
 ---------------------------------------------------------------------------------------------------- */
 
-.but-no-back a.fl-button {
+.but-no-back a.fl-button,
+.fl-builder-content .but-no-back a.fl-button *  {
 	border: none;
 	background: transparent;
 	color: #000;
@@ -987,7 +988,7 @@ li.comment {
 	top: -5px;
 }
 
-/* Icon Centre
+/* Icon Centre Icons
 --------------------------------------------- */
 .icon-top .fl-icon {
     display: inline-block;
@@ -1002,6 +1003,14 @@ li.comment {
 
 i.fa-phone{
 	transform: rotate(110deg); 
+}
+
+.circle-border-icon .fl-icon i{
+	border: 2px solid #000;
+}
+
+.circle-border-icon .fl-icon i:hover{
+	border: 2px solid #000;
 }
 
 /* Header Quote
