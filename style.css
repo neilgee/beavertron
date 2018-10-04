@@ -139,6 +139,9 @@ address {
 	margin-bottom: 0;
 }
 
+.text-uppercase .fl-heading {
+	text-transform: uppercase;
+}
 
 /* ## Headings
 --------------------------------------------- */
@@ -376,6 +379,7 @@ textarea:focus {
 .but-no-back a.fl-button,
 .fl-builder-content .but-no-back a.fl-button *  {
 	border: none;
+	border-radius: 0;
 	background: transparent;
 	color: #000;
 	padding: 0;
@@ -613,8 +617,8 @@ a.fl-post-more-link:hover {
 	display: block;
 }
 
-.fl-post-date::before,
-.fl-post-grid-date::before {
+.single .fl-post-date::before,
+.single .fl-post-grid-date::before {
     content: '\f017';
 	font-family: 'Font Awesome 5 Free';
     color: #333;
@@ -623,7 +627,7 @@ a.fl-post-more-link:hover {
 	padding-right: 3px;
 }
 
-.fl-post-grid-author:before {
+.single  .fl-post-grid-author:before {
     content: '\f007';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -633,8 +637,8 @@ a.fl-post-more-link:hover {
     vertical-align: middle;
 }
 
-.fl-comments-popup-link::before,
-.fl-post-feed-comments::before {
+.single .fl-comments-popup-link::before,
+.single .fl-post-feed-comments::before {
     content: '\f075';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 400;
@@ -646,12 +650,12 @@ a.fl-post-more-link:hover {
 
 }
 
-.fl-post-feed-comments .fa-comment:before {
+.single .fl-post-feed-comments .fa-comment:before {
     content: "";
 }
 
-.fl-entry-categories::before,
-.fl-post-info-terms::before {
+.single .fl-entry-categories::before,
+.single .fl-post-info-terms::before {
     content: '\f07c';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 400;
@@ -661,8 +665,8 @@ a.fl-post-more-link:hover {
     padding-right: 5px;
 }
 
-.fl-entry-tags::before,
-.fl-post-info-tags .fl-post-info-terms::before{
+.single .fl-entry-tags::before,
+.single .fl-post-info-tags .fl-post-info-terms::before{
     content: '\f02c';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -1037,6 +1041,28 @@ i.fa-phone{
 
 }
 
+/* 
+ * Shadows
+---------------------------------------------------------------------------------------------------- */
+
+.bottom-shadow {
+	box-shadow: 0px 15px 15px -15px #b9b9b9; 
+}
+.top-shadow {
+	box-shadow: 0px -15px 10px -15px #b9b9b9; 
+}
+.left-shadow {
+	box-shadow: -15px 0px 10px -15px #b9b9b9; 
+}
+.right-shadow {
+	box-shadow: 15px 0px 10px -15px #b9b9b9;
+}
+
+.full-shadow {
+	-webkit-box-shadow: 0px 0px 15px 0 rgba(185,185,185,1);
+	-moz-box-shadow: 0px 0px 15px 0 rgba(185,185,185,1);
+	box-shadow: 0px 0px 15px 0 rgba(185,185,185,1);
+}
 
 /* Offset Anchor Sticky Header
  * Add HTML --> <a class="anchor" id="top"></a>
