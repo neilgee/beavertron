@@ -48,6 +48,11 @@ final class FLChildTheme {
         // Select2 JS - CSS & JS files filed and init is commented out in global
         // if( is_shop() || is_product_category() ) {
 
+        // wooSelect
+        // wp_enqueue_script( 'selectinit', get_stylesheet_directory_uri() . '/js/global.js', array( 'selectWoo' ), '1.0.0', true );   
+        // wp_enqueue_style( 'select2');
+
+        // Actual select2 scripts and styles
         // wp_enqueue_script( 'select2js', get_stylesheet_directory_uri() . '/js/select2.min.js', array( 'jquery' ), '4.0.6', true );
         // wp_enqueue_style( 'select2css', get_stylesheet_directory_uri() . '/css/select2.min.css' , array(), '4.0.6', 'all' );
         // wp_enqueue_script( 'selectinit', get_stylesheet_directory_uri() . '/js/global.js', array( 'select2js' ), '1.0.0', true );       
