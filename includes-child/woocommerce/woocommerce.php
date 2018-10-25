@@ -127,6 +127,41 @@ function bt_custom_shipping_fields( $fields = array() ) {
  * @since 1.0.0
  */
 function bt_thank_you() {
-	$added_text = '<p>Thank you your order has been received. Your download link is below. You will also receive an email with your PDF download link.</p>';
-	return $added_text ;
+        $added_text = '<p>Thank you your order has been received. Your download link is below. You will also receive an email with your PDF download link.</p>';
+        return $added_text ;
+}
+
+/**
+ * Filter to remove SKU number
+ * @since 1.7.0
+ */
+//add_filter( 'wc_product_sku_enabled', '__return_false' );
+
+
+//add_filter( 'woocommerce_product_tabs', 'bt_remove_product_tabs', 98 );
+/**
+ * Remove WooCommerce Tabs - this code removes all 3 tabs - to be more specific just remove actual unset lines 
+ * @since 1.7.0
+ */
+function bt_remove_product_tabs( $tabs ) {
+
+        unset( $tabs['description'] );      	// Remove the description tab
+        unset( $tabs['reviews'] ); 			// Remove the reviews tab
+        unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+        return $tabs;
+
+}
+
+//add_filter('woocommerce_dropdown_variation_attribute_options_args', 'bt_dropdown_choice', 10);
+// 
+/**
+ * Change the custom "Choose an option" on the front end
+ * @since 1.7.0
+ */
+function bt_dropdown_choice( $args ){
+        if( is_product() ) {
+                $args['show_option_none'] = "Chose a voucher value:";
+        }  
+        return $args;    
 }

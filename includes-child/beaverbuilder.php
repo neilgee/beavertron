@@ -147,6 +147,7 @@ function bt_builder_color_presets( $colors ) {
     $colors = array();
         
         $colors[] = 'c3251d';
+        $colors[] = '222f3e';
         $colors[] = 'ffffff';
         $colors[] = '000000';
         $colors[] = '333333';
@@ -172,7 +173,7 @@ function bt_customize_color_presets() {
           vert: 's', // square vertical displays saturdation
           strip: 'l' // slider displays lightness
         },
-        palettes: ['#c3251d','#ffffff', '#000000', '#333333', '#999999']
+        palettes: ['#c3251d', '#222f3e', '#ffffff', '#000000', '#333333', '#999999']
       })
     });
   </script>
