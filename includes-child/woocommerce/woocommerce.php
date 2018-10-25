@@ -165,3 +165,14 @@ function bt_dropdown_choice( $args ){
         }  
         return $args;    
 }
+
+//add_filter( 'woocommerce_add_to_cart_redirect', 'bt_add_to_cart_redirect' );
+/**
+ * Go Straight to checkout after added to cart
+ * @since 1.7.0
+ */
+function bt_add_to_cart_redirect() {
+        global $woocommerce;
+        $checkout_url = wc_get_checkout_url();
+        return $checkout_url;
+}
