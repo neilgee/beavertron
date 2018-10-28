@@ -56,22 +56,32 @@ function bt_woocommerce_pagination( $args ) {
 
 /**
  * Removes Order Notes Title - Additional Information
- * @since 1.0.0
+ * @since 1.7.0
  */
-// add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
+$bt_woo_additional = get_theme_mod( 'bt_woo_additional');
 
+if( $bt_woo_additional === 'disabled' ) {
+	add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
+}
 /**
- * Remove display notice - Showing all x results
+ * Remove Notice - Showing all x results
  * @since 1.0.0
  */
-// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+$bt_woo_results = get_theme_mod( 'bt_woo_results');
+
+if( $bt_woo_results === 'disabled' ) {
+	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+}
 
 /**
  * Remove default sorting drop-down from WooCommerce
- * @since 1.0.0
+ * @since 1.7.0
  */
-// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+$bt_woo_sort = get_theme_mod( 'bt_woo_sort');
 
+if( $bt_woo_sort === 'disabled' ) {
+	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+}
 
 // add_filter( 'woocommerce_checkout_fields' , 'bt_remove_order_notes' );
 /**
@@ -135,7 +145,11 @@ function bt_thank_you() {
  * Filter to remove SKU number
  * @since 1.7.0
  */
-//add_filter( 'wc_product_sku_enabled', '__return_false' );
+$bt_woo_sku = get_theme_mod( 'bt_woo_sku');
+
+if( $bt_woo_sku === 'disabled' ) {
+	add_filter( 'wc_product_sku_enabled', '__return_false' );
+}
 
 
 //add_filter( 'woocommerce_product_tabs', 'bt_remove_product_tabs', 98 );
@@ -176,3 +190,7 @@ function bt_add_to_cart_redirect() {
         $checkout_url = wc_get_checkout_url();
         return $checkout_url;
 }
+
+
+
+

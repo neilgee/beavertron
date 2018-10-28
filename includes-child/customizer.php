@@ -96,6 +96,119 @@ function bt_register_theme_customizer( $wp_customize ) {
 	);
 
 	/**
+	 * Add Enable/Disable Additional Notes
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting(
+		'bt_woo_additional', //give it an ID
+			array(
+			'default'   => 'enabled',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bt_woo_additional_notes', //give it an ID
+			 array (
+				'label'       => __( 'WooCommerce Additional Notes', 'beavertron' ),
+				'section'     => 'fl-content-woo',
+				'settings'    => 'bt_woo_additional',                                                                //pick the setting it applies to
+				'description' => __( 'Enable or disable Woo Additional/Order Notes on Checkout', 'fl-automator' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'enabled'           => __( 'Enabled', 'beavertron' ),
+					'disabled'          => __( 'Disabled', 'beavertron' ),
+				),
+		 	)
+	   	)
+	);
+
+
+	/**
+	 * Add Enable/Disable Woo Sort
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting(
+		'bt_woo_sort', //give it an ID
+			array(
+			'default'   => 'enabled',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bt_woo_sort', //give it an ID
+			 array (
+				'label'       => __( 'WooCommerce Default Sort', 'beavertron' ),
+				'section'     => 'fl-content-woo',
+				'settings'    => 'bt_woo_sort',                                                                //pick the setting it applies to
+				'description' => __( 'Enable or disable Woo Default Sort', 'beavertron' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'enabled'           => __( 'Enabled', 'beavertron' ),
+					'disabled'          => __( 'Disabled', 'beavertron' ),
+				),
+		 	)
+	   	)
+	);
+
+	/**
+	 * Enable/Disable Woo Display Results
+	 * @since 1.0.0
+	 */
+	$wp_customize->add_setting(
+		'bt_woo_results', //give it an ID
+			array(
+			'default'   => 'enabled',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bt_woo_results', //give it an ID
+			 array (
+				'label'       => __( 'WooCommerce Display Results', 'beavertron' ),
+				'section'     => 'fl-content-woo',
+				'settings'    => 'bt_woo_results',                                                                //pick the setting it applies to
+				'description' => __( 'Enable or disable Woo Display Results Notice', 'beavertron' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'enabled'           => __( 'Enabled', 'beavertron' ),
+					'disabled'          => __( 'Disabled', 'beavertron' ),
+				),
+		 	)
+	   	)
+	);
+
+	/**
+	 * Enable/Disable Woo SKU
+	 * @since 1.7.0
+	 */
+	$wp_customize->add_setting(
+		'bt_woo_sku', //give it an ID
+			array(
+			'default'   => 'disabled',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bt_woo_sku', //give it an ID
+			 array (
+				'label'       => __( 'WooCommerce Display SKU', 'beavertron' ),
+				'section'     => 'fl-content-woo',
+				'settings'    => 'bt_woo_sku',                                                                //pick the setting it applies to
+				'description' => __( 'Enable or disable Woo SKU', 'beavertron' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'enabled'           => __( 'Enabled', 'beavertron' ),
+					'disabled'          => __( 'Disabled', 'beavertron' ),
+				),
+		 	)
+	   	)
+	);
+
+	/**
 	 * Change Customizer Heading Section
 	 * @since 1.0.0
 	 */

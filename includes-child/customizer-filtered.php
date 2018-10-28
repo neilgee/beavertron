@@ -52,7 +52,7 @@ function bt_customizer_options_filtered( $data, $key ) {
             ),
             'control' => array(
                 'class'     => 'WP_Customize_Color_Control',
-                'label'     => __( 'Border Hover Color', 'beavertron' ),
+                'label'     => __( 'Border Hover Colour', 'beavertron' ),
                 'priority'  => 0,
             ),
         );
@@ -74,6 +74,7 @@ function bt_customizer_options_filtered( $data, $key ) {
       //  $data['sections']['fl-header-logo']['options']['fl-logo-font-family']['setting']['default']='system-ui';
 
     }
+
  
     return $data;  
 }

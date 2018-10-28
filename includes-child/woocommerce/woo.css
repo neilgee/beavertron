@@ -127,6 +127,11 @@
 
 /* Related Products */
 
+.woocommerce .related {
+	clear: both;
+}
+
+
 .woocommerce-page .related ul.products li.product {
 	width: 49%;
 }
