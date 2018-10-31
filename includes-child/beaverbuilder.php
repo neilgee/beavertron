@@ -30,6 +30,24 @@
     return $regex;
 }
 
+add_filter( 'image_size_names_choose', 'bt_custom_image_sizes' );
+/**
+* Helps Beaver Builder see custom sizes.
+* @since 1.0.0
+* @link https://kb.wpbeaverbuilder.com/article/382-add-custom-image-sizes
+*/
+function bt_custom_image_sizes( $sizes ) {
+    global $_wp_additional_image_sizes;
+    if ( empty( $_wp_additional_image_sizes ) )
+            return $sizes;
+
+    foreach ( $_wp_additional_image_sizes as $id => $data ) {
+            if ( !isset($sizes[$id]) )
+                    $sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
+    }
+    return $sizes;
+}
+
 
 //add_filter( 'fl_builder_font_families_system', 'bt_added_fonts_plugin' );
 /**

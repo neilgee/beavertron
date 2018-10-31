@@ -125,23 +125,6 @@ function bt_theme_setup() {
 	*/
 	load_theme_textdomain( 'beavertron', get_stylesheet_directory_uri() . '/languages' );
 
-	add_filter( 'image_size_names_choose', 'bt_custom_image_sizes' );
-	/**
-	* Helps Beaver Builder see custom sizes.
-	* @since 1.0.0
-	* @link https://kb.wpbeaverbuilder.com/article/382-add-custom-image-sizes
-	*/
-	function bt_custom_image_sizes( $sizes ) {
-		global $_wp_additional_image_sizes;
-		if ( empty( $_wp_additional_image_sizes ) )
-				return $sizes;
-	
-		foreach ( $_wp_additional_image_sizes as $id => $data ) {
-				if ( !isset($sizes[$id]) )
-						$sizes[$id] = ucfirst( str_replace( '-', ' ', $id ) );
-		}
-		return $sizes;
-	}
 
 	add_filter( 'intermediate_image_sizes_advanced', 'bt_remove_default_images' );
 	/**
@@ -238,7 +221,7 @@ function bt_theme_setup() {
 	add_filter( 'widget_text', 'do_shortcode' );
 
 
-	add_filter( 'widget_text','bt_execute_php_widgets' );
+	//add_filter( 'widget_text','bt_execute_php_widgets' );
 	/**
 	* Allow PHP code to run in Widgets.
 	* @since 1.0.0
