@@ -236,6 +236,35 @@ function bt_register_theme_customizer( $wp_customize ) {
 	   	)
 	);
 
+
+	/**
+	 * Remove Category Meta on WooCommerce product page
+	 * @since 1.7.0
+	 */
+	$wp_customize->add_setting(
+		'bt_woo_meta', //give it an ID
+			array(
+			'default'   => 'disabled',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bt_woo_meta', //give it an ID
+			 array (
+				'label'       => __( 'WooCommerce Remove Meta', 'beavertron' ),
+				'section'     => 'fl-content-woo',
+				'settings'    => 'bt_woo_meta',   //pick the setting it applies to
+				'description' => __( 'Remove Post Category Meta on Product Page', 'beavertron' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'enabled'           => __( 'Enabled', 'beavertron' ),
+					'disabled'          => __( 'Disabled', 'beavertron' ),
+				),
+		 	)
+	   	)
+	);
+
 	/**
 	 * Change Customizer Heading Section
 	 * @since 1.0.0

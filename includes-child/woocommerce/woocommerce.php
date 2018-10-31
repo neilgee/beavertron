@@ -161,6 +161,16 @@ if( $bt_woo_related === 'enabled' ) {
 
 }
 
+/**
+ * Remove Category Meta on WooCommerce product page
+ * @since 1.7.0
+ */
+$bt_woo_meta = get_theme_mod( 'bt_woo_meta');
+if( $bt_woo_meta === 'enabled' ) {
+	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+}
+
 
 //add_filter( 'woocommerce_product_tabs', 'bt_remove_product_tabs', 98 );
 /**
