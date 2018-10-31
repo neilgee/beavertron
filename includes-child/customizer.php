@@ -266,6 +266,35 @@ function bt_register_theme_customizer( $wp_customize ) {
 	);
 
 	/**
+	 * Remove the WooCommerce breadcrumbs
+	 * @since 1.7.0
+	 */
+	$wp_customize->add_setting(
+		'bt_woo_breadcrumbs', //give it an ID
+			array(
+			'default'   => 'disabled',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bt_woo_breadcrumbs', //give it an ID
+			 array (
+				'label'       => __( 'WooCommerce Remove Breadcrumbs', 'beavertron' ),
+				'section'     => 'fl-content-woo',
+				'settings'    => 'bt_woo_breadcrumbs',   //pick the setting it applies to
+				'description' => __( 'Remove the WooCommerce breadcrumbs', 'beavertron' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'enabled'           => __( 'Enabled', 'beavertron' ),
+					'disabled'          => __( 'Disabled', 'beavertron' ),
+				),
+		 	)
+	   	)
+	);
+
+
+	/**
 	 * Change Customizer Heading Section
 	 * @since 1.0.0
 	 */

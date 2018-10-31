@@ -171,6 +171,20 @@ if( $bt_woo_meta === 'enabled' ) {
 
 }
 
+/**
+ * Remove the WooCommerce breadcrumbs 
+ * @link https://docs.woocommerce.com/document/customise-the-woocommerce-breadcrumb/
+ * @since 1.7.0
+ */
+
+add_action( 'init', 'bt_remove_wc_breadcrumbs' );
+function bt_remove_wc_breadcrumbs() {
+$bt_woo_breadcrumbs = get_theme_mod( 'bt_woo_breadcrumbs');
+	if( $bt_woo_breadcrumbs === 'enabled' ) {
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+	}
+}
+
 
 //add_filter( 'woocommerce_product_tabs', 'bt_remove_product_tabs', 98 );
 /**
