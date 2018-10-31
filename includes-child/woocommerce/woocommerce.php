@@ -151,6 +151,16 @@ if( $bt_woo_sku === 'disabled' ) {
 	add_filter( 'wc_product_sku_enabled', '__return_false' );
 }
 
+/**
+ * Remove related products on a WooCommerce product page
+ * @since 1.7.0
+ */
+$bt_woo_related = get_theme_mod( 'bt_woo_related');
+if( $bt_woo_related === 'enabled' ) {
+	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+}
+
 
 //add_filter( 'woocommerce_product_tabs', 'bt_remove_product_tabs', 98 );
 /**

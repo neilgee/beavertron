@@ -209,6 +209,34 @@ function bt_register_theme_customizer( $wp_customize ) {
 	);
 
 	/**
+	 * Remove related products on a WooCommerce product page
+	 * @since 1.7.0
+	 */
+	$wp_customize->add_setting(
+		'bt_woo_related', //give it an ID
+			array(
+			'default'   => 'disabled',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bt_woo_related', //give it an ID
+			 array (
+				'label'       => __( 'WooCommerce Remove Related', 'beavertron' ),
+				'section'     => 'fl-content-woo',
+				'settings'    => 'bt_woo_related',   //pick the setting it applies to
+				'description' => __( 'Remove Related Products on Product Page', 'beavertron' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'enabled'           => __( 'Enabled', 'beavertron' ),
+					'disabled'          => __( 'Disabled', 'beavertron' ),
+				),
+		 	)
+	   	)
+	);
+
+	/**
 	 * Change Customizer Heading Section
 	 * @since 1.0.0
 	 */
