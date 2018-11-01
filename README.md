@@ -65,13 +65,13 @@ More info here - https://wpbeaches.com/add-custom-logo-schema-beaver-themer-head
 ### Customizer
 - Extra WooCommerce settings for button and alert colors have been added to the default WooCommerce panel, they only appear if WooCommerce is active.
 - WooCommerce Customizer options
- -- set amount of products on Shop / Archive, 
- -- change text on variation dropdown, 
- -- change text on order received screen, 
- -- remove review, description, additional tabs,
- -- remove breadcrumbs,
- -- remove single product meta,
- -- remove related products from single product page 
+  - set amount of products on Shop / Archive, 
+  - change text on variation dropdown, 
+  - change text on order received screen, 
+  - remove review, description, additional tabs,
+  - remove breadcrumbs,
+  - remove single product meta,
+  - remove related products from single product page 
 - Button Hover Color and Padding added in panel *General > Buttons*
 - Additional Customizer settings are output via wp_add_inline_style to the child theme CSS 
 - Added panel 'Featured Images' with 'Hero Background' field - not actively used.
