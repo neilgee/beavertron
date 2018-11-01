@@ -357,6 +357,56 @@ function bt_register_theme_customizer( $wp_customize ) {
 	);
 
 	/**
+	 * WooTabs Removalists
+	 * @since 1.7.0
+	 */
+	
+	$wp_customize->add_setting( 'bt_woo_tabs_review',
+	   array(
+	      'default' => 0,
+	   )
+	);
+	 
+	$wp_customize->add_control( 'bt_woo_tabs_review',
+	   array(
+	      'label' => __( 'Remove Woo Tabs Review' ),
+	      'section' => 'fl-content-woo',
+	      'priority' => 10, // Optional. Order priority to load the control. Default: 10
+	      'type' => 'checkbox',
+	   )
+	);
+
+	$wp_customize->add_setting( 'bt_woo_tabs_description',
+	   array(
+	      'default' => 0,
+	   )
+	);
+	 
+	$wp_customize->add_control( 'bt_woo_tabs_description',
+	   array(
+	      'label' => __( 'Remove Woo Tabs Description' ),
+	      'section' => 'fl-content-woo',
+	      'priority' => 10, // Optional. Order priority to load the control. Default: 10
+	      'type' => 'checkbox',
+	   )
+	);
+	
+	$wp_customize->add_setting( 'bt_woo_tabs_information',
+	   array(
+	      'default' => 0,
+	   )
+	);
+	 
+	$wp_customize->add_control( 'bt_woo_tabs_information',
+	   array(
+	      'label' => __( 'Remove Woo Tabs Information' ),
+	      'section' => 'fl-content-woo',
+	      'priority' => 10, // Optional. Order priority to load the control. Default: 10
+	      'type' => 'checkbox',
+	   )
+	);
+
+	/**
 	 * Change Customizer Heading Section
 	 * @since 1.0.0
 	 */

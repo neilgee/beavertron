@@ -192,18 +192,28 @@ $bt_woo_breadcrumbs = get_theme_mod( 'bt_woo_breadcrumbs');
 }
 
 
-//add_filter( 'woocommerce_product_tabs', 'bt_remove_product_tabs', 98 );
+add_filter( 'woocommerce_product_tabs', 'bt_remove_product_tabs', 98 );
 /**
  * Remove WooCommerce Tabs - this code removes all 3 tabs - to be more specific just remove actual unset lines 
  * @since 1.7.0
  */
 function bt_remove_product_tabs( $tabs ) {
-
-        unset( $tabs['description'] );      	// Remove the description tab
-        unset( $tabs['reviews'] ); 			// Remove the reviews tab
-        unset( $tabs['additional_information'] );  	// Remove the additional information tab
-
-        return $tabs;
+$bt_woo_tabs_review = get_theme_mod( 'bt_woo_tabs_review');
+$bt_woo_tabs_description = get_theme_mod( 'bt_woo_tabs_description');
+$bt_woo_tabs_information = get_theme_mod( 'bt_woo_tabs_information');
+	
+	
+	if ($bt_woo_tabs_description == 1) {
+     unset( $tabs['description'] );
+    }      	// Remove the description tab
+    if ($bt_woo_tabs_review == 1) {
+     unset( $tabs['reviews'] ); 		
+    }	// Remove the reviews tab
+    if ($bt_woo_tabs_information == 1) {
+     unset( $tabs['additional_information'] );  	
+    }  // Remove the additional information tab
+	
+    return $tabs;
 
 }
 
