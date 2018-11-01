@@ -131,15 +131,19 @@ function bt_custom_shipping_fields( $fields = array() ) {
 }
 
 
-//add_filter( 'woocommerce_thankyou_order_received_text', 'bt_thank_you' );
+add_filter( 'woocommerce_thankyou_order_received_text', 'bt_thank_you' );
 /**
  * Filter thank you text for digital downloads or the first page after payment
- * @since 1.0.0
+ * @since 1.7.0
  */
 function bt_thank_you() {
-        $added_text = '<p>Thank you your order has been received. Your download link is below. You will also receive an email with your PDF download link.</p>';
+$bt_woo_order_received = get_theme_mod( 'bt_woo_order_received');
+       
+       $added_text = $bt_woo_order_received;
+       
         return $added_text ;
 }
+
 
 /**
  * Filter to remove SKU number

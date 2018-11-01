@@ -293,6 +293,39 @@ function bt_register_theme_customizer( $wp_customize ) {
 	   	)
 	);
 
+		/**
+	 * Change WooCommerce Order Received Text
+	 * @since 1.7.0
+	 */
+	// Add section.
+	$wp_customize->add_section( 'bt_woo_order_section' , array(
+		'title'    => __('Order Received Text','beavertron'),
+		'panel'    => 'woocommerce',
+		'priority' => 10
+	) );
+	// Add setting
+	$wp_customize->add_setting( 'bt_woo_order_received', array(
+		 'default'           => __( 'Thank you. Your order has been received.', 'beavertron' ),
+		 'sanitize_callback' => 'sanitize_text'
+	) );
+	// Add control
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'bt_woo_order_received',
+		    array(
+		        'label'    => __( 'Order Received Text', 'beavertron' ),
+		        'section'  => 'bt_woo_order_section',
+		        'settings' => 'bt_woo_order_received',
+		        'type'     => 'textarea'
+		    )
+	    )
+	);
+	
+	// Sanitize text
+	function sanitize_text( $text ) {
+	    return sanitize_text_field( $text );
+	}
+
 
 	/**
 	 * Change Customizer Heading Section
