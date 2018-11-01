@@ -30,7 +30,7 @@ add_filter( 'loop_shop_per_page', 'bt_new_loop_shop_per_page', 20 );
  * @since 1.0.0
  */
 function bt_new_loop_shop_per_page( $cols ) {
-	$bt_number_products = get_theme_mod( 'bt_number_products');
+	$bt_number_products = get_theme_mod( 'bt_number_products' );
 
         // $cols contains the current number of products per page based on the value stored on Options -> Reading
         // Return the number of products you wanna show per page.
@@ -53,23 +53,23 @@ function bt_woocommerce_pagination( $args ) {
 	$args['next_text'] = sprintf( '%s &raquo;', __( 'Next Page', 'beavertron' ) );
 
 	return $args;
-
 }
 
 /**
  * Removes Order Notes Title - Additional Information
  * @since 1.7.0
  */
-$bt_woo_additional = get_theme_mod( 'bt_woo_additional');
+$bt_woo_additional = get_theme_mod( 'bt_woo_additional' );
 
 if( $bt_woo_additional === 'disabled' ) {
 	add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
 }
+
 /**
  * Remove Notice - Showing all x results
  * @since 1.0.0
  */
-$bt_woo_results = get_theme_mod( 'bt_woo_results');
+$bt_woo_results = get_theme_mod( 'bt_woo_results' );
 
 if( $bt_woo_results === 'disabled' ) {
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
@@ -79,7 +79,7 @@ if( $bt_woo_results === 'disabled' ) {
  * Remove default sorting drop-down from WooCommerce
  * @since 1.7.0
  */
-$bt_woo_sort = get_theme_mod( 'bt_woo_sort');
+$bt_woo_sort = get_theme_mod( 'bt_woo_sort' );
 
 if( $bt_woo_sort === 'disabled' ) {
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
@@ -91,7 +91,7 @@ if( $bt_woo_sort === 'disabled' ) {
  * @since 1.0.0
  */
 function bt_remove_order_notes( $fields ) {
-        unset($fields['order']['order_comments']);
+        unset( $fields['order']['order_comments'] );
         return $fields;
 }
 
@@ -103,7 +103,7 @@ function bt_remove_order_notes( $fields ) {
  * @link https://docs.woothemes.com/document/tutorial-customising-checkout-fields-using-actions-and-filters/
  */
 function bt_custom_billing_fields( $fields = array() ) {
-        unset($fields['billing_company']);
+        unset( $fields['billing_company'] );
         // unset($fields['billing_address_1']);
         // unset($fields['billing_address_2']);
         // unset($fields['billing_state']);
@@ -121,7 +121,7 @@ function bt_custom_billing_fields( $fields = array() ) {
  * @link https://docs.woothemes.com/document/tutorial-customising-checkout-fields-using-actions-and-filters/
  */
 function bt_custom_shipping_fields( $fields = array() ) {
-        unset($fields['shipping_company']);
+        unset( $fields['shipping_company'] );
         // unset($fields['shipping_address_1']);
         // unset($fields['shipping_address_2']);
         // unset($fields['shipping_state']);
@@ -139,7 +139,7 @@ add_filter( 'woocommerce_thankyou_order_received_text', 'bt_thank_you' );
  * @since 1.7.0
  */
 function bt_thank_you() {
-$bt_woo_order_received = get_theme_mod( 'bt_woo_order_received');
+$bt_woo_order_received = get_theme_mod( 'bt_woo_order_received' );
        
        $added_text = $bt_woo_order_received;
        
@@ -151,7 +151,7 @@ $bt_woo_order_received = get_theme_mod( 'bt_woo_order_received');
  * Filter to remove SKU number
  * @since 1.7.0
  */
-$bt_woo_sku = get_theme_mod( 'bt_woo_sku');
+$bt_woo_sku = get_theme_mod( 'bt_woo_sku' );
 
 if( $bt_woo_sku === 'disabled' ) {
 	add_filter( 'wc_product_sku_enabled', '__return_false' );
@@ -161,29 +161,26 @@ if( $bt_woo_sku === 'disabled' ) {
  * Remove related products on a WooCommerce product page
  * @since 1.7.0
  */
-$bt_woo_related = get_theme_mod( 'bt_woo_related');
+$bt_woo_related = get_theme_mod( 'bt_woo_related' );
 if( $bt_woo_related === 'enabled' ) {
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
-
 }
 
 /**
  * Remove Category Meta on WooCommerce product page
  * @since 1.7.0
  */
-$bt_woo_meta = get_theme_mod( 'bt_woo_meta');
+$bt_woo_meta = get_theme_mod( 'bt_woo_meta' );
 if( $bt_woo_meta === 'enabled' ) {
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
 }
 
+add_action( 'init', 'bt_remove_wc_breadcrumbs' );
 /**
  * Remove the WooCommerce breadcrumbs 
  * @link https://docs.woocommerce.com/document/customise-the-woocommerce-breadcrumb/
  * @since 1.7.0
  */
-
-add_action( 'init', 'bt_remove_wc_breadcrumbs' );
 function bt_remove_wc_breadcrumbs() {
 $bt_woo_breadcrumbs = get_theme_mod( 'bt_woo_breadcrumbs');
 	if( $bt_woo_breadcrumbs === 'enabled' ) {
@@ -198,6 +195,7 @@ add_filter( 'woocommerce_product_tabs', 'bt_remove_product_tabs', 98 );
  * @since 1.7.0
  */
 function bt_remove_product_tabs( $tabs ) {
+
 $bt_woo_tabs_review = get_theme_mod( 'bt_woo_tabs_review');
 $bt_woo_tabs_description = get_theme_mod( 'bt_woo_tabs_description');
 $bt_woo_tabs_information = get_theme_mod( 'bt_woo_tabs_information');
@@ -217,22 +215,23 @@ $bt_woo_tabs_information = get_theme_mod( 'bt_woo_tabs_information');
 
 }
 
-add_filter('woocommerce_dropdown_variation_attribute_options_args', 'bt_dropdown_choice', 10);
-// 
+add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'bt_dropdown_choice', 10 );
 /**
  * Change the custom "Choose an option" on the front end
  * @since 1.7.0
  */
 function bt_dropdown_choice( $args ){
+	
 	if( is_product() ) {
-	$bt_woo_dropdown_variation = get_theme_mod( 'bt_woo_dropdown_variation');
 
-	$args['show_option_none'] = $bt_woo_dropdown_variation;
+		$bt_woo_dropdown_variation = get_theme_mod( 'bt_woo_dropdown_variation');
+
+		$args['show_option_none'] = $bt_woo_dropdown_variation;
 	}  
-	return $args;    
+		return $args;    
 }
 
-//add_filter( 'woocommerce_add_to_cart_redirect', 'bt_add_to_cart_redirect' );
+add_filter( 'woocommerce_add_to_cart_redirect', 'bt_add_to_cart_redirect' );
 /**
  * Go Straight to checkout after added to cart
  * @since 1.7.0

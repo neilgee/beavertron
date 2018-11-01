@@ -328,7 +328,7 @@ function bt_register_theme_customizer( $wp_customize ) {
 	 */
 	// Add section.
 	$wp_customize->add_section( 'bt_woo_vary_dropdown_section' , array(
-		'title'    => __('Variation Dropdown Choice Text','beavertron'),
+		'title'    => __('Variation Dropdown Text','beavertron'),
 		'panel'    => 'woocommerce',
 		'priority' => 10
 	) );
