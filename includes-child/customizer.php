@@ -325,7 +325,36 @@ function bt_register_theme_customizer( $wp_customize ) {
 	function sanitize_text( $text ) {
 	    return sanitize_text_field( $text );
 	}
-
+		
+	/**
+	 * Change number of WooCommerce Products Shop & Archive
+	 * @since 1.7.0
+	 */
+	$wp_customize->add_setting(
+		'bt_number_products', //give it an ID
+			array(
+				'default' => '12', // Give it a default
+				//'transport' => 'postMessage',
+			)
+	);
+	$wp_customize->add_control(
+		new FLCustomizerControl(
+			$wp_customize,
+			'bt_number_products', //give it an ID
+			array(
+				'label'    => __( 'Number of WooCommerce Products Shop & Archive', 'beavertron' ),   //set the label to appear in the Customizer
+				'section'  => 'fl-content-woo',                                      //select the section for it to appear under  
+				'settings' => 'bt_number_products',                    //pick the setting it applies to
+				'priority' => 5,
+				'type'     => 'slider',
+				'choices'  => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			)
+		)
+	);
 
 	/**
 	 * Change Customizer Heading Section
