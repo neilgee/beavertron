@@ -293,7 +293,7 @@ function bt_register_theme_customizer( $wp_customize ) {
 	   	)
 	);
 
-		/**
+	/**
 	 * Change WooCommerce Order Received Text
 	 * @since 1.7.0
 	 */
@@ -316,6 +316,35 @@ function bt_register_theme_customizer( $wp_customize ) {
 		        'label'    => __( 'Order Received Text', 'beavertron' ),
 		        'section'  => 'bt_woo_order_section',
 		        'settings' => 'bt_woo_order_received',
+		        'type'     => 'textarea'
+		    )
+	    )
+	);
+
+
+	/**
+	 * Change WooCommerce Variation Dropdown Text
+	 * @since 1.7.0
+	 */
+	// Add section.
+	$wp_customize->add_section( 'bt_woo_vary_dropdown_section' , array(
+		'title'    => __('Variation Dropdown Choice Text','beavertron'),
+		'panel'    => 'woocommerce',
+		'priority' => 10
+	) );
+	// Add setting
+	$wp_customize->add_setting( 'bt_woo_dropdown_variation', array(
+		 'default'           => __( 'Choose an option', 'beavertron' ),
+		 'sanitize_callback' => 'sanitize_text'
+	) );
+	// Add control
+	$wp_customize->add_control( new WP_Customize_Control(
+	    $wp_customize,
+		'bt_woo_dropdown_variation',
+		    array(
+		        'label'    => __( 'Variation Dropdown Text', 'beavertron' ),
+		        'section'  => 'bt_woo_vary_dropdown_section',
+		        'settings' => 'bt_woo_dropdown_variation',
 		        'type'     => 'textarea'
 		    )
 	    )

@@ -217,17 +217,19 @@ $bt_woo_tabs_information = get_theme_mod( 'bt_woo_tabs_information');
 
 }
 
-//add_filter('woocommerce_dropdown_variation_attribute_options_args', 'bt_dropdown_choice', 10);
+add_filter('woocommerce_dropdown_variation_attribute_options_args', 'bt_dropdown_choice', 10);
 // 
 /**
  * Change the custom "Choose an option" on the front end
  * @since 1.7.0
  */
 function bt_dropdown_choice( $args ){
-        if( is_product() ) {
-                $args['show_option_none'] = "Chose a voucher value:";
-        }  
-        return $args;    
+	if( is_product() ) {
+	$bt_woo_dropdown_variation = get_theme_mod( 'bt_woo_dropdown_variation');
+
+	$args['show_option_none'] = $bt_woo_dropdown_variation;
+	}  
+	return $args;    
 }
 
 //add_filter( 'woocommerce_add_to_cart_redirect', 'bt_add_to_cart_redirect' );
