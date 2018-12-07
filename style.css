@@ -378,20 +378,23 @@ textarea:focus {
 ---------------------------------------------------------------------------------------------------- */
 
 .but-no-back a.fl-button,
+.but-no-back .fl-post-more-link a,
+.but-no-back .fl-post-grid-content a.fl-post-grid-more,
 .fl-builder-content .but-no-back a.fl-button *  {
 	border: none;
 	border-radius: 0;
-	background: transparent;
-	color: #000;
-	padding: 0;
+	background: transparent !important;
+	color: #333 !important;
+	padding: 0 !important;
 }
 
 .but-no-back a.fl-button:hover,
+.but-no-back .fl-post-grid-content a.fl-post-grid-more:hover,
 .but-no-back a.fl-button:hover * {
 	color: #000 ;
 	border: none;
 	background: transparent;
-	opacity: .8;
+	opacity: .8 !important;
 }
 
 .fl-builder-content .but-no-back i.fl-button-icon-after {
@@ -483,7 +486,7 @@ a.fl-post-more-link:hover {
 	}
 }
 
-/* # Mobile Nav Using Beaver In Built Button Option - changed background and added hamburger icon
+/* # Mobile Nav Using Beaver Theme In Built Button Option - changed background and added hamburger icon
  * Black and white example below
 ---------------------------------------------------------------------------------------------------- */
 
@@ -510,6 +513,30 @@ a.fl-post-more-link:hover {
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:hover,
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:active {
 		background: #ffffff;
+	}
+}
+
+/* # Mobile Nav Using Beaver Themer Option - changed color
+ * Black example below
+---------------------------------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+	.fl-page .fl-menu-mobile-toggle * {
+		color: #000;
+		border: none;
+	}
+
+	.fl-page .fl-menu-mobile-toggle:hover {
+		border: none;
+		background: transparent !important;
+	}
+
+	.fl-menu-mobile-close, 
+	.fl-menu-mobile-close:hover, 
+	.fl-menu-mobile-close:focus {
+		padding: 3px !important;
+		border-radius: 50% !important;
+		width: 35px !important;
+		height: 35px !important;
 	}
 }
 
@@ -811,9 +838,10 @@ li.comment {
 
 
 @media (max-width: 767px) {
-	.site-footer-widgets-row h3.fl-heading,
+	.site-footer-widgets-row .fl-heading,
 	.site-footer-widgets-row .fl-icon-group-left,
-	.site-footer-widgets-row .menu li  {
+	.site-footer-widgets-row .menu li,
+	.site-footer-widgets-row .fl-rich-text p  {
 		text-align: center !important;
 	} 
 	.site-footer-widgets-row .uabb-business-hours-wrap {
@@ -829,6 +857,10 @@ li.comment {
 		margin-right: 10px;
 	}
 	
+}
+
+.site-footer-row .menu .sub-menu {
+	display: none !important;
 }
 
 /* Site Footer
@@ -998,10 +1030,10 @@ li.comment {
 /* Icon Centre Icons
 --------------------------------------------- */
 .icon-top .fl-icon {
-    display: inline-block;
+    display: block;
     vertical-align: middle;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .icon-top .fl-icon i {
@@ -1023,7 +1055,9 @@ i.fa-phone{
 /* Header Quote
 ---------------------------------------------------------------------------------------------------- */
 .header-quote .fl-heading-text::before,
-.header-quote .fl-rich-text p:first-of-type::before  {
+.header-quote .fl-post-title::before,
+.header-quote .fl-post-grid-title::before,
+.header-quote .fl-rich-text p::first-of-type::before {
 	content: '\f205';
 	font-family: 'dashicons';
 	padding-right:10px;
@@ -1032,6 +1066,7 @@ i.fa-phone{
 }
 
 .header-quote .fl-heading-text::after,
+.header-quote .fl-post-excerpt p::after,
 .header-quote .fl-rich-text p:last-of-type::after {
 	content: '\f205';
 	font-family: 'dashicons';
@@ -1040,8 +1075,6 @@ i.fa-phone{
 	display: inline-block;
 	font-size: 30px;
 	color: #333;
-
-
 }
 
 /* 

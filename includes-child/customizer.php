@@ -182,12 +182,15 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 	/**
 	 * Enable/Disable Woo SKU
+	 * Now enabled due to Woo PDF Voucher issue I found
+	 * @link https://github.com/woocommerce/woocommerce/issues/21906
+	 * Have hidden SKU with CSS in includes-child/woocommerce/woo.css
 	 * @since 1.7.0
 	 */
 	$wp_customize->add_setting(
 		'bt_woo_sku', //give it an ID
 			array(
-			'default'   => 'disabled',
+			'default'   => 'enabled',
 		)
 	);
 	$wp_customize->add_control(

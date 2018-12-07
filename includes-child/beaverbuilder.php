@@ -16,7 +16,7 @@
  * Remove BB Plugin LightBox
  * @since 1.0.0
  */
- //add_filter( 'fl_builder_override_lightbox', __return_true );
+ //add_filter( 'fl_builder_override_lightbox', '__return_true' );
 
 
  add_filter( 'fl_module_upload_regex', 'bt_upload_image_formats', 10, 4 );

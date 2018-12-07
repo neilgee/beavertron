@@ -17,6 +17,7 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'blog-feature', 300, 200, true );
 	add_image_size( 'medium', 300, 300, true ); // Overwrite default and hard cropping
 }
+
 /**
  * Filtering the Customizer
  * Not working for theme if inside after_setup_theme function - so thats why it is here.
@@ -87,7 +88,6 @@ function bt_theme_setup() {
 	 */
 	//include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
 	
-	
 	/**
 	 * Load in Beaver Builder Plugin functions
 	 * @since 1.0.0
@@ -149,7 +149,6 @@ function bt_theme_setup() {
 		return $mimetypes;
 	}
 
-
 	/**
 	* Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
 	* @since 1.0.0
@@ -160,7 +159,6 @@ function bt_theme_setup() {
 		'flex-height' => true,
 		'flex-width'  => true,
 	));
-	
 	
 	add_shortcode( 'client_logo', 'bt_client_logo' );
 	/**
@@ -174,7 +172,6 @@ function bt_theme_setup() {
 		}
 	return ob_get_clean();
 	}
-
 	
 	add_action( 'add_attachment', 'bt_image_meta_upon_image_upload' );
 	/**
@@ -183,9 +180,7 @@ function bt_theme_setup() {
 	 * @link https://brutalbusiness.com/automatically-set-the-wordpress-image-title-alt-text-other-meta/
 	 */
 	function bt_image_meta_upon_image_upload( $post_ID ) {
-
 		// Check if uploaded file is an image, else do nothing
-
 		if ( wp_attachment_is_image( $post_ID ) ) {
 
 			$my_image_title = get_post( $post_ID )->post_title;
@@ -210,7 +205,6 @@ function bt_theme_setup() {
 
 			// Set the image meta (e.g. Title, Excerpt, Content)
 			wp_update_post( $my_image_meta );
-
 		} 
 	}
 
@@ -219,7 +213,6 @@ function bt_theme_setup() {
 	* @since 1.0.0
 	*/
 	add_filter( 'widget_text', 'do_shortcode' );
-
 
 	//add_filter( 'widget_text','bt_execute_php_widgets' );
 	/**

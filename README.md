@@ -96,7 +96,7 @@ Including
 
 
 ### Miscellaneous
-- PHP is enabled to execute in widget areas
+- PHP is disabled to execute in widget areas
 - Shortcode enabled in widget areas
 - Author name removed in Post Meta for posts
 - Meta has default icon styling
