@@ -229,4 +229,11 @@ function bt_theme_setup() {
 	return $html;
 	}
 
+	/**
+	 * Disable Gutenberg.
+	 * @since 1.7.0
+	 */
+	//add_filter('use_block_editor_for_post', '__return_false');
+
+
 } // Closing After Set Up Hook
