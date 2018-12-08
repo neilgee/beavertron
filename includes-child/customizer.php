@@ -15,6 +15,34 @@ function bt_register_theme_customizer( $wp_customize ) {
 
 	global $wp_customize;
 
+	/**
+	 * Add Enable/Disable Gutenberg
+	 * @since 1.7.0
+	 */
+	$wp_customize->add_setting(
+		'bt_gutenberg_toggle', //give it an ID
+			array(
+			'default'   => 'disabled',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'bt_gutenberg_toggle_switch', //give it an ID
+			 array (
+				'label'       => __( 'Gutenberg', 'beavertron' ),
+				'section'     => 'fl-layout',
+				'settings'    => 'bt_gutenberg_toggle',                                                                //pick the setting it applies to
+				'description' => __( 'Enable or disable Gutenberg Block Editor', 'fl-automator' ),
+				'type'        => 'select',
+				'choices'     => array(
+					'enabled'           => __( 'Enabled', 'beavertron' ),
+					'disabled'          => __( 'Disabled', 'beavertron' ),
+				),
+		 	)
+	   	)
+	);
+
 	/* *
 	 * Adding in a Hover Control for Buttons to the 'fl-buttons' panel
 	 * Also can be done with fl_theme_add_panel_data filter - see 2 examples in customizer-filtered.php
