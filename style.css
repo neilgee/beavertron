@@ -177,9 +177,15 @@ figure {
 }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  img[src*=".svg"] {
-    width: 100%;
-  }
+	img[src*=".svg"] {
+		width: auto;
+	}
+
+  .fl-builder-content[data-shrink="1"] img {
+		width: auto;
+		height: 100%;
+	}
+}
 }
 
 /* ## Avatar
