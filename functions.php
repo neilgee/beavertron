@@ -59,12 +59,10 @@ function bt_theme_setup() {
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 	/**
-	 * Load Beaver Builder classes, cache buster and core class
+	 * Load Beaver Builder classes, core class
 	 * @since 1.0.0
 	 */
-	// if ( ! class_exists('FLCache\CacheHelper') ) {
-	// 	require_once( get_stylesheet_directory() . '/classes/class-fl-builder-cache-helper.php');
-	// }
+
 	require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
 	// Actions - BB Default way - This theme calls required files below.
 	add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
@@ -240,6 +238,16 @@ function bt_theme_setup() {
 
 		
 	}
+	add_filter( 'fl_ace_editor_settings', 'custom_ace_editor' );
+
+	function custom_ace_editor() {
+		$change_ace = array(
+			'showLineNumbers' => true,
+			'wrap'            => true,
+		);
+		return $change_ace;
+	}
+	
 
 
 } // Closing After Set Up Hook

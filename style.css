@@ -342,6 +342,13 @@ textarea:focus {
     font-size: inherit;
 }
 
+@media only screen and (min-width: 641px) {
+	.gform_wrapper .top_label input.medium, 
+	.gform_wrapper .top_label select.medium {
+		width: 100% !important;
+	}
+}
+
 /* # Buttons - Black-But example
 ---------------------------------------------------------------------------------------------------- */
 /* lines up the button if parent is equal heights change >>>>> .the-row <<<<<< */
@@ -862,6 +869,14 @@ li.comment {
 	.site-footer-widgets-row .uabb-business-day {
 		margin-right: 10px;
 	}
+
+	.site-footer-widgets-row .fl-button-wrap {
+		text-align: center;
+	}
+	/* Non footer elements */
+	.fl-slide  .fl-slide-content .fl-button-wrap {
+		text-align: center;
+	}
 	
 }
 
@@ -1063,7 +1078,8 @@ i.fa-phone{
 .header-quote .fl-heading-text::before,
 .header-quote .fl-post-title::before,
 .header-quote .fl-post-grid-title::before,
-.header-quote .fl-rich-text p::first-of-type::before {
+.header-quote .fl-post-excerpt p:first-of-type::before,
+.header-quote .fl-rich-text p:first-of-type::before {
 	content: '\f205';
 	font-family: 'dashicons';
 	padding-right:10px;
@@ -1072,7 +1088,7 @@ i.fa-phone{
 }
 
 .header-quote .fl-heading-text::after,
-.header-quote .fl-post-excerpt p::after,
+.header-quote .fl-post-excerpt p:last-of-type::after,
 .header-quote .fl-rich-text p:last-of-type::after {
 	content: '\f205';
 	font-family: 'dashicons';
