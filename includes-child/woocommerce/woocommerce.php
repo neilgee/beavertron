@@ -16,12 +16,12 @@ function woo_css_styles() {
 include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customize-woo.php' );
 
 /**
- * Supports for zoom/slider/gallery
- * @since 1.0.0
+ * Remove Supports for zoom/slider/gallery
+ * @since 1.7.0
  */
-// add_theme_support( 'wc-product-gallery-lightbox' );
-// add_theme_support( 'wc-product-gallery-slider' );
-// add_theme_support( 'wc-product-gallery-zoom' );
+//remove_theme_support( 'wc-product-gallery-zoom' );
+//remove_theme_support( 'wc-product-gallery-lightbox' );
+//remove_theme_support( 'wc-product-gallery-slider' );
 
 
 add_filter( 'loop_shop_per_page', 'bt_new_loop_shop_per_page', 20 );
