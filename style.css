@@ -1140,6 +1140,11 @@ a.anchor {
 	display: none !important;
 }
 
+.fl-builder-button-group [data-action="draft"] {
+	display: none;
+}
+
+
 
 /* Print Styles
 ---------------------------------------------------------------------------------------------------- */

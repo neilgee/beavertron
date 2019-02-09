@@ -64,7 +64,7 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '5.7.9', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '5.7.10', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -87,7 +87,7 @@ function gsm_register_required_plugins() {
 					'slug'               => 'bb-ultimate-addon', // The plugin slug (typically the folder name).
 					'source'             => get_theme_root() . '/lib/plugins/bb-ultimate-addon.zip', // The plugin source.
 					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					'version'            => '1.13.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					'version'            => '1.14.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -111,7 +111,7 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.4.2.4.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.4.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '2.4.5.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
