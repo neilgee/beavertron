@@ -529,7 +529,7 @@ a.fl-post-more-link:hover {
 	}
 }
 
-/* # Mobile Nav Using Beaver Themer Option - changed color
+/* # Mobile Toggle Icon Nav Using Beaver Themer Option - changed color
  * Black example below
 ---------------------------------------------------------------------------------------------------- */
 @media (max-width: 767px) {
@@ -538,8 +538,8 @@ a.fl-post-more-link:hover {
 		border: none;
 	}
 
-	.fl-page .fl-menu-mobile-toggle:hover {
-		border: none;
+	.fl-page .fl-menu-mobile-toggle:hover * {
+		color: #fff;
 		background: transparent !important;
 	}
 
@@ -875,6 +875,11 @@ li.comment {
 	}
 	/* Non footer elements */
 	.fl-slide  .fl-slide-content .fl-button-wrap {
+		text-align: center;
+	}
+
+	.custom-logo-link {
+		display: block;
 		text-align: center;
 	}
 	

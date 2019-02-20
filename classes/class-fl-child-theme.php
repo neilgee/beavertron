@@ -38,9 +38,14 @@ final class FLChildTheme {
         // Business Profile CSS
         //wp_enqueue_style( 'businessprofile', get_stylesheet_directory_uri() . '/css/business-profile.css' , array(), '2.0.0', 'all' );
 
-        // Take out the default lightbox
+        // Take out the default BB Scripts if not used
         // wp_dequeue_script('jquery-magnificpopup');
         // wp_dequeue_style('jquery-magnificpopup');
+        // wp_dequeue_script( 'bootstrap' );
+        // wp_dequeue_script( 'imagesloaded' );
+        // wp_dequeue_script( 'jquery-fitvids' );
+        // wp_dequeue_script( 'jquery-throttle' );
+        // wp_dequeue_script( 'jquery-waypoints' );
 
         // Set Up Global JS
         // wp_enqueue_script( 'global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), '1.0.0', true );
