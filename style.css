@@ -854,7 +854,8 @@ li.comment {
 	.site-footer-widgets-row .fl-heading,
 	.site-footer-widgets-row .fl-icon-group-left,
 	.site-footer-widgets-row .menu li,
-	.site-footer-widgets-row .fl-rich-text p  {
+	.site-footer-widgets-row .fl-rich-text p,
+	.site-footer-widgets-row .fl-module-icon   {
 		text-align: center !important;
 	} 
 	.site-footer-widgets-row .uabb-business-hours-wrap {

@@ -110,6 +110,14 @@ function bt_theme_setup() {
 	if ( class_exists( 'GFCommon' ) ) {
 		include_once( get_stylesheet_directory() . '/includes-child/gravity.php' );
 	}
+
+	/**
+	 * Load in ACF functions
+	 * @since 1.7.0
+	 */
+	if ( class_exists( 'acf' ) ) {
+		include_once( get_stylesheet_directory() . '/includes-child/acf.php' );
+	}
 	
 	/**
 	* Get the plugins ffrom TGM Plugin Activation
@@ -239,7 +247,10 @@ function bt_theme_setup() {
 		
 	}
 	add_filter( 'fl_ace_editor_settings', 'custom_ace_editor' );
-
+	/**
+	 * Show line numbers and wrap text in Ace editor
+	 * @since 1.7.0
+	 */
 	function custom_ace_editor() {
 		$change_ace = array(
 			'showLineNumbers' => true,
