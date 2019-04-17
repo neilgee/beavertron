@@ -1,8 +1,8 @@
 <?php
 /**
- * BeaverTron Inline CSS
+ * Beavertron Inline CSS
  *
- * This file adds the required CSS to the front end of BeaverTron theme.
+ * This file adds the required CSS to the front end of Beavertron theme.
  *
  * @package beavertron
  * @author  @_neilgee

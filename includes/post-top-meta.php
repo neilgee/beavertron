@@ -33,7 +33,7 @@ if($comments && $comment_count) {
 	}
 
 	echo '<span class="fl-comments-popup-link">';
-	// comments_popup_link('0 <i class="fa fa-comment"></i>', '1 <i class="fa fa-comment"></i>', '% <i class="fa fa-comment"></i>');
+	// comments_popup_link('0 <i class="fas fa-comment"></i>', '1 <i class="fas fa-comment"></i>', '% <i class="fas fa-comment"></i>');
 	// Add some comment wording and remove FA icon above
 	comments_popup_link('Leave A Comment', 'Leave A Comment', '% Comments');			
 	echo '</span>';

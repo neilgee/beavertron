@@ -338,7 +338,7 @@ textarea:focus {
 
 /* Gravity Forms */
 .gform_wrapper label.gfield_label {
-    font-weight: 400;
+    font-weight: 400 !important;
     font-size: inherit;
 }
 
@@ -434,7 +434,8 @@ textarea:focus {
 a.more-link,
 .fl-post-grid-content a.fl-post-grid-more,
 a.fl-post-more-link,
-a.fl-post-feed-more  {
+a.fl-post-feed-more,
+a.fl-post-slider-feed-more  {
 	display:inline-block;
 	font-size:14px;
 	margin-top:10px;
@@ -454,7 +455,9 @@ a.fl-post-feed-more  {
 
 a.more-link:hover,
 .fl-post-grid-content a.fl-post-grid-more:hover,
-a.fl-post-more-link:hover {
+a.fl-post-more-link:hover,
+a.fl-post-feed-more:hover,
+a.fl-post-slider-feed-more:hover   {
 	opacity:.8;
 	color:#333333;
 	background-color:#999999;
@@ -538,8 +541,12 @@ a.fl-post-more-link:hover {
 		border: none;
 	}
 
+	.fl-page .fl-menu-mobile-toggle:hover {
+		border: none;
+	}
+
 	.fl-page .fl-menu-mobile-toggle:hover * {
-		color: #fff;
+		color: #000;
 		background: transparent !important;
 	}
 
@@ -1036,7 +1043,8 @@ li.comment {
 /* Lists Using a tick icon as an example
 --------------------------------------------- */
 
-.fl-content  .tick-list li {
+.fl-content .tick-list li,
+.fl-page .tick-list li  {
 	list-style-type: none;
 	margin-bottom: 10px;
 	position: relative;
