@@ -33,11 +33,11 @@ function bt_custom_login_url() {
 	return site_url();
 }
 
-add_filter( 'login_headertitle','bt_login_header_title' );
+add_filter( 'login_headertext', 'bt_login_header_title' );
 /**
  *  Logo Title Attribute uses Site Name
  *
- * @since 1.0.0
+ * @since 1.7.0
  */
 function bt_login_header_title() {
 	return get_bloginfo( 'name' );

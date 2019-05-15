@@ -543,6 +543,7 @@ a.fl-post-slider-feed-more:hover   {
 
 	.fl-page .fl-menu-mobile-toggle:hover {
 		border: none;
+		background: inherit;
 	}
 
 	.fl-page .fl-menu-mobile-toggle:hover * {
