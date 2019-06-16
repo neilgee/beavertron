@@ -891,6 +891,14 @@ li.comment {
 		display: block;
 		text-align: center;
 	}
+
+	.fl-icon-group-right {
+		text-align: center;
+	}
+
+	.fl-icon-group-left {
+		text-align: center;
+	}
 	
 }
 

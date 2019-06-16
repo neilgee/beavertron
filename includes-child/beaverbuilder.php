@@ -48,38 +48,40 @@ function bt_custom_image_sizes( $sizes ) {
     return $sizes;
 }
 
-
-//add_filter( 'fl_builder_font_families_system', 'bt_added_fonts_plugin' );
+// add_filter( 'fl_builder_font_families_system', 'bt_added_webfonts' );
+// add_filter( 'fl_theme_system_fonts', 'bt_added_webfonts' );
 /**
- * Add fonts to BB Module font dropdown selection
- * Example below
- * @since 1.0.0
- */
-function bt_added_fonts_plugin( $system ) {
-    $system[ 'system-ui-fonts' ] = array(
-			"fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
-            "weights"  => array(
-                "300",
-                "400",
-				"700",
-				"900"
-            )
-    );
-    return $system;
-}
-//add_filter( 'fl_theme_system_fonts', 'bt_added_fonts' );
-/**
- * Add fonts to BB Theme
+ * Add fonts to BB Theme & Builder
+ * https://kb.wpbeaverbuilder.com/article/234-add-web-fonts-to-your-theme-and-the-beaver-builder-plugin
  * Adding Fonts to Customizer - example below
  * @since 1.0.0
  */
-function bt_added_fonts( $system ) {
-    $system[ '-apple-system' ] = array(
+function bt_added_webfonts( $system ) {
+    $system[ 'Avenir Book' ] = array(
 			"fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
             "weights"  => array(
                 "300",
+            )
+    );
+    
+    $system[ 'Avenir Roman' ] = array(
+            "fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
+            "weights"  => array(
                 "400",
+            )
+    );
+
+    $system[ 'Avenir Bold' ] = array(
+            "fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
+            "weights"  => array(
                 "700",
+            )
+    );
+
+    $system[ 'Avenir Black' ] = array(
+            "fallback" => "BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",			
+            "weights"  => array(
+                "900",
             )
     );
     return $system;
@@ -88,7 +90,7 @@ function bt_added_fonts( $system ) {
 
 add_filter( 'fl_builder_register_settings_form', 'wb_builder_register_settings_form_short', 10, 2 );
 /** 
- * Filter the Global Settings Options.
+ * Filter the Global Settings Options BB Plugin.
  * Media breakpoints and form title have been changed.
  * @since 1.0.0
  */
@@ -103,6 +105,22 @@ function wb_builder_register_settings_form_short( $form, $id ) {
    } 
    
    return $form;
+}
+
+
+add_filter( 'fl_theme_breakpoint_opts', 'bt_custom_breakpoints');
+/**
+ * Return array of theme breakpoints for BB Theme
+ * @since 1.7.3
+ */
+function bt_custom_breakpoints() {
+
+    $args = array(
+        'medium_breakpoint' =>  1023,
+        'mobile_breakpoint' =>  767,
+    );
+
+    return  $args;
 }
 
 

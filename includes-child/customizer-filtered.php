@@ -13,6 +13,9 @@ function bt_customizer_options_filtered( $data, $key ) {
 
         // Layout
         $data['sections']['fl-layout']['options']['fl-content-width']['setting']['default']='1200';
+        $data['sections']['fl-layout']['options']['fl-medium-breakpoint']['setting']['default']='1024';
+        $data['sections']['fl-layout']['options']['fl-mobile-breakpoint']['setting']['default']='767';
+
         $data['sections']['fl-layout']['options']['fl-scroll-to-top']['setting']['default']='enable';
         $data['sections']['fl-layout']['options']['fl-awesome']['setting']['default']='fa5';
         // Background
