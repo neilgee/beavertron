@@ -1,4 +1,3 @@
-
 (function($){
 
     $(function() { // Document Ready
@@ -21,12 +20,12 @@
                 
         //     });
 
-
     });
     // Functions
     function clickColumn() {
 
         $('.click-col').css('cursor', 'pointer');
+        
         $('.click-col').on('click', function(event){
             $(this).find('a')[0].click();
         });

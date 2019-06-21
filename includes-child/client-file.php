@@ -119,6 +119,14 @@ function wsl_edit_text() {
 }
 
 /**
+ *  Stop Site Health Emails from beng sent to Admin
+ *
+ * @since 1.0.0
+ */
+add_filter( 'wp_fatal_error_handler_enabled', '__return_false' );
+
+
+/**
  * Roles & Capabilities
  * @link  https://wordpress.stackexchange.com/questions/4191/allow-editors-to-edit-menus
  * Add editor the privilege to edit theme & menu
