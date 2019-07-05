@@ -2,18 +2,48 @@
 
 add_action( 'wp_enqueue_scripts', 'woo_css_styles', 900 );
 /**
- * WOO CSS styles.
+ * WOO CSS styles
  * @since 1.0.0
  */
 function woo_css_styles() {
         wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-child/woocommerce/woo.css', array(), '2.0.0', 'all' );
 }
 
+
 /**
  * WOO Customizer Options
  * @since 1.0.0
  */
 include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customize-woo.php' );
+
+
+add_action( 'template_redirect', 'bt_remove_woocommerce_styles_scripts', 999 );
+/**
+ * Remove Woo Styles and Scripts from non-Woo Pages
+ * @link https://gist.github.com/DevinWalker/7621777#gistcomment-1980453
+ * @since 1.7.0
+ */
+function bt_remove_woocommerce_styles_scripts() {
+        if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
+                remove_action('wp_enqueue_scripts', [WC_Frontend_Scripts::class, 'load_scripts']);
+                remove_action('wp_print_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
+                remove_action('wp_print_footer_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
+        }
+}
+
+
+add_action( 'wp_enqueue_scripts', 'bt_dequeue_woocommerce_fragments', 99 );
+/**
+ * Disable WooCommerce Fragments on Product Pages
+ * Make sure 'Redirect to Cart After Successful Addition' is set in WC backend
+ * @since 1.7.0
+ */
+function bt_dequeue_woocommerce_fragments() {
+        if ( is_product() ) {
+                wp_dequeue_script( 'wc-cart-fragments' );
+        }
+}
+
 
 /**
  * Remove Supports for zoom/slider/gallery
@@ -55,6 +85,7 @@ function bt_woocommerce_pagination( $args ) {
 	return $args;
 }
 
+
 /**
  * Removes Order Notes Title - Additional Information
  * @since 1.7.0
@@ -64,6 +95,7 @@ $bt_woo_additional = get_theme_mod( 'bt_woo_additional' );
 if( $bt_woo_additional === 'disabled' ) {
 	add_filter( 'woocommerce_enable_order_notes_field', '__return_false' );
 }
+
 
 /**
  * Remove Notice - Showing all x results
@@ -75,6 +107,7 @@ if( $bt_woo_results === 'disabled' ) {
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 }
 
+
 /**
  * Remove default sorting drop-down from WooCommerce
  * @since 1.7.0
@@ -84,6 +117,7 @@ $bt_woo_sort = get_theme_mod( 'bt_woo_sort' );
 if( $bt_woo_sort === 'disabled' ) {
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 }
+
 
 // add_filter( 'woocommerce_checkout_fields' , 'bt_remove_order_notes' );
 /**
@@ -114,6 +148,7 @@ function bt_custom_billing_fields( $fields = array() ) {
         return $fields;
 }
 
+
 //add_filter('woocommerce_shipping_fields','bt_custom_shipping_fields');
 /**
  * Remove some fields from shipping form
@@ -141,7 +176,7 @@ add_filter( 'woocommerce_thankyou_order_received_text', 'bt_thank_you' );
 function bt_thank_you() {
 $bt_woo_order_received = get_theme_mod( 'bt_woo_order_received' );
        
-       $added_text = $bt_woo_order_received;
+        $added_text = $bt_woo_order_received;
        
         return $added_text ;
 }
@@ -157,6 +192,7 @@ if( $bt_woo_sku === 'disabled' ) {
 	add_filter( 'wc_product_sku_enabled', '__return_false' );
 }
 
+
 /**
  * Remove related products on a WooCommerce product page
  * @since 1.7.0
@@ -166,6 +202,7 @@ if( $bt_woo_related === 'enabled' ) {
 	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 }
 
+
 /**
  * Remove Category Meta on WooCommerce product page
  * @since 1.7.0
@@ -174,6 +211,7 @@ $bt_woo_meta = get_theme_mod( 'bt_woo_meta' );
 if( $bt_woo_meta === 'enabled' ) {
 	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 }
+
 
 add_action( 'init', 'bt_remove_wc_breadcrumbs' );
 /**
@@ -201,19 +239,20 @@ $bt_woo_tabs_description = get_theme_mod( 'bt_woo_tabs_description');
 $bt_woo_tabs_information = get_theme_mod( 'bt_woo_tabs_information');
 	
 	
-	if ($bt_woo_tabs_description == 1) {
-     unset( $tabs['description'] );
-    }      	// Remove the description tab
-    if ($bt_woo_tabs_review == 1) {
-     unset( $tabs['reviews'] ); 		
-    }	// Remove the reviews tab
-    if ($bt_woo_tabs_information == 1) {
-     unset( $tabs['additional_information'] );  	
-    }  // Remove the additional information tab
-	
-    return $tabs;
+        if ($bt_woo_tabs_description == 1) {
+        unset( $tabs['description'] );
+        }      	// Remove the description tab
+        if ($bt_woo_tabs_review == 1) {
+        unset( $tabs['reviews'] ); 		
+        }	// Remove the reviews tab
+        if ($bt_woo_tabs_information == 1) {
+        unset( $tabs['additional_information'] );  	
+        }  // Remove the additional information tab
+
+        return $tabs;
 
 }
+
 
 add_filter( 'woocommerce_dropdown_variation_attribute_options_args', 'bt_dropdown_choice', 10 );
 /**
@@ -230,6 +269,7 @@ function bt_dropdown_choice( $args ){
 	}  
 		return $args;    
 }
+
 
 add_filter( 'woocommerce_add_to_cart_redirect', 'bt_add_to_cart_redirect' );
 /**
