@@ -1028,7 +1028,7 @@ li.comment {
 }
 
 @media only screen and (max-width: 767px) {
-
+/* Add into Module Class */
 	.fl-builder .split-list ul {
 		margin-bottom: 0;
 		margin-top: 0;
@@ -1039,11 +1039,11 @@ li.comment {
 	 }
 	
 	.fl-col-small + .fl-col-small .split-list .fl-node-content {
-		margin-top:-20px;
+		margin-top:0;
 		margin-bottom: 20px;
 	 }
 	
-	}
+}
 
 
 /* Icon Stuff
