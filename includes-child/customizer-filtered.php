@@ -14,7 +14,10 @@ function bt_customizer_options_filtered( $data, $key ) {
         // Layout
         $data['sections']['fl-layout']['options']['fl-content-width']['setting']['default']='1200';
         $data['sections']['fl-layout']['options']['fl-medium-breakpoint']['setting']['default']='1024';
-        $data['sections']['fl-layout']['options']['fl-mobile-breakpoint']['setting']['default']='767';
+        $data['sections']['fl-layout']['options']['fl-mobile-breakpoint']['setting']['default']='768';
+
+        $data['sections']['fl-layout']['options']['fl-framework']['setting']['default']='bootstrap-4';
+
 
         $data['sections']['fl-layout']['options']['fl-scroll-to-top']['setting']['default']='enable';
         $data['sections']['fl-layout']['options']['fl-awesome']['setting']['default']='fa5';
@@ -28,6 +31,7 @@ function bt_customizer_options_filtered( $data, $key ) {
         $data['sections']['fl-heading-font']['options']['fl-heading-font-family']['setting']['default']='system-ui';
         $data['sections']['fl-body-font']['options']['fl-body-text-color']['setting']['default']='#333333';
         $data['sections']['fl-body-font']['options']['fl-body-font-family']['setting']['default']='system-ui';
+        $data['sections']['fl-body-font']['options']['fl-body-font-size']['setting']['default']='18';
 
         // Buttons
         $data['sections']['fl-buttons']['options']['fl-button-style']['setting']['default']='custom';

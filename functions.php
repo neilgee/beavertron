@@ -120,23 +120,23 @@ function bt_theme_setup() {
 	}
 	
 	/**
-	* Get the plugins ffrom TGM Plugin Activation
-	* @since 1.0.0
-	*/
+	 * Get the plugins ffrom TGM Plugin Activation
+	 * @since 1.0.0
+	 */
 	//require_once  get_stylesheet_directory() . '/plugins.php';
 
 	/**
-	* Allow the theme to be translated.
-	* @since 1.0.0
-	*/
+	 * Allow the theme to be translated.
+	 * @since 1.0.0
+	 */
 	load_theme_textdomain( 'beavertron', get_stylesheet_directory_uri() . '/languages' );
 
 
 	add_filter( 'intermediate_image_sizes_advanced', 'bt_remove_default_images' );
 	/**
-	* Remove default image sizes
-	* @since 1.0.0
-	*/
+	 * Remove default image sizes
+	 * @since 1.0.0
+	 */
 	function bt_remove_default_images( $sizes ) {
 		// unset( $sizes['small']); // 150px
 		// unset( $sizes['medium']); // 300px
@@ -147,18 +147,18 @@ function bt_theme_setup() {
 
 	add_filter( 'upload_mimes', 'bt_add_svg_images' );
 	/**
-	* Allow SVG Images Via Media Uploader.
-	* @since 1.0.0
-	*/
+	 * Allow SVG Images Via Media Uploader.
+	 * @since 1.0.0
+	 */
 	function bt_add_svg_images( $mimetypes ) {
 		$mimetypes['svg'] = 'image/svg+xml';
 		return $mimetypes;
 	}
 
 	/**
-	* Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
-	* @since 1.0.0
-	*/
+	 * Add support for custom logo change the dimensions to suit. Need WordPress 4.5 for this.
+	 * @since 1.0.0
+	 */
 	add_theme_support( 'custom-logo', array(
 		'height'      => 100, // set to your dimensions
 		'width'       => 300,// set to your dimensions
@@ -168,9 +168,9 @@ function bt_theme_setup() {
 	
 	add_shortcode( 'client_logo', 'bt_client_logo' );
 	/**
-	* Position the content with a shortcode [client_logo]
-	* @since 1.0.0
-	*/
+	 * Position the content with a shortcode [client_logo]
+	 * @since 1.0.0
+	 */
 	function bt_client_logo() {
 	ob_start();
 		if ( function_exists( 'the_custom_logo' ) ) {    
@@ -215,16 +215,16 @@ function bt_theme_setup() {
 	}
 
 	/**
-	* Allow shortcode to run in widgets.
-	* @since 1.0.0
-	*/
+	 * Allow shortcode to run in widgets.
+	 * @since 1.0.0
+	 */
 	add_filter( 'widget_text', 'do_shortcode' );
 
 	//add_filter( 'widget_text','bt_execute_php_widgets' );
 	/**
-	* Allow PHP code to run in Widgets.
-	* @since 1.0.0
-	*/
+	 * Allow PHP code to run in Widgets.
+	 * @since 1.0.0
+	 */
 	function bt_execute_php_widgets( $html ) {
 		if ( strpos( $html, '<' . '?php' ) !== false ) {
 			ob_start();
@@ -235,17 +235,6 @@ function bt_theme_setup() {
 	return $html;
 	}
 
-	/**
-	 * Toggle Gutenberg Block Editor
-	 * @since 1.7.0
-	 */
-	$bt_gutenberg_toggle = get_theme_mod( 'bt_gutenberg_toggle' );
-
-		if( $bt_gutenberg_toggle === 'disabled' ) {
-			add_filter( 'use_block_editor_for_post', '__return_false' );
-
-		
-	}
 	add_filter( 'fl_ace_editor_settings', 'custom_ace_editor' );
 	/**
 	 * Show line numbers and wrap text in Ace editor
