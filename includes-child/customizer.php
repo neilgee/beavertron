@@ -14,7 +14,7 @@ add_action( 'customize_register', 'bt_register_theme_customizer', 20 );
 function bt_register_theme_customizer( $wp_customize ) {
 
 	global $wp_customize;
-	
+
 	/* *
 	 * Adding in a Hover Control for Buttons to the 'fl-buttons' panel
 	 * Also can be done with fl_theme_add_panel_data filter - see 2 examples in customizer-filtered.php
@@ -750,14 +750,14 @@ function bt_default_theme_preset( $mods ) {
 		'fl-heading-font-family'		 => 'system-ui',
 		'fl-h1-font-size'			     => '36',
 		'fl-h2-font-size'			     => '30',
-		'fl-h3-font-size'			     => '24',
-		'fl-h4-font-size'			     => '20',
-		'fl-h5-font-size'			     => '18',
-		'fl-h6-font-size'			     => '16',
+		'fl-h3-font-size'			     => '26',
+		'fl-h4-font-size'			     => '22',
+		'fl-h5-font-size'			     => '20',
+		'fl-h6-font-size'			     => '18',
 
 		'fl-body-text-color'			 => '#333333',
 		'fl-body-font-family'			 => 'system-ui',
-		'fl-body-font-weight'			 => '300',
+		'fl-body-font-weight'			 => '400',
 		'fl-body-font-size'			     => '18',
 		'fl-body-line-height'			 => '1.6',
 

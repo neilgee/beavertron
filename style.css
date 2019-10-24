@@ -1030,7 +1030,7 @@ li.comment {
 @media only screen and (max-width: 767px) {
 /* Add into Module Class */
 	.fl-builder .split-list ul {
-		margin-bottom: 0;
+		margin-bottom: 20px;
 		margin-top: 0;
 	 }
 	
@@ -1120,6 +1120,9 @@ i.fa-phone{
 	display: inline-block;
 	font-size: 30px;
 	color: #333;
+	line-height: 0;
+    position: relative;
+    top: 10px;
 }
 
 /* 
