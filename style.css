@@ -157,6 +157,17 @@ h6 {
 }
 
 
+/* ## Tables
+--------------------------------------------- */
+.table td, .table th {
+    padding: 20px;
+    vertical-align: top;
+    border-top: 1px solid #000;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(0, 0, 0);
+}
+
 
 /* ## Objects
 --------------------------------------------- */
@@ -563,7 +574,9 @@ a.fl-post-slider-feed-more:hover   {
 
 /* # Site Navigation
 ---------------------------------------------------------------------------------------------------- */
-
+.default-cursor .fl-has-submenu-container > a{
+	cursor:default;
+}
 
 
 /* FrontPage Container Widgets

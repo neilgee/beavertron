@@ -113,7 +113,7 @@
 }
 
 .woocommerce ul.products li.product .button {
-	margin-top: auto;
+	margin: 10px auto;
 	display: table;
 }
 

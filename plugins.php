@@ -64,7 +64,7 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '5.8.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '5.8.9', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -87,7 +87,7 @@ function gsm_register_required_plugins() {
 					'slug'               => 'bb-ultimate-addon', // The plugin slug (typically the folder name).
 					'source'             => get_theme_root() . '/lib/plugins/bb-ultimate-addon.zip', // The plugin source.
 					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					'version'            => '1.20.2', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					'version'            => '1.26.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -109,9 +109,9 @@ function gsm_register_required_plugins() {
 			 array(
 					 'name'               => 'Gravity Forms', // The plugin name.
 					 'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.4.12.6.zip', // The plugin source.
+					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.4.17.19.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.4.12.6', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '2.4.17.19', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -150,139 +150,119 @@ function gsm_register_required_plugins() {
 			),
 
 			 array(
-					 'name'      => 'Adminimize',
-					 'slug'      => 'adminimize',
-					 'required'  => false,
+					 'name'     => 'Adminimize',
+					 'slug'     => 'adminimize',
+					 'required' => false,
 			 ),
 			 array(
-					'name'      => 'Admin Page Spider',
-					'slug'      => 'admin-page-spider',
-					'required'  => false,
+					 'name'     => 'Akismet',
+					 'slug'     => 'akismet',
+					 'required' => false,
+			 ),
+			 array(
+					'name'     => 'WPD Beaver Popups',
+					'slug'     => 'wpd-beaver-popups',
+					'required' => false,
 			),
 			 array(
-					 'name'      => 'Akismet',
-					 'slug'      => 'akismet',
-					 'required'  => false,
-			 ),
-			 array(
-					'name'      => 'WPD Beaver Popups',
-					'slug'      => 'wpd-beaver-popups',
-					'required'  => false,
+					'name'     => 'Better Search Replace',
+					'slug'     => 'better-search-replace',
+					'required' => false,
 			),
 			 array(
-					'name'      => 'Better Search Replace',
-					'slug'      => 'better-search-replace',
-					'required'  => false,
+					 'name'     => 'BuddyPress',
+					 'slug'     => 'buddypress',
+					 'required' => false,
+			 ),
+			 array(
+					 'name'     => 'Bootstrap Modals',
+					 'slug'     => 'bootstrap-modals',
+					 'required' => false,
+			 ),
+			 array(
+					 'name'     => 'Business Profile',
+					 'slug'     => 'business-profile',
+					 'required' => false,
+			 ),
+			 array(
+					 'name'     => 'Content Aware Sidebars',
+					 'slug'     => 'content-aware-sidebars',
+					 'required' => false,
+			 ),
+			 array(
+					'name'     => 'Custom Content Shortcode',
+					'slug'     => 'custom-content-shortcode',
+					'required' => false,
 			),
 			 array(
-					 'name'      => 'BuddyPress',
-					 'slug'      => 'buddypress',
-					 'required'  => false,
+					 'name'     => 'Duplicate Post',
+					 'slug'     => 'duplicate-post',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Bootstrap Modals',
-					 'slug'      => 'bootstrap-modals',
-					 'required'  => false,
+					 'name'     => 'Duplicator',
+					 'slug'     => 'duplicator',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Business Profile',
-					 'slug'      => 'business-profile',
-					 'required'  => false,
+					 'name'     => 'Dynamic Widgets',
+					 'slug'     => 'dynamic-widgets',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Content Aware Sidebars',
-					 'slug'      => 'content-aware-sidebars',
-					 'required'  => false,
+					 'name'     => 'Easy Updates Manager',
+					 'slug'     => 'stops-core-theme-and-plugin-updates',
+					 'required' => false,
 			 ),
 			 array(
-					'name'      => 'Custom Content Shortcode',
-					'slug'      => 'custom-content-shortcode',
-					'required'  => false,
+					'name'     => 'Force Regenerate Thumbnails',
+					'slug'     => 'force-regenerate-thumbnails',
+					'required' => false,
 			),
 			 array(
-					 'name'      => 'Duplicate Post',
-					 'slug'      => 'duplicate-post',
-					 'required'  => false,
+					 'name'     => 'Members',
+					 'slug'     => 'members',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Duplicator',
-					 'slug'      => 'duplicator',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Dynamic Widgets',
-					 'slug'      => 'dynamic-widgets',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Easy Updates Manager',
-					 'slug'      => 'stops-core-theme-and-plugin-updates',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'EWWW Image Optimizer',
-					 'slug'      => 'ewww-image-optimizer',
-					 'required'  => false,
-			 ),
-			 array(
-					'name'      => 'Force Regenerate Thumbnails',
-					'slug'      => 'force-regenerate-thumbnails',
-					'required'  => false,
+					'name'     => 'No Page Comment',
+					'slug'     => 'no_page_comment',
+					'required' => false,
 			),
 			 array(
-					 'name'      => 'Members',
-					 'slug'      => 'members',
-					 'required'  => false,
+					 'name'     => 'Post Types Order',
+					 'slug'     => 'post-types-order',
+					 'required' => false,
 			 ),
 			 array(
-					'name'      => 'No Page Comment',
-					'slug'      => 'no_page_comment',
-					'required'  => false,
-			),
-			 array(
-					 'name'      => 'Post Types Order',
-					 'slug'      => 'post-types-order',
-					 'required'  => false,
+					 'name'     => 'Post Type Switcher',
+					 'slug'     => 'post-type-switcher',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Post Type Switcher',
-					 'slug'      => 'post-type-switcher',
-					 'required'  => false,
-			 ),
-			 array(
-					'name'      => 'Safe SVG',
-					'slug'      => 'safe-svg',
-					'required'  => false,
+					'name'     => 'Safe SVG',
+					'slug'     => 'safe-svg',
+					'required' => false,
 			),	
 			 array(
-					 'name'      => 'Simply Show Hooks',
-					 'slug'      => 'simply-show-hooks',
-					 'required'  => false,
+					 'name'     => 'Simply Show Hooks',
+					 'slug'     => 'simply-show-hooks',
+					 'required' => false,
 			 ),	
 			 array(
-					'name'      => 'SOGO Add Script Header Footer',
-					'slug'      => 'oh-add-script-header-footer',
-					'required'  => false,
+					'name'     => 'SOGO Add Script Header Footer',
+					'slug'     => 'oh-add-script-header-footer',
+					'required' => false,
 			),
 			 array(
-					 'name'      => 'Testimonial Rotator',
-					 'slug'      => 'testimonial-rotator',
-					 'required'  => false,
+					 'name'     => 'Google Analytics by Yoast',
+					 'slug'     => 'google-analytics-for-wordpress',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Google Analytics by Yoast',
-					 'slug'      => 'google-analytics-for-wordpress',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Imsanity',
-					 'slug'      => 'imsanity',
-					 'required'  => false,
-			 ),
-			 array(
-					 'name'      => 'Jetpack',
-					 'slug'      => 'jetpack',
-					 'required'  => false,
+					 'name'     => 'Jetpack',
+					 'slug'     => 'jetpack',
+					 'required' => false,
 			 ),
 			 array(
 					'name'     => 'LiteSpeed Cache',
@@ -290,66 +270,69 @@ function gsm_register_required_plugins() {
 					'required' => false,
 			),
 			 array(
-					 'name'      => 'ManageWP Worker',
-					 'slug'      => 'worker',
-					 'required'  => false,
+					 'name'     => 'ManageWP Worker',
+					 'slug'     => 'worker',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'MapPress Easy Google Maps',
-					 'slug'      => 'mappress-google-maps-for-wordpress',
-					 'required'  => false,
+					 'name'     => 'MapPress Easy Google Maps',
+					 'slug'     => 'mappress-google-maps-for-wordpress',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'matchHeight',
-					 'slug'      => 'matchheight',
-					 'required'  => false,
+					 'name'     => 'matchHeight',
+					 'slug'     => 'matchheight',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'SlickNav Mobile Menu',
-					 'slug'      => 'slicknav-mobile-menu',
-					 'required'  => false,
-			 ),
-		
-			 array(
-					 'name'      => 'Smoothscroller',
-					 'slug'      => 'smoothscroller',
-					 'required'  => false,
+					 'name'     => 'SlickNav Mobile Menu',
+					 'slug'     => 'slicknav-mobile-menu',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'The Events Calendar',
-					 'slug'      => 'the-events-calendar',
-					 'required'  => false,
+					 'name'     => 'Smoothscroller',
+					 'slug'     => 'smoothscroller',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Venobox Lightbox',
-					 'slug'      => 'venobox-lightbox',
-					 'required'  => false,
+					 'name'     => 'The Events Calendar',
+					 'slug'     => 'the-events-calendar',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Widget CSS Classes',
-					 'slug'      => 'widget-css-classes',
-					 'required'  => false,
+					 'name'     => 'Venobox Lightbox',
+					 'slug'     => 'venobox-lightbox',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Woocommerce',
-					 'slug'      => 'woocommerce',
-					 'required'  => false,
+					 'name'     => 'Widget CSS Classes',
+					 'slug'     => 'widget-css-classes',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'Wordfence',
-					 'slug'      => 'wordfence',
-					 'required'  => false,
+					 'name'     => 'Woocommerce',
+					 'slug'     => 'woocommerce',
+					 'required' => false,
 			 ),
 			 array(
-					 'name'      => 'WordPress SEO',
-					 'slug'      => 'wordpress-seo',
-					 'required'  => false,
+					 'name'     => 'Wordfence',
+					 'slug'     => 'wordfence',
+					 'required' => false,
 			 ),
-	
 			 array(
-					 'name'      => 'WP Sweep',
-					 'slug'      => 'wp-sweep',
-					 'required'  => false,
+					 'name'     => 'WordPress SEO',
+					 'slug'     => 'wordpress-seo',
+					 'required' => false,
+			 ),	
+			 array(
+					'name'     => 'WP Crontrol',
+					'slug'     => 'wp-crontrol',
+					'required' => false,
+			),	
+			 array(
+					 'name'     => 'WP Sweep',
+					 'slug'     => 'wp-sweep',
+					 'required' => false,
 			 ),
 			 // This is an example of the use of 'is_callable' functionality. A user could - for instance -
 			 // have WPSEO installed *or* WPSEO Premium. The slug would in that last case be different, i.e.
