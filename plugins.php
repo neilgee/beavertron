@@ -285,9 +285,14 @@ function gsm_register_required_plugins() {
 					 'required' => false,
 			 ),
 			 array(
-					 'name'     => 'SlickNav Mobile Menu',
-					 'slug'     => 'slicknav-mobile-menu',
-					 'required' => false,
+					'name'     => 'Shortcode in Menus',
+					'slug'     => 'shortcode-in-menus',
+					'required' => false,
+			),
+			 array(
+					'name'     => 'SlickNav Mobile Menu',
+					'slug'     => 'slicknav-mobile-menu',
+					'required' => false,
 			 ),
 			 array(
 					 'name'     => 'Smoothscroller',

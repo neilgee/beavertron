@@ -4,6 +4,7 @@
  * @since 1.0.0
  * @package beavertron
  */
+
  /**
   * Set Up Default Colors - so if not changed in Customizer no CSS mark up is output
   * @since 1.0.0

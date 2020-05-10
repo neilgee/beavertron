@@ -8,21 +8,6 @@
  * @link    http://wpbeaches.com/
  */
 
-
-
-add_action( 'login_head', 'bt_custom_login_logo' );
-/**
- * Client Logo for Backend Login - Home link and Image Description
- *
- * @since 1.0.0
- */
-function bt_custom_login_logo() {
-	echo '<style type="text/css">
-            .login h1 a { background-image:url(' . get_stylesheet_directory_uri() . '/images/logo.png) !important; width: 260px; !important; height: 60px !important; background-size: 100% 100% !important; margin-bottom: 60px !important;}
-            .login form {margin-top: -50px;}
-        </style>';
-}
-
 add_filter( 'login_headerurl', 'bt_custom_login_url', 10, 4 );
 /**
  * Logo Backend Home link
@@ -77,10 +62,18 @@ function bt_remove_dashboard_widgets() {
 	// remove_meta_box('dashboard_activity','dashboard', 'normal'); //Activity
 	remove_action( 'welcome_panel','wp_welcome_panel' );
 	remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel'); // Try Gutenberg
-
+	remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' ); // Remove Site Health Widget
 }
 
 
+add_filter( 'wp_fatal_error_handler_enabled', '__return_false' );
+/**
+ *  Stop Site Health Emails from beng sent to Admin
+ *
+ * @since 1.0.0
+ */
+
+ 
 add_action( 'admin_head', 'bt_hide_tabs' );
 /**
  *  Hide 'Screen Option' and 'Help' tab for non-Admins
@@ -118,12 +111,6 @@ function wsl_edit_text() {
     return "<em>Site by <a href='https://websitelove.com.au' rel='nofollow'>WebsiteLove</a>, contact <a href='mailto:support@websitelove.com.au' rel='nofollow'>us</a></em>";
 }
 
-/**
- *  Stop Site Health Emails from beng sent to Admin
- *
- * @since 1.0.0
- */
-add_filter( 'wp_fatal_error_handler_enabled', '__return_false' );
 
 
 /**

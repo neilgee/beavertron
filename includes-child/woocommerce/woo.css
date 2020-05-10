@@ -135,7 +135,7 @@
 .woocommerce-page .related ul.products li.product {
 	width: 49%;
 }
-@media (min-width: 767px) {
+@media (min-width: 768px) {
 	.woocommerce-page .related ul.products li.product {
 		width: 30.8%;
 		padding: 2%;
@@ -145,4 +145,15 @@
 
 .sku_wrapper {
 	display: none;
+}
+
+/* Reduce table padding on small devices */
+@media (max-width: 767px) {
+	.woocommerce table.shop_table th, 
+	.woocommerce-page table.shop_table th, 
+	.woocommerce table.shop_table td, 
+	.woocommerce-page table.shop_table td {
+		border-color: #e6e6e6 !important;
+		padding: 10px !important;
+	}
 }

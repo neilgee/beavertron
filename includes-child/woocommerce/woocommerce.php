@@ -14,7 +14,7 @@ function woo_css_styles() {
  * WOO Customizer Options
  * @since 1.0.0
  */
-include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customize-woo.php' );
+include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customizer-woo.php' );
 
 
 add_action( 'template_redirect', 'bt_remove_woocommerce_styles_scripts', 999 );

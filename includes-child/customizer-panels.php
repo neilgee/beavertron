@@ -444,7 +444,6 @@ function bt_register_theme_customizer( $wp_customize ) {
 	 */
 	//$wp_customize->get_section( 'background_image' )->title = __( 'Background Styles', 'beavertron' );
 
-
 	/**
 	 *  Add WooCommerce Colors Section
 	 * @since 2.0.0
@@ -499,6 +498,158 @@ function bt_register_theme_customizer( $wp_customize ) {
 			'settings'   => 'hero_bg',
 			)
 	) );
+
+
+	/**
+	 * Create login panel
+	 * Add setting
+	 * Add control
+	 * Also can be done with FLCustomizer::add_panel - see example commented further down
+	 * @since 1.0.0
+	 */
+	// Add Panel
+	// $wp_customize->add_panel( 'login_page', array(
+	// 	'priority'       => 70,
+	// 	'theme_supports' => '',
+	// 	'title'          => __( 'Login', 'beavertron' ),
+	// 	'description'    => __( 'Set login page styles', 'beavertron' ),
+	// ) );
+
+	// Add Login Styles
+	// Add in Settings section with 'fl-settings'.
+	$wp_customize->add_section( 'bt_login_styles' , array(
+		'title'      => __( 'Login Styles','beavertron' ),
+		'panel'      => 'fl-settings',
+		'priority'   => 120,
+		) 
+	);
+
+	$wp_customize->add_setting( 'bt_login_accent_color', array(
+			'default' => '#007cba', // Give it a default
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'bt_login_custom_accent_color', //give it an ID
+		   array(
+			   'label'      => __( 'Login accent color', 'beavertron' ), //set the label to appear in the Customizer
+			   'section'    => 'bt_login_styles', //select the section for it to appear under  
+			   'settings'   => 'bt_login_accent_color' //pick the setting it applies to
+		   )
+	   )
+	);
+
+	$wp_customize->add_setting( 'bt_login_accent_hover_color', array(
+			'default' => '#0071a1', // Give it a default
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'bt_login_custom_accent_hover_color', //give it an ID
+			array(
+					'label'      => __( 'Login accent hover color', 'beavertron' ), //set the label to appear in the Customizer
+					'section'    => 'bt_login_styles', //select the section for it to appear under  
+					'settings'   => 'bt_login_accent_hover_color' //pick the setting it applies to
+				)
+			)
+	);
+
+	$wp_customize->add_setting( 'bt_login_link_color', array(
+		'default' => '#555d66', // Give it a default
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'bt_login_custom_link_color', //give it an ID
+			array(
+				'label'      => __( 'Login link color', 'beavertron' ), //set the label to appear in the Customizer
+				'section'    => 'bt_login_styles', //select the section for it to appear under  
+				'settings'   => 'bt_login_link_color' //pick the setting it applies to
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'bt_login_link_hover_color', array(
+			'default' => '#00a0d2', // Give it a default
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'bt_login_custom_link_hover_color', //give it an ID
+			array(
+				'label'      => __( 'Login link hover color', 'beavertron' ), //set the label to appear in the Customizer
+				'section'    => 'bt_login_styles', //select the section for it to appear under  
+				'settings'   => 'bt_login_link_hover_color' //pick the setting it applies to
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'bt_login_background_color', array(
+		'default' => '#f1f1f1', // Give it a default
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'bt_login_custom_background_color', //give it an ID
+			array(
+				'label'      => __( 'Login background color', 'beavertron' ), //set the label to appear in the Customizer
+				'section'    => 'bt_login_styles', //select the section for it to appear under  
+				'settings'   => 'bt_login_background_color' //pick the setting it applies to
+			)
+		)
+	);	
+
+	$wp_customize->add_setting( 'bt_login_form_color', array(
+		'default' => '#ffffff', // Give it a default
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'bt_login_form_color', //give it an ID
+			array(
+				'label'      => __( 'Login form background color', 'beavertron' ), //set the label to appear in the Customizer
+				'section'    => 'bt_login_styles', //select the section for it to appear under  
+				'settings'   => 'bt_login_form_color' //pick the setting it applies to
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'bt_login_form_text', array(
+		'default' => '#444444', // Give it a default
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+		$wp_customize,
+		'bt_login_form_text', //give it an ID
+			array(
+				'label'      => __( 'Login form text color', 'beavertron' ), //set the label to appear in the Customizer
+				'section'    => 'bt_login_styles', //select the section for it to appear under  
+				'settings'   => 'bt_login_form_text' //pick the setting it applies to
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'bt_admin_font',
+		array(
+		'default' => 0,
+		)
+	);
+	
+	$wp_customize->add_control( 'bt_admin_font',
+		array(
+		'label' => __( 'Make WP Dashboard font same as frontend' ),
+		'section' => 'bt_login_styles',
+		'priority' => 10, // Optional. Order priority to load the control. Default: 10
+		'type' => 'checkbox',
+		)
+	);
 
 
 	/**
@@ -706,7 +857,7 @@ set_theme_mod( 'fl-preset', 'bt-preset' );
 
 add_filter( 'fl_default_theme_mods', 'bt_default_theme_preset');
 /** 
- *  Sey Active Preset Theme Mods
+ *  Set Active Preset Theme Mods
  *  @since 1.0.0
  */
 function bt_default_theme_preset( $mods ) {
@@ -829,7 +980,7 @@ function bt_default_theme_preset( $mods ) {
 //add_action( 'after_setup_theme', 'bt_add_customizer_panel', 35 );
 /**
  * Create Custom Customizer Panel with FLCustomizer::add_panel
- * 7 Panel Examples with a range of controls
+ * 7 Panel Examples with a range of controls ... informational
  * @since 1.7.0
  */
 function bt_add_customizer_panel() {
@@ -1098,5 +1249,5 @@ function bt_add_customizer_panel() {
             $data = FLTheme::get_setting('bt-body-bg-color');
 
 
-            var_dump ($data);   
+          //  var_dump ($data);   
 }

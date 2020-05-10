@@ -23,7 +23,7 @@ if ( function_exists( 'add_image_size' ) ) {
  * Not working for theme if inside after_setup_theme function - so thats why it is here.
  * @since 1.7.0
  */
-require_once( get_stylesheet_directory() . '/includes-child/customizer-filtered.php' );
+require_once( get_stylesheet_directory() . '/includes-child/customizer-defaults.php' );
 
 
 add_action( 'after_setup_theme', 'bt_theme_setup', 15 );
@@ -40,7 +40,7 @@ function bt_theme_setup() {
 	 */
 	define( 'CHILD_THEME_NAME', 'beavertron' );
 	define( 'CHILD_THEME_URL', 'http://wpbeaches.com' );
-	define( 'CHILD_THEME_VERSION', '1.7.0' );
+	define( 'CHILD_THEME_VERSION', '1.7.1' );
 	define( 'FL_CHILD_THEME_DIR', get_stylesheet_directory() );
 	define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
 	// Allow SVG Upload
@@ -71,14 +71,15 @@ function bt_theme_setup() {
 	 * Add Customizer Options and CSS output.
 	 * @since 1.0.0
 	 */
-	require_once( get_stylesheet_directory() . '/includes-child/customizer.php' );
-	require_once( get_stylesheet_directory() . '/includes-child/output.php' );
+	require_once( get_stylesheet_directory() . '/includes-child/customizer-panels.php' );
+	require_once( get_stylesheet_directory() . '/includes-child/inline-css-style.php' );
+	require_once( get_stylesheet_directory() . '/includes-child/inline-css-style-login.php' );
 
 	/**
-	 * Client Logo for WP Login and backend admin clean up.
+	 * Client Logo for WP Login and backend dashboard admin clean up.
 	 * @since 1.0.0
 	 */
-	include_once( get_stylesheet_directory() . '/includes-child/client-file.php' );
+	include_once( get_stylesheet_directory() . '/includes-child/dashboard.php' );
 	
 	/**
 	 * Remove Default BB Mobile Menu.
