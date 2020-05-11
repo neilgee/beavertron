@@ -636,6 +636,26 @@ function bt_register_theme_customizer( $wp_customize ) {
 		)
 	);
 
+	// Getting the default WP custom logo - 4 keys in the array - url[0], width[1], height[2] and a boolean[3]
+	$custom_logo_id  = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
+	$custom_logo_url = $custom_logo_id [0];
+	$custom_logo_width = $custom_logo_id [1];
+	$custom_logo_height = $custom_logo_id [2];
+
+	// Add setting.
+	$wp_customize->add_setting( 'bt_login_logo', array(
+		'default'     => $custom_logo_url,
+	) );
+
+	// Add control.
+	$wp_customize->add_control( new WP_Customize_Image_Control(
+		$wp_customize, 'bt_login_logo', array(
+			'label'      => __( 'Add alternative login logo here,', 'beavertron' ),
+			'section'    => 'bt_login_styles',
+			'settings'   => 'bt_login_logo',
+			)
+	) );
+
 	$wp_customize->add_setting( 'bt_admin_font',
 		array(
 		'default' => 0,

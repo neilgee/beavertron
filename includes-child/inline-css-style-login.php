@@ -19,6 +19,7 @@ function bt_css_inline_login() {
 	$login_link_hover_color = get_theme_mod( 'bt_login_link_hover_color');
 	$login_form_color = get_theme_mod( 'bt_login_form_color');
 	$login_form_text_color = get_theme_mod( 'bt_login_form_text');
+	$login_logo = get_theme_mod( 'bt_login_logo');
 	
 	// Getting the default WP custom logo - 4 keys in the array - url[0], width[1], height[2] and a boolean[3]
 	$custom_logo_id  = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
@@ -30,7 +31,7 @@ function bt_css_inline_login() {
 	/* Start off with •nuffink */
 	$css = '';
 
-	$css .= ( !empty($custom_logo_url) ) ? sprintf('
+	$css .= ( !empty($login_logo) ) ? sprintf('
 	.login h1 a { 
 		background-image: url(%s);
 		width: 300px !important;
@@ -43,9 +44,24 @@ function bt_css_inline_login() {
 	.login .success, 
 	.login #login_error {
 		line-height: 1.8;
-    	padding-bottom: 10px;
+		padding-bottom: 10px;
 	}
-	', $custom_logo_url) : '';
+	', $login_logo) : sprintf('
+	.login h1 a { 
+		background-image: url(%s);
+		width: 300px !important;
+		height: 100px !important;
+		background-size: contain;
+		background-position: center;
+	}
+
+	.login .message, 
+	.login .success, 
+	.login #login_error {
+		line-height: 1.8;
+		padding-bottom: 10px;
+	}
+	', $custom_logo_url);
 	
 
 	$css .= ( !empty($login_color) ) ? sprintf('
@@ -218,7 +234,7 @@ function bt_css_inline_admin_common() {
 
 add_action( 'admin_enqueue_scripts', 'bt_css_inline_admin_bar', 1009 );
 /**
- * Inline Style for admin css Common
+ * Inline Style for admin css top bar
  *
  * @since 1.7.1
  */
