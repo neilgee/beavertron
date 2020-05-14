@@ -23,9 +23,11 @@ function bt_css_inline_login() {
 	
 	// Getting the default WP custom logo - 4 keys in the array - url[0], width[1], height[2] and a boolean[3]
 	$custom_logo_id  = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-	$custom_logo_url = $custom_logo_id [0];
-	$custom_logo_width = $custom_logo_id [1];
-	$custom_logo_height = $custom_logo_id [2];
+	if(!empty($custom_logo_id )) {
+		$custom_logo_url = $custom_logo_id [0];
+		$custom_logo_width = $custom_logo_id [1];
+		$custom_logo_height = $custom_logo_id [2];
+	}	
 	$font_login = FLTheme::get_setting( 'fl-body-font-family' );
 	
 	/* Start off with •nuffink */
@@ -61,7 +63,7 @@ function bt_css_inline_login() {
 		line-height: 1.8;
 		padding-bottom: 10px;
 	}
-	', $custom_logo_url);
+	', (! empty($custom_logo_url)) );
 	
 
 	$css .= ( !empty($login_color) ) ? sprintf('
