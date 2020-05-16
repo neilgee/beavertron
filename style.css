@@ -1,7 +1,7 @@
 /*
 Theme Name: Beavertron
 Theme URI: https://www.wpbeaches.com
-Version: 1.7
+Version: 1.7.1
 Description: An BB child theme that can be used as a clean slate for custom development.
 Author: Neil Gowran
 Author URI: https://www.wpbeaches.com
@@ -9,7 +9,6 @@ template: bb-theme
 */
 
 /* Intial CSS is via the parent skin - fl-automator-skin-css */
-
 
 @media (max-width:1200px) {
 	
@@ -24,17 +23,17 @@ template: bb-theme
     }
 
     h2 {
-        font-size: 27px;
+        font-size: 30px;
         line-height: 1.4;
     }
 
     h3 {
-        font-size: 21px;
+        font-size: 26px;
         line-height: 1.4;
     }
 
     h4 {
-        font-size: 18px;
+        font-size: 22px;
         line-height: 1.4;
     }
 }
@@ -42,27 +41,27 @@ template: bb-theme
 @media (max-width: 767px) {
 	
 	body {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 1.3;
     }
 
     h1 {
-        font-size: 40px;
+        font-size: 38px;
         line-height: 1.4;
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 29px;
         line-height: 1.4;
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 25px;
         line-height: 1.4;
     }
 
     h4 {
-        font-size: 18px;
+        font-size: 22px;
         line-height: 1.4;
     }
 
@@ -159,6 +158,7 @@ h6 {
 
 /* ## Tables
 --------------------------------------------- */
+
 .table td, .table th {
     padding: 20px;
     vertical-align: top;
@@ -196,7 +196,6 @@ figure {
 		width: auto;
 		height: 100%;
 	}
-
 }
 
 /* ## Avatar
@@ -206,7 +205,6 @@ figure {
 	float: left;
 	border-radius: 50%;
 }
-
 
 /* ## Search Form
 --------------------------------------------- */
@@ -229,7 +227,6 @@ figure {
 	position: absolute;
 	width: 1px;
 }
-
 
 /* ## Forms
 --------------------------------------------- */
@@ -292,8 +289,6 @@ input[type="submit"].small {
 	color: #777;
 	cursor: not-allowed;
 }
-
-
 
 input[type=text], 
 input[type=password], 
@@ -363,6 +358,7 @@ textarea:focus {
 /* # Buttons - Black-But example
 ---------------------------------------------------------------------------------------------------- */
 /* lines up the button if parent is equal heights change >>>>> .the-row <<<<<< */
+
 .fl-builder-content .the-row .fl-module-button {
 	margin-top: auto;
 } 
@@ -395,9 +391,6 @@ textarea:focus {
 	color: #000 !important;
 }
 
-
-
-
 /* # Buttons - Button with chevron(add the icon) no background
 ---------------------------------------------------------------------------------------------------- */
 
@@ -427,17 +420,14 @@ textarea:focus {
     line-height: 0;
 }
 
-
 /* # Skip Links
 ---------------------------------------------------------------------------------------------------- */
-
 
 /* Display outline on focus */
 :focus {
 	color: #333;
 	outline: #ccc solid 1px;
 }
-
 
 /* Read More
 ---------------------------------------------------------------------------------------------------- */
@@ -502,6 +492,7 @@ a.fl-post-slider-feed-more:hover   {
 
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
+
 .fl-page-nav-wrap {
     border-bottom: none;
 	border-top: none;
@@ -516,7 +507,6 @@ a.fl-post-slider-feed-more:hover   {
 /* # Mobile Nav Using Beaver Theme In Built Button Option - changed background and added hamburger icon
  * Black and white example below
 ---------------------------------------------------------------------------------------------------- */
-
 
 @media (max-width: 767px) {
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle * {
@@ -533,19 +523,22 @@ a.fl-post-slider-feed-more:hover   {
 	
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle {
 		display: block;
-		background: #ffffff;
+		background: transparent;
 		color: #000000;
+		border: none;
 	}
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:focus,
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:hover,
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:active {
-		background: #ffffff;
+		background: transparent;
+		border: none;
 	}
 }
 
 /* # Mobile Toggle Icon Nav Using Beaver Themer Option - changed color
  * Black example below
 ---------------------------------------------------------------------------------------------------- */
+
 @media (max-width: 767px) {
 	.fl-page .fl-menu-mobile-toggle * {
 		color: #000;
@@ -578,7 +571,6 @@ a.fl-post-slider-feed-more:hover   {
 	cursor:default;
 }
 
-
 /* FrontPage Container Widgets
 ---------------------------------------------------------------------------------------------------- */
 
@@ -603,6 +595,7 @@ a.fl-post-slider-feed-more:hover   {
 
 /* ## Archive Title & Description
 --------------------------------------------- */
+
 .fl-archive-header {
 	margin-bottom: 40px;
 }
@@ -611,7 +604,6 @@ a.fl-post-slider-feed-more:hover   {
 	margin: 0;
 	padding-bottom: 0;
 	border-bottom: none;
-
 }
 
 .fl-archive .fl-category-description {
@@ -625,9 +617,9 @@ a.fl-post-slider-feed-more:hover   {
 	margin-bottom: 0;
 }
 
-
 /* # Widgets
 ---------------------------------------------------------------------------------------------------- */
+
 .fl-widget {
 	word-wrap: break-word;
 	margin-bottom: 60px;
@@ -644,7 +636,6 @@ a.fl-post-slider-feed-more:hover   {
 	padding: 0;
 }
 
-
 .fl-widget p:last-child,
 .fl-widget ul > li:last-of-type {
 	margin-bottom: 0;
@@ -660,7 +651,6 @@ a.fl-post-slider-feed-more:hover   {
 	padding-left: 20px;
 	text-indent: -20px;
 }
-
 
 /* Entry Meta
 --------------------------------------------- */
@@ -740,7 +730,6 @@ a.fl-post-slider-feed-more:hover   {
     vertical-align: sub;
 }
 
-
 /* Pagination
 --------------------------------------------- */
 
@@ -776,7 +765,6 @@ a.fl-post-slider-feed-more:hover   {
 	border: 1px solid #aaaaaa;
 	border-radius: 3px;
 }
-
 
 .pagination a:hover,
 .pagination a.active  {
@@ -839,7 +827,6 @@ li.comment {
 	padding: 24px;
 }
 
-
 /* Sidebars
 ---------------------------------------------------------------------------------------------------- */
 
@@ -861,7 +848,6 @@ li.comment {
 	background-color: #fff;
 	margin-bottom: 40px;
 }
-
 
 /* Footer Widgets
 ---------------------------------------------------------------------------------------------------- */
@@ -950,8 +936,6 @@ li.comment {
 	vertical-align: middle;
 }
 
-
-
 /* # Plugins
 ---------------------------------------------------------------------------------------------------- */
 
@@ -961,8 +945,6 @@ li.comment {
 #wpstats {
 	display: none;
 }
-
-
 
 /* Sticky Footer  - 1st Block commented is BB recommended, 2nd Block, uncommented is Flexbox
 ---------------------------------------------------------------------------------------------------- */
@@ -1000,12 +982,10 @@ li.comment {
 	word-wrap: break-word;
 }
 
-
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	
 	.fl-page { display: block; } /* IE10 & IE11 */
-   
 }
+
 /* CSS Snippets
  * Rows, Lists and Quotes
  * 
@@ -1054,10 +1034,8 @@ li.comment {
 	.fl-col-small + .fl-col-small .split-list .fl-node-content {
 		margin-top:0;
 		margin-bottom: 20px;
-	 }
-	
+	 }	
 }
-
 
 /* Icon Stuff
 --------------------------------------------- */
@@ -1183,8 +1161,6 @@ a.anchor {
 	display: none;
 }
 
-
-
 /* Print Styles
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1293,9 +1269,4 @@ a.anchor {
 	ul {
 		page-break-before: avoid;
 	}
-
 }
-
-
-
-
