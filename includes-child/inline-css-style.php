@@ -89,22 +89,7 @@ function bt_css() {
 		}
 	', $hero_bg_image ) : '';
 
-
-	// Padding for Buttons
-	$button_padding_width = FLTheme::get_setting( 'bt_button_padding_left_right' );
-	$button_padding_height = FLTheme::get_setting( 'bt_button_padding_top_bottom' ); // Assigning it to a variable to keep the markup clean.
-	$css .= ( $button_padding_width ) ? sprintf('
-		.fl-page button, 
-		.fl-responsive-preview-content button, 
-		.fl-page input[type=button], 
-		.fl-responsive-preview-content input[type=button], 
-		.fl-page input[type=submit], 
-		.fl-responsive-preview-content input[type=submit], 
-		.fl-page a.fl-button, 
-		.fl-responsive-preview-content a.fl-button {
-			padding: %1$spx %2$spx
-		}
-	', $button_padding_height, $button_padding_width ) : '';
+	
 	
 	// Button Border Hover Color
 	$border_color = FLTheme::get_setting( 'bt_border_color_hover' );
@@ -120,6 +105,56 @@ function bt_css() {
 			border-color: %s;	
 		}
 	', $border_color ) : '';
+
+	// All the buttons
+	$button_col = FLTheme::get_setting( 'fl-button-color' );
+	$button_col_hover = FLTheme::get_setting( 'fl-button-hover-color' );
+	$button_col_bg = FLTheme::get_setting( 'fl-button-background-color' );
+	$button_col_bg_hover = FLTheme::get_setting( 'fl-button-background-hover-color' );
+	$button_font = FLTheme::get_setting( 'fl-button-font-family' );
+	$button_weight = FLTheme::get_setting( 'fl-button-font-weight' );
+	$button_size = FLTheme::get_setting( 'fl-button-font-size' );
+	$button_line_height = FLTheme::get_setting( 'fl-button-line-height' );
+	$button_transform = FLTheme::get_setting( 'fl-button-text-transform' );
+	$button_border = FLTheme::get_setting( 'fl-button-border-style' );
+	$button_border_width = FLTheme::get_setting( 'fl-button-border-width' );
+	$button_border_color = FLTheme::get_setting( 'fl-button-border-color' );
+	$button_border_radius = FLTheme::get_setting( 'fl-button-border-radius' );
+	$button_border_hover = FLTheme::get_setting( 'bt_border_color_hover' );
+	$button_padding_width = FLTheme::get_setting( 'bt_button_padding_left_right' );
+	$button_padding_height = FLTheme::get_setting( 'bt_button_padding_top_bottom' ); // Assigning it to a variable to keep the markup clean.
+
+	$css .= ( $button_col ) ? sprintf('	
+		a.more-link,
+		.fl-post-grid-content a.fl-post-grid-more,
+		a.fl-post-more-link,
+		a.fl-post-feed-more,
+		a.fl-post-slider-feed-more  {
+			font-family:%5$s;
+			font-weight: %6$s;
+			font-size:%7$spx;
+			line-height:%8$s;
+			text-transform: %9$s;
+			border-style:%10$s;
+			border-width: %11$spx;
+			border-radius:%13$spx;
+			border-color:%12$s;
+			color:%1$s;
+			background-color:%3$s;
+			padding: %15$spx %16$spx;
+		}
+
+		a.more-link:hover,
+		.fl-post-grid-content a.fl-post-grid-more:hover,
+		a.fl-post-more-link:hover,
+		a.fl-post-feed-more:hover,
+		a.fl-post-slider-feed-more:hover   {
+			color:%2$s;
+			background-color:%4$s;
+			border-color:%14$s;
+		}
+	', $button_col, $button_col_hover, $button_col_bg, $button_col_bg_hover, $button_font, $button_weight, $button_size, $button_line_height, $button_transform, $button_border, $button_border_width, $button_border_color, $button_border_radius, $button_border_hover, $button_padding_width, $button_padding_height) : '';
+
 
 
 // WooCommerce
