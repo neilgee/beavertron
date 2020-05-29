@@ -30,10 +30,18 @@ function bt_css() {
 	
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
-	$bt_woo_button_color           = get_theme_mod( 'bt_woo_button_color', bt_woo_button_color_default() );
-	$bt_woo_button_hover_color     = get_theme_mod( 'bt_woo_button_hover_color', bt_woo_button_hover_color_default() );
+	$bt_woo_button_text_color        = get_theme_mod( 'bt_woo_button_text_color', bt_woo_button_text_color_default() );
+	$bt_woo_button_text_hover_color  = get_theme_mod( 'bt_woo_button_text_hover_color', bt_woo_button_text_hover_color_default() );
+
+	$bt_woo_button_color           	= get_theme_mod( 'bt_woo_button_color', bt_woo_button_color_default() );
+	$bt_woo_button_hover_color     	= get_theme_mod( 'bt_woo_button_hover_color', bt_woo_button_hover_color_default() );
+	$bt_woo_border_color     		= get_theme_mod( 'bt_woo_border_color', bt_woo_button_border_color_default() );
+	$bt_woo_border_hover_color		= get_theme_mod( 'bt_woo_border_color_hover', bt_woo_button_border_hover_color_default() );
+
 	$bt_woo_button_alt_color       = get_theme_mod( 'bt_woo_button_alt_color', bt_woo_button_alt_color_default() );
 	$bt_woo_button_alt_hover_color = get_theme_mod( 'bt_woo_button_alt_hover_color', bt_woo_button_alt_hover_color_default() );
+	
+	
 	$bt_woo_button_dis_color       = get_theme_mod( 'bt_woo_button_dis_color', bt_woo_button_dis_color_default() );
 	$bt_woo_button_dis_hover_color = get_theme_mod( 'bt_woo_button_dis_hover_color', bt_woo_button_dis_hover_color_default() );
 
@@ -43,10 +51,7 @@ function bt_css() {
 	$bt_woo_error_color	           = get_theme_mod( 'bt_woo_error_color', bt_woo_error_color_default() );
 	$bt_woo_info_color	           = get_theme_mod( 'bt_woo_info_color', bt_woo_info_color_default() );
 	$bt_woo_message_color	       = get_theme_mod( 'bt_woo_message_color', bt_woo_message_color_default() );
-
-	
 	}
-
 
 	//* Calculate Color Contrast
 	function bt_color_contrast( $color ) {
@@ -160,29 +165,36 @@ function bt_css() {
 // WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
 
-
 		$css .= ( bt_woo_button_color_default() !== $bt_woo_button_color ) ? sprintf( '
-		.woocommerce a.button,
-		.woocommerce #respond input#submit,
-		.woocommerce button.button,
-		.woocommerce input.button {
-			background: %1$s;
-			border: 1px solid %1$s;
+		.woocommerce .fl-page a.button,
+		.woocommerce .fl-page #respond input#submit,
+		.woocommerce .fl-page button.button,
+		.woocommerce .fl-page input.button,
+		.woocommerce-page ul.products li.product a.button,
+		.woocommerce-page a.button,
+		.woocommerce-page button.button,
+		.woocommerce-page .woocommerce button[type=submit] {
+			background-color: %1$s;
+			border: 1px solid %3$s;
 			color: %2$s;
 		}
-		', $bt_woo_button_color, bt_color_contrast( $bt_woo_button_color ) ) : '';
+		', $bt_woo_button_color, $bt_woo_button_text_color , $bt_woo_border_color  ) : '';
 
-
+		
 		$css .= ( bt_woo_button_hover_color_default() !== $bt_woo_button_hover_color ) ? sprintf( '
-		.woocommerce #respond input#submit:hover,
-		.woocommerce a.button:hover,
-		.woocommerce button.button:hover,
-		.woocommerce input.button:hover  {
-			background: %1$s;
-			border: 1px solid %1$s;
+		.woocommerce .fl-page #respond input#submit:hover,
+		.woocommerce .fl-page a.button:hover,
+		.woocommerce .fl-page button.button:hover,
+		.woocommerce .fl-page input.button:hover,
+		.woocommerce-page ul.products li.product a.button:hover,
+		.woocommerce-page a.button:hover,
+		.woocommerce-page button.button:hover,
+		.woocommerce-page .woocommerce button[type=submit]:hover  {
+			background-color: %1$s;
+			border: 1px solid %3$s;
 			color: %2$s;
 		}
-		', $bt_woo_button_hover_color, bt_color_contrast( $bt_woo_button_hover_color ) ) : '';
+		', $bt_woo_button_hover_color, $bt_woo_button_text_hover_color, $bt_woo_border_hover_color ) : '';
 
 
 		$css .= ( bt_woo_button_alt_color_default() !== $bt_woo_button_alt_color ) ? sprintf( '
@@ -215,23 +227,24 @@ function bt_css() {
 		.woocommerce button.button.alt,
 		.woocommerce input.button.alt,
 		.woocommerce span.onsale {
-			background: %1$s;
-			border: 1px solid %1$s;
+			background-color: %1$s;
+			border: 1px solid %3$s;
 			color: %2$s;
 		}
-		', $bt_woo_button_alt_color, bt_color_contrast( $bt_woo_button_alt_color ) ) : '';
+		', $bt_woo_button_alt_color, $bt_woo_button_text_color, $bt_woo_border_color  ) : '';
 
-
+		
+		
 		$css .= ( bt_woo_button_alt_hover_color_default() !== $bt_woo_button_alt_hover_color ) ? sprintf( '
 		.woocommerce #respond input#submit.alt:hover,
 		.woocommerce a.button.alt:hover,
 		.woocommerce button.button.alt:hover,
 		.woocommerce input.button.alt:hover {
-			background: %1$s;
-			border: 1px solid %1$s;
+			background-color: %1$s;
+			border: 1px solid %3$s;
 			color: %2$s;
 		}
-		', $bt_woo_button_alt_hover_color, bt_color_contrast( $bt_woo_button_alt_hover_color ) ) : '';
+		', $bt_woo_button_alt_hover_color, $bt_woo_button_text_hover_color, $bt_woo_border_hover_color ) : '';
 
 
 		$css .= ( bt_woo_button_dis_color_default() !== $bt_woo_button_dis_color ) ? sprintf( '
@@ -246,7 +259,7 @@ function bt_css() {
 		.woocommerce input.button.disabled,
 		.woocommerce input.button:disabled,
 		.woocommerce input.button:disabled[disabled] {
-			background: %1$s;
+			background-color: %1$s;
 			border: 1px solid %1$s;
 			color: %2$s;
 		}
@@ -266,7 +279,7 @@ function bt_css() {
 		.woocommerce input.button.disabled:hover,
 		.woocommerce input.button:disabled:hover,
 		.woocommerce input.button:disabled[disabled]:hover {
-			background: %1$s;
+			background-color: %1$s;
 			border: 1px solid %1$s;
 			color: %2$s;
 		}
@@ -331,7 +344,7 @@ function bt_css() {
 
 		$css .= ( bt_woo_error_color_default() !== $bt_woo_error_color  ) ? sprintf( '
 		.woocommerce a.remove:hover {
-		    background: %s;
+		    background-color: %s;
 		}
 		', $bt_woo_error_color ) : '';
 

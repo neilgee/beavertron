@@ -9,14 +9,30 @@
   * Set Up Default Colors - so if not changed in Customizer no CSS mark up is output
   * @since 1.0.0
   */
+ 
+ function  bt_woo_button_text_color_default() {
+ return '#ffffff';
+ }
+
+ function  bt_woo_button_text_hover_color_default() {
+ return '#999999';
+ }
 
  function  bt_woo_button_color_default() {
  return '#ebe9eb';
  }
- //
+ 
  function  bt_woo_button_hover_color_default() {
   return '#dad8da';
  }
+
+ function  bt_woo_button_border_color_default() {
+        return '#ebe9eb';
+}
+
+function  bt_woo_button_border_hover_color_default() {
+        return '#dad8da';
+}
 
  function  bt_woo_button_alt_color_default() {
  return '#a46497';
@@ -73,6 +89,38 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
 	// 	'priority'   => 520,
 	// ) );
 
+        // Add buttons foreground color
+        // Add setting.
+	$wp_customize->add_setting( 'bt_woo_button_text_color', array(
+		'default' => bt_woo_button_text_color_default(),
+		'sanitize_callback' => 'sanitize_hex_color',
+        ) );
+
+	// Add control
+        $wp_customize->add_control( new WP_Customize_Color_Control(
+        $wp_customize, 'bt_woo_button_text_color', array(
+		'label'      => __( 'Button Color', 'beavertron' ), //set the label to appear in the Customizer
+		'section'    => 'woocommerce_colors', //select the section for it to appear under
+		'settings'   => 'bt_woo_button_text_color' //pick the setting it applies to
+		)
+        ) );
+
+	// Add buttons hover - focus foreground color
+	// Add setting.
+	$wp_customize->add_setting( 'bt_woo_button_text_hover_color', array(
+		'default' => bt_woo_button_text_hover_color_default(),
+		'sanitize_callback' => 'sanitize_hex_color',
+        ) );
+
+	// Add control
+        $wp_customize->add_control( new WP_Customize_Color_Control(
+        $wp_customize, 'bt_woo_button_text_hover_color', array(
+		'label'      => __( 'Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
+		'section'    => 'woocommerce_colors', //select the section for it to appear under
+		'settings'   => 'bt_woo_button_text_hover_color' //pick the setting it applies to
+		)
+        ) );
+
 	// Add buttons background color
 	// Add setting.
 	$wp_customize->add_setting( 'bt_woo_button_color', array(
@@ -104,6 +152,39 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
 		'settings'   => 'bt_woo_button_hover_color' //pick the setting it applies to
 		)
         ) );
+
+        /* *
+	 * Adding in a Border Color and Border Hover Control for Woo Buttons to the Woo panel
+	 * Also can be done with fl_theme_add_panel_data filter - see 2 examples in customizer-filtered.php
+	 * @since 1.7.0
+	 */
+        $wp_customize->add_setting( 'bt_woo_border_color', array(
+                'default' => bt_woo_button_border_color_default(),
+                'sanitize_callback' => 'sanitize_hex_color',
+        ) );
+        
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+	$wp_customize, 'bt_woo_border_color', array(
+                'label'      => __( 'Border Color', 'beavertron' ), //set the label to appear in the Customizer
+                'section'    => 'woocommerce_colors', //select the section for it to appear under  
+                'settings'   => 'bt_woo_border_color', //pick the setting it applies to
+		)
+        ) );
+        
+	$wp_customize->add_setting( 'bt_woo_border_color_hover', array(
+                'default' => bt_woo_button_border_hover_color_default(),
+                'sanitize_callback' => 'sanitize_hex_color',
+        ) );
+        
+	$wp_customize->add_control( new WP_Customize_Color_Control(
+	$wp_customize, 'bt_woo_border_color_hover', array(
+                'label'      => __( 'Border Hover Color', 'beavertron' ), //set the label to appear in the Customizer
+                'section'    => 'woocommerce_colors', //select the section for it to appear under  
+                'settings'   => 'bt_woo_border_color_hover', //pick the setting it applies to
+		)
+	) );
+        
+
 
         // Add buttons background alt color
         // Add setting.
