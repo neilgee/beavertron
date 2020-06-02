@@ -45,6 +45,8 @@ function bt_theme_setup() {
 	define( 'FL_CHILD_THEME_URL', get_stylesheet_directory_uri() );
 	// Allow SVG Upload
 	define( 'ALLOW_UNFILTERED_UPLOADS', true );
+	// Fix BB 403 errors via Ajax calls
+	define( 'FL_BUILDER_MODSEC_FIX', true );
 
 	/**
 	 * Clean up WP Head
