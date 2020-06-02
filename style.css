@@ -991,6 +991,15 @@ li.comment {
  * 
  *---------------------------------------------------------------------------------------------------- */
 
+ /* Align buttons across columns - make sure column Equal Heights is set for Flex
+  * Add the align-button-row class to the row
+  */
+
+ .align-button-row .fl-col-content .fl-module-button {
+    margin-top: auto;
+}
+
+
  /* Center an uneven row - below is an example of 2 cols centered in a 3 col layout */
 @media (min-width: 768px) {
 	.two-row-three-parent .fl-col-group {
