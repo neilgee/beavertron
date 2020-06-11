@@ -27,7 +27,10 @@ function bt_css_inline_login() {
 		$custom_logo_url = $custom_logo_id [0];
 		$custom_logo_width = $custom_logo_id [1];
 		$custom_logo_height = $custom_logo_id [2];
-	}	
+	}
+	else {
+		$custom_logo_url = '';
+	}		
 	$font_login = FLTheme::get_setting( 'fl-body-font-family' );
 	
 	/* Start off with •nuffink */
@@ -63,7 +66,7 @@ function bt_css_inline_login() {
 		line-height: 1.8;
 		padding-bottom: 10px;
 	}
-	', (! empty($custom_logo_url)) );
+	', $custom_logo_url );
 	
 
 	$css .= ( !empty($login_color) ) ? sprintf('
