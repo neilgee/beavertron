@@ -27,20 +27,12 @@
  }
 
  function  bt_woo_button_border_color_default() {
-        return '#ebe9eb';
+return '#ebe9eb';
 }
 
 function  bt_woo_button_border_hover_color_default() {
-        return '#dad8da';
+return '#dad8da';
 }
-
- function  bt_woo_button_alt_color_default() {
- return '#a46497';
- }
-
- function  bt_woo_button_alt_hover_color_default() {
-  return '#935386';
- }
 
  function  bt_woo_button_dis_color_default() {
  return '#eee';
@@ -87,7 +79,10 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
 	// 	'title'      => __( 'WooCommerce','beavertron' ),
 	// 	//'panel'      => 'woocommerce',
 	// 	'priority'   => 520,
-	// ) );
+        // ) );
+        
+        // Change WooCommerce Panel Title
+        $wp_customize->get_section('woocommerce_colors')->title = __( 'Buttons & Colors' );
 
         // Add buttons foreground color
         // Add setting.
@@ -99,7 +94,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
 	// Add control
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_button_text_color', array(
-		'label'      => __( 'Button Color', 'beavertron' ), //set the label to appear in the Customizer
+		'label'      => __( 'Button Text Color', 'beavertron' ), //set the label to appear in the Customizer
 		'section'    => 'woocommerce_colors', //select the section for it to appear under
 		'settings'   => 'bt_woo_button_text_color' //pick the setting it applies to
 		)
@@ -115,7 +110,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
 	// Add control
         $wp_customize->add_control( new WP_Customize_Color_Control(
         $wp_customize, 'bt_woo_button_text_hover_color', array(
-		'label'      => __( 'Button Hover Color', 'beavertron' ), //set the label to appear in the Customizer
+		'label'      => __( 'Button Text Hover Color', 'beavertron' ), //set the label to appear in the Customizer
 		'section'    => 'woocommerce_colors', //select the section for it to appear under
 		'settings'   => 'bt_woo_button_text_hover_color' //pick the setting it applies to
 		)
@@ -183,40 +178,6 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
                 'settings'   => 'bt_woo_border_color_hover', //pick the setting it applies to
 		)
 	) );
-        
-
-
-        // Add buttons background alt color
-        // Add setting.
-        $wp_customize->add_setting( 'bt_woo_button_alt_color', array(
-                'default' => bt_woo_button_alt_color_default(),
-                'sanitize_callback' => 'sanitize_hex_color',
-        ) );
-
-        // Add control
-        $wp_customize->add_control( new WP_Customize_Color_Control(
-        $wp_customize, 'bt_woo_button_alt_color', array(
-                'label'      => __( 'Button Alt Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'woocommerce_colors', //select the section for it to appear under
-                'settings'   => 'bt_woo_button_alt_color' //pick the setting it applies to
-                )
-        ) );
-
-        // Add buttons hover - focus background color
-        // Add setting.
-        $wp_customize->add_setting( 'bt_woo_button_alt_hover_color', array(
-                'default' => bt_woo_button_alt_hover_color_default(),
-                'sanitize_callback' => 'sanitize_hex_color',
-        ) );
-
-        // Add control
-        $wp_customize->add_control( new WP_Customize_Color_Control(
-        $wp_customize, 'bt_woo_button_alt_hover_color', array(
-                'label'      => __( 'Button Alt Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-                'section'    => 'woocommerce_colors', //select the section for it to appear under
-                'settings'   => 'bt_woo_button_alt_hover_color' //pick the setting it applies to
-                )
-        ) );
 
         // Add buttons background disabled color
         // Add setting.
@@ -264,7 +225,7 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
         $wp_customize->add_setting(
                 'bt_button_woo_padding_left_right', //give it an ID
                 array(
-                        'default' => '7', // Give it a default
+                        'default' => '30', // Give it a default
                         //'transport' => 'postMessage',
                 )
         );
@@ -287,13 +248,15 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
                         )
                 )
         );
+
         $wp_customize->add_setting(
                 'bt_button_woo_padding_top_bottom', //give it an ID
                 array(
-                        'default' => '28', // Give it a default
+                        'default' => '5', // Give it a default
                         //'transport' => 'postMessage',
                 )
         );
+
         $wp_customize->add_control(
                 new FLCustomizerControl(
                 $wp_customize,
@@ -312,6 +275,53 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
                         )
                 )
         );
+        // Add Woo button font family
+        $wp_customize->add_setting(
+                'bt_button_woo_font_family', //give it an ID
+                    array(
+                        'default' => 'Helvetica', // Give it a default
+                        //'transport' => 'postMessage',
+                    )
+        );
+            
+        $wp_customize->add_control(
+        new FLCustomizerControl(
+                $wp_customize,
+                'bt_button_woo_font_family', //give it an ID
+                        array(
+                                'class'   => 'FLCustomizerControl',
+                                'label'   => __( 'Font Family', 'beavertron' ),
+                                'type'    => 'font',
+                                'connect' => 'bt_button_woo_font_weight',  //set the label to appear in the Customizer
+                                'section'  => 'woocommerce_colors',  //select the section for it to appear under  
+                                'settings' => 'bt_button_woo_font_family',  //pick the setting it applies to
+                                'priority' => 15,
+                        ),
+        ) );
+
+        // Add Woo button font weight
+        $wp_customize->add_setting(
+                'bt_button_woo_font_weight', //give it an ID
+                    array(
+                        'default' => '400', // Give it a default
+                        //'transport' => 'postMessage',
+                    )
+        );
+            
+        $wp_customize->add_control(
+        new FLCustomizerControl(
+                $wp_customize,
+                'bt_button_woo_font_weight', //give it an ID
+                        array(
+                                'class'   => 'FLCustomizerControl',
+                                'label'   => __( 'Font Weight', 'beavertron' ),
+                                'type'    => 'font-weight',
+                                'connect' => 'bt_button_woo_font_family',  //set the label to appear in the Customizer
+                                'section'  => 'woocommerce_colors',       //select the section for it to appear under  
+                                'settings' => 'bt_button_woo_font_weight',   //pick the setting it applies to
+                                'priority' => 15,
+                        ),
+        ) );
 
          // Add control
          $wp_customize->add_control( new WP_Customize_Color_Control(
@@ -321,7 +331,186 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
                         'settings' => 'bt_woo_price_color',                //pick the setting it applies to
                         'priority' => 20
                         )
-                ) );
+        ) );
+
+
+        // Add font size
+        $wp_customize->add_setting(
+                'bt_button_woo_font_size', //give it an ID
+                array(
+                        'default' => '16', // Give it a default
+                        'transport' => 'postMessage',
+                )
+        );
+        
+        $wp_customize->add_control(
+                new FLCustomizerControl(
+                $wp_customize,
+                'bt_button_woo_font_size', //give it an ID
+                        array(
+                                'class'   => 'FLCustomizerControl',
+                                'label'   => __( 'Font Size', 'Font size for buttons.', 'beavertron' ),
+                                'type'       => 'slider',
+                                'choices'    => get_font_size_limits(),
+                                'responsive' => true,
+                                'section'  => 'woocommerce_colors',       //select the section for it to appear under  
+                                'settings' => 'bt_button_woo_font_size',   //pick the setting it applies to
+                                'priority' => 15,
+                        ),
+        ) );
+
+        // Add line-height
+        $wp_customize->add_setting(
+                'bt_button_woo_line_height', //give it an ID
+                array(
+                        'default'   => '1.2',
+                        'transport' => 'postMessage',
+                )
+        );
+        
+        $wp_customize->add_control(
+                new FLCustomizerControl(
+                $wp_customize,
+                'bt_button_woo_font_weight', //give it an ID
+                        array(
+                                'class'      => 'FLCustomizerControl',
+                                'label'      => __( 'Line Height', 'beavertron' ),
+                                'type'       => 'slider',
+                                'choices'    => array(
+                                        'min'  => 1,
+                                        'max'  => 2.5,
+                                        'step' => 0.05,
+                                ),
+                                'responsive' => true,
+                                'section'  => 'woocommerce_colors',       //select the section for it to appear under  
+                                'settings' => 'bt_button_woo_line_height',   //pick the setting it applies to
+                                'priority' => 15,
+                        ),
+        ));
+
+
+        // Add text transform
+        $wp_customize->add_setting(
+                'bt_button_woo_text_transform', //give it an ID
+                array(
+                        'default'   => 'none',
+                        'transport' => 'postMessage',
+                )
+        );
+        
+        $wp_customize->add_control(
+                new WP_Customize_Control(
+                $wp_customize,
+                'bt_button_woo_text_transform', //give it an ID
+                        array(
+                        'class'   => 'WP_Customize_Control',
+                        'label'   => _x( 'Text Transform', 'Text transform for buttons.', 'beavertron' ),
+                        'type'    => 'select',
+                        'choices' => array(
+                                'none'       => __( 'Regular', 'beavertron' ),
+                                'capitalize' => __( 'Capitalize', 'beavertron' ),
+                                'uppercase'  => __( 'Uppercase', 'beavertron' ),
+                                'lowercase'  => __( 'Lowercase', 'beavertron' ),
+                        ),
+                        'section'  => 'woocommerce_colors',       //select the section for it to appear under  
+                        'settings' => 'bt_button_woo_text_transform',   //pick the setting it applies to
+                        'priority' => 15,
+                        ),
+        ));
+
+        // Add border style
+        $wp_customize->add_setting(
+                'bt_button_woo_border_style', //give it an ID
+                array(
+                        'default'   => 'none',
+                        'transport' => 'postMessage',
+                )
+        );
+        
+        $wp_customize->add_control(
+                new WP_Customize_Control(
+                $wp_customize,
+                'bt_button_woo_border_style', //give it an ID
+                        array(
+                        'class'   => 'WP_Customize_Control',
+                        'label'   => _x( 'Border Style', 'Border style for buttons.', 'beavertron' ),
+                        'type'    => 'select',
+                        'choices' => array(
+                                'none'    => __( 'None', 'beavertron' ),
+                                'solid'   => __( 'Solid', 'beavertron' ),
+                                'dotted'  => __( 'Dotted', 'beavertron' ),
+                                'dashed'  => __( 'Dashed', 'beavertron' ),
+                                'double'  => __( 'Double', 'beavertron' ),
+                                'groove'  => __( 'Groove', 'beavertron' ),
+                                'ridge'   => __( 'Ridge', 'beavertron' ),
+                                'inset'   => __( 'Inset', 'beavertron' ),
+                                'outset'  => __( 'Outset', 'beavertron' ),
+                                'initial' => __( 'Initial', 'beavertron' ),
+                                'inherit' => __( 'Inherit', 'beavertron' ),
+                        ),
+                        'section'  => 'woocommerce_colors',       //select the section for it to appear under  
+                        'settings' => 'bt_button_woo_border_style',   //pick the setting it applies to
+                        'priority' => 15,
+                        ),
+        ));
+
+        // Add border width
+        $wp_customize->add_setting(
+                'bt_button_woo_border_width', //give it an ID
+                array(
+                        'default'   => '0',
+                        'transport' => 'postMessage',
+                )
+        );
+        
+        $wp_customize->add_control(
+                new FLCustomizerControl(
+                $wp_customize,
+                'bt_button_woo_border_width', //give it an ID
+                        array(
+                        'class'   => 'FLCustomizerControl',
+                        'label'   => _x( 'Border Width', 'Border width for buttons.', 'beavertron' ),
+                        'type'    => 'slider',
+                        'choices' => array(
+                                'min'  => 0,
+                                'max'  => 10,
+                                'step' => 1,
+                        ),
+                        'section'  => 'woocommerce_colors',       //select the section for it to appear under  
+                        'settings' => 'bt_button_woo_border_width',   //pick the setting it applies to
+                        'priority' => 15,
+                        ),
+        ));
+        
+        
+        
+        // Add border radius
+        $wp_customize->add_setting(
+                'bt_button_woo_border_radius', //give it an ID
+                array(
+                        'default'   => '0',
+                        'transport' => 'postMessage',
+                )
+        );
+        
+        $wp_customize->add_control(
+                new FLCustomizerControl(
+                $wp_customize,
+                'bt_button_woo_border_radius', //give it an ID
+                        array(
+                        'class'   => 'FLCustomizerControl',
+                        'label'   => _x( 'Border Radius', 'Font size for buttons.', 'beavertron' ),
+                        'type'    => 'slider',
+                        'choices' => array(
+                                'min'  => 0,
+                                'max'  => 25,
+                                'step' => 1,
+                        ),
+                        'section'  => 'woocommerce_colors',       //select the section for it to appear under  
+                        'settings' => 'bt_button_woo_border_radius',   //pick the setting it applies to
+                        'priority' => 15,
+                        ),
+        ));
         
         // Add sale price color
         // Add setting.
@@ -392,7 +581,4 @@ function bt_register_theme_customizer_woo( $wp_customize ) {
                 'priority' => 20
                 )
         ) );
-
-
-
 }

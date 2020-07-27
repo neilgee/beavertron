@@ -250,7 +250,16 @@ function bt_theme_setup() {
 		);
 		return $change_ace;
 	}
-	
+
+
+
 
 
 } // Closing After Set Up Hook
+
+
+add_action( 'wp_enqueue_scripts', 'bb_turn_off', 999999 );
+
+function bb_turn_off() {
+	wp_dequeue_script('jquery-magnificpopup');
+}

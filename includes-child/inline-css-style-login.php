@@ -32,6 +32,7 @@ function bt_css_inline_login() {
 		$custom_logo_url = '';
 	}		
 	$font_login = FLTheme::get_setting( 'fl-body-font-family' );
+	$font_login = '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif';
 	
 	/* Start off with •nuffink */
 	$css = '';

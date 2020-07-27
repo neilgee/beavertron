@@ -39,13 +39,39 @@ final class FLChildTheme {
         //wp_enqueue_style( 'businessprofile', get_stylesheet_directory_uri() . '/css/business-profile.css' , array(), '2.0.0', 'all' );
 
         // Take out the default BB Scripts if not used
-        // wp_dequeue_script('jquery-magnificpopup');
-        // wp_dequeue_style('jquery-magnificpopup');
         // wp_dequeue_script( 'bootstrap' );
-        // wp_dequeue_script( 'imagesloaded' );
-        // wp_dequeue_script( 'jquery-fitvids' );
-        // wp_dequeue_script( 'jquery-throttle' );
-        // wp_dequeue_script( 'jquery-waypoints' );
+
+        $bt_fitvids_script = get_theme_mod( 'bt_fitvids_script');
+        $bt_waypoints_script = get_theme_mod( 'bt_waypoints_script');
+        $bt_throttle_script = get_theme_mod( 'bt_throttle_script');
+        $bt_imagesloaded_script = get_theme_mod( 'bt_imagesloaded_script');
+        $bt_magnificpopup_script = get_theme_mod( 'bt_magnificpopup_script');
+        $bt_magnificpopup_style = get_theme_mod( 'bt_magnificpopup_style');
+
+        if( $bt_magnificpopup_script == 1)  {
+            wp_dequeue_script('jquery-magnificpopup');
+        }
+  
+        if( $bt_magnificpopup_style == 1)  {
+            wp_dequeue_style('jquery-magnificpopup');
+        }
+
+        if( $bt_imagesloaded_script == 1)  {
+            wp_dequeue_script( 'imagesloaded' );
+        }
+        if( $bt_fitvids_script == 1)  {
+            wp_dequeue_script( 'jquery-fitvids' );
+        }
+
+        if( $bt_throttle_script == 1)  {
+            wp_dequeue_script( 'jquery-throttle' );
+        }
+
+        if( $bt_waypoints_script == 1)  {
+             wp_dequeue_script( 'jquery-waypoints' );
+        }
+        
+       
 
         // Set Up Global JS
         // wp_enqueue_script( 'global', get_stylesheet_directory_uri() . '/js/global.js', array( 'jquery' ), '1.0.0', true );

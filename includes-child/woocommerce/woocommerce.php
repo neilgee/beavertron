@@ -118,6 +118,16 @@ if( $bt_woo_sort === 'disabled' ) {
 	remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
 }
 
+/**
+ * Hide 'add to cart' button on Woo archive pages
+ * @since 1.7.1
+ */
+$cartbut = FLTheme::get_setting( 'fl-woo-cart-button' );
+
+if ( $cartbut === 'hidden' ) {
+        remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart' );
+}
+
 
 // add_filter( 'woocommerce_checkout_fields' , 'bt_remove_order_notes' );
 /**
@@ -237,7 +247,6 @@ function bt_remove_product_tabs( $tabs ) {
 $bt_woo_tabs_review = get_theme_mod( 'bt_woo_tabs_review');
 $bt_woo_tabs_description = get_theme_mod( 'bt_woo_tabs_description');
 $bt_woo_tabs_information = get_theme_mod( 'bt_woo_tabs_information');
-	
 	
         if ($bt_woo_tabs_description == 1) {
         unset( $tabs['description'] );

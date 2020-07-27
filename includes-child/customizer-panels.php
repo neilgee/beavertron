@@ -47,10 +47,11 @@ function bt_register_theme_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'bt_button_padding_left_right', //give it an ID
 			array(
-				'default' => '7', // Give it a default
+				'default' => '30', // Give it a default
 				//'transport' => 'postMessage',
 			)
 	);
+
 	$wp_customize->add_control(
 	   new FLCustomizerControl(
 		   $wp_customize,
@@ -69,13 +70,15 @@ function bt_register_theme_customizer( $wp_customize ) {
 			)
 	   )
 	);
+
 	$wp_customize->add_setting(
 		'bt_button_padding_top_bottom', //give it an ID
 			array(
-				'default' => '28', // Give it a default
+				'default' => '5', // Give it a default
 				//'transport' => 'postMessage',
 			)
 	);
+
 	$wp_customize->add_control(
 	   new FLCustomizerControl(
 		   $wp_customize,
@@ -671,6 +674,110 @@ function bt_register_theme_customizer( $wp_customize ) {
 		array(
 		'label' => __( 'Make WP Dashboard font same as frontend' ),
 		'section' => 'bt_login_styles',
+		'priority' => 10, // Optional. Order priority to load the control. Default: 10
+		'type' => 'checkbox',
+		)
+	);
+
+
+
+	/**
+	 * Beaver Builder Script Removalists
+	 * @since 1.7.0
+	 */
+
+	// Add section.
+	$wp_customize->add_section( 'bt_scripts_section' , array(
+		'title'    => __('BB Scripts','beavertron'),
+		'panel'    => 'fl-general',
+		'priority' => 10
+	) );
+	
+	$wp_customize->add_setting( 'bt_fitvids_script',
+	   array(
+	      'default' => 0,
+	   )
+	);
+	 
+	$wp_customize->add_control( 'bt_fitvids_script',
+	   array(
+	      'label' => __( 'Remove BB FitVids Script' ),
+	      'section' => 'bt_scripts_section',
+	      'priority' => 10, // Optional. Order priority to load the control. Default: 10
+	      'type' => 'checkbox',
+	   )
+	);
+
+	$wp_customize->add_setting( 'bt_waypoints_script',
+		array(
+		'default' => 0,
+		)
+	);
+	
+	$wp_customize->add_control( 'bt_waypoints_script',
+		array(
+		'label' => __( 'Remove BB Waypoints Script' ),
+		'section' => 'bt_scripts_section',
+		'priority' => 10, // Optional. Order priority to load the control. Default: 10
+		'type' => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting( 'bt_throttle_script',
+		array(
+		'default' => 0,
+		)
+	);
+
+	$wp_customize->add_control( 'bt_throttle_script',
+		array(
+		'label' => __( 'Remove BB Throttle Script' ),
+		'section' => 'bt_scripts_section',
+		'priority' => 10, // Optional. Order priority to load the control. Default: 10
+		'type' => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting( 'bt_imagesloaded_script',
+		array(
+		'default' => 0,
+		)
+	);
+
+	$wp_customize->add_control( 'bt_imagesloaded_script',
+		array(
+		'label' => __( 'Remove BB Imagesloaded Script' ),
+		'section' => 'bt_scripts_section',
+		'priority' => 10, // Optional. Order priority to load the control. Default: 10
+		'type' => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting( 'bt_magnificpopup_script',
+		array(
+		'default' => 0,
+		)
+	);
+
+	$wp_customize->add_control( 'bt_magnificpopup_script',
+		array(
+		'label' => __( 'Remove BB Magnificpopup Script' ),
+		'section' => 'bt_scripts_section',
+		'priority' => 10, // Optional. Order priority to load the control. Default: 10
+		'type' => 'checkbox',
+		)
+	);
+
+	$wp_customize->add_setting( 'bt_magnificpopup_style',
+		array(
+		'default' => 0,
+		)
+	);
+
+	$wp_customize->add_control( 'bt_magnificpopup_style',
+		array(
+		'label' => __( 'Remove BB Magnificpopup Style' ),
+		'section' => 'bt_scripts_section',
 		'priority' => 10, // Optional. Order priority to load the control. Default: 10
 		'type' => 'checkbox',
 		)
