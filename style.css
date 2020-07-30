@@ -355,6 +355,38 @@ textarea:focus {
 	}
 }
 
+
+/* Gravity Forms Validation Color */
+.gform_wrapper .gfield_required {
+    color: #790000 !important;
+}
+
+.gform_wrapper div.validation_error {
+    color: #790000 !important;
+    border-top: 2px solid #790000 !important;
+	border-bottom: 2px solid #790000 !important;
+}
+
+.gform_wrapper .validation_message {
+    color: #790000 !important;
+}
+
+.gform_wrapper .gfield_error .gfield_label {
+    color: #790000 !important;
+}
+
+.gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]), .gform_wrapper li.gfield_error textarea {
+    border: 1px solid #790000 !important;
+}
+
+.gform_wrapper li.gfield.gfield_error, 
+.gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    background-color: rgba(255,223,224,.25);
+    border-top: 1px solid #790000 !important;
+	border-bottom: 1px solid #790000 !important;
+}
+
+
 /* # Buttons - Black-But example
 ---------------------------------------------------------------------------------------------------- */
 /* lines up the button if parent is equal heights change >>>>> .the-row <<<<<< */
