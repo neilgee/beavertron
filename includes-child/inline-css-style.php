@@ -143,7 +143,9 @@ function bt_css() {
 		.fl-post-grid-content a.fl-post-grid-more,
 		a.fl-post-more-link,
 		a.fl-post-feed-more,
-		a.fl-post-slider-feed-more  {
+		a.fl-post-slider-feed-more,
+		a.button,
+		.fl-page a.button  {
 			font-family:%5$s, Arial;
 			font-weight: %6$s;
 			font-size:%7$spx;
@@ -155,20 +157,21 @@ function bt_css() {
 			border-color:%12$s;
 			color:%1$s;
 			background-color:%3$s;
-			padding: %15$spx %16$spx;
+			padding: %16$spx %15$spx;
 		}
 
 		a.more-link:hover,
 		.fl-post-grid-content a.fl-post-grid-more:hover,
 		a.fl-post-more-link:hover,
 		a.fl-post-feed-more:hover,
-		a.fl-post-slider-feed-more:hover   {
+		a.fl-post-slider-feed-more:hover,
+		a.button:hover,
+		.fl-page a.button:hover   {
 			color:%2$s;
 			background-color:%4$s;
 			border-color:%14$s;
 		}
 	', $button_col, $button_col_hover, $button_col_bg, $button_col_bg_hover, $button_font, $button_weight, $button_size, $button_line_height, $button_transform, $button_border, $button_border_width, $button_border_color, $button_border_radius, $button_border_hover, $button_padding_width, $button_padding_height) : '';
-
 
 
 // WooCommerce
@@ -253,7 +256,8 @@ function bt_css() {
 		.woocommerce-page button.button.alt:hover, 
 		.woocommerce-page a.button.alt:hover, 
 		.woocommerce-page a.button:hover, 
-		.woocommerce-page .woocommerce button[type=submit]:hover  {
+		.woocommerce-page .woocommerce button[type=submit]:hover,
+		.woocommerce-page .woocommerce a.button.wc-forward  {
 			background-color: %1$s;
 			color: %2$s;
 			border: %4$spx %5$s %3$s;
