@@ -145,7 +145,9 @@ function bt_css() {
 		a.fl-post-feed-more,
 		a.fl-post-slider-feed-more,
 		a.button,
-		.fl-page a.button  {
+		.fl-page a.button,
+		.fl-builder-content a.fl-button, 
+		.fl-builder-content a.fl-button:visited    {
 			font-family:%5$s, Arial;
 			font-weight: %6$s;
 			font-size:%7$spx;
@@ -166,7 +168,8 @@ function bt_css() {
 		a.fl-post-feed-more:hover,
 		a.fl-post-slider-feed-more:hover,
 		a.button:hover,
-		.fl-page a.button:hover   {
+		.fl-page a.button:hover,
+		.fl-builder-content a.fl-button:hover    {
 			color:%2$s;
 			background-color:%4$s;
 			border-color:%14$s;
@@ -218,7 +221,9 @@ function bt_css() {
 		.woocommerce button.button.alt,
 		.woocommerce input.button.alt,
 		.woocommerce-page button.button, 
-		.woocommerce-page .woocommerce button[type=submit] {
+		.woocommerce-page .woocommerce button[type=submit],
+		.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+		.woocommerce .widget_price_filter .ui-slider .ui-slider-handle  {
 			background-color: %1$s;
 			color: %2$s;
 			padding: %4$spx %5$spx;

@@ -1109,7 +1109,7 @@ li.comment {
     display: block;
     vertical-align: middle;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 
 .icon-top .fl-icon i {

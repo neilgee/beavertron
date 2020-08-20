@@ -37,17 +37,6 @@
 	position: relative !important;
 }
 
-.woocommerce .related ul li.product img,
-.woocommerce .related ul.products li.product img,
-.woocommerce .upsells.products ul li.product img,
-.woocommerce .upsells.products ul.products li.product img,
-.woocommerce-page .related ul li.product img,
-.woocommerce-page .related ul.products li.product img,
-.woocommerce-page .upsells.products ul li.product img,
-.woocommerce-page .upsells.products ul.products li.product img {
-	width: auto;
-}
-
 .woocommerce div.product div.images img,
 .woocommerce #content div.product div.images img,
 .woocommerce-page div.product div.images img,
@@ -58,17 +47,6 @@
 .woocommerce ul.products li.product a img,
 .woocommerce-page ul.products li.product a img {
 	width:auto;
-}
-
-.woocommerce .related ul li.product,
-.woocommerce .related ul.products li.product,
-.woocommerce .upsells.products ul li.product,
-.woocommerce .upsells.products ul.products li.product,
-.woocommerce-page .related ul li.product,
-.woocommerce-page .related ul.products li.product,
-.woocommerce-page .upsells.products ul li.product,
-.woocommerce-page .upsells.products ul.products li.product {
-	padding: 4%;
 }
 
 .woocommerce-cart table.cart input {
@@ -126,6 +104,29 @@
 }
 
 /* Related Products */
+
+.woocommerce .related ul li.product img,
+.woocommerce .related ul.products li.product img,
+.woocommerce .upsells.products ul li.product img,
+.woocommerce .upsells.products ul.products li.product img,
+.woocommerce-page .related ul li.product img,
+.woocommerce-page .related ul.products li.product img,
+.woocommerce-page .upsells.products ul li.product img,
+.woocommerce-page .upsells.products ul.products li.product img {
+	width: auto;
+}
+
+.woocommerce .related ul li.product,
+.woocommerce .related ul.products li.product,
+.woocommerce .upsells.products ul li.product,
+.woocommerce .upsells.products ul.products li.product,
+.woocommerce-page .related ul li.product,
+.woocommerce-page .related ul.products li.product,
+.woocommerce-page .upsells.products ul li.product,
+.woocommerce-page .upsells.products ul.products li.product {
+	padding: 4%;
+	margin-left: 0 !important;
+}
 
 .woocommerce .related {
 	clear: both;
