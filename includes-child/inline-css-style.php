@@ -147,7 +147,9 @@ function bt_css() {
 		a.button,
 		.fl-page a.button,
 		.fl-builder-content a.fl-button, 
-		.fl-builder-content a.fl-button:visited    {
+		.fl-builder-content a.fl-button:visited,
+		.gform_wrapper .gform_footer input.button, 
+		.gform_wrapper .gform_footer input[type="submit"] {
 			font-family:%5$s, Arial;
 			font-weight: %6$s;
 			font-size:%7$spx;
@@ -169,7 +171,9 @@ function bt_css() {
 		a.fl-post-slider-feed-more:hover,
 		a.button:hover,
 		.fl-page a.button:hover,
-		.fl-builder-content a.fl-button:hover    {
+		.fl-builder-content a.fl-button:hover,
+		.gform_wrapper .gform_footer:hover input.button, 
+		.gform_wrapper .gform_footer input[type="submit"]:hover {
 			color:%2$s;
 			background-color:%4$s;
 			border-color:%14$s;

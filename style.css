@@ -18,7 +18,7 @@ template: bb-theme
     }
 
     h1 {
-        font-size: 43px;
+        font-size: 34px;
         line-height: 1.4;
     }
 
@@ -1076,6 +1076,17 @@ li.comment {
 		margin-top:0;
 		margin-bottom: 20px;
 	 }	
+}
+
+.no-list li {
+	list-style-type: none;
+}
+
+body.has-blocks .fl-post-content ul, 
+body.has-blocks .fl-post-content ol {
+    margin: inherit;
+    max-width: none;
+    list-style-position: inside;
 }
 
 /* Icon Stuff

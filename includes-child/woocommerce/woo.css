@@ -25,7 +25,6 @@
 	clear:both;
 }
 
-
 .woocommerce .wc_payment_method  {
 	list-style-type: none;
 }
@@ -104,7 +103,6 @@
 }
 
 /* Related Products */
-
 .woocommerce .related ul li.product img,
 .woocommerce .related ul.products li.product img,
 .woocommerce .upsells.products ul li.product img,
@@ -132,20 +130,15 @@
 	clear: both;
 }
 
-
 .woocommerce-page .related ul.products li.product {
 	width: 49%;
 }
+
 @media (min-width: 768px) {
 	.woocommerce-page .related ul.products li.product {
 		width: 30.8%;
 		padding: 2%;
 	}
-}
-
-
-.sku_wrapper {
-	display: none;
 }
 
 /* Reduce table padding on small devices */
@@ -157,4 +150,46 @@
 		border-color: #e6e6e6 !important;
 		padding: 10px !important;
 	}
+}
+
+
+/* Stock */
+
+.sku_wrapper {
+	display: none;
+}
+/**
+ * Bootstrap Colors
+ * @link https://getbootstrap.com/docs/4.0/components/alerts/
+ */
+.stock {
+	color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    border-radius: .25rem;
+}
+
+/* Slider */
+
+.woocommerce div.product div.images .flex-control-thumbs {
+	margin-top: 10px;
+}
+
+/* My Account Page */
+
+.woocommerce-account .woocommerce form.login, 
+.woocommerce-account .woocommerce-page form.login {
+   border: none;
+}
+
+button.woocommerce-form-login__submit {
+	display: block;
 }
