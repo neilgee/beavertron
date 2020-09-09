@@ -193,3 +193,17 @@
 button.woocommerce-form-login__submit {
 	display: block;
 }
+
+@media(min-width:768px) {
+	
+	.woocommerce-MyAccount-navigation {
+		margin-right: 40px;
+		width: 26%;
+		float: left;
+	}
+}
+/* Variations */
+
+.variations tr {
+	display: flex;
+}

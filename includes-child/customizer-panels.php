@@ -16,30 +16,6 @@ function bt_register_theme_customizer( $wp_customize ) {
 	global $wp_customize;
 
 	/* *
-	 * Adding in a Hover Control for Buttons to the 'fl-buttons' panel
-	 * Also can be done with fl_theme_add_panel_data filter - see 2 examples in customizer-filtered.php
-	 * @since 1.7.0
-	 */
-	$wp_customize->add_setting(
-		'bt_border_color_hover', //give it an ID
-			array(
-				'default' => '#000000', // Give it a default
-			)
-	);
-	$wp_customize->add_control(
-	   new WP_Customize_Color_Control(
-		   $wp_customize,
-		   'bt_border_color_on_hover', //give it an ID
-			array(
-				'label'      => __( 'Border Hover Color', 'beavertron' ), //set the label to appear in the Customizer
-				'section'    => 'fl-buttons', //select the section for it to appear under  
-				'settings'   => 'bt_border_color_hover', //pick the setting it applies to
-				'priority'	 => 15,
-			)
-	   )
-	);
-
-	/* *
 	 * Adding in a Padding Controls for Buttons to the 'fl-buttons' panel
 	 * Also can be done with fl_theme_add_panel_data filter - see 2 examples in customizer-filtered.php
 	 * @since 1.7.0

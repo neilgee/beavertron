@@ -106,7 +106,7 @@ function bt_css() {
 	
 	
 	// Button Border Hover Color
-	$border_color = FLTheme::get_setting( 'bt_border_color_hover' );
+	$border_color = FLTheme::get_setting( 'fl-button-border-hover-color' );
 	$css .= ( $border_color ) ? sprintf('
 		.fl-page button:hover, 
 		.fl-responsive-preview-content button:hover, 
@@ -134,7 +134,7 @@ function bt_css() {
 	$button_border_width = FLTheme::get_setting( 'fl-button-border-width' );
 	$button_border_color = FLTheme::get_setting( 'fl-button-border-color' );
 	$button_border_radius = FLTheme::get_setting( 'fl-button-border-radius' );
-	$button_border_hover = FLTheme::get_setting( 'bt_border_color_hover' );
+	$button_border_hover = FLTheme::get_setting( 'fl-button-border-hover-color' );
 	$button_padding_width = FLTheme::get_setting( 'bt_button_padding_left_right' );
 	$button_padding_height = FLTheme::get_setting( 'bt_button_padding_top_bottom' ); // Assigning it to a variable to keep the markup clean.
 
