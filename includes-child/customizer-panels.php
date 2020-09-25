@@ -437,8 +437,9 @@ function bt_register_theme_customizer( $wp_customize ) {
 	 *  Move BB WooCommerce layout Section to native WooCommerce panel
 	 * @since 2.0.0
 	 */
+	if ( class_exists( 'WooCommerce' ) ) {
 	$wp_customize->get_section('fl-content-woo')->panel ='woocommerce';
-
+	}
 
 	/**
 	 * Create custom panel
@@ -892,7 +893,7 @@ FLCustomizer::add_preset( 'bt-preset', array(
 		'fl-body-text-color'			 => '#333333',
 		'fl-body-font-family'			 => 'system-ui',
 		'fl-body-font-weight'			 => '400',
-		'fl-body-font-size'			     => '18',
+		'fl-body-font-size'			     => '17',
 		'fl-body-line-height'			 => '1.3',
 
 		'fl-archive-readmore-text' 	  => 'See More',
@@ -1019,6 +1020,7 @@ function bt_default_theme_preset( $mods ) {
 		'fl-body-font-weight'			 => '400',
 		'fl-body-font-size'			     => '18',
 		'fl-body-line-height'			 => '1.6',
+		//'fl-body-font-size_mobile'		=> '12',
 
 		'fl-archive-readmore-text' 	     => 'Read More',
 
