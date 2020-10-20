@@ -216,3 +216,9 @@ function bt_customize_color_presets() {
   </script>
   <?php
 };
+
+/** 
+ * See BB Module Usage
+ * @since 1.0.0
+ */
+add_filter( 'is_module_disable_enabled','__return_true' );
