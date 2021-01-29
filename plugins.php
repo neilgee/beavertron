@@ -64,76 +64,32 @@ function gsm_register_required_plugins() {
 					 'slug'               => 'advanced-custom-fields', // The plugin slug (typically the folder name).
 					 'source'             => get_theme_root() . '/lib/plugins/advanced-custom-fields-pro.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '5.8.9', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '5.9.4', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			 ),
-			 // This is an example of how to include a plugin pre-packaged with a theme.
-			//  array(
-			// 		 'name'               => 'Beaver Builder Plugin (Pro Version)', // The plugin name.
-			// 		 'slug'               => 'bb-plugin-pro', // The plugin slug (typically the folder name).
-			// 		 'source'             => get_theme_root() . '/lib/plugins/bb-plugin-pro.zip', // The plugin source.
-			// 		 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-			// 		 'version'            => '2.1.4.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-			// 		 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			// 		 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-			// 		 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-			// 		 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			//  ),
+		
 			 array(
 					'name'               => 'Ultimate Addon for Beaver Builder', // The plugin name.
 					'slug'               => 'bb-ultimate-addon', // The plugin slug (typically the folder name).
 					'source'             => get_theme_root() . '/lib/plugins/bb-ultimate-addon.zip', // The plugin source.
 					'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					'version'            => '1.26.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					'version'            => '1.29.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 					'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 			),
-				// This is an example of how to include a plugin pre-packaged with a theme.
-			// array(
-			// 		'name'               => 'Beaver Themer', // The plugin name.
-			// 		'slug'               => 'bb-theme-builder', // The plugin slug (typically the folder name).
-			// 		'source'             => get_theme_root() . '/lib/plugins/bb-theme-builder.zip', // The plugin source.
-			// 		'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-			// 		'version'            => '1.1.2.1', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-			// 		'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			// 		'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-			// 		'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-			// 		'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			// ),   
+		 
 			 // This is an example of how to include a plugin pre-packaged with a theme.
 			 array(
 					 'name'               => 'Gravity Forms', // The plugin name.
 					 'slug'               => 'gravityforms', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.4.21.3.zip', // The plugin source.
+					 'source'             => get_theme_root() . '/lib/plugins/gravityforms_2.4.22.3.zip', // The plugin source.
 					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.4.21.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			 ),
-			 array(
-					 'name'               => 'Woocommerce Memberships', // The plugin name.
-					 'slug'               => 'woocommerce-memberships', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/woocommerce-memberships.zip', // The plugin source.
-					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '1.7.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
-					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
-					 'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
-			 ),
-			 array(
-					 'name'               => 'Woocommerce Subscriptions', // The plugin name.
-					 'slug'               => 'woocommerce-subscriptions', // The plugin slug (typically the folder name).
-					 'source'             => get_theme_root() . '/lib/plugins/woocommerce-subscriptions.zip', // The plugin source.
-					 'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-					 'version'            => '2.0.20', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
+					 'version'            => '2.4.22.3', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
 					 'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 					 'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 					 'external_url'       => '', // If set, overrides default API URL and points to an external URL.
@@ -149,6 +105,12 @@ function gsm_register_required_plugins() {
 					'external_url'       => 'https://github.com/neilgee/wp-sync-db/', // If set, overrides default API URL and points to an external URL.
 			),
 
+			array(
+					'name'     => 'Activity Log',
+					'slug'     => 'aryo-activity-log',
+					'required' => false,
+			),
+
 			 array(
 					 'name'     => 'Adminimize',
 					 'slug'     => 'adminimize',
@@ -159,31 +121,14 @@ function gsm_register_required_plugins() {
 					 'slug'     => 'akismet',
 					 'required' => false,
 			 ),
-			 array(
-					'name'     => 'WPD Beaver Popups',
-					'slug'     => 'wpd-beaver-popups',
-					'required' => false,
-			),
+
 			 array(
 					'name'     => 'Better Search Replace',
 					'slug'     => 'better-search-replace',
 					'required' => false,
 			),
-			 array(
-					 'name'     => 'BuddyPress',
-					 'slug'     => 'buddypress',
-					 'required' => false,
-			 ),
-			 array(
-					 'name'     => 'Bootstrap Modals',
-					 'slug'     => 'bootstrap-modals',
-					 'required' => false,
-			 ),
-			 array(
-					 'name'     => 'Business Profile',
-					 'slug'     => 'business-profile',
-					 'required' => false,
-			 ),
+
+
 			 array(
 					 'name'     => 'Content Aware Sidebars',
 					 'slug'     => 'content-aware-sidebars',
@@ -199,16 +144,7 @@ function gsm_register_required_plugins() {
 					 'slug'     => 'duplicate-post',
 					 'required' => false,
 			 ),
-			 array(
-					 'name'     => 'Duplicator',
-					 'slug'     => 'duplicator',
-					 'required' => false,
-			 ),
-			 array(
-					 'name'     => 'Dynamic Widgets',
-					 'slug'     => 'dynamic-widgets',
-					 'required' => false,
-			 ),
+
 			 array(
 					 'name'     => 'Easy Updates Manager',
 					 'slug'     => 'stops-core-theme-and-plugin-updates',
@@ -219,11 +155,13 @@ function gsm_register_required_plugins() {
 					'slug'     => 'force-regenerate-thumbnails',
 					'required' => false,
 			),
-			 array(
-					 'name'     => 'Members',
-					 'slug'     => 'members',
-					 'required' => false,
-			 ),
+
+			array(
+					'name'     => 'Limit Login Attempts Reloaded',
+					'slug'     => 'limit-login-attempts-reloaded',
+					'required' => false,
+			),
+
 			 array(
 					'name'     => 'No Page Comment',
 					'slug'     => 'no_page_comment',
@@ -239,11 +177,13 @@ function gsm_register_required_plugins() {
 					 'slug'     => 'post-type-switcher',
 					 'required' => false,
 			 ),
+
 			 array(
-					'name'     => 'Safe SVG',
-					'slug'     => 'safe-svg',
+					'name'     => 'Post SMTP Mailer/Email Log',
+					'slug'     => 'post-smtp',
 					'required' => false,
-			),	
+			),
+	
 			 array(
 					 'name'     => 'Simply Show Hooks',
 					 'slug'     => 'simply-show-hooks',
@@ -259,16 +199,7 @@ function gsm_register_required_plugins() {
 					 'slug'     => 'google-analytics-for-wordpress',
 					 'required' => false,
 			 ),
-			 array(
-					 'name'     => 'Jetpack',
-					 'slug'     => 'jetpack',
-					 'required' => false,
-			 ),
-			 array(
-					'name'     => 'LiteSpeed Cache',
-					'slug'     => 'litespeed-cache',
-					'required' => false,
-			),
+
 			 array(
 					 'name'     => 'ManageWP Worker',
 					 'slug'     => 'worker',
@@ -279,11 +210,7 @@ function gsm_register_required_plugins() {
 					 'slug'     => 'mappress-google-maps-for-wordpress',
 					 'required' => false,
 			 ),
-			 array(
-					 'name'     => 'matchHeight',
-					 'slug'     => 'matchheight',
-					 'required' => false,
-			 ),
+
 			 array(
 					'name'     => 'Shortcode in Menus',
 					'slug'     => 'shortcode-in-menus',
@@ -294,31 +221,25 @@ function gsm_register_required_plugins() {
 					'slug'     => 'slicknav-mobile-menu',
 					'required' => false,
 			 ),
-			 array(
-					 'name'     => 'Smoothscroller',
-					 'slug'     => 'smoothscroller',
-					 'required' => false,
-			 ),
-			 array(
-					 'name'     => 'The Events Calendar',
-					 'slug'     => 'the-events-calendar',
-					 'required' => false,
-			 ),
+	
 			 array(
 					 'name'     => 'Venobox Lightbox',
 					 'slug'     => 'venobox-lightbox',
 					 'required' => false,
 			 ),
-			 array(
-					 'name'     => 'Widget CSS Classes',
-					 'slug'     => 'widget-css-classes',
-					 'required' => false,
-			 ),
+	
 			 array(
 					 'name'     => 'Woocommerce',
 					 'slug'     => 'woocommerce',
 					 'required' => false,
 			 ),
+
+			 array(
+					'name'     => 'WooCommerce PDF Invoices & Packing Slips',
+					'slug'     => 'woocommerce-pdf-invoices-packing-slips',
+					'required' => false,
+			),
+
 			 array(
 					 'name'     => 'Wordfence',
 					 'slug'     => 'wordfence',
@@ -329,11 +250,7 @@ function gsm_register_required_plugins() {
 					 'slug'     => 'wordpress-seo',
 					 'required' => false,
 			 ),	
-			 array(
-					'name'     => 'WP Crontrol',
-					'slug'     => 'wp-crontrol',
-					'required' => false,
-			),	
+
 			 array(
 					 'name'     => 'WP Sweep',
 					 'slug'     => 'wp-sweep',
