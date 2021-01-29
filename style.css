@@ -33,6 +33,10 @@ p {
 	padding: 0;
 }
 
+.no-para-space p{
+	margin-bottom: 0;
+}
+
 .fl-post-content ul,
 .fl-post-content ol {
 	margin-top: 20px;

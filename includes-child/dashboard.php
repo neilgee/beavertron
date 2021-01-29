@@ -73,6 +73,15 @@ add_filter( 'wp_fatal_error_handler_enabled', '__return_false' );
  * @since 1.0.0
  */
 
+// Disable auto-update email notifications for plugins.
+add_filter( 'auto_plugin_update_send_email', '__return_false' );
+ 
+// Disable auto-update email notifications for themes.
+add_filter( 'auto_theme_update_send_email', '__return_false' );
+
+// Disable application passwords introduced in WP 5.6.
+add_filter( 'wp_is_application_passwords_available', '__return_false' );
+
  
 add_action( 'admin_head', 'bt_hide_tabs' );
 /**
@@ -124,3 +133,19 @@ function wsl_edit_text() {
 
 // add $cap capability to this role object
 // $role_object->add_cap( 'edit_theme_options' );
+
+
+
+add_filter('wp_mail_from', 'prefix_email_from');
+// Change default WordPress from  email address
+function prefix_email_from( $new_email ) {
+	$admin_email = get_option( 'admin_email' );
+ return $admin_email;
+}
+
+add_filter('wp_mail_from_name', 'prefix_name_from');
+// Change default WordPress from name
+function prefix_name_from( $new_name ) {
+	$blogname = get_option( 'blogname' );
+	return $blogname;
+}

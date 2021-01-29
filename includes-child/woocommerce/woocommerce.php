@@ -280,7 +280,7 @@ function bt_dropdown_choice( $args ){
 }
 
 
-add_filter( 'woocommerce_add_to_cart_redirect', 'bt_add_to_cart_redirect' );
+//add_filter( 'woocommerce_add_to_cart_redirect', 'bt_add_to_cart_redirect' );
 /**
  * Go Straight to checkout after added to cart
  * @since 1.7.0
