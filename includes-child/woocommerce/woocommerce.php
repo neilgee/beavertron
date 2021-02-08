@@ -6,7 +6,9 @@ add_action( 'wp_enqueue_scripts', 'woo_css_styles', 900 );
  * @since 1.0.0
  */
 function woo_css_styles() {
+        if ( is_woocommerce() &&  is_cart() &&  is_checkout() ) {
         wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-child/woocommerce/woo.css', array(), '2.0.0', 'all' );
+        } 
 }
 
 
