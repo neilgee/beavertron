@@ -17,7 +17,7 @@ function bt_customizer_options_filtered( $data, $key ) {
         $data['sections']['fl-layout']['options']['fl-medium-breakpoint']['setting']['default']='1024';
         $data['sections']['fl-layout']['options']['fl-mobile-breakpoint']['setting']['default']='768';
 
-        $data['sections']['fl-layout']['options']['fl-framework']['setting']['default']='bootstrap-4';
+        $data['sections']['fl-layout']['options']['fl-framework']['setting']['default']='base-4';
 
 
         $data['sections']['fl-layout']['options']['fl-scroll-to-top']['setting']['default']='enable';

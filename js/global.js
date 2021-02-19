@@ -1,7 +1,7 @@
 (function($){
 
     $(function() { // Document Ready
-    
+
     	// clickColumn();
 
         // Target Dropdowns for select2
