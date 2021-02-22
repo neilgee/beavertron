@@ -79,11 +79,16 @@ add_filter( 'auto_plugin_update_send_email', '__return_false' );
 // Disable auto-update email notifications for themes.
 add_filter( 'auto_theme_update_send_email', '__return_false' );
 
+// Disable auto-update email notifications for core WP.
+add_filter( 'auto_core_update_send_email', '__return_false' );
+
 // Disable application passwords introduced in WP 5.6.
 add_filter( 'wp_is_application_passwords_available', '__return_false' );
 
 // Disable xmlrpc
 add_filter( 'xmlrpc_enabled', '__return_false' );
+
+
 
 // Disable JetPack Messages
 add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
