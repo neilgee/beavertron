@@ -6,7 +6,7 @@ add_action( 'wp_enqueue_scripts', 'woo_css_styles', 900 );
  * @since 1.0.0
  */
 function woo_css_styles() {
-        if ( is_woocommerce() &&  is_cart() &&  is_checkout() ) {
+        if ( is_woocommerce() ||  is_cart() ||  is_checkout() ) {
         wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-child/woocommerce/woo.css', array(), '2.0.0', 'all' );
         } 
 }
@@ -236,6 +236,24 @@ $bt_woo_breadcrumbs = get_theme_mod( 'bt_woo_breadcrumbs');
 	if( $bt_woo_breadcrumbs === 'enabled' ) {
 		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 	}
+}
+
+add_filter( 'woocommerce_breadcrumb_defaults', 'prefix_change_breadcrumb_home_text' );
+/**
+ * Rename "home" in WooCommerce breadcrumb
+ */
+function prefix_change_breadcrumb_home_text( $defaults ) {
+    // Change the breadcrumb home text from 'Home' to 'Shop'
+	$defaults['home'] = 'Shop';
+	return $defaults;
+}
+
+add_filter( 'woocommerce_breadcrumb_home_url', 'prefix_custom_breadrumb_home_url' );
+/**
+ * Replace the home link URL in WooCommerce breadcrumb
+ */
+function prefix_custom_breadrumb_home_url() {
+    return '/shop/';
 }
 
 
