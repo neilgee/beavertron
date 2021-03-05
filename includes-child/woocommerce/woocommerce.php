@@ -6,7 +6,7 @@ add_action( 'wp_enqueue_scripts', 'woo_css_styles', 900 );
  * @since 1.0.0
  */
 function woo_css_styles() {
-        if ( is_woocommerce() ||  is_cart() ||  is_checkout() ) {
+        if ( is_woocommerce() ||  is_cart() ||  is_checkout() || is_account_page() ) {
         wp_enqueue_style( 'woocss' , get_stylesheet_directory_uri() . '/includes-child/woocommerce/woo.css', array(), '2.0.0', 'all' );
         } 
 }
@@ -19,6 +19,7 @@ function woo_css_styles() {
 include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customizer-woo.php' );
 
 
+
 add_action( 'template_redirect', 'bt_remove_woocommerce_styles_scripts', 999 );
 /**
  * Remove Woo Styles and Scripts from non-Woo Pages
@@ -26,11 +27,15 @@ add_action( 'template_redirect', 'bt_remove_woocommerce_styles_scripts', 999 );
  * @since 1.7.0
  */
 function bt_remove_woocommerce_styles_scripts() {
-        if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
-                remove_action('wp_enqueue_scripts', [WC_Frontend_Scripts::class, 'load_scripts']);
-                remove_action('wp_print_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
-                remove_action('wp_print_footer_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
+
+        // Skip Woo Pages
+        if ( is_woocommerce() || is_cart() || is_checkout() || is_account_page() ) {
+                return;
         }
+        // Otherwise...
+        remove_action('wp_enqueue_scripts', [WC_Frontend_Scripts::class, 'load_scripts']);
+        remove_action('wp_print_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
+        remove_action('wp_print_footer_scripts', [WC_Frontend_Scripts::class, 'localize_printed_scripts'], 5);
 }
 
 
