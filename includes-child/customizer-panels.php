@@ -441,43 +441,7 @@ function bt_register_theme_customizer( $wp_customize ) {
 	$wp_customize->get_section('fl-content-woo')->panel ='woocommerce';
 	}
 
-	/**
-	 * Create custom panel
-	 * Create Custom Section
-	 * Add setting
-	 * Add control
-	 * Also can be done with FLCustomizer::add_panel - see example commented further down
-	 * @since 1.0.0
-	 */
-	// Add Panel
-	$wp_customize->add_panel( 'featured_images', array(
-		'priority'       => 70,
-		'theme_supports' => '',
-		'title'          => __( 'Featured Images', 'beavertron' ),
-		'description'    => __( 'Set background images for certain widgets.', 'beavertron' ),
-	) );
-
-	// Add Featured Image for Hero Widget
-	// Add section.
-	$wp_customize->add_section( 'hero_background' , array(
-		'title'      => __( 'Hero Background','beavertron' ),
-		'panel'      => 'featured_images',
-		'priority'   => 20,
-	) );
-
-	// Add setting.
-	$wp_customize->add_setting( 'hero_bg', array(
-			//'default'     => get_stylesheet_directory_uri() . '/images/hero-bg.jpg',
-	) );
-
-	// Add control.
-	$wp_customize->add_control( new WP_Customize_Image_Control(
-		$wp_customize, 'hero_background_image', array(
-			'label'      => __( 'Add Hero Background Here, the width should be approx 1400px', 'beavertron' ),
-			'section'    => 'hero_background',
-			'settings'   => 'hero_bg',
-			)
-	) );
+	
 
 
 	/**

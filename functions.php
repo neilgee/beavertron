@@ -76,7 +76,13 @@ function bt_theme_setup() {
 	require_once( get_stylesheet_directory() . '/includes-child/customizer-panels.php' );
 	require_once( get_stylesheet_directory() . '/includes-child/inline-css-style.php' );
 	require_once( get_stylesheet_directory() . '/includes-child/inline-css-style-login.php' );
-
+	/**
+	 * WOO Customizer Options
+	 * @since 1.0.0
+	 */
+	if ( class_exists( 'WooCommerce' ) ) {
+	include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customizer-woo.php' );
+	}
 	/**
 	 * Client Logo for WP Login and backend dashboard admin clean up.
 	 * @since 1.0.0

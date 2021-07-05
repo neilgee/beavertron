@@ -1028,6 +1028,37 @@ li.comment {
 	list-style-type: none;
 }
 
+/* Flex Bullet List 2 Columns - surround 2 ul in a div with a .flex-bullet-list class */
+
+.flex-bullet-list {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
+@media (min-width: 768px) {
+	.flex-bullet-list ul+ul {
+		margin-left: 40px;
+	}
+	.flex-bullet-list ul {
+		width: 45%;
+	}
+	.flex-bullet-list {
+		flex-flow: row nowrap;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 767px) {
+	.entry-content .you-list ul,
+	.you-list ul {
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+}
+
+
+
 body.has-blocks .fl-post-content ul, 
 body.has-blocks .fl-post-content ol {
     margin: inherit;

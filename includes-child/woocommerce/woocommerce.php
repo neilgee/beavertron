@@ -11,15 +11,6 @@ function woo_css_styles() {
         } 
 }
 
-
-/**
- * WOO Customizer Options
- * @since 1.0.0
- */
-include_once( get_stylesheet_directory() . '/includes-child/woocommerce/customizer-woo.php' );
-
-
-
 add_action( 'template_redirect', 'bt_remove_woocommerce_styles_scripts', 999 );
 /**
  * Remove Woo Styles and Scripts from non-Woo Pages
@@ -243,21 +234,21 @@ $bt_woo_breadcrumbs = get_theme_mod( 'bt_woo_breadcrumbs');
 	}
 }
 
-add_filter( 'woocommerce_breadcrumb_defaults', 'prefix_change_breadcrumb_home_text' );
+add_filter( 'woocommerce_breadcrumb_defaults', 'bt_change_breadcrumb_home_text' );
 /**
  * Rename "home" in WooCommerce breadcrumb
  */
-function prefix_change_breadcrumb_home_text( $defaults ) {
+function bt_change_breadcrumb_home_text( $defaults ) {
     // Change the breadcrumb home text from 'Home' to 'Shop'
 	$defaults['home'] = 'Shop';
 	return $defaults;
 }
 
-add_filter( 'woocommerce_breadcrumb_home_url', 'prefix_custom_breadrumb_home_url' );
+add_filter( 'woocommerce_breadcrumb_home_url', 'bt_custom_breadrumb_home_url' );
 /**
  * Replace the home link URL in WooCommerce breadcrumb
  */
-function prefix_custom_breadrumb_home_url() {
+function bt_custom_breadrumb_home_url() {
     return '/shop/';
 }
 

@@ -25,8 +25,6 @@ function bt_css() {
 	$handle  = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
 	// $handle  = 'fl-automator-skin';
 	/* Our Customiser settings, stored as variables */
-	$hero_bg_image                 = get_theme_mod( 'hero_bg');
-
 	
 	// WooCommerce
 	if ( class_exists( 'WooCommerce' ) ) {
@@ -94,16 +92,6 @@ function bt_css() {
 
 	/* Start off with •nuffink*/
 	$css = '';
-
-
-	$css .= ( !empty($hero_bg_image) ) ? sprintf('
-		.herocontainer {
-			background: url(%s) no-repeat center;
-			background-size: cover;
-		}
-	', $hero_bg_image ) : '';
-
-	
 	
 	// Button Border Hover Color
 	$border_color = FLTheme::get_setting( 'fl-button-border-hover-color' );
