@@ -14,7 +14,7 @@
  * @since 1.0.0
  */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size( 'blog-feature', 300, 200, true );
+	add_image_size( 'blog-feature', 600, 400, true );
 	add_image_size( 'medium', 300, 300, true ); // Overwrite default and hard cropping
 }
 
