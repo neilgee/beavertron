@@ -2,7 +2,7 @@
 
     $(function() { // Document Ready
 
-    	// clickColumn();
+    	clickColumn();
 
         // Target Dropdowns for select2
         //$('.sf-input-select').select2({
