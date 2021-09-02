@@ -303,7 +303,6 @@ textarea:focus {
 	}
 }
 
-
 /* Gravity Forms Validation Color */
 .gform_wrapper .gfield_required {
     color: #790000 !important;
@@ -332,6 +331,27 @@ textarea:focus {
     background-color: rgba(255,223,224,.25);
     border-top: 1px solid #790000 !important;
 	border-bottom: 1px solid #790000 !important;
+}
+
+.gform_wrapper .gform_validation_errors > h2 {
+    color: #790000  !important;
+}
+
+.gform_wrapper .gform_validation_errors {
+    border: 1.5px solid #790000  !important;
+}
+
+.gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message {
+    border: 1px solid #790000  !important;
+}
+
+.gform_wrapper .gfield_error [aria-invalid="true"] {
+    border: 1px solid #790000 !important;
+}
+
+
+.gform_wrapper.gravity-theme .gfield_label {
+    font-weight: 400 !important;
 }
 
 
