@@ -222,3 +222,23 @@ function bt_customize_color_presets() {
  * @since 1.0.0
  */
 add_filter( 'is_module_disable_enabled','__return_true' );
+
+
+add_action( 'admin_head', 'bb_full_canvas' );
+/**
+ *  Honey I unshrunk the icon canvas
+ */
+function bb_full_canvas() {
+	
+	if ( ! current_user_can( 'activate_plugins' )) {
+		echo '
+				<style type="text/css">
+					.fl-icon-selector .fl-lightbox {
+						height: 100%;
+						width: 100%;
+						margin-top: 0 !important;
+					}
+				</style>
+			';
+	}
+}
