@@ -1213,6 +1213,12 @@ a.anchor {
 .fl-builder-edit  .collapse:not(.show) {
     display: block;
 }
+/* Full Icon Canvas */
+.fl-icon-selector .fl-lightbox {
+    height: 100%;
+    width: 100%;
+    margin-top: 0 !important;
+}
 
 /* Print Styles
 ---------------------------------------------------------------------------------------------------- */
