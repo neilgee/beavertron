@@ -183,6 +183,7 @@ function bt_css() {
 		.woocommerce-page a.button,
 		.woocommerce-page button.button,
 		.woocommerce-page .woocommerce button[type=submit],
+		.woocommerce-page .woocommerce a.button.wc-forward,
 		/* Alt Selectors */
 		.woocommerce #respond input#submit.alt.disabled,
 		.woocommerce #respond input#submit.alt.disabled:hover,
@@ -254,7 +255,7 @@ function bt_css() {
 		.woocommerce-page a.button.alt:hover, 
 		.woocommerce-page a.button:hover, 
 		.woocommerce-page .woocommerce button[type=submit]:hover,
-		.woocommerce-page .woocommerce a.button.wc-forward  {
+		.woocommerce-page .woocommerce a.button.wc-forward:hover  {
 			background-color: %1$s;
 			color: %2$s;
 			border: %4$spx %5$s %3$s;
