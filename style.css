@@ -998,7 +998,10 @@ li.comment {
 }
 
 
- /* Center an uneven row - below is an example of 2 cols centered in a 3 col layout */
+ /* Center an uneven row - below is an example of 2 cols centered in a 3 col layout 
+  * Class is applied in Column Parent Column
+  */
+  
 @media (min-width: 768px) {
 	.two-row-three-parent .fl-col-group {
 		display: flex;

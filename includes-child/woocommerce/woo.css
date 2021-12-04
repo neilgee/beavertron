@@ -340,3 +340,30 @@ button.woocommerce-form-login__submit {
 .variations tr {
 	display: flex;
 }
+
+/* 2 Column Checkout */
+
+@media(min-width:768px) {
+	.woocommerce .col2-set .col-1, 
+	.woocommerce-page .col2-set .col-1 {
+		width: 90%;
+	}
+
+	#customer_details {
+		display: flex;
+		flex-flow: column nowrap;
+		float: left;
+		width: 50%;
+	}
+
+	#customer_details .col-2 {
+		width: 90%;
+		margin-top: 20px;
+	}
+
+	#order_review,
+	#order_review_heading {
+		width: 50%;
+		float: left;
+	}
+}
