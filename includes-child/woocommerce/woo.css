@@ -365,5 +365,6 @@ button.woocommerce-form-login__submit {
 	#order_review_heading {
 		width: 50%;
 		float: left;
+		clear: none;
 	}
 }
