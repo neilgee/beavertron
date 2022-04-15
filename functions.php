@@ -127,6 +127,12 @@ function bt_theme_setup() {
 	if ( class_exists( 'acf' ) ) {
 		include_once( get_stylesheet_directory() . '/includes-child/acf.php' );
 	}
+
+	/**
+	 * Improve Cache Puging on Runcloud NGINX
+	 * @since 1.0.0
+	 */
+	//require_once  get_stylesheet_directory() . '/includes-child/cache-buster.php';
 	
 	/**
 	 * Get the plugins ffrom TGM Plugin Activation

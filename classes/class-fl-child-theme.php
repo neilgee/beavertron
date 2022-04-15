@@ -35,9 +35,6 @@ final class FLChildTheme {
 		// Load FA 5 Everywhere
 		wp_enqueue_style( 'font-awesome-5' );
 
-        // Business Profile CSS
-        //wp_enqueue_style( 'businessprofile', get_stylesheet_directory_uri() . '/css/business-profile.css' , array(), '2.0.0', 'all' );
-
         // Take out the default BB Scripts if not used
         // wp_dequeue_script( 'bootstrap' );
 
