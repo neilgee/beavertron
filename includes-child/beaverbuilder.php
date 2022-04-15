@@ -100,8 +100,8 @@ function wb_builder_register_settings_form_short( $form, $id ) {
     $form['title'] = 'Beavertron Global Settings';
     $form['tabs']['general']['sections']['rows']['fields']['row_width']['default'] = '1200';    
     $form['tabs']['general']['sections']['rows']['fields']['row_width_default']['default'] = 'full';
-	$form['tabs']['general']['sections']['responsive']['fields']['responsive_breakpoint']['default'] = '767';
-    $form['tabs']['general']['sections']['responsive']['fields']['medium_breakpoint']['default'] = '1023';
+	$form['tabs']['general']['sections']['responsive']['fields']['responsive_breakpoint']['default'] = '809';
+    $form['tabs']['general']['sections']['responsive']['fields']['medium_breakpoint']['default'] = '1079';
     $form['tabs']['general']['sections']['responsive']['fields']['responsive_col_max_width']['default'] = '0';
    } 
    
@@ -117,8 +117,8 @@ add_filter( 'fl_theme_breakpoint_opts', 'bt_custom_breakpoints');
 function bt_custom_breakpoints() {
 
     $args = array(
-        'medium_breakpoint' =>  1023,
-        'mobile_breakpoint' =>  767,
+        'medium_breakpoint' =>  1079,
+        'mobile_breakpoint' =>  809,
     );
 
     return  $args;

@@ -343,7 +343,7 @@ button.woocommerce-form-login__submit {
 
 /* 2 Column WooCommerce Checkout */
 
-@media(min-width:809px) {
+@media(min-width:810px) {
 	.woocommerce .col2-set .col-1, 
 	.woocommerce-page .col2-set .col-1 {
 		width: 90%;
