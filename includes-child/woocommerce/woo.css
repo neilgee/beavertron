@@ -248,8 +248,10 @@ button.woocommerce-form-login__submit {
 .woocommerce-page .related ul li.product,
 .woocommerce-page .related ul.products li.product,
 .woocommerce-page .upsells.products ul li.product,
-.woocommerce-page .upsells.products ul.products li.product {
-	padding: 4%;
+.woocommerce-page .upsells.products ul.products li.product,
+.woocommerce[class*="columns-"] ul.products li.product,
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product  {
 	margin-left: 0 !important;
 }
 
@@ -346,7 +348,7 @@ button.woocommerce-form-login__submit {
 @media(min-width:810px) {
 	.woocommerce .col2-set .col-1, 
 	.woocommerce-page .col2-set .col-1 {
-		width: 90%;
+		width: 90% !important;
 	}
 
 	#customer_details {
@@ -373,3 +375,4 @@ button.woocommerce-form-login__submit {
 .woocommerce .blockUI.blockOverlay:before {
 	position:fixed!important
 }
+
