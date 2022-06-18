@@ -33,7 +33,7 @@ p {
 	padding: 0;
 }
 
-.no-para-space p{
+.no-para-space p:last-child {
 	margin-bottom: 0;
 }
 
@@ -304,7 +304,10 @@ textarea:focus {
 }
 
 /* Gravity Forms Validation Color */
-.gform_wrapper .gfield_required {
+.gform_wrapper .gfield_required,
+.gform_wrapper .validation_message,
+.gform_wrapper .gfield_error .gfield_label,
+.gform_wrapper .gform_validation_errors > h2  {
     color: #790000 !important;
 }
 
@@ -314,15 +317,12 @@ textarea:focus {
 	border-bottom: 2px solid #790000 !important;
 }
 
-.gform_wrapper .validation_message {
-    color: #790000 !important;
-}
-
-.gform_wrapper .gfield_error .gfield_label {
-    color: #790000 !important;
-}
-
-.gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]), .gform_wrapper li.gfield_error textarea {
+.gform_wrapper li.gfield_error input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]), 
+.gform_wrapper li.gfield_error textarea,
+.gform_wrapper .gform_validation_errors,
+.gform_wrapper .gfield_validation_message, 
+.gform_wrapper .validation_message,
+.gform_wrapper .gfield_error [aria-invalid="true"]  {
     border: 1px solid #790000 !important;
 }
 
@@ -333,27 +333,9 @@ textarea:focus {
 	border-bottom: 1px solid #790000 !important;
 }
 
-.gform_wrapper .gform_validation_errors > h2 {
-    color: #790000  !important;
-}
-
-.gform_wrapper .gform_validation_errors {
-    border: 1.5px solid #790000  !important;
-}
-
-.gform_wrapper .gfield_validation_message, .gform_wrapper .validation_message {
-    border: 1px solid #790000  !important;
-}
-
-.gform_wrapper .gfield_error [aria-invalid="true"] {
-    border: 1px solid #790000 !important;
-}
-
-
 .gform_wrapper.gravity-theme .gfield_label {
     font-weight: 400 !important;
 }
-
 
 /* # Buttons - Black-But example
 ---------------------------------------------------------------------------------------------------- */
@@ -436,7 +418,7 @@ a.more-link,
 .fl-post-grid-content a.fl-post-grid-more,
 a.fl-post-more-link,
 a.fl-post-feed-more,
-a.fl-post-slider-feed-more  {
+a.fl-post-slider-feed-more {
 	display:inline-block;
 	font-size:14px;
 	margin-top:10px;
@@ -597,6 +579,7 @@ a.fl-post-slider-feed-more:hover   {
 .fl-archive-header {
 	margin-bottom: 40px;
 }
+
 .fl-archive .fl-archive-title {
 	font-size: 36px;
 	margin: 0;
@@ -656,7 +639,6 @@ a.fl-post-slider-feed-more:hover   {
 	font-size: 14px;
 }
 
-
 .fl-post-meta-bottom {
 	font-style: normal;
 	border-top: 1px solid #e6e6e6;
@@ -679,7 +661,7 @@ a.fl-post-slider-feed-more:hover   {
 	padding-right: 3px;
 }
 
-.single  .fl-post-grid-author:before {
+.single .fl-post-grid-author:before {
     content: '\f007';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -699,7 +681,6 @@ a.fl-post-slider-feed-more:hover   {
     padding-left: 10px;
 	vertical-align: middle;
 	padding-right: 3px;
-
 }
 
 .single .fl-post-feed-comments .fa-comment:before {
@@ -718,7 +699,7 @@ a.fl-post-slider-feed-more:hover   {
 }
 
 .single .fl-entry-tags::before,
-.single .fl-post-info-tags .fl-post-info-terms::before{
+.single .fl-post-info-tags .fl-post-info-terms::before {
     content: '\f02c';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -740,10 +721,6 @@ a.fl-post-slider-feed-more:hover   {
 	text-align: center;
 }
 
-.pagination a {
-	color: #fff;
-}
-
 .pagination li {
 	display: inline;
 }
@@ -751,7 +728,7 @@ a.fl-post-slider-feed-more:hover   {
 .pagination  a {
 	background-color: #fff;
 	border-radius: 3px;
-	color: #333;
+	color: #000;
 	cursor: pointer;
 	display: inline-block;
 	margin-bottom: 4px;
@@ -784,7 +761,6 @@ a.fl-post-slider-feed-more:hover   {
 	padding: 40px 0 16px;
 }
 
-
 .comment-header {
 	font-size: 16px;
 }
@@ -813,7 +789,6 @@ li.comment {
 	display: block;
 	margin-right: 12px;
 }
-
 
 .entry-pings .reply {
 	display: none;
@@ -854,49 +829,39 @@ li.comment {
 	margin-bottom: 0;
 }
 
-
 @media (max-width: 809px) {
 	.site-footer-widgets-row .fl-heading,
 	.site-footer-widgets-row .fl-icon-group-left,
 	.site-footer-widgets-row .menu li,
 	.site-footer-widgets-row .fl-rich-text p,
-	.site-footer-widgets-row .fl-module-icon   {
+	.site-footer-widgets-row .fl-module-icon,
+	.site-footer-widgets-row .fl-button-wrap,
+	/* Non footer elements */
+	.fl-slide  .fl-slide-content .fl-button-wrap,
+	.fl-icon-group-right,
+	.fl-icon-group-left    {
 		text-align: center !important;
 	} 
+
 	.site-footer-widgets-row .uabb-business-hours-wrap {
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: center;
 	}
+
 	.site-footer-widgets-row .uabb-business-day,
 	.site-footer-widgets-row .uabb-business-hours {
 		width: auto;
 	}
+
 	.site-footer-widgets-row .uabb-business-day {
 		margin-right: 10px;
-	}
-
-	.site-footer-widgets-row .fl-button-wrap {
-		text-align: center;
-	}
-	/* Non footer elements */
-	.fl-slide  .fl-slide-content .fl-button-wrap {
-		text-align: center;
 	}
 
 	.custom-logo-link {
 		display: block;
 		text-align: center;
 	}
-
-	.fl-icon-group-right {
-		text-align: center;
-	}
-
-	.fl-icon-group-left {
-		text-align: center;
-	}
-	
 }
 
 .site-footer-row .menu .sub-menu {
@@ -944,20 +909,8 @@ li.comment {
 	display: none;
 }
 
-/* Sticky Footer  - 1st Block commented is BB recommended, 2nd Block, uncommented is Flexbox
+/* Sticky Footer is Flexbox
 ---------------------------------------------------------------------------------------------------- */
-
-/* .fl-page {
-	position: relative;
-	min-height: 100vh;
-	padding-bottom: 60px; 
-}
-.fl-page-footer-wrap {
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-} */
-
 .fl-page {
 	display: -ms-flexbox;
 	display:-webkit-flex;
@@ -997,7 +950,6 @@ li.comment {
     margin-top: auto;
 }
 
-
  /* Center an uneven row - below is an example of 2 cols centered in a 3 col layout 
   * Class is applied in Column Parent Column
   */
@@ -1031,23 +983,23 @@ li.comment {
 }
 
 @media (max-width:809px) {
-/* Add into Column Class */
-.fl-builder .split-list ul {
-	margin-bottom: 0;
-	margin-top: 0;
- }
+	/* Add into Column Class */
+	.fl-builder .split-list ul {
+		margin-bottom: 0;
+		margin-top: 0;
+	}
 
-.fl-col-small.split-list .fl-node-content {
-	 margin-bottom: 0;
-	padding-bottom: 0 !important;
-	padding-top: 5px !important;
- }
+	.fl-col-small.split-list .fl-node-content {
+		margin-bottom: 0;
+		padding-bottom: 0 !important;
+		padding-top: 5px !important;
+	}
 
-.fl-col-small + .fl-col-small .split-list .fl-node-content {
-	margin-top:0;
-	margin-bottom: 20px;
-	padding-top: 5px !important;
- }	
+	.fl-col-small + .fl-col-small .split-list .fl-node-content {
+		margin-top:0;
+		margin-bottom: 20px;
+		padding-top: 5px !important;
+	}	
 }
 
 .no-list li {
@@ -1066,9 +1018,11 @@ li.comment {
 	.flex-bullet-list ul+ul {
 		margin-left: 40px;
 	}
+
 	.flex-bullet-list ul {
 		width: 45%;
 	}
+
 	.flex-bullet-list {
 		flex-flow: row nowrap;
 		justify-content: center;
@@ -1082,8 +1036,6 @@ li.comment {
 		margin-bottom: 0 !important;
 	}
 }
-
-
 
 body.has-blocks .fl-post-content ul, 
 body.has-blocks .fl-post-content ol {
@@ -1105,7 +1057,7 @@ body.has-blocks .fl-post-content ol {
 	position: relative;
 }
 
-.tick-list li:before{
+.tick-list li:before {
 	content: '\f00c';
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -1134,10 +1086,7 @@ i.fa-phone{
 	transform: rotate(110deg); 
 }
 
-.circle-border-icon .fl-icon i{
-	border: 2px solid #000;
-}
-
+.circle-border-icon .fl-icon i,
 .circle-border-icon .fl-icon i:hover{
 	border: 2px solid #000;
 }
@@ -1178,12 +1127,15 @@ i.fa-phone{
 .bottom-shadow {
 	box-shadow: 0 15px 15px -15px #b9b9b9; 
 }
+
 .top-shadow {
 	box-shadow: 0 -15px 10px -15px #b9b9b9; 
 }
+
 .left-shadow {
 	box-shadow: -15px 0 10px -15px #b9b9b9; 
 }
+
 .right-shadow {
 	box-shadow: 15px 0 10px -15px #b9b9b9;
 }
@@ -1219,6 +1171,7 @@ a.anchor {
 .fl-builder-edit  .collapse:not(.show) {
     display: block;
 }
+
 /* Full Icon Canvas */
 .fl-icon-selector .fl-lightbox {
     height: 100%;
