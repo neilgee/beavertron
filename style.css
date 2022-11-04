@@ -1,10 +1,10 @@
 /*
 Theme Name: Beavertron
-Theme URI: https://www.wpbeaches.com
+Theme URI: https://wpbeaches.com
 Version: 1.7.1
 Description: An BB child theme that can be used as a clean slate for custom development.
 Author: Neil Gowran
-Author URI: https://www.wpbeaches.com
+Author URI: https://wpbeaches.com
 template: bb-theme
 */
 
@@ -938,8 +938,7 @@ li.comment {
 }
 
 /* CSS Snippets
- * Rows, Lists and Quotes
- * 
+ *  Utility CLasses - Rows, Lists and Quotes
  *---------------------------------------------------------------------------------------------------- */
 
  /* Align buttons across columns - make sure column Equal Heights is set for Flex
@@ -989,17 +988,15 @@ li.comment {
 		margin-top: 0;
 	}
 
-	.fl-col-small.split-list .fl-node-content {
+	.fl-col-small.split-list .fl-module-content {
 		margin-bottom: 0;
 		padding-bottom: 0 !important;
-		padding-top: 5px !important;
 	}
 
-	.fl-col-small + .fl-col-small .split-list .fl-node-content {
-		margin-top:0;
+	.fl-col-small + .fl-col-small.split-list .fl-module-content {	
+		margin-top:0 !important;
 		margin-bottom: 20px;
-		padding-top: 5px !important;
-	}	
+	}
 }
 
 .no-list li {
@@ -1069,6 +1066,7 @@ body.has-blocks .fl-post-content ol {
 	top: -5px;
 }
 
+
 /* Icon Centre Icons
 --------------------------------------------- */
 .icon-top .fl-icon {
@@ -1082,6 +1080,7 @@ body.has-blocks .fl-post-content ol {
 	float: none;
 }
 
+/* Flip FontAwsome phone icon */
 i.fa-phone{
 	transform: rotate(110deg); 
 }
@@ -1159,16 +1158,16 @@ a.anchor {
 
 /* Builder & Bootstrap Stuff
 ---------------------------------------------------------------------------------------------------- */
-
+/* Remove BB tooltips */
 * .fl-help-tooltip{
 	display: none !important;
 }
-
+/* Remove BB Draft button */
 .fl-builder-button-group [data-action="draft"] {
 	display: none;
 }
 
-.fl-builder-edit  .collapse:not(.show) {
+.fl-builder-edit .collapse:not(.show) {
     display: block;
 }
 
@@ -1179,11 +1178,31 @@ a.anchor {
     margin-top: 0 !important;
 }
 
+/* Toggle when using Bootstraps Collapse
+--------------------------------------------- */
+a[aria-expanded="true"]::after {
+	content: '\f077';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	color: #32407b;
+	font-size: 13px;
+	margin-left: 5px;
+}
+
+a[aria-expanded="false"]::after {
+	content: '\f054';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	color: #32407b;
+	margin-left: 5px;
+	font-size: 13px;
+}
+
 /* Print Styles
 ---------------------------------------------------------------------------------------------------- */
 
 @media print {
-
+	
 	*,
 	*:before,
 	*:after {
@@ -1257,7 +1276,6 @@ a.anchor {
 		display: none !important;
 	}
 
-
 	h1,
 	h2,
 	h3,
@@ -1269,7 +1287,6 @@ a.anchor {
 		page-break-inside: avoid;
 		widows: 3;
 	}
-
 
 	img {
 		page-break-after: avoid;

@@ -194,11 +194,11 @@ $bt_woo_order_received = get_theme_mod( 'bt_woo_order_received' );
  * Filter to remove SKU number
  * @since 1.7.0
  */
-$bt_woo_sku = get_theme_mod( 'bt_woo_sku' );
+// $bt_woo_sku = get_theme_mod( 'bt_woo_sku' );
 
-if( $bt_woo_sku === 'disabled' ) {
-	add_filter( 'wc_product_sku_enabled', '__return_false' );
-}
+// if( $bt_woo_sku === 'disabled' ) {
+// 	add_filter( 'wc_product_sku_enabled', '__return_false' );
+// }
 
 
 /**

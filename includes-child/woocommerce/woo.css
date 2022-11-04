@@ -21,7 +21,6 @@ button.woocommerce-form-login__submit {
 		float: left;
 	}
 }
- 
 
  .woocommerce-MyAccount-navigation .is-active a {
 	color: #004380;
@@ -149,7 +148,7 @@ button.woocommerce-form-login__submit {
 	padding: 1%;
 }
 
-.woocommerce a[title="View Cart"]{
+.woocommerce a[title="View Cart"] {
 	display: block;
 	clear:both;
 }
@@ -168,13 +167,10 @@ button.woocommerce-form-login__submit {
 .woocommerce div.product div.images img,
 .woocommerce #content div.product div.images img,
 .woocommerce-page div.product div.images img,
-.woocommerce-page #content div.product div.images img {
-	width: auto;
-}
-
+.woocommerce-page #content div.product div.images img,
 .woocommerce ul.products li.product a img,
 .woocommerce-page ul.products li.product a img {
-	width:auto;
+	width: auto;
 }
 
 .woocommerce-cart table.cart input {
@@ -291,7 +287,7 @@ button.woocommerce-form-login__submit {
  * @link https://getbootstrap.com/docs/4.0/components/alerts/
  */
 .stock {
-	color: #004085;
+	color: #999;
     background-color: #cce5ff;
     border-color: #b8daff;
     position: relative;
@@ -323,11 +319,13 @@ button.woocommerce-form-login__submit {
 	.woocommerce-page .cart-collaterals .cart_totals {
 		width: 100% !important;
 	}
+
 	#shipping_method {
 		clear: left;
 		text-align: left;
 		padding-top: 10px !important;
 	}
+
 	.woocommerce-shipping-destination,
 	.woocommerce-shipping-calculator,
 	.woocommerce table.shop_table_responsive tr td, 
@@ -336,15 +334,12 @@ button.woocommerce-form-login__submit {
 	}
 }
 
-
 /* Variations */
-
 .variations tr {
 	display: flex;
 }
 
 /* 2 Column WooCommerce Checkout */
-
 @media(min-width:810px) {
 	.woocommerce .col2-set .col-1, 
 	.woocommerce-page .col2-set .col-1 {
@@ -375,4 +370,3 @@ button.woocommerce-form-login__submit {
 .woocommerce .blockUI.blockOverlay:before {
 	position:fixed!important
 }
-
