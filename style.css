@@ -486,6 +486,14 @@ a.fl-post-slider-feed-more:hover   {
 	}
 }
 
+.sub-menu li {
+	text-align: left;
+}
+
+.fl-menu-mobile-toggle.hamburger-label {
+  float: right;
+}
+
 /* # Mobile Nav Using Beaver Theme In Built Button Option - changed background and added hamburger icon
  * Black and white example below
 ---------------------------------------------------------------------------------------------------- */
