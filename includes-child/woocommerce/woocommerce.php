@@ -308,5 +308,12 @@ function bt_add_to_cart_redirect() {
 }
 
 
-
-
+add_action( 'wp_print_styles', 'bt_deregister_gbstyles_wc', 100 );
+/**
+ * Disable gutenberg style in Frontend
+ * 
+ */
+function bt_deregister_gbstyles_wc() {
+	wp_dequeue_style('wc-blocks-style'); // disable woocommerce frontend block styles
+	wp_dequeue_style('wc-blocks-vendors-style'); // disable woocommerce frontend block styles
+}
