@@ -118,7 +118,7 @@ function bt_custom_breakpoints() {
 
     $args = array(
         'medium_breakpoint' =>  1079,
-        'mobile_breakpoint' =>  809,
+        'mobile_breakpoint' =>  767,
     );
 
     return  $args;
