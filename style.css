@@ -452,10 +452,10 @@ a.fl-post-slider-feed-more:hover   {
 
 /* Media Query Snippets
 ---------------------------------------------------------------------------------------------------- */
-@media (max-width: 809px) {
+@media (max-width: 767px) {
 }
 
-@media (min-width: 810px) and (max-width:1079px) {
+@media (min-width: 768px) and (max-width:1079px) {
 }
 
 @media (min-width: 1080px) {
@@ -498,7 +498,7 @@ a.fl-post-slider-feed-more:hover   {
  * Black and white example below
 ---------------------------------------------------------------------------------------------------- */
 
-@media (max-width: 809px) {
+@media (max-width: 767px) {
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle * {
 		color: #000000;
 		text-transform: uppercase;
@@ -529,7 +529,7 @@ a.fl-post-slider-feed-more:hover   {
  * Black example below
 ---------------------------------------------------------------------------------------------------- */
 
-@media (max-width: 809px) {
+@media (max-width: 767px) {
 	.fl-page .fl-menu-mobile-toggle * {
 		color: #000;
 		border: none;
@@ -837,7 +837,7 @@ li.comment {
 	margin-bottom: 0;
 }
 
-@media (max-width: 809px) {
+@media (max-width: 767px) {
 	.site-footer-widgets-row .fl-heading,
 	.site-footer-widgets-row .fl-icon-group-left,
 	.site-footer-widgets-row .menu li,
@@ -961,7 +961,7 @@ li.comment {
   * Class is applied in Column Parent Column
   */
   
-@media (min-width: 810px) {
+@media (min-width: 768px) {
 	.two-row-three-parent .fl-col-group {
 		display: flex;
 		flex-flow: row wrap;
@@ -977,7 +977,7 @@ li.comment {
  * 1st code is CSS cols, 2nd code is 2 text edit boxes with UL list in each
 ---------------------------------------------------------------------------------------------------- */
 
-@media (min-width: 810px) {
+@media (min-width: 768px) {
 	.three-column-list {
 		column-count: 3;
 		column-gap: 40px;
@@ -989,7 +989,7 @@ li.comment {
 	}
 }
 
-@media (max-width:809px) {
+@media (max-width:767px) {
 	/* Add into Column Class */
 	.fl-builder .split-list ul {
 		margin-bottom: 0;
@@ -1019,7 +1019,7 @@ li.comment {
 	justify-content: flex-start;
 }
 
-@media (min-width: 810px) {
+@media (min-width:768px) {
 	.flex-bullet-list ul+ul {
 		margin-left: 40px;
 	}
@@ -1034,7 +1034,7 @@ li.comment {
 	}
 }
 
-@media (max-width: 809px) {
+@media (max-width: 767px) {
 	.entry-content .you-list ul,
 	.you-list ul {
 		margin-top: 0 !important;

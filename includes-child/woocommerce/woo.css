@@ -13,7 +13,7 @@ button.woocommerce-form-login__submit {
 	display: block;
 }
 
-@media(min-width:810px) {
+@media(min-width:768px) {
 	
 	.woocommerce-MyAccount-navigation {
 		margin-right: 20px;
@@ -259,7 +259,7 @@ button.woocommerce-form-login__submit {
 	width: 49%;
 }
 
-@media (min-width: 810px) {
+@media (min-width: 768px) {
 	.woocommerce-page .related ul.products li.product {
 		width: 30.8%;
 		padding: 2%;
@@ -267,7 +267,7 @@ button.woocommerce-form-login__submit {
 }
 
 /* Reduce table padding on small devices */
-@media (max-width: 809px) {
+@media (max-width: 767px) {
 	.woocommerce table.shop_table th, 
 	.woocommerce-page table.shop_table th, 
 	.woocommerce table.shop_table td, 
@@ -340,7 +340,7 @@ button.woocommerce-form-login__submit {
 }
 
 /* 2 Column WooCommerce Checkout */
-@media(min-width:810px) {
+@media(min-width:768px) {
 	.woocommerce .col2-set .col-1, 
 	.woocommerce-page .col2-set .col-1 {
 		width: 90% !important;
