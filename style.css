@@ -1019,7 +1019,6 @@ li.comment {
 }
 
 /* Flex Bullet List 2 Columns - surround 2 ul in a div with a .flex-bullet-list class */
-
 .flex-bullet-list {
 	display: flex;
 	flex-flow: row wrap;
@@ -1027,18 +1026,25 @@ li.comment {
 }
 
 @media (min-width:768px) {
+
+	.flex-bullet-list,
+	.flex-bullet-list .fl-rich-text {
+		flex-flow: row nowrap;
+		justify-content: center;
+		display: flex;
+	}
+
+	.flex-bullet-list .fl-rich-text ul+ul,
 	.flex-bullet-list ul+ul {
 		margin-left: 40px;
 	}
 
-	.flex-bullet-list ul {
+	.flex-bullet-list ul,
+	.flex-bullet-list .fl-rich-text ul {
 		width: 45%;
 	}
 
-	.flex-bullet-list {
-		flex-flow: row nowrap;
-		justify-content: center;
-	}
+
 }
 
 @media (max-width: 767px) {
