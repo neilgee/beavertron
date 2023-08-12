@@ -68,6 +68,7 @@ function bt_theme_setup() {
 	require_once( get_stylesheet_directory() . '/classes/class-fl-child-theme.php');
 	// Actions - BB Default way - This theme calls required files below.
 	add_action( 'wp_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
+	add_action( 'fl_builder_ui_enqueue_scripts', 'FLChildTheme::enqueue_scripts', 1000 );
 
 	/**
 	 * Add Customizer Options and CSS output.
