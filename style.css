@@ -337,6 +337,10 @@ textarea:focus {
     font-weight: 400 !important;
 }
 
+.grecaptcha-badge { 
+    visibility: hidden;
+}
+
 /* # Buttons - Black-But example
 ---------------------------------------------------------------------------------------------------- */
 /* lines up the button if parent is equal heights change >>>>> .the-row <<<<<< */
@@ -910,9 +914,12 @@ li.comment {
 	font-size: 14px;
 }
 
-.site-footer-row .dashicons {
+.site-footer-row .dashicons,
+footer .dashicons-heart {
 	vertical-align: middle;
 }
+
+footer 
 
 /* # Plugins
 ---------------------------------------------------------------------------------------------------- */
@@ -1017,7 +1024,6 @@ li.comment {
 .no-list li {
 	list-style-type: none;
 }
-
 /* Flex Bullet List 2 Columns - surround 2 ul in a div with a .flex-bullet-list class */
 .flex-bullet-list {
 	display: flex;
@@ -1025,7 +1031,28 @@ li.comment {
 	justify-content: flex-start;
 }
 
+.flex-bullet-list .fl-rich-text ul:first-of-type {
+	margin-bottom: 0;
+}
+
+.flex-bullet-list .fl-rich-text ul+ul,
+.flex-bullet-list ul+ul {
+	margin-top: 0;
+}
+
 @media (min-width:768px) {
+
+	.flex-bullet-list .fl-rich-text ul+ul,
+	.flex-bullet-list ul+ul {
+		margin-left: 40px;
+		margin-top: 20px;
+	}
+
+	.flex-bullet-list ul,
+	.flex-bullet-list .fl-rich-text ul {
+		width: 45%;
+		min-width: 320px;
+	}
 
 	.flex-bullet-list,
 	.flex-bullet-list .fl-rich-text {
@@ -1033,18 +1060,6 @@ li.comment {
 		justify-content: center;
 		display: flex;
 	}
-
-	.flex-bullet-list .fl-rich-text ul+ul,
-	.flex-bullet-list ul+ul {
-		margin-left: 40px;
-	}
-
-	.flex-bullet-list ul,
-	.flex-bullet-list .fl-rich-text ul {
-		width: 45%;
-	}
-
-
 }
 
 @media (max-width: 767px) {
