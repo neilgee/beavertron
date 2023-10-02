@@ -384,17 +384,17 @@ textarea:focus {
 .but-no-back .fl-post-more-link a,
 .but-no-back .fl-post-grid-content a.fl-post-grid-more,
 .fl-builder-content .but-no-back a.fl-button *  {
-	border: none;
+	border: none !important;
 	border-radius: 0;
 	background: transparent !important;
-	color: #333 !important;
+	color: #000 !important;
 	padding: 0 !important;
 }
 
 .but-no-back a.fl-button:hover,
 .but-no-back .fl-post-grid-content a.fl-post-grid-more:hover,
 .but-no-back a.fl-button:hover * {
-	color: #000 ;
+	color: #333;
 	border: none;
 	background: transparent;
 	opacity: .8 !important;
@@ -404,6 +404,10 @@ textarea:focus {
     margin-left: -3px;
     margin-right: 0;
     line-height: 0;
+}
+
+.but-no-back a:focus {
+	outline: none !important;
 }
 
 /* # Skip Links
