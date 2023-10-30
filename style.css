@@ -1080,6 +1080,28 @@ body.has-blocks .fl-post-content ol {
     max-width: none;
     list-style-position: inside;
 }
+/* Green Dots
+---------------------------------------------------------------------------------------------------- */
+
+.green-dots {
+	list-style-type: none;
+	/* Remove default bullets */
+}
+
+.green-dots li::before {
+	content: "● ";
+	/* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: #72bc44;
+	/* Change the color */
+	font-weight: bold;
+	/* If you want it to be bold */
+	display: inline-block;
+	/* Needed to add space between the bullet and the text */
+	width: 1em;
+	/* Also needed for space (tweak if needed) */
+	margin-left: -1em;
+	/* Also needed for space (tweak if needed) */
+}
 
 /* Icon Stuff
 --------------------------------------------- */
