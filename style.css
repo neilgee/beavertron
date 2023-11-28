@@ -505,17 +505,13 @@ a.fl-post-slider-feed-more:hover   {
 	text-align: left;
 }
 
-.fl-menu-mobile-toggle.hamburger-label {
-  float: right;
-}
-
 /* # Mobile Nav Using Beaver Theme In Built Button Option - changed background and added hamburger icon
  * Black and white example below
 ---------------------------------------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle * {
-		color: #000000;
+		color: #000;
 		text-transform: uppercase;
 	}
 
@@ -523,15 +519,16 @@ a.fl-post-slider-feed-more:hover   {
 		content: '\f0c9';
 		font-family: 'Font Awesome 5 Free';
 		font-weight: 900;
-		color: #000000;
+		color: #000;
 	}
 	
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle {
 		display: block;
 		background: transparent;
-		color: #000000;
+		color: #000;
 		border: none;
 	}
+	
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:focus,
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:hover,
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:active {
