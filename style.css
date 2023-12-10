@@ -1080,7 +1080,8 @@ body.has-blocks .fl-post-content ol {
 /* Green Dots
 ---------------------------------------------------------------------------------------------------- */
 
-.green-dots {
+.green-dots,
+.green-dots ul {
 	list-style-type: none;
 	/* Remove default bullets */
 }
