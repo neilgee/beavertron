@@ -1156,7 +1156,8 @@ i.fa-phone{
 .header-quote .fl-post-title::before,
 .header-quote .fl-post-grid-title::before,
 .header-quote .fl-post-excerpt p:first-of-type::before,
-.header-quote .fl-rich-text p:first-of-type::before {
+.header-quote .fl-rich-text p:first-of-type::before,
+.header-quote .pp-content-grid-post-excerpt p:first-of-type::before {
 	content: '\f205';
 	font-family: 'dashicons';
 	padding-right:10px;
@@ -1166,7 +1167,8 @@ i.fa-phone{
 
 .header-quote .fl-heading-text::after,
 .header-quote .fl-post-excerpt p:last-of-type::after,
-.header-quote .fl-rich-text p:last-of-type::after {
+.header-quote .fl-rich-text p:last-of-type::after,
+.header-quote .pp-content-grid-post-excerpt p:last-of-type::after {
 	content: '\f205';
 	font-family: 'dashicons';
 	transform: rotate(180deg); 
