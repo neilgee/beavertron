@@ -53,7 +53,7 @@ function bt_css_inline_login() {
 		padding-bottom: 10px;
 	}
 	', $login_logo) : sprintf('
-	.login h1 a { 
+	.login .wp-login-logo a { 
 		background-image: url(%s);
 		width: 300px !important;
 		height: 100px !important;
