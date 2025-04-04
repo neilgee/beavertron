@@ -18,7 +18,6 @@ button.woocommerce-form-login__submit {
 	.woocommerce-MyAccount-navigation {
 		margin-right: 20px;
 		width: 26%;
-		float: left;
 	}
 }
 
@@ -272,8 +271,8 @@ button.woocommerce-form-login__submit {
 	.woocommerce-page table.shop_table th, 
 	.woocommerce table.shop_table td, 
 	.woocommerce-page table.shop_table td {
-		border-color: #e6e6e6 !important;
-		padding: 10px !important;
+	border-color: #e6e6e6 !important;
+	padding: 10px !important;
 	}
 }
 
