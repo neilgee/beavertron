@@ -29,7 +29,7 @@ function bt_login_header_title() {
 }
 
 
-add_action('after_setup_theme', 'bt_remove_admin_bar');
+add_action('init', 'bt_remove_admin_bar');
 /**
  *  Remove admin bar for subscribers.
  *
@@ -49,8 +49,8 @@ add_action('wp_dashboard_setup', 'bt_remove_dashboard_widgets' );
  * @since 1.0.0
  */
 function bt_remove_dashboard_widgets() {
-	// remove_meta_box('dashboard_quick_press','dashboard','side'); //Quick Press widget
-	// remove_meta_box('dashboard_recent_drafts','dashboard','side'); //Recent Drafts
+	remove_meta_box('dashboard_quick_press','dashboard','side'); //Quick Press widget
+	//remove_meta_box('dashboard_recent_drafts','dashboard','side'); //Recent Drafts
 	remove_meta_box( 'dashboard_primary','dashboard','side' ); //WordPress.com Blog
 	// remove_meta_box('dashboard_secondary','dashboard','side'); //Other WordPress News
 	// remove_meta_box('dashboard_incoming_links','dashboard','normal'); //Incoming Links
@@ -59,10 +59,14 @@ function bt_remove_dashboard_widgets() {
 	// remove_meta_box('rg_forms_dashboard','dashboard','normal'); //Gravity Forms
 	// remove_meta_box('dashboard_recent_comments','dashboard','normal'); //Recent Comments
 	// remove_meta_box('icl_dashboard_widget','dashboard','normal'); //Multi Language Plugin
-	// remove_meta_box('dashboard_activity','dashboard', 'normal'); //Activity
+	remove_meta_box('dashboard_activity','dashboard', 'normal'); //Activity
 	remove_action( 'welcome_panel','wp_welcome_panel' );
 	remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel'); // Try Gutenberg
 	remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' ); // Remove Site Health Widget
+    remove_meta_box('wpseo_first_time_seo_configuration', 'dashboard', 'normal');
+    remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'normal' );
+    remove_meta_box( 'wpseo-wincher-dashboard-overview', 'dashboard', 'normal' );
+    remove_meta_box( 'wpseo-dashboard-popular', 'dashboard', 'normal' );
 }
 
 
