@@ -1207,6 +1207,40 @@ i.fa-phone{
 	box-shadow: 0 0 15px 0 rgba(185,185,185,1);
 }
 
+/* 
+ * Transparent Overlays
+---------------------------------------------------------------------------------------------------- */
+.trans-overlay .fl-row-content-wrap {
+	position: relative;
+}
+
+.trans-overlay .fl-row-content-wrap::after {
+	content: "";
+	background-color: rgba(255, 255, 255, .8);
+	width: 50%;
+	border-top-right-radius: 100px;
+	height: 70%;
+	bottom: 0;
+	position: absolute;
+	left: 0;
+	display: block;
+	top: unset;
+}
+
+@media(max-width:1100px) {
+	.trans-overlay .fl-row-content-wrap::after {
+		width: 70%;
+	}
+}
+
+@media(max-width:767px) {
+	.trans-overlay .fl-row-content-wrap::after {
+		width: 100%;
+		border-top-right-radius: 0;
+		height: 100%;
+	}
+}
+
 /* Offset Anchor Sticky Header
  * Add HTML --> <a class="anchor" id="top"></a>
 ---------------------------------------------------------------------------------------------------- */
