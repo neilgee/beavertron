@@ -517,7 +517,7 @@ a.fl-post-slider-feed-more:hover   {
 
 	.fl-page-nav-toggle-button.fl-page-nav-toggle-visible-mobile .fl-page-nav .navbar-toggle:before {
 		content: '\f0c9';
-		font-family: 'Font Awesome 5 Free';
+		font-family: 'Font Awesome 6 Free';
 		font-weight: 900;
 		color: #000;
 	}
@@ -674,7 +674,7 @@ a.fl-post-slider-feed-more:hover   {
 .single .fl-post-grid-date::before,
 .single .fl-post-feed-date::before  {
     content: '\f017';
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
     color: #333;
     font-size: 25px;
 	vertical-align: middle;
@@ -683,7 +683,7 @@ a.fl-post-slider-feed-more:hover   {
 
 .single .fl-post-grid-author:before {
     content: '\f007';
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
     color: #333;
     font-size: 25px;
@@ -694,7 +694,7 @@ a.fl-post-slider-feed-more:hover   {
 .single .fl-comments-popup-link::before,
 .single .fl-post-feed-comments::before {
     content: '\f075';
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
 	font-weight: 400;
     color: #333;
     font-size: 25px;
@@ -710,7 +710,7 @@ a.fl-post-slider-feed-more:hover   {
 .single .fl-entry-categories::before,
 .single .fl-post-info-terms::before {
     content: '\f07c';
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
 	font-weight: 400;
     color: #333;
     font-size: 25px;
@@ -721,7 +721,7 @@ a.fl-post-slider-feed-more:hover   {
 .single .fl-entry-tags::before,
 .single .fl-post-info-tags .fl-post-info-terms::before {
     content: '\f02c';
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
     color: #333;
     font-size: 25px;
@@ -1116,7 +1116,7 @@ body.has-blocks .fl-post-content ol {
 
 .tick-list li:before {
 	content: '\f00c';
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
 	padding-right: 5px;
 	color: #555555;
@@ -1279,7 +1279,7 @@ a.anchor {
 --------------------------------------------- */
 a[aria-expanded="true"]::after {
 	content: '\f077';
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
 	color: #32407b;
 	font-size: 13px;
@@ -1288,7 +1288,7 @@ a[aria-expanded="true"]::after {
 
 a[aria-expanded="false"]::after {
 	content: '\f054';
-	font-family: 'Font Awesome 5 Free';
+	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
 	color: #32407b;
 	margin-left: 5px;
