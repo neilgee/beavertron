@@ -91,12 +91,6 @@ function bt_theme_setup() {
 	include_once( get_stylesheet_directory() . '/includes-child/dashboard.php' );
 	
 	/**
-	 * Remove Default BB Mobile Menu.
-	 * @since 1.0.0
-	 */
-	//include_once( get_stylesheet_directory() . '/includes-child/mobile-menu-removal.php' );
-	
-	/**
 	 * Load in Beaver Builder Plugin functions
 	 * @since 1.0.0
 	 */
@@ -128,18 +122,7 @@ function bt_theme_setup() {
 	if ( class_exists( 'acf' ) ) {
 		include_once( get_stylesheet_directory() . '/includes-child/acf.php' );
 	}
-
-	/**
-	 * Improve Cache Puging on Runcloud NGINX
-	 * @since 1.0.0
-	 */
-	//require_once  get_stylesheet_directory() . '/includes-child/cache-buster.php';
 	
-	/**
-	 * Get the plugins ffrom TGM Plugin Activation
-	 * @since 1.0.0
-	 */
-	//require_once  get_stylesheet_directory() . '/plugins.php';
 
 	/**
 	 * Allow the theme to be translated.

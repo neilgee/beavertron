@@ -25,7 +25,7 @@
  * @since 1.0.0
  */
  function bt_upload_image_formats( $regex, $type, $ext, $file ) {
-    $regex[ 'photo' ] = '#(jpe?g|png|gif|bmp|tiff|svg?)#i';
+    $regex[ 'photo' ] = '#(jpe?g|png|gif|bmp|tiff|webp|svg?)#i';
 
     return $regex;
 }
