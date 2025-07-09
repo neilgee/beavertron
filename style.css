@@ -1295,6 +1295,21 @@ a[aria-expanded="false"]::after {
 	font-size: 13px;
 }
 
+/* Grid - swap grid order ina  2 column use .item-2
+---------------------------------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+	.grid-item {
+		grid-template-columns: 1fr;
+	}
+
+	.grid-item-1 {
+		grid-row: 2;
+	}
+
+	.grid-item-2 {
+		grid-row: 1 !important;
+	}
+}
 /* Print Styles
 ---------------------------------------------------------------------------------------------------- */
 
