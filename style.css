@@ -458,12 +458,7 @@ a.fl-post-slider-feed-more:hover   {
    	position: relative;
 }
 
-/* Flex Controls
----------------------------------------------------------------------------------------------------- */
 
-.flex-grow {
-	flex-grow: 1;
-}
 
 /* Media Query Snippets
 ---------------------------------------------------------------------------------------------------- */
@@ -1295,7 +1290,7 @@ a[aria-expanded="false"]::after {
 	font-size: 13px;
 }
 
-/* Grid - swap grid order ina  2 column use .item-2
+/* Grid/Flex - swap grid order in a 2 column use .item-2
 ---------------------------------------------------------------------------------------------------- */
 @media (max-width: 767px) {
 	.grid-item {
@@ -1310,6 +1305,21 @@ a[aria-expanded="false"]::after {
 		grid-row: 1 !important;
 	}
 }
+/* Allow PowerPack Image Carousel to display if images flicker or do not show
+---------------------------------------------------------------------------------------------------- */
+/* .fl-module-box {
+	min-width: 0 !important;
+	min-height: 0 !important;
+} */
+
+/* Flex Controls
+---------------------------------------------------------------------------------------------------- */
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+
 /* Print Styles
 ---------------------------------------------------------------------------------------------------- */
 
