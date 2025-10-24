@@ -1075,13 +1075,13 @@ body.has-blocks .fl-post-content ol {
 /* Green Dots
 ---------------------------------------------------------------------------------------------------- */
 
-.green-dots .fl-module-content,
-.green-dots .fl-module-content ul {
+.green-dots .fl-module,
+.green-dots .fl-module ul {
 	list-style-type: none;
 	/* Remove default bullets */
 }
 
-.green-dots .fl-module-content li::before {
+.green-dots .fl-module li::before {
 	content: "● ";
 	/* Add content: \2022 is the CSS Code/unicode for a bullet */
 	color: #72bc44;

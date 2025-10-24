@@ -33,7 +33,7 @@ final class FLChildTheme {
         // If we need external
 		//wp_enqueue_style( 'font-awesome-5', get_stylesheet_directory_uri() . '/fonts/fontawesome/css/fontawesome-all.min.css' );
 		// Load FA 5 Everywhere
-		wp_enqueue_style( 'font-awesome-5' );
+		wp_enqueue_style( 'font-awesome-6' );
 
         // Take out the default BB Scripts if not used
         // wp_dequeue_script( 'bootstrap' );
