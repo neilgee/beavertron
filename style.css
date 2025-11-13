@@ -1205,7 +1205,7 @@ i.fa-phone{
 
 /* 
  * Transparent Overlays
- * Example https: //electrixallblew.com.au/
+ * Example https://electrixallblew.com.au/
 ---------------------------------------------------------------------------------------------------- */
 .trans-overlay .fl-row-content-wrap {
 	position: relative;
@@ -1277,7 +1277,7 @@ a[aria-expanded="true"]::after {
 	content: '\f077';
 	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
-	color: #32407b;
+	color: #999;
 	font-size: 13px;
 	margin-left: 5px;
 }
@@ -1286,7 +1286,7 @@ a[aria-expanded="false"]::after {
 	content: '\f054';
 	font-family: 'Font Awesome 6 Free';
 	font-weight: 900;
-	color: #32407b;
+	color: #999;
 	margin-left: 5px;
 	font-size: 13px;
 }
@@ -1306,6 +1306,7 @@ a[aria-expanded="false"]::after {
 		grid-row: 1 !important;
 	}
 }
+
 /* Allow PowerPack Image Carousel to display if images flicker or do not show
 ---------------------------------------------------------------------------------------------------- */
 /* .fl-module-box {
