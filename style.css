@@ -568,6 +568,33 @@ a.fl-post-slider-feed-more:hover   {
 	cursor:default;
 }
 
+/* Underlines not on mobile - Change Menu name and background color to suit
+ */
+
+@media(min-width:768px) {
+
+	.fl-menu-horizontal>li>a:hover:after {
+		transform: scaleX(1);
+	}
+
+	.fl-menu-horizontal>li>a::after {
+		content: '';
+		position: absolute;
+		background-color: #7AC798;
+		height: 3px;
+		bottom: -5px;
+		width: 40%;
+		left: 35%;
+		transform: scaleX(0);
+		transition: 250ms ease-in-out;
+	}
+
+	.fl-menu-horizontal>li>a:hover:after {
+		transform: scaleX(1);
+	}
+
+}
+
 /* FrontPage Container Widgets
 ---------------------------------------------------------------------------------------------------- */
 
