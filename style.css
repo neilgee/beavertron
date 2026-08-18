@@ -1099,35 +1099,43 @@ body.has-blocks .fl-post-content ol {
     max-width: none;
     list-style-position: inside;
 }
-/* Green Dots
----------------------------------------------------------------------------------------------------- */
+/* Coloured bullet lists
+-------------------------------------------------- */
 
-.green-dots .fl-module,
-.green-dots .fl-module ul,
-.green-dots .fl-module-content,
-.green-dots .fl-module-content ul {
-	list-style-type: none;
-	/* Remove default bullets */
+.purple-dots ul,
+.green-dots ul {
+	list-style: none;
 }
 
-.green-dots .fl-module>ul li::before,
-.green-dots .fl-module>ul ul li::before,
-.green-dots .fl-module-content ul li::before,
-.green-dots .fl-module-content ul ul li::before {
-	content: "● ";
-	/* Add content: \2022 is the CSS Code/unicode for a bullet */
-	color: #72bc44;
-	/* Change the color */
-	font-weight: bold;
-	/* If you want it to be bold */
+.purple-dots li,
+.green-dots li {
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.purple-dots li::before,
+.green-dots li::before {
+	content: "●";
 	display: inline-block;
-	/* Needed to add space between the bullet and the text */
 	width: 1em;
-	/* Also needed for space (tweak if needed) */
 	margin-left: -1em;
-	/* Also needed for space (tweak if needed) */
+	font-weight: bold;
 }
 
+/* Purple */
+.purple-dots li::before {
+	color: #93278F;
+}
+
+/* Green */
+.green-dots li::before {
+	color: #84A681;
+}
+
+.purple-dots ul li,
+.green-dots ul li {
+	margin-bottom: 15px;
+}
 /* Icon Stuff
 --------------------------------------------- */
 
