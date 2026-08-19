@@ -595,6 +595,95 @@ a.fl-post-slider-feed-more:hover   {
 
 }
 
+/* Beaver Builder desktop submenu arrows */
+@media (min-width: 993px) {
+
+	/*
+	 * Make the submenu label and arrow content-sized.
+	 * The second value controls the arrow-button width.
+	 */
+	.menu-toggle-closer .fl-menu .menu>li.menu-item-has-children>.fl-has-submenu-container {
+		display: inline-grid !important;
+		grid-template-columns: max-content 35px !important;
+		align-items: stretch !important;
+		column-gap: 0 !important;
+		width: max-content !important;
+	}
+
+	/* Remove BB's extra space between the label and toggle */
+	.menu-toggle-closer .fl-menu .menu>li.menu-item-has-children>.fl-has-submenu-container>a {
+		padding-right: 0 !important;
+	}
+
+	/* Reset the new Beaver Builder submenu button */
+	.menu-toggle-closer .fl-menu .menu>li.menu-item-has-children>.fl-has-submenu-container>button.fl-menu-toggle.fl-content-ui-button {
+		position: relative !important;
+		inset: auto !important;
+
+		display: block !important;
+		align-self: stretch !important;
+
+		width: 22px !important;
+		min-width: 22px !important;
+		max-width: 22px !important;
+		height: auto !important;
+
+		margin: 0 !important;
+		padding: 0 !important;
+
+		border: 0 !important;
+		border-radius: 0 !important;
+		outline: 0 !important;
+
+		background: transparent !important;
+		background-image: none !important;
+		box-shadow: none !important;
+
+		color: inherit !important;
+		appearance: none !important;
+		-webkit-appearance: none !important;
+	}
+
+	/* Remove BB's mouse-click, hover and expanded-state box */
+	.menu-toggle-closer .fl-menu .menu>li.menu-item-has-children>.fl-has-submenu-container>button.fl-menu-toggle.fl-content-ui-button:hover,
+
+	.menu-toggle-closer .fl-menu .menu>li.menu-item-has-children>.fl-has-submenu-container>button.fl-menu-toggle.fl-content-ui-button:focus,
+
+	.menu-toggle-closer .fl-menu .menu>li.menu-item-has-children>.fl-has-submenu-container>button.fl-menu-toggle.fl-content-ui-button:active,
+
+	.menu-toggle-closer .fl-menu .menu>li.menu-item-has-children>.fl-has-submenu-container>button.fl-menu-toggle.fl-content-ui-button[aria-expanded="true"] {
+		border: 0 !important;
+		outline: 0 !important;
+		background: transparent !important;
+		background-image: none !important;
+		box-shadow: none !important;
+	}
+
+	/*
+	 * Keyboard focus remains visible by thickening the arrow itself,
+	 * rather than displaying a box around the button.
+	 */
+	.menu-toggle-closer .fl-menu .menu>li.menu-item-has-children>.fl-has-submenu-container>button.fl-menu-toggle.fl-content-ui-button:focus-visible::before {
+		border-right-width: 3px !important;
+		border-bottom-width: 3px !important;
+	}
+}
+
+/* Remove border/outline from the mobile Menu toggle */
+@media (max-width: 992px) {
+
+	.menu-toggle-closer .fl-menu .fl-menu-mobile-toggle,
+	.menu-toggle-closer .fl-menu .fl-menu-mobile-toggle:hover,
+	.menu-toggle-closer .fl-menu .fl-menu-mobile-toggle:focus,
+	.menu-toggle-closer .fl-menu .fl-menu-mobile-toggle:focus-visible,
+	.menu-toggle-closer .fl-menu .fl-menu-mobile-toggle:active,
+	.menu-toggle-closer .fl-menu .fl-menu-mobile-toggle[aria-expanded="true"] {
+		border: 0 !important;
+		outline: 0 !important;
+		box-shadow: none !important;
+	}
+}
+
 /* FrontPage Container Widgets
 ---------------------------------------------------------------------------------------------------- */
 
